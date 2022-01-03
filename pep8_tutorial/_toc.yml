@@ -1,0 +1,46 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: PEP Overview
+    numbered: True
+    chapters:
+      - file: chapters/ch1_pep_overview/01_pep_intro
+        title: PEP Overview
+
+  - caption: PEP 8. Style Guide for Python Code
+    numbered: True
+    chapters:
+      - file: chapters/ch2_pep8/ch02_01_intro_to_pep8
+        title: Introduction to PEP 8
+
+      - file: chapters/ch2_pep8/ch02_02_foolish_consistency
+        title: A Foolish Consistency is the Hobgoblin of Little Minds
+      
+      - file: chapters/ch2_pep8/ch02_03_code_lay_out
+        title: Code Lay-out
+      
+      - file: chapters/ch2_pep8/ch02_04_string_quotes
+        title: String Quotes
+
+      - file: chapters/ch2_pep8/ch02_05_white_space
+        title: White Space
+
+      - file: chapters/ch2_pep8/ch02_06_when_to_use_trailing_commans
+        title: Using Trailing Commas
+
+      - file: chapters/ch2_pep8/ch02_07_comments
+        title: Comments
+
+      - file: chapters/ch2_pep8/ch02_08_naming_conventions
+        title: Naming Conventions
+        
+      - file: chapters/ch2_pep8/ch02_09_programing_recommendations
+        title: Programming Recommendations
+
+        
+      
+        
+

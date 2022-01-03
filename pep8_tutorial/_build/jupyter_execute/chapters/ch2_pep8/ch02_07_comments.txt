@@ -1,0 +1,19 @@
+# Substract two integers
+def add(a, b):
+    return a + b
+
+x = x + 1  # Increment x
+
+x = x + 1  # Compensate for border
+
+def foo():
+    """Return a foobang
+    Optional plotz says to frobnicate the bizbaz first.
+    """
+    your_code
+        :
+
+def foo():
+    """Return a foobang"""
+    your_code
+        :

@@ -1,0 +1,15 @@
+FILES = ('setup.cfg',)
+
+FILES = 'setup.cfg',
+
+FILES = [
+    'setup.cfg',
+    'tox.ini',
+    ]
+
+initialize(FILES,
+           error=True,
+           )
+
+FILES = ['setup.cfg', 'tox.ini',]
+initialize(FILES, error=True,)

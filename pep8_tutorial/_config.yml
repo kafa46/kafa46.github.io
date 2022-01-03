@@ -1,0 +1,79 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: My sample book
+author: Giseop Noh
+logo: ./imgs/prof_noh.jpg
+copyright: '2021 Cheongju University'
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+    title: "파이썬 스타일 가이드" 
+    author: '노기섭 \\\\ 청주대학교 인공지능소프트웨어전공'
+    theme: "manual"
+    toctree_only: True
+    papersize: 'a4paper'
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+
+sphinx:
+    config:
+        language: "kr"
+        tls_verify: false
+        linkcheck_anchors: false
+        html_show_copyright: false
+        html_last_updated_fmt: "%d %b %Y"
+        latex_logo: 'imgs/prof_noh.png'
+        latex_toplevel_sectioning: 'chapter'
+        latex_elements:
+            preamble: |
+                \usepackage{ccicons}
+            maketitle: |
+                \newcommand\sphinxbackoftitlepage{\input{../../credits.tex}}\sphinxmaketitle
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
+  home_page_in_navbar: true
+  use_repository_button: false
+  use_edit_page_button: false
+  use_issues_button: true
+  extra_navbar: <a href="mailto:kafa46@cju.ac.kr">contact</a> 
+  extra_footer: |
+        <p>
+            본 책자에 적용되는 라이센스는 
+            <a href="https://creativecommons.org/licenses/by/4.0/">
+              Creative Commons Attribution 4.0 International
+            </a>.
+        </p>
