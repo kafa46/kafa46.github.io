@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
+title: PEP 8 Tutorial
 author: Giseop Noh
 logo: ./imgs/prof_noh.jpg
 copyright: '2021 Cheongju University'
@@ -73,7 +73,7 @@ html:
   extra_footer: |
         <p>
             본 책자에 적용되는 라이센스는 
-            <a href="https://creativecommons.org/licenses/by/4.0/">
-              Creative Commons Attribution 4.0 International
+            <a href="https://opensource.org/licenses/MIT">
+              MIT License
             </a>.
         </p>
