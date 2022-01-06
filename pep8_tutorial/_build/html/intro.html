@@ -124,6 +124,23 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="python-enhancement-proposal-pep-8-tutorial">
 <h1>Python Enhancement Proposal (PEP) 8 Tutorial<a class="headerlink" href="#python-enhancement-proposal-pep-8-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>이 책은 Python Enhancement Proposal (PEP)는 파이썬을 개선하기 위한 제안서, 즉 PEP에 대한 전반적인 개념을 설명하고 그 중에서도 Python 코딩 스타일에 대한 권고사항에 대한 PEP 8에 대한 튜토리얼을 제공하기 위해 작성되었습니다.</p>
+<p>이 책의 저자는 파이썬을 좋아하고 즐겨 사용하는 청주대학교 인공지능소프트웨어전공 교수입니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">저자소개</p>
+<p>청주대학교 소프트웨어융합학부 인공지능소프트웨어전공</p>
+<p>노기섭 교수</p>
+<p>Contact</p>
+<ul class="simple">
+<li><p>E-mail: <a class="reference external" href="mailto:kafa46&#37;&#52;&#48;cju&#46;ac&#46;kr">kafa46<span>&#64;</span>cju<span>&#46;</span>ac<span>&#46;</span>kr</a></p></li>
+<li><p>Phone: 043-229-8496 (유선)</p></li>
+<li><p>Mobile: Not open to public (private, 비공개)</p></li>
+</ul>
+<div class="figure align-left" id="pythonic-image">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/prof_noh.jpg"><img alt="_images/prof_noh.jpg" class="bg-primary mb-1" src="_images/prof_noh.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">청주대 노기섭 교수</span><a class="headerlink" href="#pythonic-image" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<hr class="docutils" />
 <p>PEP는 보다 나은 파이썬을 위한 다양한 의견을 체계적으로 정리한 문서를 의미합니다.</p>
 <p>파이썬을 배우는 사람들은 먼저 문법을 배우고 다양한 예제 실습을 통해 프로그래밍 능력을 키워 갑니다. 파이썬 문법을 배우고 다양한 예제를 실습하는 것은 매우 중요합니다. 하지만 어느 수준 이상 올라가게 되면 더 이상 혼자서 코딩을 할 수 없게 됩니다.</p>
 <p>일반적인 소프트웨어 개발의 경우 다양한 기능을 구현해야 하므로 다음과 같은 과정을 거치게 됩니다.</p>
@@ -152,21 +169,20 @@
 <strong>관용</strong>이란 습관으로 굳어진 것을 의미합니다. 한자로 보면 '버릇 관 (慣)'과 '쓸 용(用)'이 합쳐서 오랫동안 써서 굳어진 대로 늘 사용하는 것을 뜻합니다. <strong>관용적 표현</strong>이라는 것은 관용적으로 굳어진 것들을 사용한다는 의미가 되겠습니다.</p>
 <p>파이썬은 ‘프로그래밍 언어’ 입니다. '언어’는 어떤 객체(object) 사이에서 소통하기 위한 수단입니다. 프로그래머라는 객체가 컴퓨터라는 객체와 소통하기 위해서는 당연히 언어가 필요합니다. 프로그래머가 컴퓨터와 소통하기 위한 언어는 다양합니다. Java, C, C++, Fortran, Go 등등 수없이 많습니다. 그 중에서 여러분들은 Python이라는 언어를 가지고 컴퓨터와 소통하고 있을 겁니다.</p>
 <p>Python도 언어이기 때문에 문법과 다양한 표현법이 존재합니다. 똑같은 기능을 구현하더라도 코딩하는 방법(코딩 스타일)은 다양하게 존재합니다. 프로그래머 입맛에 따라 거의 무한대의 방법이 존재할 겁니다. 하지만 영어(언어)의 관용구처럼 Python(언어)도 관용적 표현, 즉 관용적 코딩 스타일이 자연스럽게 생기게 됩니다. 이렇게 생긴 파이썬 관용적 표현들을 따라 코딩하는 것을 ‘Pythonic (파이쏘닉)’ 하다고 말합니다.</p>
-<div class="figure align-center" id="pythonic-image">
+<div class="figure align-center" id="id1">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/pythonic.jpg"><img alt="_images/pythonic.jpg" class="bg-primary mb-1" src="_images/pythonic.jpg" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Pythonic Image (source: <a class="reference external" href="https://tali.tistory.com/1356">https://tali.tistory.com/1356</a>)</span><a class="headerlink" href="#pythonic-image" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Pythonic Image (source: <a class="reference external" href="https://tali.tistory.com/1356">https://tali.tistory.com/1356</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>파이쏘닉한 소스코드는 다른 개발자들이 편하게 소스코드를 읽고 해석할 수 있기 때문에 <strong>개발 속도</strong>와 <strong>유지보수 효율성</strong>을 높일 수 있는 중요한 방법 중 하나입니다. 우리가 그걸 알면서 굳이 사용하지 않을 필요는 없는 겁니다.</p>
 <p>그래서 등장한 것이 통일된 코딩 규칙을 갖자는 것입니다. 그 통일된 규칙을 체계적으로 정리한 것이 PEP 8입니다.
 파이썬을 배우는 사람들은 문법과 실습에 집중하면서 자연스럽게 Pythonic 코드를 간접적으로 배우게 됩니다.</p>
 <p>하지만 어떤 경우는 전혀 그렇지 못한 경우도 있을 것입니다. Pythonic 하게 코딩하는 것은 그리 어려운 것이 아닙니다. Python 문법을 공부한 사람이라면 한두번 설명만 들으면 누구라도 할 수 있습니다.</p>
-<p>PEP는 수많은 종류가 있습니다. 이번 튜토리얼은 PEP의 개념 'Stype Guide for Python Code’로 불리는 PEP 8에 대하여 설명하겠습니다.</p>
+<p>PEP는 수많은 종류가 있습니다. 이번 튜토리얼은 PEP의 개념 'Style Guide for Python Code’로 불리는 PEP 8에 대하여 설명하겠습니다.</p>
 <hr class="docutils" />
-<hr class="docutils" />
-<p>튜토리얼은 크게 2개의 Chapter로 구성되어 있습니다.</p>
+<p>튜토리얼은 크게 2개의 Part로 구성되어 있습니다.</p>
 <ul class="simple">
 <li><p>Chapter 1: PEP의 개념과 종류에 대한 소개</p></li>
-<li><p>Chapter 2: PEP 8 구체적 설명</p></li>
+<li><p>Chapter 2 ~ 10: PEP 8 구체적 설명 (Step by Step)</p></li>
 </ul>
 <p>PEP 8은 파이썬의 코딩 스타일을 제안하는 내용입니다. 전문 개발자가 되기 위해 알아두어야 합니다. 파이썬 전문 개발자가 아니도라도 프로그래머들이 사용하는 코딩 스타일을 알고 있다면 협업이나 코드 분석을 쉽게 할 수 있는 장점이 있습니다.</p>
 <p>다시 말하면 프로그래밍 생산성을 높일 수 있다는 의미입니다. 파이썬 문법을 배우고 다양한 예제를 풀어보는 등 공부는 많이 하지만 코딩 스타일을 정확하게 배우는 경우는 드물게 됩니다. 이번 튜토리얼을 통해 보다 전문적인 지식을 얻기 바랍니다.</p>
@@ -175,22 +191,6 @@
 <p>튜토리얼은 파이썬 공식 홈페이지에 게시된 문서를 참고하여 작성되었습니다.</p>
 <p><strong>Python PEP</strong>: <a class="reference external" href="https://www.python.org/dev/peps">https://www.python.org/dev/peps</a></p>
 </div>
-<div class="admonition- admonition">
-<p class="admonition-title">저자소개</p>
-<p>청주대학교 소프트웨어융합학부 인공지능소프트웨어전공</p>
-<p>노기섭 교수</p>
-<p>Contact</p>
-<ul class="simple">
-<li><p>E-mail: <a class="reference external" href="mailto:kafa46&#37;&#52;&#48;cju&#46;ac&#46;kr">kafa46<span>&#64;</span>cju<span>&#46;</span>ac<span>&#46;</span>kr</a></p></li>
-<li><p>Phone: 043-229-8496 (유선)</p></li>
-<li><p>Mobile: Not open to public (private, 비공개)</p></li>
-</ul>
-<div class="figure align-left" id="id1">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/prof_noh.jpg"><img alt="_images/prof_noh.jpg" class="bg-primary mb-1" src="_images/prof_noh.jpg" style="width: 200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">청주대 노기섭 교수</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<hr class="docutils" />
 <div class="toctree-wrapper compound">
 <span id="document-chapters/ch1_pep_overview/01_pep_intro"></span><div class="tex2jax_ignore mathjax_ignore section" id="python-enhancement-proposal-pep">
 <h2><span class="section-number">1. </span>Python Enhancement Proposal (PEP)<a class="headerlink" href="#python-enhancement-proposal-pep" title="Permalink to this headline">¶</a></h2>
@@ -240,9 +240,9 @@
 <div class="admonition-pep-13-python-language-governance admonition">
 <p class="admonition-title">PEP 13 - Python Language Governance</p>
 <p>PEP 13: <a class="reference external" href="https://www.python.org/dev/peps/pep-0013/">https://www.python.org/dev/peps/pep-0013/</a></p>
-<p>파이썬 언어를 통치(종합관리)하기 위한 일련의 절차를 정의
-운영위원회 관련 선발, 투펴, 이력 등 포함
-현재 운영위원회 투표자, 선발자, 투표방식 등은 <a class="reference external" href="https://www.python.org/dev/peps/pep-8102">PEP 8012</a>에 명시되어 있으니 관심있는 사람은 내용을 확인해 보기 바랍니다.</p>
+<p><a class="reference external" href="https://www.python.org/dev/peps/pep-0013/">PEP 13</a>은 파이썬 언어를 통치(종합관리)하기 위한 일련의 절차를 정의하고 있습니다.</p>
+<p>운영위원회 관련 선발, 투표 결과, 이력관리 등 을 포함하고 있으며,</p>
+<p>현재 운영위원회 투표자, 선발자, 투표방식 등은 <a class="reference external" href="https://www.python.org/dev/peps/pep-8102">PEP 8012</a>에 명시되어 있으니 관심있는 사람은 내용을 확인해 보기 바랍니다.</p>
 </div>
 </div>
 <div class="section" id="pythons-core-developers">
@@ -2580,7 +2580,7 @@ Dunder methods in foo1: [&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dict
 <p class="admonition-title">Linter란?</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ko.wikipedia.org/wiki/%EB%A6%B0%ED%8A%B8_(%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)">Online wiki</a>: lint는 컴퓨터 프로그래밍에서 의심스럽거나, 에러를 발생하기 쉬운 코드에 표시(flag)를 달아 놓는 것을 말합니다. 원래는 C 언어에서 사용하던 용어였으나 지금은 다른 언어에서도 일반적으로 사용됩니다.</p></li>
-<li><p>python으로 작성된 모듈, 패키지 등을 손쉽게 PEP8 스타일 가이드 및 구문에러 등을 통해 분석해 채점하고 올바르게 수정할 수 있도록 도와주는 작은 프로그램입니다. VS code의 경우 Extention을 이용해 쉽게 설치하고 사용할 수 있다. 대표적인 익스텐션은 <code class="docutils literal notranslate"><span class="pre">[pylint](https://pylint.org/)</span></code>이 있다.</p></li>
+<li><p>python으로 작성된 모듈, 패키지 등을 손쉽게 PEP8 스타일 가이드 및 구문에러 등을 통해 분석해 채점하고 올바르게 수정할 수 있도록 도와주는 작은 프로그램입니다. VS code의 경우 Extention을 이용해 쉽게 설치하고 사용할 수 있다. 대표적인 익스텐션은 <a class="reference external" href="https://pylint.org/">pylint</a>이 있다.</p></li>
 </ul>
 </div>
 </div>

@@ -48,8 +48,10 @@
 # ```{admonition} PEP 13 - Python Language Governance
 # PEP 13: https://www.python.org/dev/peps/pep-0013/
 # 
-# 파이썬 언어를 통치(종합관리)하기 위한 일련의 절차를 정의
-# 운영위원회 관련 선발, 투펴, 이력 등 포함
+# [PEP 13](https://www.python.org/dev/peps/pep-0013/)은 파이썬 언어를 통치(종합관리)하기 위한 일련의 절차를 정의하고 있습니다.
+# 
+# 운영위원회 관련 선발, 투표 결과, 이력관리 등 을 포함하고 있으며,
+# 
 # 현재 운영위원회 투표자, 선발자, 투표방식 등은 [PEP 8012](https://www.python.org/dev/peps/pep-8102 "PEP 8012")에 명시되어 있으니 관심있는 사람은 내용을 확인해 보기 바랍니다.
 # ```
 

@@ -2,6 +2,33 @@
 
 이 책은 Python Enhancement Proposal (PEP)는 파이썬을 개선하기 위한 제안서, 즉 PEP에 대한 전반적인 개념을 설명하고 그 중에서도 Python 코딩 스타일에 대한 권고사항에 대한 PEP 8에 대한 튜토리얼을 제공하기 위해 작성되었습니다.
 
+이 책의 저자는 파이썬을 좋아하고 즐겨 사용하는 청주대학교 인공지능소프트웨어전공 교수입니다.
+
+
+```{admonition} 저자소개
+
+청주대학교 소프트웨어융합학부 인공지능소프트웨어전공
+
+노기섭 교수
+
+Contact
+- E-mail: kafa46@cju.ac.kr
+- Phone: 043-229-8496 (유선)
+- Mobile: Not open to public (private, 비공개)
+
+
+```{figure} ./imgs/prof_noh.jpg
+---
+class: bg-primary mb-1
+width: 200px
+align: left
+name: pythonic-image
+---
+청주대 노기섭 교수
+```
+---
+
+
 PEP는 보다 나은 파이썬을 위한 다양한 의견을 체계적으로 정리한 문서를 의미합니다.
 
 파이썬을 배우는 사람들은 먼저 문법을 배우고 다양한 예제 실습을 통해 프로그래밍 능력을 키워 갑니다. 파이썬 문법을 배우고 다양한 예제를 실습하는 것은 매우 중요합니다. 하지만 어느 수준 이상 올라가게 되면 더 이상 혼자서 코딩을 할 수 없게 됩니다.
@@ -54,15 +81,14 @@ Pythonic Image (source: https://tali.tistory.com/1356)
 
 하지만 어떤 경우는 전혀 그렇지 못한 경우도 있을 것입니다. Pythonic 하게 코딩하는 것은 그리 어려운 것이 아닙니다. Python 문법을 공부한 사람이라면 한두번 설명만 들으면 누구라도 할 수 있습니다.
 
-PEP는 수많은 종류가 있습니다. 이번 튜토리얼은 PEP의 개념 'Stype Guide for Python Code'로 불리는 PEP 8에 대하여 설명하겠습니다.
+PEP는 수많은 종류가 있습니다. 이번 튜토리얼은 PEP의 개념 'Style Guide for Python Code'로 불리는 PEP 8에 대하여 설명하겠습니다.
 
 ---
---- 
 
-튜토리얼은 크게 2개의 Chapter로 구성되어 있습니다.
+튜토리얼은 크게 2개의 Part로 구성되어 있습니다.
 
 * Chapter 1: PEP의 개념과 종류에 대한 소개
-* Chapter 2: PEP 8 구체적 설명
+* Chapter 2 ~ 10: PEP 8 구체적 설명 (Step by Step)
 
 PEP 8은 파이썬의 코딩 스타일을 제안하는 내용입니다. 전문 개발자가 되기 위해 알아두어야 합니다. 파이썬 전문 개발자가 아니도라도 프로그래머들이 사용하는 코딩 스타일을 알고 있다면 협업이나 코드 분석을 쉽게 할 수 있는 장점이 있습니다. 
 
@@ -74,25 +100,3 @@ PEP 8은 파이썬의 코딩 스타일을 제안하는 내용입니다. 전문 �
 **Python PEP**: https://www.python.org/dev/peps
 ```
 
-```{admonition} 저자소개
-
-청주대학교 소프트웨어융합학부 인공지능소프트웨어전공
-
-노기섭 교수
-
-Contact
-- E-mail: kafa46@cju.ac.kr
-- Phone: 043-229-8496 (유선)
-- Mobile: Not open to public (private, 비공개)
-
-
-```{figure} ./imgs/prof_noh.jpg
----
-class: bg-primary mb-1
-width: 200px
-align: left
-name: pythonic-image
----
-청주대 노기섭 교수
-```
----
