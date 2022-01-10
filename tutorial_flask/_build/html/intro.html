@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Tutorial을 시작하며 &#8212; Flask Tutorial for CJU Students</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Flask 소개 (Intro)" href="Contents/ch01_intro_to_flask.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Flask Tutorial for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="이 책 검색 ..." aria-label="이 책 검색 ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Flask Tutorial을 시작하며
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch01_intro_to_flask.html">
+   1. Flask 소개 (Intro)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch02_todo_list.html">
+   2. Flask를 위한 사전 준비 목록
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch03_prep_intro_to_vscode.html">
+   3. 준비 1. VS Code 소개 및 설치
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch04_prep_anaconda_env.html">
+   4. 준비 2. 가상환경 및
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     anaconda
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch05_prep_flask_installation.html">
+   5. 준비 3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     flask
+    </span>
+   </code>
+   설치
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch06_prep_gitignore.html">
+   6. 준비 4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .gitignore
+    </span>
+   </code>
+   세팅
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/ch07_prep_dependancy_requirements.html">
+   7. 준비 5. 의존성 파일
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requirement.txt
+    </span>
+   </code>
+   생성
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Contents/apdx01_monolithic_vs_msa.html">
+   8. Monolithic vs. MSA
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="탐색 전환" aria-controls="site-navigation"
+                title="탐색 전환" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="이 페이지 다운로드"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="소스 파일 다운로드" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDF로 인쇄"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="소스 저장소"><i
+                    class="fab fa-github"></i>저장소</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="이슈 열기"><i class="fas fa-lightbulb"></i>열린 문제</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="전체 화면으로보기"
+        title="전체 화면으로보기"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="flask-tutorial">
+<h1>Flask Tutorial을 시작하며<a class="headerlink" href="#flask-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>이 책은 대표적인 Python 웹 프레임워크 중 하나인 Flask를 설명하고 이용할 수 있도록 하기 위해 작성되었습니다.
+웹 프레임워크에 대해 전혀 모르더라도 튜토리얼을 따라오면 누구든지 사용할 수 있게 됩니다.</p>
+<p>컴퓨터 언어, 그 중에서도 프로그래밍 언어를 배우는 목적이 무엇일까요? 아마도 자신이 원하는 기능을 구현(코딩)하여 컴퓨터에게 일을 시키고 싶기 때문일 것입니다. 그렇다면 이런 질문을 하게 됩니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">코딩에 대한 근본적 질문</p>
+<p>“어떻게 내가 만든 기능이나 서비스를 사람들이 편리하게 사용하게 할 수 있을까?”</p>
+</div>
+<p>위 질문에 대한 답은 “사람들이 가장 많이 사용하는 방법을 이용해 제공하면 된다” 입니다. 현재 사람들이 가장 많이 사용하는 방법은 <code class="docutils literal notranslate"><span class="pre">웹(web)</span></code> 입니다. 거의 모든 사람들은 PC, 스마트폰과 같은 디바이스를 사용하고 있으며, 이런 디바이스는 웹 환경에서 정보를 검색하고, 글/사진/동영상을 공유하고, 자신이 가지고 있는 정보를 업로드합니다.</p>
+<p>한가지 예를 들어 보겠습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">여러분은</span> <span class="pre">동물</span> <span class="pre">사진</span> <span class="pre">한장을</span> <span class="pre">입력하면</span> <span class="pre">인공지능</span> <span class="pre">기술을</span> <span class="pre">활용해서</span> <span class="pre">그</span> <span class="pre">사진</span> <span class="pre">속</span> <span class="pre">동물이</span> <span class="pre">무엇인지</span> <span class="pre">알려주는</span> <span class="pre">서비스를</span> <span class="pre">구현(코딩)</span> <span class="pre">했습니다.</span> <span class="pre">현재</span> <span class="pre">여러분의</span> <span class="pre">프로그램은</span> <span class="pre">소스코드</span> <span class="pre">상에서</span> <span class="pre">이미지를</span> <span class="pre">입력</span> <span class="pre">받고</span> <span class="pre">그</span> <span class="pre">결과를</span> <span class="pre">터미널(콘솔창,</span> <span class="pre">도스창</span> <span class="pre">등</span> <span class="pre">까만</span> <span class="pre">화면)에</span> <span class="pre">출력합니다.</span></code></p>
+<p>그렇다면 이런 기능을 사용하고 싶은 사람(예를 들면 여러분의 부모님, 친구 등)에게 소스코드를 전달(카톡, 이메일 등으로 전송)하면 받은 사람이 쉽게 사용할 수 있을까요? 아마도 답은 <code class="docutils literal notranslate"><span class="pre">아니오</span></code>일 것입니다. 여러분이 만든 소스코드는 개발자(프로그래머)가 컴퓨터에게 일을 시키기 위한 언어로 작성되어 있기 때문에 컴퓨터 언어(programming language)를 모르는 사람들은 그 내용이 뭔지 관심도 없고, 설령 소스코드를 열어본다고 한들 웬 <code class="docutils literal notranslate"><span class="pre">외계어</span></code>만 잔뜩 들어 있다고 생각할 것입니다.</p>
+<p>여러분이 어렵게 만든 세부적인 작동 절차나 원리는 서버 속에 숨기고 사용자(부모님, 친구, 미지의 접속자 등)에게는 웹 브라우저(크롬, 엣지, 사파리 등)로 접속해서 클릭, 파일 업로드 등)의 단순 작업만으로 결과를 제공하는 것이 서로에게 좋습니다.</p>
+<p>사용자는 친숙한 웹/앱 환경(브라우저)으로 접속하여 정보를 조회하거나 요청(<code class="docutils literal notranslate"><span class="pre">request</span></code>)하면, 그 서비스를 담당하는 서버(server)에서 여러분이 만든 소스코드를 작동시켜서 나온 결과를 사용자가 현재 보고 있는 브라우저에 뿌려주면(<code class="docutils literal notranslate"><span class="pre">response</span></code>)하면 됩니다. 이런 식으로 작동하는 것을 <code class="docutils literal notranslate"><span class="pre">client-sever</span> <span class="pre">아키텍처</span></code> 라고 합니다. 웹 기반으로 서비스를 제공하는 client-server 아키텍처를 쉽게 개발할 수 있도록 도와주는 것이 <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span> <span class="pre">프레임워크</span></code>입니다.</p>
+<p>과거에는 <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span></code>을 하려면 네트워크, 데이터베이스, 프런트 기술(HTML, CSS, JavaScript), 백엔드 기술(각종 programming language), 보안 기술, 미들웨어, 웹서버 기술 등 모든 지식을 모두 학습해야 하는 지옥과 같은 상황이었습니다.</p>
+<p>그러나 최근에는 <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span></code>에 필요하지만 공통적으로 적용되는 기술은 미리 구현해 놓고, 개발자는 새로운 서비스 개발에 집중하도록 도와주는 훌륭한 <code class="docutils literal notranslate"><span class="pre">프레임워크(framework)</span></code>가 많이 등장했습니다. 과거에 오랜시간 동안 학습/실습을 통해 성장한 전문 개발자들이 하던 일을 최근에는 간단한 학습만으로 구현할 수 있는 상황이 되었습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span> <span class="pre">프레임워크</span></code>의 종류는 많습니다. 그 중에 Python을 이용한 <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span> <span class="pre">프레임워크</span></code>도 있습니다. 물론 다른 언어를 기반으로 하는 웹 개발 프레임워크도 많습니다. Python의 편리함과 방대한 라이브러리를 강점으로 Python 사용자가 급격히 증가하였습니다. 우리는 웹 개발 프레임워크 중 Python을 기반으로 제공되는  <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span> <span class="pre">프레임워크</span></code>를 공부할 것입니다.</p>
+<div class="figure align-left" id="flask-logo">
+<a class="reference internal image-reference" href="_images/flask_logo.png"><img alt="Flask log" src="_images/flask_logo.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Flask 로고</span><a class="headerlink" href="#flask-logo" title="Permalink to this image">¶</a></p>
+</div>
+<p>Python <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">개발</span> <span class="pre">프레임워크</span></code>는 Flask와 Django가 대표적입니다. 우리는 간단히 배워서 쉽게 적용할 수 있는 Flask에 대하여 학습할 것입니다. 관심있는 독자들은 Django도 같이 학습할 것을 추천합니다.</p>
+<p>이 책의 저자는 파이썬을 좋아하고 즐겨 사용하는 청주대학교 인공지능소프트웨어전공 교수입니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">저자소개</p>
+<p>청주대학교 소프트웨어융합학부 인공지능소프트웨어전공</p>
+<p>노기섭 교수</p>
+<p>Contact</p>
+<ul class="simple">
+<li><p>E-mail: <a class="reference external" href="mailto:kafa46&#37;&#52;&#48;cju&#46;ac&#46;kr">kafa46<span>&#64;</span>cju<span>&#46;</span>ac<span>&#46;</span>kr</a></p></li>
+<li><p>Phone: 043-229-8496 (유선)</p></li>
+<li><p>Mobile: Not open to public (private, 비공개)</p></li>
+</ul>
+<div class="figure align-left" id="pythonic-image">
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/prof_noh.jpg"><img alt="_images/prof_noh.jpg" class="bg-primary mb-1" src="_images/prof_noh.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">청주대 노기섭 교수</span><a class="headerlink" href="#pythonic-image" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="Contents/ch01_intro_to_flask.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Flask 소개 (Intro)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          으로 Giseop Noh<br/>
+        
+            &copy; 저작권 Prof. Giseop Noh in Cheongju University.<br/>
+          <div class="extra_footer">
+            <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

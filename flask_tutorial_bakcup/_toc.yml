@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+chapters:
+- file: Contents/ch01_intro_to_flask
+- file: Contents/ch02_preparation_for_flask
+- file: Contents/apdx01_monolithic_vs_msa

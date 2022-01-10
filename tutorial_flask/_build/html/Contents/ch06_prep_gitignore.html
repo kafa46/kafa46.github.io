@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. 준비 4. .gitignore 세팅 &#8212; Flask Tutorial for CJU Students</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. 준비 5. 의존성 파일 requirement.txt 생성" href="ch07_prep_dependancy_requirements.html" />
+    <link rel="prev" title="5. 준비 3. flask 설치" href="ch05_prep_flask_installation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Flask Tutorial for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="이 책 검색 ..." aria-label="이 책 검색 ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Flask Tutorial을 시작하며
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01_intro_to_flask.html">
+   1. Flask 소개 (Intro)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch02_todo_list.html">
+   2. Flask를 위한 사전 준비 목록
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03_prep_intro_to_vscode.html">
+   3. 준비 1. VS Code 소개 및 설치
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04_prep_anaconda_env.html">
+   4. 준비 2. 가상환경 및
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     anaconda
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05_prep_flask_installation.html">
+   5. 준비 3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     flask
+    </span>
+   </code>
+   설치
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. 준비 4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .gitignore
+    </span>
+   </code>
+   세팅
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07_prep_dependancy_requirements.html">
+   7. 준비 5. 의존성 파일
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requirement.txt
+    </span>
+   </code>
+   생성
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="apdx01_monolithic_vs_msa.html">
+   8. Monolithic vs. MSA
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="탐색 전환" aria-controls="site-navigation"
+                title="탐색 전환" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="이 페이지 다운로드"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Contents/ch06_prep_gitignore.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="소스 파일 다운로드" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDF로 인쇄"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="소스 저장소"><i
+                    class="fab fa-github"></i>저장소</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/ch06_prep_gitignore.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="이슈 열기"><i class="fas fa-lightbulb"></i>열린 문제</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="전체 화면으로보기"
+        title="전체 화면으로보기"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 내용
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gitignore-io">
+   6.1. 유용한 사이트
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     gitignore.io
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   6.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .gitignore
+    </span>
+   </code>
+   추가 설정
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="gitignore">
+<h1><span class="section-number">6. </span>준비 4. <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 세팅<a class="headerlink" href="#gitignore" title="Permalink to this headline">¶</a></h1>
+<p>내 컴퓨터에서 작업한 것들을 협업 또는 백업을 위해 원격 저장소에 업로드해야 하는 경우가 항상 발생합니다.
+이 경우 사용하는 것이 <code class="docutils literal notranslate"><span class="pre">git</span></code> 이라는 도구입니다.
+본 책자는 <code class="docutils literal notranslate"><span class="pre">git</span></code>에 대한 튜토리얼이 아니므로 <code class="docutils literal notranslate"><span class="pre">git</span></code>에 대한 세부적인 설명은 생략합니다.
+<code class="docutils literal notranslate"><span class="pre">git</span></code>에 대해 좀 더 공부하고자 하는 여러분은 <code class="docutils literal notranslate"><span class="pre">git</span></code> 튜토리얼이 블로그, 유튜브 강의, 전문서적 구매 등을 통하여 학습할 것을 추천합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>는 <code class="docutils literal notranslate"><span class="pre">git</span></code>을 이용하여 내 컴퓨터에서 작업한 소스코드를 원격 저장소(repository)로 업로드 할 때
+불필요한 파일까지 업로드 되는 것을 방지하기 위해 작성하는 텍스트 파일입니다.
+예를 들면 VS Code 설정파일(<code class="docutils literal notranslate"><span class="pre">.vscode</span></code>)은 내 컴퓨터에서는 필요하지만, 원격저장소에 올릴 필요는 없습니다.
+Jupyter Notebook에 필요한 <code class="docutils literal notranslate"><span class="pre">.ipynb_checkpoint</span></code> 폴더, 백업 파일(<code class="docutils literal notranslate"><span class="pre">.bak</span></code>), 데이터베이스 파일(<code class="docutils literal notranslate"><span class="pre">.db</span></code>), 개인 정보나 비밀번호 등이
+담긴 파일(<code class="docutils literal notranslate"><span class="pre">*.secret</span></code>) 등은 원격 저장소에 올리면 안됩니다.</p>
+<p>작업 디렉토리에 <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>라는 빈 파일 하나를 만들고 그 안에 내가 원격저장소로 업로드 할때
+자동으로 딸려 올라가지 않도록 할 파일들을 쭉 적어주면 됩니다.
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 파일 작성법은 <a class="reference external" href="https://programming119.tistory.com/105">참고 블로그</a>를 방문해서 관련 내용을 참고하기 바랍니다.</p>
+<div class="section" id="gitignore-io">
+<h2><span class="section-number">6.1. </span>유용한 사이트 <code class="docutils literal notranslate"><span class="pre">gitignore.io</span></code><a class="headerlink" href="#gitignore-io" title="Permalink to this headline">¶</a></h2>
+<p>자주 사용하는 운영체제, 개발환경(IDE), 프로그래밍 언어에 대한  <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 내용을 자동을 작성해 주는 유용한 사이트가 있습니다.
+해당 사이트는 <a class="reference external" href="https://www.toptal.com/developers/gitignore"><code class="docutils literal notranslate"><span class="pre">gitignore.io</span></code></a> 입니다.
+<a class="reference external" href="https://www.toptal.com/developers/gitignore"><code class="docutils literal notranslate"><span class="pre">gitignore.io</span></code></a>에서 <code class="docutils literal notranslate"><span class="pre">python,</span> <span class="pre">flask,</span> <span class="pre">linux,</span> <span class="pre">windows,</span> <span class="pre">macOS,</span> <span class="pre">VisualStudioCode</span></code>와 관련된
+<code class="docutils literal notranslate"><span class="pre">gitignore</span></code> 내용을 생성해 보겠습니다.</p>
+<div class="figure align-left" id="gitignore-screen">
+<a class="reference internal image-reference" href="../_images/gitignore.io_screen.jpg"><img alt="gitignore.io screen" src="../_images/gitignore.io_screen.jpg" style="width: 650px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">gitignore.io를 이용해서 <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 내용을 자동으로 생성하기</span><a class="headerlink" href="#gitignore-screen" title="Permalink to this image">¶</a></p>
+</div>
+<p>gitignore.io에서 <code class="docutils literal notranslate"><span class="pre">생성</span></code> 아이콘을 클릭하면 아래와 같이 자동으로 원격 저장소 업로드 시 제외할 파일/디렉토리 목록을 생성해 줍니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>gitignore.io에서 모든 것을 해결해 주지는 않습니다.
+자주 사용하는 것들만 모아서 생성해 주기 때문에
+개인적으로 제외할 파일을 별도로 지정해 주어야 합니다.</p>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Created by https://www.toptal.com/developers/gitignore/api/python,flask,linux,windows,macos,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,flask,linux,windows,macos,visualstudiocode
+
+### Flask ###
+instance/*
+!instance/.gitignore
+.webassets-cache
+.env
+
+### Flask.Python Stack ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+:
+:
+</pre></div>
+</div>
+<p>VS Code에서 <code class="docutils literal notranslate"><span class="pre">.gitingnore</span></code> 파일을 만들고 위에서 생성한 목록을 복사하여 붙여넣기 합니다.
+다음 그림을 참고하세요.</p>
+<div class="figure align-left" id="gitingnore-file-create">
+<a class="reference internal image-reference" href="../_images/vscode_07_gitignore_file_create.png"><img alt="vscode .gitingnore file create" src="../_images/vscode_07_gitignore_file_create.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">VS Code에서 <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 파일 만들기</span><a class="headerlink" href="#gitingnore-file-create" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">6.2. </span><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 추가 설정<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">flask</span></code>를 사용하려면 데이터베이스가 필요합니다.
+나중에 <code class="docutils literal notranslate"><span class="pre">sqlite</span></code>라는 데이터베이스를 사용할 예정입니다.
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 파일의 맨 마지막에 아래 내용을 추가로 복사하여 붙여넣기 한 다음 파일을 저장합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sqlite</span>
+<span class="o">*.</span><span class="n">db</span>
+</pre></div>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">파일 이름에서 . 과  * 의미</p>
+<p>파일이름에서 파일 이름이 없고 <code class="docutils literal notranslate"><span class="pre">점(.)</span></code> 다음에 확장자 이름 형태로 되어 있는 것은
+대부분  설정(configuration) 파일(또는 디렉토리)을 의미합니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">gitignore</span></code> 설정파일</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.bash</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">bash</span></code> 설정파일</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.vscode</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">VS</span> <span class="pre">Code</span></code> 설정 파일</p></li>
+</ul>
+<p>파일 이름에 와일드 문자 <code class="docutils literal notranslate"><span class="pre">*</span></code>가 있다면
+<code class="docutils literal notranslate"><span class="pre">모든(all)</span></code>을 의미합니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*.txt</span></code>  <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">.txt</span></code>를 확장자로 갖는 모든 파일</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> 파일 안에 <code class="docutils literal notranslate"><span class="pre">*.txt</span></code>가 기록되어 있다면,
+<code class="docutils literal notranslate"><span class="pre">.txt</span></code>를 확장자로 갖는 모든 파일을 원격 저장소 업로드 시 제외하겠다는 의미입니다.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Contents"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch05_prep_flask_installation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>준비 3. <code class="docutils literal notranslate"><span class="pre">flask</span></code> 설치</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch07_prep_dependancy_requirements.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>준비 5. 의존성 파일 <code class="docutils literal notranslate"><span class="pre">requirement.txt</span></code> 생성</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          으로 Giseop Noh<br/>
+        
+            &copy; 저작권 Prof. Giseop Noh in Cheongju University.<br/>
+          <div class="extra_footer">
+            <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+chapters:
+- file: Contents/ch01_intro_to_flask
+- file: Contents/ch02_todo_list.md
+- file: Contents/ch03_prep_intro_to_vscode
+- file: Contents/ch04_prep_anaconda_env.md
+- file: Contents/ch05_prep_flask_installation.md
+- file: Contents/ch06_prep_gitignore.md
+- file: Contents/ch07_prep_dependancy_requirements.md
+- file: Contents/apdx01_monolithic_vs_msa
