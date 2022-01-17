@@ -1,0 +1,1063 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 추상 클래스 (Abstract Class) &#8212; Software Engineering for CJU Students</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. 디자인 패턴 (Design Patterns)" href="design_patterns.html" />
+    <link rel="prev" title="1. 소프트웨어 공학 소개" href="ch01_intro_sw_engineering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Software Engineering for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Software Engineering
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01_intro_sw_engineering.html">
+   1. 소프트웨어 공학 소개
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. 추상 클래스 (Abstract Class)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="design_patterns.html">
+   3. 디자인 패턴 (Design Patterns)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="interface.html">
+   4. 인터페이스 (interface)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Contents/abstract_class.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/abstract_class.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#need-of-abstract-class">
+   2.1. 추상 클래스의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.2. 추상 클래스 구현
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     2.2.1. Java 추상 클래스
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       2.2.1.1. Java 추상 클래스 만들기
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       2.2.1.2. Java 추상 메서드 만들기
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     2.2.2. Python 추상 클래스
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>추상 클래스 (Abstract Class)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#need-of-abstract-class">
+   2.1. 추상 클래스의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   2.2. 추상 클래스 구현
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     2.2.1. Java 추상 클래스
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       2.2.1.1. Java 추상 클래스 만들기
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       2.2.1.2. Java 추상 메서드 만들기
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     2.2.2. Python 추상 클래스
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="abstract-class">
+<h1><span class="section-number">2. </span>추상 클래스 (Abstract Class)<a class="headerlink" href="#abstract-class" title="Permalink to this headline">¶</a></h1>
+<p>추상 클래스는 클래스의 명칭과 메서드는 있지만 메서드의 처리 내용이 없는 클래스를 말합니다.
+추상 클래스의 메서드에 내용이 없기 때문에 이를 해결하기 위해서는
+추상 클래스를 상속받은 클래스에서 메서드 내용을 코딩해서 구현합니다.</p>
+<p>추상 클래스는 클래스이지만 메서드의 내용이 없기 때문에 미완성 클래스라고 볼 수 있습니다.
+클래스는 객체 생성을 위한 <strong>설계도</strong>라고 볼 수도 있습니다.
+따라서 내용이 없는 클래스 (추상 클래스)는 <strong>미완성 설계도</strong>라고 볼 수 있습니다.</p>
+<p>추상 클래스로 객체를 생성하면 미완성인 객체가 나오게 되므로,
+추상 클래스 객체를 생성한다는 것은 말이 안되겠죠?
+추상 클래스는 원칙적으로 상속을 통해서만 메서드를 구현하기 때문에 객체를 생성해서는 안됩니다.</p>
+<p>추상 클래스를 처음 접하는 사람들은 다음과 같은 질문을 할 수 있습니다.</p>
+<ul class="simple">
+<li><p>그냥 클래스 만들고 그때 그때 객체를 생성해서 쓰면 편할텐데…</p></li>
+<li><p>복잡하게 왜 상속해서 메서드 내용을 구현(코딩)하지?</p></li>
+<li><p>복잡하고 불편한거 아닌가?</p></li>
+<li><p>실제로 개발할 때 자주 사용하는 거야?</p></li>
+</ul>
+<p>여러가지 의문이 생깁니다.
+다음 장에서 왜 이렇게 복잡한 개념이 등장했는지 살펴보도록 하겠습니다.</p>
+<div class="section" id="need-of-abstract-class">
+<span id="id1"></span><h2><span class="section-number">2.1. </span>추상 클래스의 필요성<a class="headerlink" href="#need-of-abstract-class" title="Permalink to this headline">¶</a></h2>
+<p>여러분은 <code class="docutils literal notranslate"><span class="pre">CJU전자</span> <span class="pre">소프트웨어</span> <span class="pre">개발부</span></code>에 취업했다고 가정해 봅시다.
+첫 출근 해보니 개발팀 중에서 TV 관련 소프트웨어 개발 업무에 배정 되었습니다.
+팀장님은 나에게 TV 리모컨과 관련된 SW 개발을 담당하라고 하셨습니다.</p>
+<p>리모컨 SW 개발을 위해 회사에서 생산하고 있는 TV와 리모컨의 종류를 파악해 봤더니 다음과 같았습니다.</p>
+<ul class="simple">
+<li><p>TV 종류</p>
+<ul>
+<li><p>고급형: 5종</p></li>
+<li><p>일반형: 13종</p></li>
+</ul>
+</li>
+<li><p>리모컨</p>
+<ul>
+<li><p>고급형: 1종</p></li>
+<li><p>일반형: 1종</p></li>
+</ul>
+</li>
+</ul>
+<p>고급형 TV는 음성인식, 스마트폰 연동, 인터넷 연결 기능 등 다양한 기능이 추가되어 있습니다.
+리모컨은 고급형에 공통적으로 사용할 수 있는 1종으로 구성하면 될 것 같습니다.</p>
+<p>일반형 TV는 단순히 전원 켜기/끄기, 볼륨 조절, 채널 조절 등 TV를 시청하기 위한 기능만 있습니다.
+일반형 TV에 공통적으로 사용할 수 있는 리모컨을 1종으로 구성하면 될 것입니다.</p>
+<p>그러면 이제부터 리모컨으로 TV를 제어할 소프트웨어를 만들면 되겠습니다.
+소프트웨어를 코딩하기 전에 먼저 설계부터 해야겠죠?</p>
+<p>가장 단순하게 생각한다면 고급형 클래스 1개, 일반형 클래스 1개를 만들면 될 것입니다.
+문제를 단순화하기 위해 보급형 리모컨은 전원 켜기/끄기 기능만 있고,
+고급형은 보급형 기능에 Netflix 연결 기능이 추가되었다고 가정해 보겠습니다.</p>
+<ul>
+<li><p>보급형 리모콘 클래스</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>LowEndTV</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int    TV_id </br></br>power_on( )</br>        print(‘전원을 켭니다.’)</br></br>power_off( )</br>        print(‘전원을 끕니다.’)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>고급형 리모컨 클래스</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>HiEndTV</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int    TV_id </br></br>television_on( )</br>        print(‘전원을 켭니다.’)</br></br>television_off( )</br>        print(‘전원을 끕니다.’)</br></br>connect_Netflix( )</br>        print(‘넷플릭스에 연결합니다.’)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>여러분은 드디어 리모컨 클래스 설계를 완성하고 팀장님께 보고하러 갔습니다.</p>
+<p>앗!!!</p>
+<p>그런데, 팀장님은 다음과 같이 말씀하십니다.</p>
+<div class="admonition-tv admonition">
+<p class="admonition-title">프리미엄 TV 출시 결정</p>
+<p>경영진에서 고급형 TV에 음성이식 기능을 추가한 <code class="docutils literal notranslate"><span class="pre">프리미엄</span> <span class="pre">TV</span></code>를 출시하기로 결졍하였습니다.
+우리 팀에서도 프리미엄 TV를 지원할 SW를 개발해야 합니다.
+프리미엄 리모컨에 음성인식 기능을 추가하세요.</p>
+</div>
+<p>팀장님께 종료 보고를 하고 칭찬받을 생각이 가득했던 여러분에게 새로운 일이 생겼습니다.</p>
+<p>이 상황에서 여러분은 어떻게 해결할 건가요?</p>
+<p>쉽게 떠올릴 수 있는 방법은 프리미엄 리모컨 클래스를 하나 더 만드는 것입니다.
+아마도 다음과 같은 구조가 될 것입니다.</p>
+<ul>
+<li><p>프리미엄 리모컨 클래스</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>PremiumTV</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int    TV_id</br></br>turn_on( )</br>        print(‘전원을 켭니다.’)</br></br>turn_off( )</br>        print(‘전원을 끕니다.’)</br></br>connect_Netflix( )</br>        print(‘넷플릭스에 연결합니다.’)</br></br>start_voice_AI( )</br>        print(‘음성인식 기능을 시작합니다.’)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>이제는 모든 일을 끝냈습니다.
+팀장님께 결과보고 하러 갔습니다.
+팀장님은 칭찬과 격려를 기대했던 여러분에게 뜻 밖의 말을 합니다.</p>
+<div class="admonition-api admonition">
+<p class="admonition-title">API 통일</p>
+<p>본체 SW개발팀에서 불만사항이 올라오고 있습니다.
+다른 모듈에서 리모콘 클래스에 접근하려 할 때 너무 복잡해서 혼선이 있다고 합니다.
+각종 리모콘에 구현된 기능 중 공통적인 것이 있습니다. API를 통일해서 여러 사람들이 편리하게 사용할 수 있도록 변경해 주세요.</p>
+</div>
+<p>흠… 자리에 돌아와서 가만히 생각해 보니 그도 그럴만 합니다.
+전원 켜기/끄기 기능은 모든 리모컨에 다 들어 있습니다. 하는 일도 모두 똑같습니다.
+그런데 API 형태가 다릅니다. 보급형 TV는 <code class="docutils literal notranslate"><span class="pre">power_on()</span></code>, 고급형은 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>, 프리미엄은 <code class="docutils literal notranslate"><span class="pre">turn_on()</span></code>을
+호출하는 형태입니다.</p>
+<p>똑같은 일을 하는 것이니 동일한 API 형태를 가져가는게 맞는 말 같습니다.</p>
+<p>그래서 고민 끝에 세 개 리모콘에서</p>
+<ul class="simple">
+<li><p>전원 켜기는 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>으로,</p></li>
+<li><p>전원 끄기는 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code>으로,</p></li>
+</ul>
+<p>모두 통일했습니다.</p>
+<p>일단 급한 불은 껐습니다. 한참 동안 큰 일 없이 여러분이 만든 클래스를 잘 사용했습니다.
+그런데 TV가 잘 팔리자 경영진은 새로운 2개 모델을 더 추가하기로 결정했습니다.
+개발 인력이 부족하다고 판단한  인사 부서는 2명의 팀원을 추가 배치 하였습니다.</p>
+<p>팀장님은 새로운 팀원 2명에게 리모컨 SW를 추가 개발하라고 요구했습니다.</p>
+<p>팀원은 각자 클래스를 만들어 여러분에게 가져왔습니다.<br />
+새로운 팀원들이 새로 만들어온 클래스 구조를 살펴보니
+다음과 같이 전원 켜기/끄기 기능을 구현했습니다.</p>
+<ul class="simple">
+<li><p>전원 켜기는 <code class="docutils literal notranslate"><span class="pre">start_tv()</span></code>으로,</p></li>
+<li><p>전원 끄기는 <code class="docutils literal notranslate"><span class="pre">terminate_tv()</span></code>으로,
+만들었습니다.</p></li>
+</ul>
+<p>아뿔사!</p>
+<p>그제서야 여러분은 뭔가 잘못된 것을 깨닫습니다.
+개발자들 사이에서 개발 효율성을 위해 API 형태를 동일하게 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>과 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code>로
+맞추기로 한 규칙에 위배됩니다.</p>
+<p>결국 여러분은 새로운 팀원에게 지금까지 흘러왔던 이야기를 알려주고 기존 형태와 동일하게 변경했습니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start_tv()</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">television_on()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">terminate_tv()</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">television_off()</span></code></p></li>
+</ul>
+<p>새로운 팀원들은 메서드 이름을 변경하자 다른 클래스에서  <code class="docutils literal notranslate"><span class="pre">start_tv()</span></code>와 <code class="docutils literal notranslate"><span class="pre">terminate_tv()</span></code>를
+호출하던 코드가 있었는지 일일히 점검해야 했고 테스트를 처음부터 다시 해봐야 했습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>이처럼 황당하고 복잡한 일들이 여러분에게 일어나지 않으리라는 보장이 있을까요?
+개발해야 할 시스템이 규모가 크고 복잡하다면 이런 일들은 항상 일어날 것입니다.
+당연히 여러분이 미래에 개발해야 할 소프트웨어는 이런 특징을 가지고 있을 것입니다.
+</pre></div>
+</div>
+<p>여러분이 이런 경험을 했다면 자연스럽게 다음과 같은 의문을 갖게 될 것입니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">이런 상황을 처음부터 방지할 수 있는 방법은?</p>
+<ul class="simple">
+<li><p>클래스를 설계할 때 API 형태(메서드 호출)를 정해주고</p></li>
+<li><p>호출 형태를 정해주고, 개발자는 이를 준수하면서 각자 기능을 구현하게 하면 어떨까?</p></li>
+<li><p>나 같은 상황을 누군가는 겪었을텐데? 흠…</p></li>
+<li><p>뭔가 깔끔한 답이 있을 것 같은데?</p></li>
+<li><p>대학교 다닐때 소프트웨어공학에서 배우지 않았을까?</p></li>
+<li><p>인터넷 검색이라도 해보자!</p></li>
+</ul>
+</div>
+<p>위 질문에 대한 답이 있을까요?</p>
+<p>다행히도 있습니다!</p>
+<p>대표적인 해결책으로 사용하는 것이 바로 <code class="docutils literal notranslate"><span class="pre">추상</span> <span class="pre">클래스</span> <span class="pre">(abstract</span> <span class="pre">class)</span></code> 입니다.</p>
+<p>추상 클래스에서 메서드 이름만 정의하고 내용은 비워 놓습니다.
+우리 사례에 적용한다면 <code class="docutils literal notranslate"><span class="pre">Remocon</span></code>이라는 추상 클래스에 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>과 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code> 메서드 이름만 정해놓고
+내용은 비워 놓습니다.
+TV 종류에 따른 리모콘 SW 구현을 담당한 개발자는 <code class="docutils literal notranslate"><span class="pre">Remocon</span></code> 추상 클래스를 상속받아
+<code class="docutils literal notranslate"><span class="pre">television_on()</span></code>과 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code> 상황에 맞게 내용을 코딩해 주면 됩니다.</p>
+<p>추상 클래스를 상속받은 경우 해당되는 메서드를 구현하지 않으면
+에러를 발생시키기 때문에 개발자들은 반드시 내용을 작성해야 합니다.
+각자 설계(코딩)한 클래스에 추상 클래스에서 지정한 메서드를 구현하지 않으면
+객체를 아예 생성할 수 없습니다.</p>
+<p>이 같은 에러를 통해 각 개발자들은 호출 형태를 준수하면서
+자신이 맡은 기능을 구현할 수 있습니다.</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.2. </span>추상 클래스 구현<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>이제부터는 실제로 추상 클래스를 구현한 사례를 살펴보도록 하겠습니다.</p>
+<p>추상 클래스는 1개 이상의 <code class="docutils literal notranslate"><span class="pre">추상</span> <span class="pre">메서드</span></code>를 가지고 있습니다.
+추상 메서드는 메서드 이름만 있고 구현이 안 된 메서드 입니다.
+<code class="docutils literal notranslate"><span class="pre">1개</span> <span class="pre">이상의</span> <span class="pre">추상</span> <span class="pre">메서드를</span> <span class="pre">가지고</span> <span class="pre">있다</span></code>는 의미는
+클래스 메서드 중 내용이 이미 구현된 메서드가 있어도 된다는 의미입니다.
+다시 말하면, 일반 클래스에 추상 메서드를 포함하고 있다고 표현할 수 있습니다.</p>
+<p>대략적인 클래스 구조를 살펴보면 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NameOfClass</span><span class="p">:</span>
+    <span class="o">//</span> <span class="n">변수들</span>
+    <span class="o">//</span> <span class="n">생성자</span>
+    <span class="o">//</span> <span class="n">일반</span> <span class="n">메서드</span>
+    <span class="o">//</span> <span class="n">추상</span> <span class="n">메서드</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>추상 메서드는 객체지향언어에 따라 구현하는 방법이 다를 수 있습니다.</p>
+</div>
+<p>`
+추상 클래스는 객체지향 언어에서 사용하기 때문에 Java, C++, Python과 같은 언어에서 사용합니다.</p>
+<ul class="simple">
+<li><p>Java와 C++은 비슷한 문법 구조를 가지고 있으므로 C++는 생략하고 Java를 예로 들어 설명하겠습니다.</p></li>
+<li><p>Python은 Java와 C++과 다른 문법을 사용하고 있어 별도로 설명하겠습니다.</p></li>
+</ul>
+<div class="section" id="java">
+<h3><span class="section-number">2.2.1. </span>Java 추상 클래스<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
+<p>Java의 경우 추상 클래스 구현을 위해 <code class="docutils literal notranslate"><span class="pre">abstract</span></code>라는 키워드를 제공합니다.</p>
+<div class="section" id="id3">
+<h4><span class="section-number">2.2.1.1. </span>Java 추상 클래스 만들기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>클래스를 추상 클래스로 만들고 싶다면 <code class="docutils literal notranslate"><span class="pre">class</span></code> 키워드 앞에 <code class="docutils literal notranslate"><span class="pre">abstract</span></code> 키워드를 붙여주면 됩니다.
+다음과 같은 형태가 될 것입니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">클래스명</span><span class="p">{</span>
+
+    <span class="c1">// 객체 변수</span>
+
+    <span class="c1">// 생성자</span>
+
+    <span class="c1">// 메서드(일반 메서드)</span>
+    
+    <span class="c1">// 추상 메서드</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4><span class="section-number">2.2.1.2. </span>Java 추상 메서드 만들기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>추상 클래스가 가지고 있는 메서드 중에서 추상 메서드를 지정할 수 있습니다.
+추상 메서드로 지정하고 싶지 않다면
+우리가 기존에 알고 있는 메서드 코딩 문법을 사용하면 됩니다.</p>
+<p>추상 메서드를 만들기 위해서는 메서드 리턴타입 앞에 abstract 키워드를 붙이면 됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[public|protected]</span> <span class="pre">abstract</span> <span class="pre">리턴타입</span> <span class="pre">메소드명(매개변수1,</span> <span class="pre">매개변수2,</span> <span class="pre">...</span> <span class="pre">);</span></code>와
+같은 형태입니다.</p>
+<p>실제 코드는 다음과 같은 형태가 됩니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">클래스명</span><span class="p">{</span>
+
+    <span class="c1">// 객체 변수</span>
+
+    <span class="c1">// 생성자</span>
+
+    <span class="c1">// 메서드(일반 메서드)</span>
+    
+    <span class="c1">// 추상 메서드</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">television_on</span><span class="p">();</span> <span class="c1">// 내용 구현이 없음</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>우리가 <a class="reference internal" href="#need-of-abstract-class"><span class="std std-ref">추상 클래스의 필요성</span></a>에서 들었던 사례를 바탕으로 TV 리모컨 추상 클래스를 구현한다면 다음과 같습니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractRemocon</span><span class="p">{</span>
+
+    <span class="c1">// 객체 변수</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">TV_id</span><span class="p">;</span>
+
+    <span class="c1">// 생성자</span>
+    <span class="c1">// 생략</span>
+
+    <span class="c1">// 일반 메서드 -&gt; 내용 구현이 있음</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show_welcome_msg</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;안녕하세요, CJU전자입니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 추상 메서드 1</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">television_on</span><span class="p">();</span> <span class="c1">// 내용 구현이 없음</span>
+
+    <span class="c1">// 추상 메서드 2</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">television_off</span><span class="p">();</span> <span class="c1">// 내용 구현이 없음</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">AbstractRemocone</span></code>이라는 이름을 갖는 추상 클래스를 만들었습니다. 우리가 만든 <code class="docutils literal notranslate"><span class="pre">AbstractRemocon</span></code> 클래스의 메서드 중에서 <code class="docutils literal notranslate"><span class="pre">show_welcome_msg()</span></code>는 일반 메서드입니다. 메서드의 반화 자료형 앞에 <code class="docutils literal notranslate"><span class="pre">abstract</span></code>라는 키워드가 붙은 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>과 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code> 메서드는 추상 메서드가 되었습니다.</p>
+<p>앞으로 리모컨을 구현하는 모든 소프트웨어는 <code class="docutils literal notranslate"><span class="pre">AbstractRemocon</span></code> 클래스를 상속받아 구현하도록 모든 개발자에게 알려줍니다.
+이렇게 하면 어떤 TV의 리모컨 SW를 구현하든 상관없이 동일한 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>과 <code class="docutils literal notranslate"><span class="pre">television_off()</span></code> 호출 구조를 유지하면서 각각의 TV 유형에 맞는 리모콘을 구현할 수 있습니다.</p>
+<p>Java는 추상 클래스를 어떻게 상속받는지 알아보겠습니다.</p>
+<p>Java에서 추상 클래스를 상속받을 때는 <code class="docutils literal notranslate"><span class="pre">extends</span></code> 키워드를 사용합니다. <code class="docutils literal notranslate"><span class="pre">extends</span></code> 키워드는 추상 클래스와 상속받을 클래스 사이에 써줍니다. 다음고 같은 형태입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[public|protected]</span> <span class="pre">class</span> <span class="pre">상속받을</span> <span class="pre">클래스</span> <span class="pre">이름</span> <span class="pre">extends</span> <span class="pre">추상클래스</span> <span class="pre">이름</span> <span class="pre">{}</span></code></p>
+<p>우리가 사용했던 TV 리모컨 예제로 살펴보면 다음과 같습니다.
+추상 메서드의 내용을 구체화하기 위하여 <code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code> 어노테이션을 사용여 오버라이딩(overriding) 합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code>는 오버라이딩을 할 경우 현재 클래스에서 오버라이딩할 메서드가 부모 클래스에 있는지 확인하고 결과를 알려줍니다.</p>
+<ul class="simple">
+<li><p>오버라이딩 할 메스드가 있는 경우: 오버라이딩 수행</p></li>
+<li><p>오버라이딩 할 메스드가 없는 경우: 에러 발생</p></li>
+</ul>
+<p>만약 개발자기 오버라이딩 할 메서드 이름을 실수로 잘못 타이핑(오타)한 경우 본인은 오버라이딩 했다고 생각하지만, 실제로는 새로운 메서드를 만들게 됩니다. <code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code>는 개발자의 실수로 잘못 코딩하는 것을 방지하는 데 도움이 됩니다.</p>
+<p>물론, <code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code>를 사용하지 않고,
+추상 클래스에 있는 추상 메서드의 이름을 정확히 써줘도 오버라이딩에는 문제가 없습니다.</p>
+<p>방어적으로 코딩을 하기 위해서는 <code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code>를 사용하는 습관을 갖는 것이 좋습니다.</p>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">보급형</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LowEndTVRemocon</span> <span class="kd">extends</span> <span class="n">AbstractRemocon</span><span class="p">{</span>
+
+    <span class="c1">// 추상 클래스에서 정의한 리모콘 아이디 (int TV_id) 값 설정</span>
+    <span class="kd">public</span> <span class="nf">Remocon</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">TV_id</span> <span class="o">=</span> <span class="s">&quot;보급형TV_0001&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_on</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 보급형 TV 리모콘 켜기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 켭니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_off</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 보급형 TV 리모콘 끄기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 끕니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">고급형</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HighEndTVRemocon</span> <span class="kd">extends</span> <span class="n">AbstractRemocon</span><span class="p">{</span>
+
+    <span class="c1">// 추상 클래스에서 정의한 리모콘 아이디 (int TV_id) 값 설정</span>
+    <span class="kd">public</span> <span class="nf">Remocon</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">TV_id</span> <span class="o">=</span> <span class="s">&quot;고급형TV_0001&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_on</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 고급형 TV 리모콘 켜기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 켭니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_off</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 고급형 TV 리모콘 끄기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 끕니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 일반 메서드 추가: 고급 기능 (넷플릭스 연결) 구현</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">connect_Netflix</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 넷플릭스 연결에</span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;넷플릭스에 연결합니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">프리미엄</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PremiumTVRemocon</span> <span class="kd">extends</span> <span class="n">AbstractRemocon</span><span class="p">{</span>
+
+    <span class="c1">// 추상 클래스에서 정의한 리모콘 아이디 (int TV_id) 값 설정</span>
+    <span class="kd">public</span> <span class="nf">Remocon</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">TV_id</span> <span class="o">=</span> <span class="s">&quot;고급형TV_0001&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_on</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 고급형 TV 리모콘 켜기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 켭니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">television_off</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 고급형 TV 리모콘 끄기에 </span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전원을 끕니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 일반 메서드 추가: 고급 기능 (넷플릭스 연결) 구현</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">connect_Netflix</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 넷플릭스 연결에</span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;넷플릭스에 연결합니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 일반 메서드 추가: 프리미엄 기능 (음성 인식) 구현</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start_voice_AI</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// 음성 인식 가능한 리모콘 구현에</span>
+        <span class="c1">// 필요한 기능을 여기에 구현합니다.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;음성인식 기능을 시작합니다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="python">
+<h3><span class="section-number">2.2.2. </span>Python 추상 클래스<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Java와 마찬가지로 Python도 추상 클래스를 만들 수 있습니다.
+그런데 언어가 다르다 보니 문법이 약간 다릅니다.
+우리가 진행해왔던 TV 리모컨 사례를 가지고 Python 추상 클래스 실습을 진행하겟습니다.</p>
+<p>먼저 Python에서 추상 클래스를 구현하려면 <code class="docutils literal notranslate"><span class="pre">abc</span></code>라는 모듈을 임포트(<code class="docutils literal notranslate"><span class="pre">import</span></code>) 해야 합니다.</p>
+<div class="admonition-abc admonition">
+<p class="admonition-title">abc 모듈</p>
+<p><code class="docutils literal notranslate"><span class="pre">abc</span></code> 모듈은 <code class="docutils literal notranslate"><span class="pre">추상</span> <span class="pre">베이스</span> <span class="pre">클래스</span> <span class="pre">(</span></code>ABC<code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">abstract</span> <span class="pre">base</span> <span class="pre">class)</span></code>를 정의하기 위한
+다양한 기본 구조를 제공하는 모듈입니다. <code class="docutils literal notranslate"><span class="pre">abc</span></code> 모듈에 대한 설명은 <code class="docutils literal notranslate"><span class="pre">Introducing</span> <span class="pre">Abstract</span> <span class="pre">Base</span> <span class="pre">Classes</span></code> (<a class="reference external" href="https://www.python.org/dev/peps/pep-3119/">PEP 3119</a>)을 참고하기 바랍니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">abc</span></code> 모듈이 가지고 있는 클래스</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abc.ABC</span></code>: <code class="docutils literal notranslate"><span class="pre">ABCMeta</span></code>를 메타 클래스로 가지는 도우미 클래스</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code>: 추상 베이스 클래스 (ABC)를 정의하기 위한 메타 클래스</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">abc</span></code> 모듈이 가지고 있는 데코레이터</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;abc.abstractmethod</span></code>: 추상 메서드를 나타내는 데코레이터</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">abc</span></code> 모듈에 대한 설명은 파이썬 공식문서 <code class="docutils literal notranslate"><span class="pre">abc</span> <span class="pre">—</span> <span class="pre">추상</span> <span class="pre">베이스</span> <span class="pre">클래스</span></code> (<a class="reference external" href="https://docs.python.org/ko/3/library/abc.html">click</a>)를 참고하였습니다.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ABCMeta</span></code> 클래스와 <code class="docutils literal notranslate"><span class="pre">abstractmethod</span></code>를 임포트하여 활용하겠습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ABCMeta</span></code>는 추상클래스를 정의하기 위해 필요합니다.</p>
+<ul>
+<li><p>Python 3.4 버전부터 지원하기 시작한 <code class="docutils literal notranslate"><span class="pre">metaclass</span></code>와 <code class="docutils literal notranslate"><span class="pre">ABCMeta</span></code>를 결합하여 사용</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abstractmethod</span></code>는 추상 메서드를 정의하기 위해 필요합니다.</p></li>
+</ul>
+</div>
+<p>모듈 임포트 방법은 다음과 같습니다. 다 아시죠?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+</pre></div>
+</div>
+<p>Python에서 추상 클래스를 생성하는 방법은 아래와 같은 구조를 사용합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">추상클래스명</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">추상메소드</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="k">pass</span> <span class="c1"># 추상 메서드는 호출할 일이 없으므로 빈 메서드로 만듦</span>
+</pre></div>
+</div>
+<p>Python에서의 추상 메서드 <code class="docutils literal notranslate"><span class="pre">pass</span></code>만 넣어서 빈 메서드를 만듭니다.
+추상 메서드는 내용이 없어야 되므로 그냥 <code class="docutils literal notranslate"><span class="pre">pass</span></code>를 적어서 내용 없는 메서드로 만들어 줍니다.</p>
+<p>Python에서 TV 리모컨 추상 클래스를 만들면 다음과 같습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">AbstractRemocon</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TV_id</span> <span class="o">=</span> <span class="n">TV_id</span>
+    
+    <span class="c1"># 일반 메서드</span>
+    <span class="k">def</span> <span class="nf">show_welcome_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕하세요, CJU전자 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">TV_id</span><span class="si">}</span><span class="s1"> 리모콘 입니다.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 추상 메서드 1</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># 추상 메서드 2</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="k">pass</span>    
+</pre></div>
+</div>
+<p>추상 클래스를 상속받아 보급형, 고급형, 프리미엄 TV 리모컨을 각각 만듭니다.
+추상 메서드 (<code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code> 데코레이터가 있는 메서드)는 반드시 내용을 적어 줍니다.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">보급형</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LowEndTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">고급형</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HieghEndTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+
+<span class="c1"># 추상 메서드 오버라이딩</span>
+<span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+
+<span class="c1"># 추상 메서드 오버라이딩</span>
+<span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 고급형 TV 추가 기능</span>
+<span class="k">def</span> <span class="nf">connect_Netflix</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;넷플릭스에 연결합니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">프리미엄</span> <span class="pre">리모콘</span></code> 클래스</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PremiumTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+
+<span class="c1"># 추상 메서드 오버라이딩</span>
+<span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+
+<span class="c1"># 추상 메서드 오버라이딩</span>
+<span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 고급형 TV 추가 기능</span>
+<span class="k">def</span> <span class="nf">connect_Netflix</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;넷플릭스에 연결합니다.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 프리미엄 TV 추가 기능</span>
+<span class="k">def</span> <span class="nf">start_voice_AI</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;음성인식 기능을 시작합니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>위에서 설명한 추상클래스와 구현된 클래스를 이용하여
+코드를 실행시키면 다음과 같은 결과가 나옵니다.</p>
+<ul>
+<li><p>일반형 리모콘 객체 생성 및 실행</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">low_end_tv</span> <span class="o">=</span> <span class="n">LowEndTVRemocon</span><span class="p">(</span><span class="s1">&#39;일반형TV_001&#39;</span><span class="p">)</span>
+<span class="n">low_end_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+<span class="n">low_end_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+<span class="n">low_end_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 실행 결과</span>
+<span class="n">안녕하세요</span><span class="p">,</span> <span class="n">CJU전자</span> <span class="n">일반형TV_001</span> <span class="n">리모콘</span> <span class="n">입니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">켭니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">끕니다</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>고급형 리모콘 객체 생성 및 실행</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">high_end_tv</span> <span class="o">=</span> <span class="n">HieghEndTVRemocon</span><span class="p">(</span><span class="s1">&#39;고급형TV_002&#39;</span><span class="p">)</span>
+<span class="n">high_end_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+<span class="n">high_end_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+<span class="n">high_end_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+<span class="n">high_end_tv</span><span class="o">.</span><span class="n">connect_Netflix</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 실행 결과</span>
+<span class="n">안녕하세요</span><span class="p">,</span> <span class="n">CJU전자</span> <span class="n">고급형TV_002</span> <span class="n">리모콘</span> <span class="n">입니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">켭니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">끕니다</span><span class="o">.</span>
+<span class="n">넷플릭스에</span> <span class="n">연결합니다</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>프리미엄 리모콘 객체 생성 및 실행</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">premium_tv</span> <span class="o">=</span> <span class="n">PremiumTVRemocon</span><span class="p">(</span><span class="s1">&#39;프리미엄TV_003&#39;</span><span class="p">)</span>
+<span class="n">premium_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+<span class="n">premium_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+<span class="n">premium_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+<span class="n">premium_tv</span><span class="o">.</span><span class="n">connect_Netflix</span><span class="p">()</span>
+<span class="n">premium_tv</span><span class="o">.</span><span class="n">start_voice_AI</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 실행 결과</span>
+<span class="n">안녕하세요</span><span class="p">,</span> <span class="n">CJU전자</span> <span class="n">프리미엄TV_003</span> <span class="n">리모콘</span> <span class="n">입니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">켭니다</span><span class="o">.</span>
+<span class="n">전원을</span> <span class="n">끕니다</span><span class="o">.</span>
+<span class="n">넷플릭스에</span> <span class="n">연결합니다</span><span class="o">.</span>
+<span class="n">음성인식</span> <span class="n">기능을</span> <span class="n">시작합니다</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>각 리모콘에서 공통적으로 사용되는 전원 켜기/끄기 기능은 <code class="docutils literal notranslate"><span class="pre">television_on()</span></code>, <code class="docutils literal notranslate"><span class="pre">television_off()</span></code>를 사용하여 공통적인 인터페이스를 유지하였습니다. 세부 기능은 추상 클래스 <code class="docutils literal notranslate"><span class="pre">AbstractRemocon</span></code>를 상속받은 클래스가 각자 구현하였습니다.</p>
+<p>참고로 Python 추상클래스 전체 코드는 다음과 같습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">AbstractRemocon</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">TV_id</span> <span class="o">=</span> <span class="n">TV_id</span>
+    
+    <span class="c1"># 일반 메서드</span>
+    <span class="k">def</span> <span class="nf">show_welcome_msg</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;안녕하세요, CJU전자 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">TV_id</span><span class="si">}</span><span class="s1"> 리모콘 입니다.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 추상 메서드 1</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># 추상 메서드 2</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LowEndTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">HieghEndTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 고급형 TV 추가 기능</span>
+    <span class="k">def</span> <span class="nf">connect_Netflix</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;넷플릭스에 연결합니다.&#39;</span><span class="p">)</span>
+
+        
+<span class="k">class</span> <span class="nc">PremiumTVRemocon</span><span class="p">(</span><span class="n">AbstractRemocon</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">TV_id</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">TV_id</span><span class="p">)</span>   
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 켭니다.&#39;</span><span class="p">)</span>    
+    
+    <span class="c1"># 추상 메서드 오버라이딩</span>
+    <span class="k">def</span> <span class="nf">television_off</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전원을 끕니다.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 고급형 TV 추가 기능</span>
+    <span class="k">def</span> <span class="nf">connect_Netflix</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;넷플릭스에 연결합니다.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># 프리미엄 TV 추가 기능</span>
+    <span class="k">def</span> <span class="nf">start_voice_AI</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;음성인식 기능을 시작합니다.&#39;</span><span class="p">)</span>
+        
+        
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">low_end_tv</span> <span class="o">=</span> <span class="n">LowEndTVRemocon</span><span class="p">(</span><span class="s1">&#39;일반형TV_001&#39;</span><span class="p">)</span>
+    <span class="n">low_end_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+    <span class="n">low_end_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+    <span class="n">low_end_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+    
+    <span class="n">high_end_tv</span> <span class="o">=</span> <span class="n">HieghEndTVRemocon</span><span class="p">(</span><span class="s1">&#39;고급형TV_002&#39;</span><span class="p">)</span>
+    <span class="n">high_end_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+    <span class="n">high_end_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+    <span class="n">high_end_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+    <span class="n">high_end_tv</span><span class="o">.</span><span class="n">connect_Netflix</span><span class="p">()</span>
+    
+    <span class="n">premium_tv</span> <span class="o">=</span> <span class="n">PremiumTVRemocon</span><span class="p">(</span><span class="s1">&#39;프리미엄TV_003&#39;</span><span class="p">)</span>
+    <span class="n">premium_tv</span><span class="o">.</span><span class="n">show_welcome_msg</span><span class="p">()</span>
+    <span class="n">premium_tv</span><span class="o">.</span><span class="n">television_on</span><span class="p">()</span>
+    <span class="n">premium_tv</span><span class="o">.</span><span class="n">television_off</span><span class="p">()</span>
+    <span class="n">premium_tv</span><span class="o">.</span><span class="n">connect_Netflix</span><span class="p">()</span>
+    <span class="n">premium_tv</span><span class="o">.</span><span class="n">start_voice_AI</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>추상 클래스에 대해 감을 좀 잡으셨나요?
+구구절절 설명한 것도 있지만,</p>
+<p>추상 클래스의 핵심을 정리하면
+<code class="docutils literal notranslate"><span class="pre">구현할</span> <span class="pre">메서드의</span> <span class="pre">형태만</span> <span class="pre">정하고</span> <span class="pre">상속받는</span> <span class="pre">클래스에서</span> <span class="pre">메서드</span> <span class="pre">구현을</span> <span class="pre">강제하는</span> <span class="pre">기능</span></code>
+입니다.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Contents"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch01_intro_sw_engineering.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>소프트웨어 공학 소개</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="design_patterns.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>디자인 패턴 (Design Patterns)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

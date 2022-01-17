@@ -1,8 +1,18 @@
-# 디자인 패턴 (Design Patterns)
+# 소프트웨어 공학 소개
 
 ## 디자인 패턴이란?
 
-플라스크 둘러보기를 통해 개략적으로 Flask를 이해하는 시간을 갖도록 하겠습니다.
+단순한 기능 구현(코딩)을 할 경우에는 디자인 패턴이라는 것이 사실 필요 없습니다.
+그러나 구현해야 할 기능이 많아지고 복잡해 진다면 점점 머리가 아파집니다.
+
+구현(코딩)을 하다보면 일정한 패턴(유형)이 자연스럽게 생기게 됩니다.
+
+
+## GoF (Gang of Four)
+
+## GoF에서 제안하는 디자인 패턴
+
+
 
 플라스크는 기본적으로 Python 언어를 사용한 웹 프레임워크입니다. Python 웹 프레임워크는 Django(장고)와  Flask(플라스크)가 있습니다. Flask는 마이크로 프레임워크를 지향하고 있습니다.
 
@@ -32,8 +42,6 @@ Flask와 Django는 다음과 같은 차이점이 있습니다. 우리는 Flask�
 
 ORM(Object Relational Mapping)은 프레임워크에서 데이터베이스를 객체로 관리할 수 있도록 지원하는 기능입니다.
 ORM을 사용하면 별도로 공부하지 않아도 편리하게 데이터베이스를 조작할 수 있습니다.
-
-MSA와 Monolithic에 대한 구체적 설명은 [여기](./monolithic_vs_msa.md)를 참고하기 바랍니다.
 
 ## 어떤 프레임워크를 더 많이 쓸까요?
 
@@ -69,23 +77,4 @@ Flask는 지원 기능이 적기 때문에 필요한 기능을 구현할 때마�
 
 다음은 Python과 Web Framework에 대한 2021년도 Survey 결과입니다. 구체적인 내용은 [Jetbrain](https://www.jetbrains.com/lp/devecosystem-2021/python/) 홈페이지를 참고하기 바랍니다.
 
-```{figure} ../imgs/survey_python_usage.png
----
-width: 500
-align: left
-alt: python usage
-name: python_usage
----
-Python 사용의 목적
-```
-
-```{figure} ../imgs/survey_python_web_framework.png
----
-width: 500
-align: left
-alt: python usage
-name: python_usage
----
-Python 개발자의 웹 프레임워크 사용 비율
-```
 

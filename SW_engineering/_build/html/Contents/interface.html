@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. 인터페이스 (interface) &#8212; Software Engineering for CJU Students</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. 디자인 패턴 (Design Patterns)" href="design_patterns.html" />
+    <link rel="prev" title="2. 추상 클래스 (Abstract Class)" href="abstract_class.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Software Engineering for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Software Engineering
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01_intro_sw_engineering.html">
+   1. 소프트웨어 공학 소개
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="abstract_class.html">
+   2. 추상 클래스 (Abstract Class)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. 인터페이스 (interface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="design_patterns.html">
+   4. 디자인 패턴 (Design Patterns)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Contents/interface.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/interface.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   3.1. 인터페이스의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3.2. 인터페이스 구현
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     3.2.1. Java 인터페이스 구현
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     3.2.2. Python 인터페이스 구현
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>인터페이스 (interface)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   3.1. 인터페이스의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3.2. 인터페이스 구현
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     3.2.1. Java 인터페이스 구현
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python">
+     3.2.2. Python 인터페이스 구현
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="interface">
+<h1><span class="section-number">3. </span>인터페이스 (interface)<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h1>
+<p>인터페이스(<code class="docutils literal notranslate"><span class="pre">interface</span></code>)는 <a class="reference internal" href="abstract_class.html"><span class="doc std std-doc">추상 클래스</span></a>와 매우 유사한 개념입니다.
+하지만 다른 점들도 있으니 세상에 나왔겠죠?</p>
+<p>인터페이스는 추상 클래스의 한 종류로 볼 수 있습니다.
+추상 클래스는 메서드 내용이 있은 일반 메서드와 내용이 없는 추상 메서드를 모두 가질 수 있지만,
+인터페이스는 모든 메서드가 추상 메서드입니다.</p>
+<p>추상 클래스를 좀 더 추상화한 것이 인터페이스입니다. 추상 클래스가 기능의 일부가 완성되지 않은 <code class="docutils literal notranslate"><span class="pre">미완성</span> <span class="pre">설계도</span></code>라면 인터페이스는 구현된 것이 아무것도 없이 기본 구조만 가지는 <code class="docutils literal notranslate"><span class="pre">기본</span> <span class="pre">설계도</span></code>라고 할 수 있습니다.</p>
+<p>인터페이스도 추상 클래스에 속하기 때문에 추상 클래스와 마찬가지로 객체를 생성할 수 없습니다.</p>
+<p>Java, C#, C++ 같은 언어에서는 <code class="docutils literal notranslate"><span class="pre">interface</span></code>라는 키워드를 이용하여 인터페이스를 만들 수 있습니다. Python은 별도의 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 지원하지 않습니다.</p>
+<p>그런데 의문이 생깁니다.</p>
+<p>추상 클래스에서 필요한 모든 기능을 추상 메서드로 지정하면 인터페이스와 동일한 역할을 하는 것인데 왜 굳이 인터페이스가 필요한걸까요? 그 이유를 다음 장에서 살펴보도록 하겠습니다.</p>
+<div class="section" id="id1">
+<h2><span class="section-number">3.1. </span>인터페이스의 필요성<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>인터페이스를 사용하는 이유를 요약하면 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>Java 언어의 경우 다중 상속을 허락하지 않습니다. 하지만 인터페이스를 이용하면 다중 상속 기능을 구현할 수 있습니다.</p></li>
+<li><p>클래스의 기본 설계도로 클래스가 반드시 해야 하는 일을 정해줍니다. 단, 어떻게 해야 하는지를 정해주지는 않습니다.</p></li>
+<li><p>모듈 간 결합도를 낮춰줍니다.</p></li>
+<li><p>인터페이스를 사용하면 변수의 값이 최종값으로 결정하여 사용할 수 있습니다. 추상 클래스는 오버라이딩을 통해 추상 클래스가 가지고 있는 변수 값들이 변할 수 있습니다.</p></li>
+</ul>
+<p>위에서 열거한 바와 같이 인터페이스를 사용하는 이유는 여러가지 입니다.
+하지만 실제로 가장 필요한 이유는 다중 상속을 지원하기 위한 것입니다.
+사례를 들어 설명하도록 하겠습니다.</p>
+<p>다음 예제는 <code class="docutils literal notranslate"><span class="pre">마이자몽</span></code>의 블로그 중 “<code class="docutils literal notranslate"><span class="pre">[JAVA]</span> <span class="pre">추상클래스</span> <span class="pre">VS</span> <span class="pre">인터페이스</span> <span class="pre">왜</span> <span class="pre">사용할까?</span> <span class="pre">차이점,</span> <span class="pre">예제로</span> <span class="pre">확인::마이자몽</span></code>” (바로가기: <a class="reference external" href="https://myjamong.tistory.com/150">click</a>)을 참고하여 재편집 하였음을 밝힙니다.</p>
+<p>추상 클래스와 인터페이스가 필요한 상황을 설명하기 위해 아래와 같이 가정하겠습니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">구현을 위한 가정사항</p>
+<ul class="simple">
+<li><p>생명체(Creature)가 존재합니다.</p></li>
+<li><p>생명체는 인간(Human)과 동물(Animal)로 구분하도록 하겠습니다.</p></li>
+<li><p>인간(Human) 중에서 케빈(Kevin) 이라는 사람이 존재합니다.</p></li>
+<li><p>동물(Animal) 중에는 거북이(Turtle)와 비둘기(Pigen)가 있습니다.</p></li>
+<li><p>사람은 말을 할 수 (Takable) 있습니다.</p></li>
+<li><p>케빈(Kevin)은 프로그래머(Programmer) 입니다.</p></li>
+<li><p>케빈(Kevin)과 거북이(Turtle)은 수영할 수 (Swimable) 있습니다.</p></li>
+<li><p>비둘기(Pigeon)은 날 수 (Flyable) 있습니다.</p></li>
+</ul>
+</div>
+<p>그림으로 표현하면 다음과 같습니다.</p>
+<div class="figure align-default" id="interface-example">
+<img alt="../_images/abstract_class_and_interface_example.png" src="../_images/abstract_class_and_interface_example.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">가정사항을 그림으로 도식화 (이미지 출처: <a class="reference external" href="https://blog.kakaocdn.net/dn/bstzKQ/btqBSPHUrzK/KpjOscUdnrMyOyJrWilSH1/img.png">click</a>)</span><a class="headerlink" href="#interface-example" title="Permalink to this image">¶</a></p>
+</div>
+<p>위 상황을 추상 클래스만 가지고 구현한다면 어떻게 될까요?
+<a class="reference internal" href="#interface-example"><span class="std std-numref">Fig. 3.1</span></a>에서 모든 일반 클래스는 2개 이상의 클래스를 상속 받아야 합니다.</p>
+<p>만약 거북이(Turtle) 클래스 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>를 구현하기 위해서 추상 클래스와 일반 클래스만 이용해서 구현해야 한다면 어떨까요? 아마도 다음과 같이 해결할 수 있을 것입니다.</p>
+<ol class="simple">
+<li><p>먼저 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>를 상속받은 새로운 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Animal</span></code>를 만듭니다.</p></li>
+<li><p>추상 클래스 <code class="docutils literal notranslate"><span class="pre">Animal</span></code>을 상속받은 또 다른 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Swimable</span></code>를 만듭니다.</p></li>
+<li><p>추상 클래스 <code class="docutils literal notranslate"><span class="pre">Swimable</span></code>을 상속받아서 일반 클래스 <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>을 만듭니다.</p></li>
+</ol>
+<p>이런 구조가 과연 적절할까요? <code class="docutils literal notranslate"><span class="pre">Kevin</span></code> 클래스를 구현하기 위해서는 몇 번의 상속 과정을 거쳐야 할까요? <code class="docutils literal notranslate"><span class="pre">Creature</span></code>, <code class="docutils literal notranslate"><span class="pre">Talkable</span></code>, <code class="docutils literal notranslate"><span class="pre">Human</span></code>, <code class="docutils literal notranslate"><span class="pre">Programmer</span></code>, <code class="docutils literal notranslate"><span class="pre">Swimable</span></code> 클래스를 모두 고려해야 비로소 <code class="docutils literal notranslate"><span class="pre">Kevin</span></code> 클래스를 만들어 낼 수 있을 것입니다.</p>
+<p>다중 상속의 문제점을 피할 수 있지만 과도하게 상속 구조가 복잡하게 되지 않을까요?</p>
+<p><a class="reference internal" href="#interface-example"><span class="std std-numref">Fig. 3.1</span></a>에서 <code class="docutils literal notranslate"><span class="pre">Talkable</span></code>,  <code class="docutils literal notranslate"><span class="pre">Programmer</span></code>, <code class="docutils literal notranslate"><span class="pre">Swimable</span></code>, <code class="docutils literal notranslate"><span class="pre">Flyable</span></code>과 같은 경우는 일반 클래스를 생성할 때 상황에 따라서 동시에 상속 받아야 합니다.
+만약 Kevin이라는 사람이 날 수 있다면 <code class="docutils literal notranslate"><span class="pre">Flyable</span></code>까지 상속 받아야 할 것입니다.</p>
+<p>이럴 경우 다중 상속을 받은 클래스에서 상황에 맞게 기능을 구현하면 편리할 것입니다.</p>
+<p>Java와 같은 언어는 이런 상황을 지원하기 위해 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 지원합니다. Python 언어는 다중 상속을 허용하기 때문에 별도로 <code class="docutils literal notranslate"><span class="pre">interface</span></code> 기능은 없습니다.</p>
+<p>다음 장에서는 <a class="reference internal" href="#interface-example"><span class="std std-numref">Fig. 3.1</span></a>의 사례를 가지고 직접 구현해 보도록 하겠습니다.</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">3.2. </span>인터페이스 구현<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>이번에는 <a class="reference internal" href="#interface-example"><span class="std std-numref">Fig. 3.1</span></a>의 사례를 가지고 직접 구현해 보도록 하겠습니다.</p>
+<p>Java는 명시적으로 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 지원하기 때문에  <code class="docutils literal notranslate"><span class="pre">마이자몽</span></code> 블로그 내용을 (바로가기: <a class="reference external" href="https://myjamong.tistory.com/150">click</a>) 그대로 활용하겠습니다.</p>
+<p>Python은 다중 상속을 허용하기 때문에 다른 형태로 구현해 보도록 하겠습니다.</p>
+<div class="section" id="java">
+<h3><span class="section-number">3.2.1. </span>Java 인터페이스 구현<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
+<p>우리는 아래 순서대로 <a class="reference internal" href="#interface-example2"><span class="std std-numref">Fig. 3.2</span></a>를 구현해 보겠습니다.</p>
+<ol class="simple">
+<li><p>인터페이스는  <code class="docutils literal notranslate"><span class="pre">Talkable</span></code>,  <code class="docutils literal notranslate"><span class="pre">Programmer</span></code>, <code class="docutils literal notranslate"><span class="pre">Swimable</span></code>, <code class="docutils literal notranslate"><span class="pre">Flyable</span></code> 구현</p></li>
+<li><p>추상클래스는 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>, <code class="docutils literal notranslate"><span class="pre">Human</span></code>, <code class="docutils literal notranslate"><span class="pre">Animal</span></code> 구현</p></li>
+</ol>
+<div class="figure align-default" id="interface-example2">
+<img alt="../_images/abstract_class_and_interface_example.png" src="../_images/abstract_class_and_interface_example.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">가정사항을 그림으로 도식화 (이미지 출처: <a class="reference external" href="https://blog.kakaocdn.net/dn/bstzKQ/btqBSPHUrzK/KpjOscUdnrMyOyJrWilSH1/img.png">click</a>)</span><a class="headerlink" href="#interface-example2" title="Permalink to this image">¶</a></p>
+</div>
+<p>먼저 인터페이스를 구현합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>앞서 설명한 바와 같이 인터페이스(<code class="docutils literal notranslate"><span class="pre">interface</span></code>)의 모든 메서드는 추상 메서드이어야 합니다.</p>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Talkable</span></code>: 말할 수 있는 클래스를 구현할 때 상속</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Talkable</span> <span class="p">{</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">talk</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Programmer</span></code>: 프로그래밍을 할 수 있는 클래스를 구현할 때 상속</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Programmer</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">coding</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Swimable</span></code>: 수영할 수 있는 클래스를 구현할 때 상속</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Swimable</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">swimDown</span><span class="p">(</span><span class="kt">int</span> <span class="n">yDistance</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Flyable</span></code>: 날 수 있는 클래스를 구현할 때 상속</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Flyable</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">fly</span><span class="p">(</span><span class="kt">int</span> <span class="n">yDistance</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">flyMove</span><span class="p">(</span><span class="kt">int</span> <span class="n">xDistance</span><span class="p">,</span> <span class="kt">int</span> <span class="n">yDistance</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</br>
+<p>이제부터는 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>, <code class="docutils literal notranslate"><span class="pre">Human</span></code>, <code class="docutils literal notranslate"><span class="pre">Animal</span></code>를 구현하겠습니다.</p>
+<p>먼저 생명체(<code class="docutils literal notranslate"><span class="pre">Creature</span></code>) 추상 클래스를 구현합니다.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">예제 구현을 위한 가정사항</p>
+<ul class="simple">
+<li><p>생명체는 실제로 존재해야 하므로 위치 (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>) 좌표를 가집니다.</p></li>
+<li><p>생명체는 나이 <code class="docutils literal notranslate"><span class="pre">age</span></code>를 가지고 있습니다.</p></li>
+<li><p>생명체는 움직일 수 <code class="docutils literal notranslate"><span class="pre">move()</span></code> 있습니다.</p></li>
+<li><p>생명체는 공격할 수 <code class="docutils literal notranslate"><span class="pre">attack()</span></code> 있습니다. 그러나 <code class="docutils literal notranslate"><span class="pre">attack()</span></code> 방식은 생명체의 종류마다 다릅니다. 추상 메서드로 처리합니다.</p></li>
+<li><p>생명체의 정보를 확인할 수 <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code> 있습니다. 그러나 <code class="docutils literal notranslate"><span class="pre">printInfo()</span></code> 방식은 생명체의 종류마다 다릅니다. <code class="docutils literal notranslate"><span class="pre">attack()</span></code>과 함께 추상 메서드로 처리합니다.</p></li>
+</ul>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Creature</span></code> 추상 클래스의 Java 구현 코드는 다음과 같습니다.</p>
+<div class="highlight-java notranslate" id="abstract-class-creature"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Creature</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Creature</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">age</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">age</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">int</span> <span class="n">xDistance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">xDistance</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setX</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setY</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">attack</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="p">();</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;x : &quot;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&quot;, y : &quot;</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s">&quot;, age : &quot;</span> <span class="o">+</span> <span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Creature</span></code>에서 <code class="docutils literal notranslate"><span class="pre">age()</span></code>, <code class="docutils literal notranslate"><span class="pre">move()</span></code> 메서드는 공통 기능이므로 추상 클래스 메서드 내용을 미리 구현하여 상속받은 클래스에서 활용할 수 있도록합니다. 일반 메서드로 코딩하였습니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">age</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">age</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">move</span><span class="p">(</span><span class="kt">int</span> <span class="n">xDistance</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">xDistance</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>생명체는 공격을 하고, 자신의 정보를 출력할 수 있습니다.
+하지만 생명체의 종류별로 그 동작이 다르기 때문에 추상 메서드로 선언합니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">attack</span><span class="p">();</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="p">();</span>
+</pre></div>
+</div>
+</li>
+<li><p>모든 클래스에서 가지고 있는 <code class="docutils literal notranslate"><span class="pre">toString()</span></code> 출력 방식을 변경하기 위하여
+오버라이딩(<code class="docutils literal notranslate"><span class="pre">&#64;override</span></code>)하여 재정의 합니다. 여기서는 좌표값 <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">age</span></code>를
+출력하도록 변경하였습니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;x : &quot;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&quot;, y : &quot;</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="s">&quot;, age : &quot;</span> <span class="o">+</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</br>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Human</span></code>: 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>를 상속 받은 새로운 추상 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Human</span> <span class="kd">extends</span> <span class="n">Creature</span> <span class="kd">implements</span> <span class="n">Talkable</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Human</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">attack</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;도구를 사용!!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">talk</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;사람은 말을 할 수 있다.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">attack()</span></code>를 인간에 맞게 구현</p></li>
+<li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">printinfo()</span></code>는 구현하지 않고 상속받을 클래스에 위임</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Animal</span></code>: 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>를 상속 받은 새로운 추상 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="kd">extends</span> <span class="n">Creature</span><span class="p">{</span>
+    
+    <span class="kd">public</span> <span class="nf">Animal</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">attack</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;몸을 사용하여 공격!!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">-</span> 
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="python">
+<h3><span class="section-number">3.2.2. </span>Python 인터페이스 구현<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Contents"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="abstract_class.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>추상 클래스 (Abstract Class)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="design_patterns.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>디자인 패턴 (Design Patterns)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
