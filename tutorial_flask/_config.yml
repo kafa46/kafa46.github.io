@@ -53,3 +53,11 @@ parse:
     - replacements
     - smartquotes
     - substitution
+
+# 코드 블록에 라인 넘버 추가
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true

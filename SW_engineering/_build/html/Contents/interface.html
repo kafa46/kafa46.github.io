@@ -109,7 +109,13 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. 인터페이스 (interface)
+   3. 인터페이스 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     interface
+    </span>
+   </code>
+   )
   </a>
  </li>
  <li class="toctree-l1">
@@ -278,7 +284,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="interface">
-<h1><span class="section-number">3. </span>인터페이스 (interface)<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>인터페이스 (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h1>
 <p>인터페이스(<code class="docutils literal notranslate"><span class="pre">interface</span></code>)는 <a class="reference internal" href="abstract_class.html"><span class="doc std std-doc">추상 클래스</span></a>와 매우 유사한 개념입니다.
 하지만 다른 점들도 있으니 세상에 나왔겠죠?</p>
 <p>인터페이스는 추상 클래스의 한 종류로 볼 수 있습니다.
@@ -499,9 +505,14 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">attack()</span></code>를 인간에 맞게 구현</p></li>
+<li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">attack()</span></code>를 인간에 맞게 구현(오버라이딩)</p></li>
 <li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">printinfo()</span></code>는 구현하지 않고 상속받을 클래스에 위임</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">implements</span> <span class="pre">Talkable</span></code> 상속을 통해 상속받은 <code class="docutils literal notranslate"><span class="pre">interface</span></code>의 <code class="docutils literal notranslate"><span class="pre">talk()</span></code> 메서드를 구현(오버라이딩)</p></li>
 </ul>
+<div class="admonition-interface admonition">
+<p class="admonition-title">interface의 상속</p>
+<p><code class="docutils literal notranslate"><span class="pre">interface</span></code>를 상속받기 위해서는 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">클래스이름</span> <span class="pre">implements</span> <span class="pre">인터페이스이름</span></code> 와 같은 문법을 사용합니다.</p>
+</div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Animal</span></code>: 추상 클래스 <code class="docutils literal notranslate"><span class="pre">Creature</span></code>를 상속 받은 새로운 추상 클래스</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="kd">extends</span> <span class="n">Creature</span><span class="p">{</span>
@@ -515,15 +526,188 @@
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;몸을 사용하여 공격!!&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="o">-</span> 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attack()</span></code> 함수를 동물(animal)에 맞게 구현(오버라이딩)</p></li>
+<li><p>추상 메서드 <code class="docutils literal notranslate"><span class="pre">printinfo()</span></code>는 구현하지 않고 상속받을 클래스에 위임</p></li>
+</ul>
+</li>
+</ul>
+</br>
+<p><code class="docutils literal notranslate"><span class="pre">interface</span></code>와 <code class="docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">class</span></code>를 모두 정의하였습니다.</p>
+<p>이것들을 사용해서 일반클래스 <code class="docutils literal notranslate"><span class="pre">Kevin</span></code>, <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>, <code class="docutils literal notranslate"><span class="pre">Pigeon</span></code>를 정의하도록 하겠습니다.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kevin</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Kevin</span> <span class="kd">extends</span> <span class="n">Human</span> <span class="kd">implements</span> <span class="n">Programmer</span><span class="p">,</span> <span class="n">Swimable</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Kevin</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">coding</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swimDown</span><span class="p">(</span><span class="kt">int</span> <span class="n">yDistance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setY</span><span class="p">(</span><span class="n">getY</span><span class="p">()</span> <span class="o">-</span> <span class="n">yDistance</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">getY</span><span class="p">()</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;너무 깊이 들어가면 죽을수도 있어!!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Kevin -&gt; &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Turtle</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Turtle</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Swimable</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Turtle</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swimDown</span><span class="p">(</span><span class="kt">int</span> <span class="n">yDistance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setY</span><span class="p">(</span><span class="n">getY</span><span class="p">()</span> <span class="o">-</span> <span class="n">yDistance</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Turtle -&gt; &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pigeon</span></code> 클래스</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pigeon</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="kd">implements</span> <span class="n">Flyable</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Pigeon</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="p">(</span><span class="kt">int</span> <span class="n">yDistance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setY</span><span class="p">(</span><span class="n">getY</span><span class="p">()</span> <span class="o">+</span> <span class="n">yDistance</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">flyMove</span><span class="p">(</span><span class="kt">int</span> <span class="n">xDistance</span><span class="p">,</span> <span class="kt">int</span> <span class="n">yDistance</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setY</span><span class="p">(</span><span class="n">getY</span><span class="p">()</span> <span class="o">+</span> <span class="n">yDistance</span><span class="p">);</span>
+        <span class="n">setX</span><span class="p">(</span><span class="n">getX</span><span class="p">()</span> <span class="o">+</span> <span class="n">xDistance</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Pigeon -&gt; &quot;</span> <span class="o">+</span> <span class="n">toString</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
 </ul>
+</br>
+<p><code class="docutils literal notranslate"><span class="pre">interface</span></code>와 <code class="docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">class</span></code>를 이용해 최종적으로 만든 일반클래스 <code class="docutils literal notranslate"><span class="pre">Kevin</span></code>, <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>, <code class="docutils literal notranslate"><span class="pre">Pigeon</span></code>를 실행하는 코드는 다음과 같습니다.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Pigeon</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pigeon</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">);</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">age</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">fly</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">flyMove</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">attack</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        
+        <span class="n">Kevin</span> <span class="n">kev</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Kevin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">age</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">attack</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">coding</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">swimDown</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">kev</span><span class="p">.</span><span class="na">talk</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        
+        <span class="n">Turtle</span> <span class="n">tur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Turtle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">95</span><span class="p">);</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">age</span><span class="p">();</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">move</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">attack</span><span class="p">();</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">swimDown</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="n">tur</span><span class="p">.</span><span class="na">printInfo</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="python">
 <h3><span class="section-number">3.2.2. </span>Python 인터페이스 구현<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Python은 공식적으로 Java와 같은 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 제공하지 않습니다.
+Python은 기본적으로 다중 상속을 지원하기 때문입니다.</p>
+<p>따라서 <code class="docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">class</span></code>와 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 구분하는 것 자체가 없습니다.
+만약 Java 스타일의 <code class="docutils literal notranslate"><span class="pre">interface</span></code>를 구현하고자 한다면 <code class="docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">class</span></code> 형태로 구현할 수 있습니다.</p>
+<p>Python 다중 상속은 다음과 같은 문법 구조를 갖게 됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">클래스이름</span><span class="p">(</span><span class="n">부모클래스1</span><span class="p">,</span> <span class="n">부모클래스2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python 다중 상속의 간단한 예를 살펴보겠습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Person</span></code>, <code class="docutils literal notranslate"><span class="pre">Student</span></code>라는 클래스를 다중 상속 받아서 대학생 <code class="docutils literal notranslate"><span class="pre">UndergraduateStudent</span></code>라는 클래스를 만들기 위한 코드는 다음과 같습니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Person</span></code> 클래스</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;음식을 먹습니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Student</span></code> 클래스</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">study</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;공부합니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">UndergraduateStudent</span></code> 클래스</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UndergraduateStudent</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">Student</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">major</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;전공이 있습니다.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>다음과 같은 코드를 활용해 다중 상속 받은 부모 클래스의 기능을 사용할 수 있습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cju_student</span> <span class="o">=</span> <span class="n">UndergraduateStudent</span><span class="p">()</span>
+<span class="n">cju_student</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+<span class="n">cju_student</span><span class="o">.</span><span class="n">study</span><span class="p">()</span>
+<span class="n">cju_student</span><span class="o">.</span><span class="n">major</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>실행 결과</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">음식을</span> <span class="n">먹습니다</span><span class="o">.</span>
+<span class="n">공부합니다</span><span class="o">.</span>
+<span class="n">전공이</span> <span class="n">있습니다</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Python <code class="docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">class</span></code> 작성법은 <a class="reference internal" href="abstract_class.html"><span class="doc std std-doc">추상 클래스(Abstract Class)</span></a> 문서를 참고하기 바랍니다.</p>
+<p>Python 다중 상속에 대한 추가적인 학습을 원한다면 아래 블로그를 참고하기 바랍니다.</p>
+<ul class="simple">
+<li><p>Python 공식 홈페이지: <code class="docutils literal notranslate"><span class="pre">9.5.1.</span> <span class="pre">Multiple</span> <span class="pre">Inheritance</span></code> (바로가기: <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#multiple-inheritance">click</a>)</p></li>
+<li><p>geeksforgeeks 블로그: <code class="docutils literal notranslate"><span class="pre">Multiple</span> <span class="pre">Inheritance</span> <span class="pre">in</span> <span class="pre">Python</span></code> (바로가기: <a class="reference external" href="https://www.geeksforgeeks.org/multiple-inheritance-in-python/">click</a>)</p></li>
+<li><p>한국 블로그 (파이썬 코딩 도장): <code class="docutils literal notranslate"><span class="pre">Unit</span> <span class="pre">36.5</span> <span class="pre">다중</span> <span class="pre">상속</span> <span class="pre">사용하기</span></code> (바로가기: <a class="reference external" href="https://dojang.io/mod/page/view.php?id=2388">click</a>)</p></li>
+<li><p>한국 블로그 (투손플레이스): <code class="docutils literal notranslate"><span class="pre">[Python/파이썬]</span> <span class="pre">Class(클래스)</span> <span class="pre">기초</span> <span class="pre">정리</span> <span class="pre">-</span> <span class="pre">3</span> <span class="pre">:</span> <span class="pre">다중상속,</span> <span class="pre">super().__init__(),</span> <span class="pre">메서드</span> <span class="pre">오버라이딩</span></code> (바로가기: <a class="reference external" href="https://ybworld.tistory.com/26">click</a>)</p></li>
+</ul>
 </div>
 </div>
 </div>

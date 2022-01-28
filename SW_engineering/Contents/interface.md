@@ -1,4 +1,4 @@
-# 인터페이스 (interface)
+# 인터페이스 (`interface`)
 
 인터페이스(`interface`)는 [추상 클래스](abstract_class.md)와 매우 유사한 개념입니다.
 하지만 다른 점들도 있으니 세상에 나왔겠죠?
@@ -251,8 +251,13 @@ name: interface_example2
         }
     }
     ```
-    - 추상 메서드 `attack()`를 인간에 맞게 구현
+    - 추상 메서드 `attack()`를 인간에 맞게 구현(오버라이딩)
     - 추상 메서드 `printinfo()`는 구현하지 않고 상속받을 클래스에 위임
+    - `implements Talkable` 상속을 통해 상속받은 `interface`의 `talk()` 메서드를 구현(오버라이딩)
+
+    ```{admonition} interface의 상속
+    `interface`를 상속받기 위해서는 `class 클래스이름 implements 인터페이스이름` 와 같은 문법을 사용합니다.
+    ```
 
 - `Animal`: 추상 클래스 `Creature`를 상속 받은 새로운 추상 클래스
 
@@ -268,7 +273,192 @@ name: interface_example2
             System.out.println("몸을 사용하여 공격!!");
         }
     }
+    ```
 
-    - 
+    - `attack()` 함수를 동물(animal)에 맞게 구현(오버라이딩)
+    - 추상 메서드 `printinfo()`는 구현하지 않고 상속받을 클래스에 위임
+
+</br>
+
+`interface`와 `abstract class`를 모두 정의하였습니다.
+
+이것들을 사용해서 일반클래스 `Kevin`, `Turtle`, `Pigeon`를 정의하도록 하겠습니다.
+
+- `Kevin` 클래스
+    ```{code} java
+    public class Kevin extends Human implements Programmer, Swimable{
+        public Kevin(int x, int y, int age) {
+            super(x, y, age);
+        }
+        
+        @Override
+        public void coding() {
+            System.out.println("Hello World!");
+        }
+        
+        @Override
+        public void swimDown(int yDistance) {
+            setY(getY() - yDistance);
+            if(getY() < -10) {
+                System.out.println("너무 깊이 들어가면 죽을수도 있어!!");
+            }
+        }
+        
+        @Override
+        public void printInfo() {
+            System.out.println("Kevin -> " + toString());
+        }
+    }
+    ```
+
+- `Turtle` 클래스
+
+    ```{code} java
+    public class Turtle extends Animal implements Swimable{
+        public Turtle(int x, int y, int age) {
+            super(x, y, age);
+        }
+        
+        @Override
+        public void swimDown(int yDistance) {
+            setY(getY() - yDistance);
+        }
+        
+        @Override
+        public void printInfo() {
+            System.out.println("Turtle -> " + toString());
+        }
+    }
+    ```
+
+- `Pigeon` 클래스
+
+    ```{code} java
+    public class Pigeon extends Animal implements Flyable{
+        public Pigeon(int x, int y, int age) {
+            super(x, y, age);
+        }
+        
+        @Override
+        public void fly(int yDistance) {
+            setY(getY() + yDistance);
+        }
+        
+        @Override
+        public void flyMove(int xDistance, int yDistance) {
+            setY(getY() + yDistance);
+            setX(getX() + xDistance);
+        }
+        
+        @Override
+        public void printInfo() {
+            System.out.println("Pigeon -> " + toString());
+        }
+    }
+    ```
+</br>
+
+`interface`와 `abstract class`를 이용해 최종적으로 만든 일반클래스 `Kevin`, `Turtle`, `Pigeon`를 실행하는 코드는 다음과 같습니다.
+
+```{code} java
+
+public class Main {
+    public static void main(String[] args) {
+        Pigeon p = new Pigeon(5,10,14);
+        p.printInfo();
+        p.age();
+        p.move(100);
+        p.printInfo();
+        p.fly(5);
+        p.printInfo();
+        p.flyMove(10, 20);
+        p.printInfo();
+        p.attack();
+        System.out.println();
+        
+        Kevin kev = new Kevin(0, 0, 35);
+        kev.printInfo();
+        kev.age();
+        kev.move(10);
+        kev.printInfo();
+        kev.attack();
+        kev.coding();
+        kev.swimDown(20);
+        kev.printInfo();
+        kev.talk();
+        System.out.println();
+        
+        Turtle tur = new Turtle(100, -10, 95);
+        tur.printInfo();
+        tur.age();
+        tur.move(-100);
+        tur.printInfo();
+        tur.attack();
+        tur.swimDown(1000);
+        tur.printInfo();
+    }
+}
+```
 
 ### Python 인터페이스 구현
+
+Python은 공식적으로 Java와 같은 `interface`를 제공하지 않습니다.
+Python은 기본적으로 다중 상속을 지원하기 때문입니다.
+
+따라서 `abstract class`와 `interface`를 구분하는 것 자체가 없습니다. 
+만약 Java 스타일의 `interface`를 구현하고자 한다면 `abstract class` 형태로 구현할 수 있습니다.
+
+Python 다중 상속은 다음과 같은 문법 구조를 갖게 됩니다.
+
+```{code} python
+class 클래스이름(부모클래스1, 부모클래스2, ...)
+```
+
+Python 다중 상속의 간단한 예를 살펴보겠습니다.
+
+`Person`, `Student`라는 클래스를 다중 상속 받아서 대학생 `UndergraduateStudent`라는 클래스를 만들기 위한 코드는 다음과 같습니다.
+
+  - `Person` 클래스
+  ```{code} python
+  class Person():
+      def eat(self,):
+          print('음식을 먹습니다.')
+  ```
+  - `Student` 클래스
+  ```{code} python
+  class Student():
+      def study(self,):
+          print('공부합니다.')
+  ```
+
+  - `UndergraduateStudent` 클래스
+  ```{code} python
+  class UndergraduateStudent(Person, Student):
+      def major(self,):
+          print('전공이 있습니다.')
+  ```
+
+
+다음과 같은 코드를 활용해 다중 상속 받은 부모 클래스의 기능을 사용할 수 있습니다.
+
+```{code} python
+cju_student = UndergraduateStudent()
+cju_student.eat()
+cju_student.study()
+cju_student.major()
+```
+
+실행 결과
+```{code}
+음식을 먹습니다.
+공부합니다.
+전공이 있습니다.
+```
+
+Python `abstract class` 작성법은 [추상 클래스(Abstract Class)](./abstract_class.md) 문서를 참고하기 바랍니다.
+
+Python 다중 상속에 대한 추가적인 학습을 원한다면 아래 블로그를 참고하기 바랍니다.
+- Python 공식 홈페이지: `9.5.1. Multiple Inheritance` (바로가기: [click](https://docs.python.org/3/tutorial/classes.html#multiple-inheritance))
+- geeksforgeeks 블로그: `Multiple Inheritance in Python` (바로가기: [click](https://www.geeksforgeeks.org/multiple-inheritance-in-python/))
+- 한국 블로그 (파이썬 코딩 도장): `Unit 36.5 다중 상속 사용하기` (바로가기: [click](https://dojang.io/mod/page/view.php?id=2388)) 
+- 한국 블로그 (투손플레이스): `[Python/파이썬] Class(클래스) 기초 정리 - 3 : 다중상속, super().__init__(), 메서드 오버라이딩` (바로가기: [click](https://ybworld.tistory.com/26)) 
