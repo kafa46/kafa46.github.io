@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.10. Template 상속" href="sec03_ch10_templates_inheritance.html" />
+    <link rel="next" title="3.10. HTML 구조와 Template 상속" href="sec03_ch10_templates_inheritance.html" />
     <link rel="prev" title="3.8. 예쁘게 - CSS 적용" href="sec03_ch08_applying_CSS.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -318,15 +318,32 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sec03_ch10_templates_inheritance.html">
-     3.10. Template 상속
+     3.10. HTML 구조와 Template 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec03_ch11_section_closing_comment.html">
+     3.11. Flask 기본기 마치며…
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../apdx01_monolithic_vs_msa.html">
-   4. Monolithic vs. MSA
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Appendix/apdx00_appendix_list.html">
+   4. Appendix List
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx01_monolithic_vs_msa.html">
+     4.1. Monolithic vs. MSA
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -459,6 +476,17 @@
      에 적용하기
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-form-html">
+     3.9.3.3. 템플릿
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       question_form.html
+      </span>
+     </code>
+     에 적용하기
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -530,6 +558,17 @@
      에 적용하기
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-form-html">
+     3.9.3.3. 템플릿
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       question_form.html
+      </span>
+     </code>
+     에 적용하기
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -561,7 +600,7 @@
 <li><p><a class="reference internal" href="sec03_ch07_register_question.html"><span class="doc std std-doc">질문 &amp; 댓글 등록 - Flask Form 활용</span></a> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Clear!</span></code></p></li>
 <li><p><a class="reference internal" href="sec03_ch08_applying_CSS.html"><span class="doc std std-doc">예쁘게 - CSS 적용</span></a> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Clear!</span></code></p></li>
 <li><p><a class="reference internal" href="#"><span class="doc std std-doc">더 예쁘게 - Bootstrap 활용</span></a> <span class="math notranslate nohighlight">\(\to\)</span> 지금 도전!</p></li>
-<li><p><a class="reference internal" href="sec03_ch10_templates_inheritance.html"><span class="doc std std-doc">Template 상속</span></a></p></li>
+<li><p><a class="reference internal" href="sec03_ch10_templates_inheritance.html"><span class="doc std std-doc">HTML 구조와 Template 상속</span></a></p></li>
 </ol>
 </div>
 <p>이제 우리는 8가지 기본기를 살펴보았습니다. 이제 끝이 보입니다. 조금만 더 힘내세요.</p>
@@ -598,9 +637,9 @@
 <p>Bootstrap 다운로드 페이지 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/download/">click</a>) 방문하여 <code class="docutils literal notranslate"><span class="pre">Compiled</span> <span class="pre">CSS</span> <span class="pre">and</span> <span class="pre">JS</span></code>에서 <code class="docutils literal notranslate"><span class="pre">Download</span></code> 아이콘을 클릭하여 다운로드 받습니다.</p>
 <div class="figure align-left" id="sec03-49-download-bootstrap">
 <a class="reference internal image-reference" href="../../_images/sec03_49_download_bootstrap.png"><img alt="flask_tutorial" src="../../_images/sec03_49_download_bootstrap.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.49 </span><span class="caption-text">Bootstrap 소스 파일 다운로드 받기</span><a class="headerlink" href="#sec03-49-download-bootstrap" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.51 </span><span class="caption-text">Bootstrap 소스 파일 다운로드 받기</span><a class="headerlink" href="#sec03-49-download-bootstrap" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-49-download-bootstrap"><span class="std std-numref">Fig. 3.49</span></a>를 참고하여 소스 파일을 다운로드 하면
+<p>그림 <a class="reference internal" href="#sec03-49-download-bootstrap"><span class="std std-numref">Fig. 3.51</span></a>를 참고하여 소스 파일을 다운로드 하면
 압축 파일 <code class="docutils literal notranslate"><span class="pre">bootstrap-x.x.x-dist.zip</span></code> 형태로 다운로드 됩니다.
 파일 이름에서 <code class="docutils literal notranslate"><span class="pre">x.x.x</span></code>는 숫자로 표기되며 다운로드하는 Bootstrap의 버전을 알려줍니다. <code class="docutils literal notranslate"><span class="pre">dist</span></code>는 배포판이라는 의미이고, <code class="docutils literal notranslate"><span class="pre">.zip</span></code>은 압축파일 이라는 뜻입니다.</p>
 <p>다운로드 받은 파일을 압축해제하면 다음과 같은 디렉토리와 파일 구조를 가집니다.</p>
@@ -659,9 +698,9 @@
 <p>Bootstrap에서 제공하는 CSS 기능만 활용하려면 <code class="docutils literal notranslate"><span class="pre">bootstrap/css/bootstrap.min.css</span></code> 파일만 사용해도 큰 무리가 없습니다. <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code> 파일을 복사하여 우리가 기존에 만들어 놓았던 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 디렉토리에 붙여넣게 합니다.</p>
 <div class="figure align-left" id="sec03-50-check-bootstrap-min-css">
 <a class="reference internal image-reference" href="../../_images/sec03_50_check_bootstrap-min-css.png"><img alt="flask_tutorial" src="../../_images/sec03_50_check_bootstrap-min-css.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.50 </span><span class="caption-text">다운 받은 <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code> 파일을 VS code에서 확인해 보기</span><a class="headerlink" href="#sec03-50-check-bootstrap-min-css" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.52 </span><span class="caption-text">다운 받은 <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code> 파일을 VS code에서 확인해 보기</span><a class="headerlink" href="#sec03-50-check-bootstrap-min-css" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-50-check-bootstrap-min-css"><span class="std std-numref">Fig. 3.50</span></a>와 같이 <code class="docutils literal notranslate"><span class="pre">static/bootstrap.min.css</span></code>를 복사하여 붙여넣기 이후에 파일을 클릭해보면 무시무시한 코드가 보입니다.
+<p>그림 <a class="reference internal" href="#sec03-50-check-bootstrap-min-css"><span class="std std-numref">Fig. 3.52</span></a>와 같이 <code class="docutils literal notranslate"><span class="pre">static/bootstrap.min.css</span></code>를 복사하여 붙여넣기 이후에 파일을 클릭해보면 무시무시한 코드가 보입니다.
 하지만 걱정하지 마세요.</p>
 <p><code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code>에 있는 코드는 Bootstrap에서 디자인 전문가들과 개발자들이 미리 만들어 놓은 코드이므로 우리가 건드리거나 이해할 필요는 없습니다. <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code> 파일을 잘 활용할 수 있으면 되는 겁니다.</p>
 <p>이제 Bootstrap 소스 파일을 이용하여 디자인을 적용할 준비가 끝났습니다.</p>
@@ -724,10 +763,10 @@
 <p>위 코드에서 특징적인 것은 이전 코드는 <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> 태그를 이용해서 목록만 간단히 렌더링 했지만
 업그레이드 된 코드는 <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> 태그를 적용하였습니다.
 <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> 태그에서는 표(테이블)의 컬럼명을 지정하는 <code class="docutils literal notranslate"><span class="pre">&lt;thead&gt;</span></code>와 표 내용을 표시하는 <code class="docutils literal notranslate"><span class="pre">&lt;tbody&gt;</span></code> 태그를 사용하였습니다.</p>
-<p>그림 <a class="reference internal" href="#ssec03-51-bootstrap-on-question-list"><span class="std std-numref">Fig. 3.51</span></a>은  <code class="docutils literal notranslate"><span class="pre">question_list.html</span></code> 파일에 CSS 디자인을 적용한 결과입니다.</p>
+<p>그림 <a class="reference internal" href="#ssec03-51-bootstrap-on-question-list"><span class="std std-numref">Fig. 3.53</span></a>은  <code class="docutils literal notranslate"><span class="pre">question_list.html</span></code> 파일에 CSS 디자인을 적용한 결과입니다.</p>
 <div class="figure align-left" id="ssec03-51-bootstrap-on-question-list">
 <a class="reference internal image-reference" href="../../_images/sec03_51_bootstrap_on_question_list.png"><img alt="flask_tutorial" src="../../_images/sec03_51_bootstrap_on_question_list.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">question_list.html</span></code>에 CSS 디자인을 적용한 결과</span><a class="headerlink" href="#ssec03-51-bootstrap-on-question-list" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.53 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">question_list.html</span></code>에 CSS 디자인을 적용한 결과</span><a class="headerlink" href="#ssec03-51-bootstrap-on-question-list" title="Permalink to this image">¶</a></p>
 </div>
 <p>위 코드를 잘 살펴보면 <code class="docutils literal notranslate"><span class="pre">class=&quot;클래스</span> <span class="pre">이름&quot;</span></code> 이라는 형태의 속성을 추가한 태그들이 있습니다. <code class="docutils literal notranslate"><span class="pre">class</span></code> 속성을 추가한 태그 목록은 다음과 같습니다.</p>
 <ul class="simple">
@@ -748,22 +787,22 @@
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;container</span> <span class="pre">my-3&quot;&gt;</span></code>를 하나의 예로 활용하겠습니다.</p>
 <p>먼저 <code class="docutils literal notranslate"><span class="pre">div</span></code> 태그에 적용할 스타일은 <code class="docutils literal notranslate"><span class="pre">class</span></code> 이름이 <code class="docutils literal notranslate"><span class="pre">container</span> <span class="pre">my-3</span></code>이 될 것입니다.
-그림 <a class="reference internal" href="#sec03-50-check-bootstrap-min-css"><span class="std std-numref">Fig. 3.50</span></a>에서 내용을 잘 찾아보면 분명히 <code class="docutils literal notranslate"><span class="pre">.contatiner</span></code>라는 스타일이 있을 것입니다. VS code에서 찾기 기능(단축키 <code class="docutils literal notranslate"><span class="pre">CTL+F``)을</span> <span class="pre">활용해</span> </code>.container`를 키워드로 검색하면 여러 개를 찾을 수 있을 것입니다.</p>
+그림 <a class="reference internal" href="#sec03-50-check-bootstrap-min-css"><span class="std std-numref">Fig. 3.52</span></a>에서 내용을 잘 찾아보면 분명히 <code class="docutils literal notranslate"><span class="pre">.contatiner</span></code>라는 스타일이 있을 것입니다. VS code에서 찾기 기능(단축키 <code class="docutils literal notranslate"><span class="pre">CTL+F``)을</span> <span class="pre">활용해</span> </code>.container`를 키워드로 검색하면 여러 개를 찾을 수 있을 것입니다.</p>
 <div class="figure align-left" id="sec03-52-bootstrap-search-container-in-css-file">
 <a class="reference internal image-reference" href="../../_images/sec03_52_bootstrap_search_container_in_css_file.png"><img alt="flask_tutorial" src="../../_images/sec03_52_bootstrap_search_container_in_css_file.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.52 </span><span class="caption-text">VS code를 이용해 <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code>에서 <code class="docutils literal notranslate"><span class="pre">.container</span></code>를 검색한 결과</span><a class="headerlink" href="#sec03-52-bootstrap-search-container-in-css-file" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.54 </span><span class="caption-text">VS code를 이용해 <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code>에서 <code class="docutils literal notranslate"><span class="pre">.container</span></code>를 검색한 결과</span><a class="headerlink" href="#sec03-52-bootstrap-search-container-in-css-file" title="Permalink to this image">¶</a></p>
 </div>
-<p>제가 검색해보니 그림 <a class="reference internal" href="#sec03-52-bootstrap-search-container-in-css-file"><span class="std std-numref">Fig. 3.52</span></a>와 같이 보입니다. 34개가 검색되었네요. 그리고 복잡하게 뭔가 코딩되어 있습니다. 우리가 신경쓸 것은 없습니다. <code class="docutils literal notranslate"><span class="pre">&quot;아!</span> <span class="pre">우리가</span> <span class="pre">다운받은</span> <span class="pre">bootstrap.min.css</span> <span class="pre">파일</span> <span class="pre">어딘가에</span> <span class="pre">container</span> <span class="pre">클래스가</span> <span class="pre">정의되어</span> <span class="pre">있구나!!&quot;</span></code> 정도로 개념을 잡으면 됩니다.</p>
+<p>제가 검색해보니 그림 <a class="reference internal" href="#sec03-52-bootstrap-search-container-in-css-file"><span class="std std-numref">Fig. 3.54</span></a>와 같이 보입니다. 34개가 검색되었네요. 그리고 복잡하게 뭔가 코딩되어 있습니다. 우리가 신경쓸 것은 없습니다. <code class="docutils literal notranslate"><span class="pre">&quot;아!</span> <span class="pre">우리가</span> <span class="pre">다운받은</span> <span class="pre">bootstrap.min.css</span> <span class="pre">파일</span> <span class="pre">어딘가에</span> <span class="pre">container</span> <span class="pre">클래스가</span> <span class="pre">정의되어</span> <span class="pre">있구나!!&quot;</span></code> 정도로 개념을 잡으면 됩니다.</p>
 <p>그러면 <code class="docutils literal notranslate"><span class="pre">contatiner</span></code> 클래스의 모양(스타일)은 어떻게 생겼을까요?</p>
 <p>구체적인 스타일과 사용법은 Bootsrtap 공식 문서를 참고하면 됩니다.
 Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</span></code> 페이지에서 <code class="docutils literal notranslate"><span class="pre">Layout</span> <span class="pre">$\to$</span> <span class="pre">Containers</span></code> 메뉴를 찾아서 들어가거나 검색창에 <code class="docutils literal notranslate"><span class="pre">Containers</span></code> 입력해도 쉽게 찾을 수 있습니다.</p>
 <p>이 참고 링크 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/layout/containers/">click</a>)를 클릭해서 방문해 봅니다. 링크를 클릭해서 방문하면 다음과 같은 화면이 나타납니다.</p>
 <div class="figure align-left" id="sec03-53-bootstrap-container-class">
 <a class="reference internal image-reference" href="../../_images/sec03_53_bootstrap_container_class.png"><img alt="flask_tutorial" src="../../_images/sec03_53_bootstrap_container_class.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.53 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Container</span></code> 클래스를 설명하는 Bootstrap 공식 문서</span><a class="headerlink" href="#sec03-53-bootstrap-container-class" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.55 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Container</span></code> 클래스를 설명하는 Bootstrap 공식 문서</span><a class="headerlink" href="#sec03-53-bootstrap-container-class" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.53</span></a>가 잘 안보이면 이미지를 클릭해서 확대해 보거나 해당 링크를 따라서 방문해 보기 바랍니다. 일단 그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.53</span></a>를 이용해서 설명하겠습니다.</p>
-<p>그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.53</span></a> 왼쪽 화면에서 <code class="docutils literal notranslate"><span class="pre">Containers</span></code> 메뉴를 클릭하면 해당 페이지가 나타납니다. 아래쪽으로 약간 내려오면 오른쪽 화면과 같이 <code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">they</span> <span class="pre">work</span></code> 라는 설명을 만날 수 있습니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.55</span></a>가 잘 안보이면 이미지를 클릭해서 확대해 보거나 해당 링크를 따라서 방문해 보기 바랍니다. 일단 그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.55</span></a>를 이용해서 설명하겠습니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-53-bootstrap-container-class"><span class="std std-numref">Fig. 3.55</span></a> 왼쪽 화면에서 <code class="docutils literal notranslate"><span class="pre">Containers</span></code> 메뉴를 클릭하면 해당 페이지가 나타납니다. 아래쪽으로 약간 내려오면 오른쪽 화면과 같이 <code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">they</span> <span class="pre">work</span></code> 라는 설명을 만날 수 있습니다.</p>
 <p>첫 번째 빨간색 네모칸 - 파란 점선 네모칸 안에 우리가 사용한 <code class="docutils literal notranslate"><span class="pre">.container</span></code>가 보이죠?
 설명을 읽어보니 해당하는 중단점까지 최대한 확대하는 효과를 준다 <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">sets</span> <span class="pre">a</span> <span class="pre">max-width</span> <span class="pre">at</span> <span class="pre">each</span> <span class="pre">responsive</span> <span class="pre">breakpoint</span></code> 라고 써있네요.
 이걸 어떻게 해석하냐고요? 그러면 중간에 있는 빨간 네모칸을 참고하면 됩니다. 표 컬럼명은 브라우저의 가로 픽셀수 입니다.</p>
@@ -779,12 +818,12 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
 <p>그럼 도대체 여백 옵션 <code class="docutils literal notranslate"><span class="pre">my-3</span></code>의 정체는 무엇일까요?</p>
 <p>다시 한번 알송달송 합니다.</p>
 <p>이에 대한 답은 Bootstrap 공식문서 <code class="docutils literal notranslate"><span class="pre">Spacing</span></code> 페이지 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/utilities/spacing/">click</a>)에 상세하게 나와 있습니다.</p>
-<p>공식문서 <code class="docutils literal notranslate"><span class="pre">Spacing</span></code> 페이지 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/utilities/spacing/">click</a>)를 클릭해서 들어가거나 <a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Docs</a> 페이지에서 <code class="docutils literal notranslate"><span class="pre">Utilities</span> <span class="pre">$\to$</span> <span class="pre">Spacing</span></code> 메뉴로 들어가면 아래 그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.54</span></a>이 나옵니다.</p>
+<p>공식문서 <code class="docutils literal notranslate"><span class="pre">Spacing</span></code> 페이지 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/utilities/spacing/">click</a>)를 클릭해서 들어가거나 <a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Docs</a> 페이지에서 <code class="docutils literal notranslate"><span class="pre">Utilities</span> <span class="pre">$\to$</span> <span class="pre">Spacing</span></code> 메뉴로 들어가면 아래 그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.56</span></a>이 나옵니다.</p>
 <div class="figure align-left" id="sec03-54-bootstrap-spacing">
 <a class="reference internal image-reference" href="../../_images/sec03_54_bootstrap_spacing.png"><img alt="flask_tutorial" src="../../_images/sec03_54_bootstrap_spacing.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.54 </span><span class="caption-text">클래스 여백(<code class="docutils literal notranslate"><span class="pre">Spacing</span></code>)을 설명하는 Bootstrap 공식 문서</span><a class="headerlink" href="#sec03-54-bootstrap-spacing" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.56 </span><span class="caption-text">클래스 여백(<code class="docutils literal notranslate"><span class="pre">Spacing</span></code>)을 설명하는 Bootstrap 공식 문서</span><a class="headerlink" href="#sec03-54-bootstrap-spacing" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.54</span></a>의 내용을 살펴보면 <code class="docutils literal notranslate"><span class="pre">Spacing</span></code>은 스타일을 적용한 태그의 여백을 만들어 주는 클래스라고 설명하고 있습니다. <code class="docutils literal notranslate"><span class="pre">container</span></code>라는 클래스 다음에 <code class="docutils literal notranslate"><span class="pre">my-3</span></code> 이라는 클래스가 또 나온 경우가 되겠습니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.56</span></a>의 내용을 살펴보면 <code class="docutils literal notranslate"><span class="pre">Spacing</span></code>은 스타일을 적용한 태그의 여백을 만들어 주는 클래스라고 설명하고 있습니다. <code class="docutils literal notranslate"><span class="pre">container</span></code>라는 클래스 다음에 <code class="docutils literal notranslate"><span class="pre">my-3</span></code> 이라는 클래스가 또 나온 경우가 되겠습니다.</p>
 <p>클래스가 공백(<code class="docutils literal notranslate"><span class="pre">space</span></code>)을 사이에 두고 여러 개가 나올 경우 첫 클래스에 해당하는 스타일을 적용하고, 적용된 스타일에 두 번째 클래스에 해당하는 스타일을 적용합니다.</p>
 <p>클래스가 여러 개일 경우 순차적으로 스타일을 적용합니다. 연결되는 것이죠.
 바로 <code class="docutils literal notranslate"><span class="pre">Cascading</span></code> 된다고 표현합니다.
@@ -794,7 +833,7 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
 <li><p><code class="docutils literal notranslate"><span class="pre">{property}{sides}-{size}</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{property}{sides}-{breakpoint}-{size}</span></code></p></li>
 </ul>
-<p>그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.54</span></a>에서 처음 나오는 <code class="docutils literal notranslate"><span class="pre">property</span></code>는 반드시 다음 둘 중 하나를 선택해야 합니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.56</span></a>에서 처음 나오는 <code class="docutils literal notranslate"><span class="pre">property</span></code>는 반드시 다음 둘 중 하나를 선택해야 합니다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">m</span></code>: 클래스의 외부여백(<code class="docutils literal notranslate"><span class="pre">margin</span></code>) 설정</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: 클래스의 내부여백(<code class="docutils literal notranslate"><span class="pre">padding</span></code>)  설정</p></li>
@@ -822,7 +861,7 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
 <p><code class="docutils literal notranslate"><span class="pre">$spacer</span></code>의 단위는 기본값으로 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">rem</span></code> 입니다.
 컴퓨터가 <code class="docutils literal notranslate"><span class="pre">rem</span></code>은 브라우저에서 사용하는 폰트 크기 <code class="docutils literal notranslate"><span class="pre">font-size</span></code> 속성에 따라서 상대적인 길이를 계산해 주는 값입니다.
 일반적으로 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">rem</span></code>은 10픽셀을 의미합니다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;container</span> <span class="pre">my-3&quot;&gt;</span></code>의 의미는 <code class="docutils literal notranslate"><span class="pre">div</span></code> 태그에 <code class="docutils literal notranslate"><span class="pre">container</span></code> 스타일을 적용하고, 그 다음 외부여백 마진(<code class="docutils literal notranslate"><span class="pre">m</span></code>) 위치를 위쪽과 아래쪽에 <code class="docutils literal notranslate"><span class="pre">y</span></code> <code class="docutils literal notranslate"><span class="pre">$spacer</span> <span class="pre">(약</span> <span class="pre">10</span> <span class="pre">픽셀)</span></code> 크기만큼 적용하라는 뜻입니다. 그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.54</span></a>을 자세히 살펴보면 표 외곽에 <code class="docutils literal notranslate"><span class="pre">container</span></code> 클래스 스타일이 적용되고 위, 아래 여백으로 10픽셀이 추가된 것을 알 수 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;div</span> <span class="pre">class=&quot;container</span> <span class="pre">my-3&quot;&gt;</span></code>의 의미는 <code class="docutils literal notranslate"><span class="pre">div</span></code> 태그에 <code class="docutils literal notranslate"><span class="pre">container</span></code> 스타일을 적용하고, 그 다음 외부여백 마진(<code class="docutils literal notranslate"><span class="pre">m</span></code>) 위치를 위쪽과 아래쪽에 <code class="docutils literal notranslate"><span class="pre">y</span></code> <code class="docutils literal notranslate"><span class="pre">$spacer</span> <span class="pre">(약</span> <span class="pre">10</span> <span class="pre">픽셀)</span></code> 크기만큼 적용하라는 뜻입니다. 그림 <a class="reference internal" href="#sec03-54-bootstrap-spacing"><span class="std std-numref">Fig. 3.56</span></a>을 자세히 살펴보면 표 외곽에 <code class="docutils literal notranslate"><span class="pre">container</span></code> 클래스 스타일이 적용되고 위, 아래 여백으로 10픽셀이 추가된 것을 알 수 있습니다.</p>
 <p>나머지 태그 <code class="docutils literal notranslate"><span class="pre">table</span></code>, <code class="docutils literal notranslate"><span class="pre">tr</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>  적용된 스타일도 직접 클릭해서 특징을 살펴보기 바랍니다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&lt;table</span> <span class="pre">class=&quot;table&quot;&gt;</span></code>  <span class="math notranslate nohighlight">\(\to\)</span> Bootstrap 참고 페이지 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/content/tables/">click</a>)</p></li>
@@ -832,8 +871,9 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
 </div>
 <div class="section" id="question-detail-html">
 <h3><span class="section-number">3.9.3.2. </span>템플릿 <code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code>에 적용하기<a class="headerlink" href="#question-detail-html" title="Permalink to this headline">¶</a></h3>
-<p>이번에는 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code>에 Bootstrap을 적용해 보겠습니다.
-구체적인 설명은 생략합니다.</p>
+<p>이번에는 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code>에 Bootstrap을 적용해 보겠습니다.</p>
+<p>본 Tutorial의 주제가 Bootstrap이 아니므로 구체적인 설명은 생략합니다.
+아래 코드에 적용된 구체적인 내용은 Bootstrap 공식 문서 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">click</a>) 참고하세요</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- 파일 이름: templates/question/question_detail.html --&gt;</span>
 
 <span class="cm">&lt;!-- bootstrap.min.css 파일을 사용하기 위한 임포트 --&gt;</span>
@@ -891,9 +931,128 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
 </pre></div>
 </div>
 </div>
+<div class="section" id="question-form-html">
+<h3><span class="section-number">3.9.3.3. </span>템플릿 <code class="docutils literal notranslate"><span class="pre">question_form.html</span></code>에 적용하기<a class="headerlink" href="#question-form-html" title="Permalink to this headline">¶</a></h3>
+<p>이번에는 마지막으로 남은 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">question_form.html</span></code>에 Bootstrap을 적용해 보겠습니다.</p>
+<p>본 Tutorial의 주제가 Bootstrap이 아니므로 구체적인 설명은 생략합니다.
+아래 코드에 적용된 구체적인 내용은 Bootstrap 공식 문서 (<a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">click</a>) 참고하세요</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- 파일 이름: templates/question/question_form.html --&gt;</span>
+
+<span class="cm">&lt;!-- bootstrap.min.css 파일을 사용하기 위한 임포트 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;bootstrap.min.css&#39;) }}&quot;</span><span class="p">&gt;</span>
+
+
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
+
+    <span class="cm">&lt;!-- 오류 내용을 표시하는 코드 추가--&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-3&quot;</span><span class="p">&gt;</span>
+        {% for field, errors in form.errors.items() %}
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;alert alert-danger&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;alert&quot;</span><span class="p">&gt;</span>
+                {{ form[field].label }}: {{ &#39;, &#39;.join(errors) }}
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        {% endfor %}
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;my-3 border-bottom pb-2&quot;</span><span class="p">&gt;</span>질문 등록<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;question.create&#39;) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+        {{ form.csrf_token }}
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-3&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-text&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;white-space: pre-line;&quot;</span><span class="p">&gt;</span>제목<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;input-group mb-3&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ form.title.data or &#39;&#39; }}&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card my-3&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-text&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;white-space: pre-line;&quot;</span><span class="p">&gt;</span>내용<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-floating&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;d-flex p-2 bd-highlight&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;질문 내용을 입력하세요&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;floatingTextarea2&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;height: 300px&quot;</span>  <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ form.contents.data or &#39;&#39; }}&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+                        <span class="cm">&lt;!-- &lt;textarea name=&quot;contents&quot; id=&quot;contents&quot; cols=&quot;30&quot; rows=&quot;10&quot; value=&quot;{{ form.contents.data or &#39;&#39; }}&quot;&gt;&lt;/textarea&gt; --&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group my-3&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>저장하기<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>이제 모든 템플릿 파일에 Bootstrap 적용을 마무리 했습니다.</p>
+<p>Flask 서버를 작동시키고 이리저리 입력도 해보고 댓글도 달아 보면서
+여러분의 웹 시스템을 즐겨 보세요.</p>
+</div>
 </div>
 <div class="section" id="cdn">
 <h2><span class="section-number">3.9.4. </span>온라인(CDN)으로 연결하여 활용<a class="headerlink" href="#cdn" title="Permalink to this headline">¶</a></h2>
+<p>앞서 우리는 Bootstrap의 CSS 파일을 다운로드한 뒤에 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 폴더에 복사하여 사용하는 방법을 알아보았습니다. 그리고 Bootstrap을 해석하는 방법을 알아보았습니다.</p>
+<p>이번에는 파일을 다운로드하고, 압축 풀고, 복사하는 것 없이 직접 인터넷 <code class="docutils literal notranslate"><span class="pre">CDN</span></code>에 접속하여 활용하는 방법에 대해 살펴보도록 하겠습니다.</p>
+<p>Bootstrap 공식 문서 중에서 <code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">start</span></code> (<a class="reference external" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/#quick-start">click</a>)에 접속해 봅니다.</p>
+<div class="figure align-left" id="sec03-55-bootstrap-css-js-bundle-link">
+<a class="reference internal image-reference" href="../../_images/sec03_55_bootstrap_css_js_bundle_link.png"><img alt="flask_tutorial" src="../../_images/sec03_55_bootstrap_css_js_bundle_link.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.57 </span><span class="caption-text">Bootstrap CDN 접속링크 복사하기</span><a class="headerlink" href="#sec03-55-bootstrap-css-js-bundle-link" title="Permalink to this image">¶</a></p>
+</div>
+<p>그림 <a class="reference internal" href="#sec03-55-bootstrap-css-js-bundle-link"><span class="std std-numref">Fig. 3.57</span></a>은 Bootstrap 공식 문서에서 CDN으로 CSS에 접속하는 페이지 입니다.</p>
+<p>Bootrstrap은 CDN 링크를 복사할 수 있는 방법을 <code class="docutils literal notranslate"><span class="pre">CSS</span></code>, <code class="docutils literal notranslate"><span class="pre">JS</span></code>, <code class="docutils literal notranslate"><span class="pre">Bundle</span></code> 형태로 제시하고 있습니다. 다양한 선택 옵션이 있으니 개발자들이 필요에 따라 링크를 복사해 가면 되겠죠?</p>
+<p>그런데 <code class="docutils literal notranslate"><span class="pre">CSS</span></code>, <code class="docutils literal notranslate"><span class="pre">JS</span></code>, <code class="docutils literal notranslate"><span class="pre">Bundle</span></code> 형태가 각각 어떤 의미인지 모르는 사람도 있을 겁니다. 그런 사람들을 위해 간단히 설명하겠습니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CSS</span></code>: Bootstrap에서 제공하는 CSS 기능에 접속하는 링크입니다. 링크는 <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> 태그의에서 다른 CSS를 로딩하기 전 위치에 있어야 합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JS</span></code>: Bootstrap의 CSS는 구현하기 위해서는 다양한 JavaScript 플러그인과 <code class="docutils literal notranslate"><span class="pre">Popper</span></code>을 사용해야 합니다. Bootstrap에서 지원하는 기능을 모두 사용하기 위해서는 <code class="docutils literal notranslate"><span class="pre">JS</span></code>에서 제공하는 링크입니다. <code class="docutils literal notranslate"><span class="pre">JS</span></code> 기능을 CDN에서 불러오는데 시간이 걸릴 수 있습니다. 굳이 많은 기능이 필요 없다면 <code class="docutils literal notranslate"><span class="pre">Js</span></code>에서 지원하는 링크를 포함하지 않아도 됩니다. 링크 위치는 <code class="docutils literal notranslate"><span class="pre">.html</span></code> 파일의 어디라도 상관 없지만 <code class="docutils literal notranslate"><span class="pre">&lt;/body&gt;</span></code> 태그 바로 직전에 있는 것을 추천합니다.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bundle</span></code>: <code class="docutils literal notranslate"><span class="pre">JavaScript</span></code> 플러그인 링크와 <code class="docutils literal notranslate"><span class="pre">Popper</span></code> 링크를 각각 복사하는 번거로움을 덜어주기 위해, 모든 기능을 하나로 묶어서 제공하는 링크입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Seperate</span></code>: JavaScript 플러그인과 <code class="docutils literal notranslate"><span class="pre">Popper</span></code> 링크를 분리해서 제공합니다. 2개의 링크를 복사해서 사용할 경우 <code class="docutils literal notranslate"><span class="pre">Proper</span></code> 툴킷과 관련된 코드가 먼저 나와야 합니다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition-popper admonition">
+<p class="admonition-title">Popper</p>
+<p>먼저 툴팁(<code class="docutils literal notranslate"><span class="pre">tooltip</span></code>)을 이해해야 합니다. 툴팁은 마우스가 어떤 <code class="docutils literal notranslate"><span class="pre">요소(element)</span></code> 위치에 있을 때 마우스를 클릭하지 않아도 작은 상자가 요소 위에 나타나서 보충 설명을 보여주는 것입니다. 쉽게 <code class="docutils literal notranslate"><span class="pre">말풍선</span></code> 이라고 생각하며 됩니다.</p>
+<div class="figure align-left" id="sec03-56-tooltip-example">
+<a class="reference internal image-reference" href="../../_images/sec03_56_tooltip_example.png"><img alt="flask_tutorial" src="../../_images/sec03_56_tooltip_example.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.58 </span><span class="caption-text">페이스북 글쓰기에서 이미지 위에 마우스를 가져갔을때 나타는 툴팁</span><a class="headerlink" href="#sec03-56-tooltip-example" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Popper</span></code>는 툴팁의 위치를 쉽게 잡아주도록 도와주는 유틸리티 입니다.</p>
+</div>
+<p>우리는 그림 <a class="reference internal" href="#sec03-55-bootstrap-css-js-bundle-link"><span class="std std-numref">Fig. 3.57</span></a>에서 표시한 <code class="docutils literal notranslate"><span class="pre">CSS</span></code>와 <code class="docutils literal notranslate"><span class="pre">Bundle</span></code> 링크를 복사하여 사용하겠습니다. 빨간색 원에 있는 <code class="docutils literal notranslate"><span class="pre">Copy</span></code> 아이콘을 누르면 링크 주소가 복사됩니다. 물론 마우스로 드래그 해서 복사해도 됩니다. 링크 주소가 아예 <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> 태그 안에 작성되어 있기 때문에 엄청 편리하게 사용할 수 있습니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-55-bootstrap-css-js-bundle-link"><span class="std std-numref">Fig. 3.57</span></a>에서 복사한 코드는 각각 다음과 같습니다.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Bootstrap CDN의 CSS 접속/사용을 위한 코드 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Bootstrap CDN의 JS Bundle 접속/사용을 위한 코드 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>우리가 작성한 모든 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">.html</span></code>의 맨 앞부분에 있는 코드 <code class="docutils literal notranslate"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;</span> <span class="pre">href=&quot;{{</span> <span class="pre">url_for('static',</span> <span class="pre">filename='bootstrap.min.css')</span> <span class="pre">}}&quot;&gt;</span></code>를 주석처리 하거나 삭제하고 위 코드로 교체합니다.</p>
+<p>저는 아래와 같이 주석처리 하였습니다.
+여러분은 과감하게 삭제하고 위 코드로 교체해 보기 바랍니다.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- bootstrap.min.css 파일을 사용하기 위한 임포트 --&gt;</span>
+<span class="cm">&lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ url_for(&#39;static&#39;, filename=&#39;bootstrap.min.css&#39;) }}&quot;&gt; --&gt;</span>
+
+<span class="cm">&lt;!-- Bootstrap CDN의 CSS/JS Bundle 사용 --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>다시 Flask 서버를 작동시키고 지금까지 우리가 만든 웹페이지에 접속하면 정상적으로 잘 작동하는 것을 확인할 수 있습니다.</p>
+<p>심지어는 Bootstrap 홈페이지에서 다운로드하고, 압축 풀어서 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 디렉토리에 복사해 놓은 <code class="docutils literal notranslate"><span class="pre">bootstrap.min.css</span></code> 파일을 삭제해 버려도 아주 잘 작동합니다. 우리가 직접 만든 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> 파일은 나중에 필요할지도 모르니 삭제하지 않고 그냥 유지하도록 하겠습니다.</p>
+<p>저는 앞으로 CDN에 접속해서 Bootstrap 사용하는 방법을 기본으로 적용하겠습니다.
+물론 파일을 다운로드 받는 방법으로 계속 사용해도 전혀 문제되지 않습니다.
+여러분의 취향대로 선택하면 됩니다.</p>
+<p><a class="reference internal" href="sec03_ch08_applying_CSS.html"><span class="doc std std-doc">예쁘게 - CSS 적용</span></a>와 <a class="reference internal" href="#"><span class="doc std std-doc">더 예쁘게 - Bootstrap 활용</span></a>는 우리가 만든 웹 시스템을 더 이쁘게 보이도록 하는 기술에 대해서 배웠습니다.</p>
+<p>다음으로 배울 내용은 HTML 문서의 기본 구조를 살펴보고 템플릿 파일을 분할하여 효율적으로 코딩하는 방법입니다.
+이 방법은 <code class="docutils literal notranslate"><span class="pre">템플릿</span> <span class="pre">상속</span></code>이라는 개념을 통해 쉽게 달성할 수 있습니다.</p>
+<p>더 배울 준비가 되었나요?</p>
+<p>좋습니다!</p>
+<p><code class="docutils literal notranslate"><span class="pre">Next</span></code> 아이콘을 클릭하여 이동하기 바랍니다.</p>
 </div>
 </div>
 
@@ -932,7 +1091,7 @@ Bootstrap의 <code class="docutils literal notranslate"><span class="pre">Docs</
     <a class='right-next' id="next-link" href="sec03_ch10_templates_inheritance.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.10. </span>Template 상속</p>
+        <p class="prev-next-title"><span class="section-number">3.10. </span>HTML 구조와 Template 상속</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

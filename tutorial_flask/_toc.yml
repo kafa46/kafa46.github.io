@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 options:
   numbered: True
+
 chapters:
 - file: Contents/ch01_intro_to_flask
   sections:
@@ -46,6 +47,16 @@ chapters:
   - file: Contents/Section03_building_fundamentals/sec03_ch08_applying_CSS
   - file: Contents/Section03_building_fundamentals/sec03_ch09_applying_Bootstrap
   - file: Contents/Section03_building_fundamentals/sec03_ch10_templates_inheritance
+  - file: Contents/Section03_building_fundamentals/sec03_ch11_section_closing_comment
 
-- file: Contents/apdx01_monolithic_vs_msa
+- file: Contents/Section04_system_deploy/sec04_ch00_intro_distribution
+  sections:
+  - file: Contents/Section04_system_deploy/sec04_ch01_server
+  - file: Contents/Section04_system_deploy/sec04_ch02_web_server
+  - file: Contents/Section04_system_deploy/sec04_ch03_middleware
+
+- file: Contents/Appendix/apdx00_appendix_list
+  sections:
+  - file: Contents/Appendix/apdx01_monolithic_vs_msa
+  - file: Contents/Appendix/apdx02_subdomain
 

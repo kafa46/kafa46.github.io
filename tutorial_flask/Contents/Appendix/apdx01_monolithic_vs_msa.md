@@ -13,7 +13,7 @@ Monolithic과 MSA에 대한 설명은 [[MSA] Monolithic Architecture VS Micro Se
 **Monolithic(모놀리식)**을 네이버 영어사전에서 찾아보면 '(조직, 단결 등이) 단일체인, 한 덩어리로 뭉친'이라고 나옵니다.
 사전적 의미 그대로 모놀리식 아키텍처는 어떤 서비스(또는 프로젝트)를 하나의 큰 덩어리로 된 어플리케이션(Application, 이하 앱)으로 만든다는 뜻입니다. 우리가 일반적으로 생각하는 방식과 비슷합니다.
 
-```{figure} ../imgs/monolithic.png
+```{figure} ../../imgs/monolithic.png
 ---
 class: bg-primary mb-1
 width: 300px
@@ -52,7 +52,7 @@ name: Monolitic Architecture
 기술적(Technical)으로 말하면 하나의 큰 앱을 작은 앱으로 나누어 만드는 방법입니다.
 우리가 직관적으로 생각하는 앱은 전체가 한 덩어리로 된 하나의 앱으로 만드는 것입니다. 
 
-```{figure} ../imgs/msa.png
+```{figure} ../../imgs/msa.png
 ---
 class: bg-primary mb-1
 width: 400px

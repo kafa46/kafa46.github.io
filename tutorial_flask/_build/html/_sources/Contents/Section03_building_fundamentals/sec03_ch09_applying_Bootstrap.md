@@ -360,7 +360,9 @@ name: sec03_54_bootstrap_spacing
 ### 템플릿 `question_detail.html`에 적용하기
 
 이번에는 템플릿 파일 `question_detail.html`에 Bootstrap을 적용해 보겠습니다.
-구체적인 설명은 생략합니다. 
+
+본 Tutorial의 주제가 Bootstrap이 아니므로 구체적인 설명은 생략합니다. 
+아래 코드에 적용된 구체적인 내용은 Bootstrap 공식 문서 ([click](https://getbootstrap.com/docs/5.1/getting-started/introduction/)) 참고하세요
 
 ```{code} html
 <!-- 파일 이름: templates/question/question_detail.html -->
@@ -419,9 +421,159 @@ name: sec03_54_bootstrap_spacing
 </div>
 ```
 
+### 템플릿 `question_form.html`에 적용하기
+
+이번에는 마지막으로 남은 템플릿 파일 `question_form.html`에 Bootstrap을 적용해 보겠습니다.
+
+본 Tutorial의 주제가 Bootstrap이 아니므로 구체적인 설명은 생략합니다. 
+아래 코드에 적용된 구체적인 내용은 Bootstrap 공식 문서 ([click](https://getbootstrap.com/docs/5.1/getting-started/introduction/)) 참고하세요
+
+```{code} html
+<!-- 파일 이름: templates/question/question_form.html -->
+
+<!-- bootstrap.min.css 파일을 사용하기 위한 임포트 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+
+<div class="container">
+
+    <!-- 오류 내용을 표시하는 코드 추가-->
+    <form method="post" class="my-3">
+        {% for field, errors in form.errors.items() %}
+            <div class="alert alert-danger" role="alert">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+            </div>
+        {% endfor %}
+    </form>
+
+    <h5 class="my-3 border-bottom pb-2">질문 등록</h5>
+
+    <form action="{{ url_for('question.create') }}" method="post">
+        {{ form.csrf_token }}
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="card-text" style="white-space: pre-line;">제목</div>
+                <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="title" id="title" size="100" value="{{ form.title.data or '' }}">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card my-3">
+            <div class="card-body">
+                <div class="card-text" style="white-space: pre-line;">내용</div>
+                <div class="form-floating">
+                    <div class="d-flex p-2 bd-highlight">
+                        <textarea class="form-control" placeholder="질문 내용을 입력하세요" id="floatingTextarea2" style="height: 300px"  value="{{ form.contents.data or '' }}"></textarea>
+                        <!-- <textarea name="contents" id="contents" cols="30" rows="10" value="{{ form.contents.data or '' }}"></textarea> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group my-3">
+            <button type="submit" class="btn btn-primary">저장하기</button>
+        </div>
+    </form>
+</div>
+```
+
+이제 모든 템플릿 파일에 Bootstrap 적용을 마무리 했습니다.
+
+Flask 서버를 작동시키고 이리저리 입력도 해보고 댓글도 달아 보면서 
+여러분의 웹 시스템을 즐겨 보세요.
+
 
 ## 온라인(CDN)으로 연결하여 활용
 
+앞서 우리는 Bootstrap의 CSS 파일을 다운로드한 뒤에 `static/` 폴더에 복사하여 사용하는 방법을 알아보았습니다. 그리고 Bootstrap을 해석하는 방법을 알아보았습니다.
 
+이번에는 파일을 다운로드하고, 압축 풀고, 복사하는 것 없이 직접 인터넷 `CDN`에 접속하여 활용하는 방법에 대해 살펴보도록 하겠습니다.
+
+Bootstrap 공식 문서 중에서 `Quick start` ([click](https://getbootstrap.com/docs/5.1/getting-started/introduction/#quick-start))에 접속해 봅니다.
+
+```{figure} ../../imgs/section03_building_fundamentals/sec03_55_bootstrap_css_js_bundle_link.png
+---
+width: 700
+align: left
+alt: flask_tutorial
+name: sec03_55_bootstrap_css_js_bundle_link
+---
+Bootstrap CDN 접속링크 복사하기
+```
+
+그림 {numref}`sec03_55_bootstrap_css_js_bundle_link`은 Bootstrap 공식 문서에서 CDN으로 CSS에 접속하는 페이지 입니다.
+
+Bootrstrap은 CDN 링크를 복사할 수 있는 방법을 `CSS`, `JS`, `Bundle` 형태로 제시하고 있습니다. 다양한 선택 옵션이 있으니 개발자들이 필요에 따라 링크를 복사해 가면 되겠죠?
+
+그런데 `CSS`, `JS`, `Bundle` 형태가 각각 어떤 의미인지 모르는 사람도 있을 겁니다. 그런 사람들을 위해 간단히 설명하겠습니다.
+- `CSS`: Bootstrap에서 제공하는 CSS 기능에 접속하는 링크입니다. 링크는 `<head>` 태그의에서 다른 CSS를 로딩하기 전 위치에 있어야 합니다.
+- `JS`: Bootstrap의 CSS는 구현하기 위해서는 다양한 JavaScript 플러그인과 `Popper`을 사용해야 합니다. Bootstrap에서 지원하는 기능을 모두 사용하기 위해서는 `JS`에서 제공하는 링크입니다. `JS` 기능을 CDN에서 불러오는데 시간이 걸릴 수 있습니다. 굳이 많은 기능이 필요 없다면 `Js`에서 지원하는 링크를 포함하지 않아도 됩니다. 링크 위치는 `.html` 파일의 어디라도 상관 없지만 `</body>` 태그 바로 직전에 있는 것을 추천합니다.
+  - `Bundle`: `JavaScript` 플러그인 링크와 `Popper` 링크를 각각 복사하는 번거로움을 덜어주기 위해, 모든 기능을 하나로 묶어서 제공하는 링크입니다. 
+  - `Seperate`: JavaScript 플러그인과 `Popper` 링크를 분리해서 제공합니다. 2개의 링크를 복사해서 사용할 경우 `Proper` 툴킷과 관련된 코드가 먼저 나와야 합니다.
+
+````{admonition} Popper
+먼저 툴팁(`tooltip`)을 이해해야 합니다. 툴팁은 마우스가 어떤 `요소(element)` 위치에 있을 때 마우스를 클릭하지 않아도 작은 상자가 요소 위에 나타나서 보충 설명을 보여주는 것입니다. 쉽게 `말풍선` 이라고 생각하며 됩니다.
+
+```{figure} ../../imgs/section03_building_fundamentals/sec03_56_tooltip_example.png
+---
+width: 400
+align: left
+alt: flask_tutorial
+name: sec03_56_tooltip_example
+---
+페이스북 글쓰기에서 이미지 위에 마우스를 가져갔을때 나타는 툴팁
+```
+
+`Popper`는 툴팁의 위치를 쉽게 잡아주도록 도와주는 유틸리티 입니다.
+````
+
+우리는 그림 {numref}`sec03_55_bootstrap_css_js_bundle_link`에서 표시한 `CSS`와 `Bundle` 링크를 복사하여 사용하겠습니다. 빨간색 원에 있는 `Copy` 아이콘을 누르면 링크 주소가 복사됩니다. 물론 마우스로 드래그 해서 복사해도 됩니다. 링크 주소가 아예 `<script>` 태그 안에 작성되어 있기 때문에 엄청 편리하게 사용할 수 있습니다.
+
+그림 {numref}`sec03_55_bootstrap_css_js_bundle_link`에서 복사한 코드는 각각 다음과 같습니다.
+
+```{code} html
+<!-- Bootstrap CDN의 CSS 접속/사용을 위한 코드 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+```
+
+```{code} html
+<!-- Bootstrap CDN의 JS Bundle 접속/사용을 위한 코드 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+```
+
+우리가 작성한 모든 템플릿 파일 `.html`의 맨 앞부분에 있는 코드 `<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">`를 주석처리 하거나 삭제하고 위 코드로 교체합니다. 
+
+저는 아래와 같이 주석처리 하였습니다. 
+여러분은 과감하게 삭제하고 위 코드로 교체해 보기 바랍니다.
+
+```{code} html
+<!-- bootstrap.min.css 파일을 사용하기 위한 임포트 -->
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}"> -->
+
+<!-- Bootstrap CDN의 CSS/JS Bundle 사용 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+```
+
+다시 Flask 서버를 작동시키고 지금까지 우리가 만든 웹페이지에 접속하면 정상적으로 잘 작동하는 것을 확인할 수 있습니다. 
+
+심지어는 Bootstrap 홈페이지에서 다운로드하고, 압축 풀어서 `static/` 디렉토리에 복사해 놓은 `bootstrap.min.css` 파일을 삭제해 버려도 아주 잘 작동합니다. 우리가 직접 만든 `style.css` 파일은 나중에 필요할지도 모르니 삭제하지 않고 그냥 유지하도록 하겠습니다.
+
+저는 앞으로 CDN에 접속해서 Bootstrap 사용하는 방법을 기본으로 적용하겠습니다.
+물론 파일을 다운로드 받는 방법으로 계속 사용해도 전혀 문제되지 않습니다.
+여러분의 취향대로 선택하면 됩니다.
+
+[](./sec03_ch08_applying_CSS.md)와 [](./sec03_ch09_applying_Bootstrap.md)는 우리가 만든 웹 시스템을 더 이쁘게 보이도록 하는 기술에 대해서 배웠습니다.
+
+다음으로 배울 내용은 HTML 문서의 기본 구조를 살펴보고 템플릿 파일을 분할하여 효율적으로 코딩하는 방법입니다.
+이 방법은 `템플릿 상속`이라는 개념을 통해 쉽게 달성할 수 있습니다.
+
+더 배울 준비가 되었나요?
+
+좋습니다! 
+
+`Next` 아이콘을 클릭하여 이동하기 바랍니다.
 
 

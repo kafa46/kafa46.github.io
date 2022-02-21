@@ -817,6 +817,7 @@ return render_template(
 원래 코드였던 아래 `question_form.html`에서는 각 필드를 `None`으로 다시 채울 겁니다.
 
 ```{code} html
+
 <!-- 수기로 만든 form -->
 <div>
 

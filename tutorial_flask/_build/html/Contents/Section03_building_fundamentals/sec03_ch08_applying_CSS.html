@@ -318,15 +318,32 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="sec03_ch10_templates_inheritance.html">
-     3.10. Template 상속
+     3.10. HTML 구조와 Template 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec03_ch11_section_closing_comment.html">
+     3.11. Flask 기본기 마치며…
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../apdx01_monolithic_vs_msa.html">
-   4. Monolithic vs. MSA
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Appendix/apdx00_appendix_list.html">
+   4. Appendix List
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx01_monolithic_vs_msa.html">
+     4.1. Monolithic vs. MSA
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -479,7 +496,7 @@
 <li><p><a class="reference internal" href="sec03_ch07_register_question.html"><span class="doc std std-doc">질문 &amp; 댓글 등록 - Flask Form 활용</span></a> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Clear!</span></code></p></li>
 <li><p><a class="reference internal" href="#"><span class="doc std std-doc">예쁘게 - CSS 적용</span></a> <span class="math notranslate nohighlight">\(\to\)</span> 지금 도전!</p></li>
 <li><p><a class="reference internal" href="sec03_ch09_applying_Bootstrap.html"><span class="doc std std-doc">더 예쁘게 - Bootstrap 활용</span></a></p></li>
-<li><p><a class="reference internal" href="sec03_ch10_templates_inheritance.html"><span class="doc std std-doc">Template 상속</span></a></p></li>
+<li><p><a class="reference internal" href="sec03_ch10_templates_inheritance.html"><span class="doc std std-doc">HTML 구조와 Template 상속</span></a></p></li>
 </ol>
 </div>
 <p>이제 3가지 기본기만 더 배우면 웹 시스템 구현 전문가가 됩니다.</p>
@@ -509,18 +526,29 @@
 <li><p>표를 추가한 경우 선 색깔, 제목셀의 배경색 등을 지정할 필요도 있습니다.</p></li>
 <li><p>그림을 추가할 경우 테두리를 넣을지, 캡션을 추가해서 그림 제목을 추가할 수도 있습니다.</p></li>
 </ul>
-<p>물론 <code class="docutils literal notranslate"><span class="pre">메모장(Notepad)</span></code>이라는 간단한 문서편집기를 사용한다면 디자인 스타일을 적용할 필요가 없습니다.</p>
-<p>하지만 우리가 코딩한 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">.html</span></code>은 화면을 렌더링한 다음에 그 결과를 크롬 같은 브라우저에 뿌려주게 됩니다. 템플렛 파일이 렌더링을 하는 과정에서 HTML 태그를 인식하고 그 효과를 적용하여 브라우저에 결과를 보여주게 됩니다. <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> 태그를 이용해서 링크를 걸어줄 수도 있고 <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code> 태그를 이용하면 굵은 글자로 표현할 수도 있습니다.</p>
+<p>물론 <code class="docutils literal notranslate"><span class="pre">메모장(Notepad)</span></code>이라는 간단한 문서편집기를 사용한다면 디자인 스타일을 적용할 필요가 없습니다. 메모장에는 서식을 사전에 편집하여 스타일로 등록하고 이것을 적용하는 기능이 지원되지 않기 때문입니다.</p>
+<p>우리가 많이 사용하는 문서 편집기 <code class="docutils literal notranslate"><span class="pre">한글</span> <span class="pre">hwp</span></code>은 디자인 스타일(style)을 편집하고 적용하는 기능을 지원하고 있습니다. 마이크로소프트사의 MS Word <code class="docutils literal notranslate"><span class="pre">.docx</span></code> 소프트웨어에도 물론 스타일 기능이 있습니다.</p>
+<div class="figure align-left" id="sec03-45-1-hwp-style-setting">
+<a class="reference internal image-reference" href="../../_images/sec03_45-1_hwp_style_setting.png"><img alt="flask_tutorial" src="../../_images/sec03_45-1_hwp_style_setting.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.45 </span><span class="caption-text">한글에서 지원하는 스타일 편집 기능</span><a class="headerlink" href="#sec03-45-1-hwp-style-setting" title="Permalink to this image">¶</a></p>
+</div>
+<p>그림 <a class="reference internal" href="#sec03-45-1-hwp-style-setting"><span class="std std-numref">Fig. 3.45</span></a>는 한글 <code class="docutils literal notranslate"><span class="pre">hwp</span></code> 에서 지원하는 스타일 편집창입니다.
+우리가 편집할 문서의 내용이 많지 않다면 굳이 스타일을 사용할 이유가 없습니다.</p>
+<p>하지만 문서 분량이 많아서 장/절을 편성하고, 각각의 장/절 수준, 표안의 내용, 각주, 참고문헌 등에 따라 일정한 디자인을 적용하고 싶을 경우라면 어떨까요? 스타일을 사전에 정의하고 필요한 부분에 단축키를 활용해서 편리하게 적용하는 것이 필수 입니다.</p>
+<p>스타일이 기능이 없다면 각각의 장/절 제목이나 문단 수준에 따라 글자크기, 줄간격, 굵게, 밑줄, 글자색깔 등 다양한 디자인 스타일을 일일히 지정해 주어야 할 것입니다. 여간 번거로운 일이 아닐 수 없습니다. 문서 편집기에서 스타일 기능은 문서 작성자에게 많은 수고를 덜어 주는 고마운 기능입니다.</p>
+<p>HTML 문서는 어떨까요?</p>
+<p>우리가 코딩한 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">.html</span></code>은 화면을 렌더링한 다음에 그 결과를 크롬 같은 브라우저에 뿌려주게 됩니다. 템플렛 파일이 렌더링을 하는 과정에서 HTML 태그를 인식하고 그 효과를 적용하여 브라우저에 결과를 보여주게 됩니다. <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> 태그를 이용해서 링크를 걸어줄 수도 있고 <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code> 태그를 이용하면 굵은 글자로 표현할 수도 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.html</span></code>도 어차피 문서입니다. 렌더링 과정을 거쳐 최종 문서를 브라우저에 보여주게 됩니다. 브라우저 화면에 보이는 문서도 다양한 디자인 스타일이 필요할 것입니다. 브라우저에 보이는 문서에도 제목은 글자 크기를 크게 하고 밑줄을 긋는 등 디자인이 필요합니다. HTML 문서도 분량이 많아지면 다양한 디자인이 필요하게 될 것입니다. 디자인이 필요할 때마다 그때 그때 스타일을 매번 반복적으로 코딩해야 할까요?</p>
 <p>우리가 이쁜 인터넷 문서를 볼 수 있는 것은 <code class="docutils literal notranslate"><span class="pre">.html</span></code>에 포함된 다양한 태그와 각각의 태그에 적용한 속성에 따라 렌더링을 해주기 때문입니다.</p>
 <p>결국 <code class="docutils literal notranslate"><span class="pre">.html</span></code> 파일도 최종 문서를 보여주기 위한 템플릿 문서라고 볼 수 있습니다.
-한글이나 파워포인트는 다양한 서식을 지정하면 프로그램 자체에서 내부적으로 처리하고 그 결과를 문서 편집창에 띄워줄 뿐입니다.</p>
-<p>우리는 한글이나 파워포인트가 제공하는 서식 아이콘을 HTML 태그를 통해 작성한 것입니다.</p>
-<p>그림 <a class="reference internal" href="#sec03-45-browser-notepad-rendering"><span class="std std-numref">Fig. 3.45</span></a>을 볼까요?</p>
+한글이나 파워포인트는 다양한 서식을 지정하면 프로그램 자체에서 내부적으로 처리하고 그 결과를 문서 편집창에 띄워줄 뿐입니다. 한글이나 MS Word 처럼 스타일 기능이 있다면 당연히 좋겠죠?</p>
+<p>브라우저 화면에서 볼 수 있는 이쁜 문서들은 우리가 한글이나 파워포인트가 제공하는 서식 아이콘을 HTML 태그를 통해 작성한 것입니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-45-browser-notepad-rendering"><span class="std std-numref">Fig. 3.46</span></a>을 볼까요?</p>
 <div class="figure align-left" id="sec03-45-browser-notepad-rendering">
 <a class="reference internal image-reference" href="../../_images/sec03_45_browser_notepad_rendering.png"><img alt="flask_tutorial" src="../../_images/sec03_45_browser_notepad_rendering.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.45 </span><span class="caption-text">브라우저에서 CSS를 검색한 화면(일부)과 동일한 내용을 메모장으로 편집한 화면</span><a class="headerlink" href="#sec03-45-browser-notepad-rendering" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.46 </span><span class="caption-text">브라우저에서 CSS를 검색한 화면(일부)과 동일한 내용을 메모장으로 편집한 화면</span><a class="headerlink" href="#sec03-45-browser-notepad-rendering" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-45-browser-notepad-rendering"><span class="std std-numref">Fig. 3.45</span></a>의 왼쪽 그림은 구글 검색창에서 CSS (<a class="reference external" href="https://ko.wikipedia.org/wiki/CSS">click</a>)를 검색한 결과에 대한 일부 내용을 캡처한 것입니다.
+<p>그림 <a class="reference internal" href="#sec03-45-browser-notepad-rendering"><span class="std std-numref">Fig. 3.46</span></a>의 왼쪽 그림은 구글 검색창에서 CSS (<a class="reference external" href="https://ko.wikipedia.org/wiki/CSS">click</a>)를 검색한 결과에 대한 일부 내용을 캡처한 것입니다.
 오른쪽 그림은 동일한 내용을 메모장을 이용하여 입력한 그림입니다.</p>
 <p>어떤 그림이 더 보기 좋은가요?</p>
 <p>대부분은 왼쪽 그림이 더 좋다고 할 것입니다. 링크가 걸린 문자는 파란색, 강조하는 단어는 굵게, 중요한 단어는 빨간색으로 표시한 것을 볼 수 있습니다. 그림 아이콘도 추가되었군요.</p>
@@ -551,6 +579,15 @@ CSS는 태그를 선택해서 스타일을 지정하는 것을  <code class="doc
 보다 자세한 내용은 참고 블로그 <code class="docutils literal notranslate"><span class="pre">CSS</span> <span class="pre">기초(1)</span></code> <a class="reference external" href="https://velog.io/&#64;oxxun21/CSS-%EA%B8%B0%EC%B4%881">click</a>을 참고하기 바랍니다.</p>
 <p>W3CSchools (<a class="reference external" href="https://www.w3schools.com/css/">click</a>)에도 훌륭한 Tutorial이 있으니 추가적인 학습을 원하는 사람은 참고하면 좋을 것 같습니다.</p>
 <p>CSS는 여러모로 개발자에게 참 편리한 기능입니다.</p>
+<p>CSS도 컴퓨터가 이해하고 해석해야 하기 때문에 일종의 프로그래밍 언어라고 볼 수도 있습니다.
+프로그래밍 언어는 계속해서 발전하고 있습니다. CSS도 마찬가지겠죠? 현재 CSS 버전은 <code class="docutils literal notranslate"><span class="pre">3</span></code> 입니다.
+현재는 <code class="docutils literal notranslate"><span class="pre">W3C</span></code> (World Wide Web Consortium) (<a class="reference external" href="https://www.w3.org/">click</a>) 이라는 단체에서 표준을 만들고 지속적으로 업그레이드를 진행하고 있습니다.
+참고로 <code class="docutils literal notranslate"><span class="pre">CSS3</span></code> 로고는 그림 <a class="reference internal" href="#sec03-45-2-css3-logo"><span class="std std-numref">Fig. 3.47</span></a>와 같습니다.</p>
+<div class="figure align-left" id="sec03-45-2-css3-logo">
+<a class="reference internal image-reference" href="../../_images/sec03_45-2_css3_logo.png"><img alt="flask_tutorial" src="../../_images/sec03_45-2_css3_logo.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.47 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CSS3</span></code> 로고</span><a class="headerlink" href="#sec03-45-2-css3-logo" title="Permalink to this image">¶</a></p>
+</div>
+<p>그림 <a class="reference internal" href="#sec03-45-2-css3-logo"><span class="std std-numref">Fig. 3.47</span></a>에서 CSS 아래에 숫자 <code class="docutils literal notranslate"><span class="pre">3</span></code>을 볼 수 있죠? CSS 버전을 의미합니다.</p>
 <p>CSS 파일은 템플릿에서 렌더링 하는 과정에서 값이 변하지 않습니다. 웹페이지를 생성할때마다 스타일이 바뀌면 안되겠죠? 이런 점 때문에 정적 <code class="docutils literal notranslate"><span class="pre">static</span></code> 파일이라고 부릅니다.</p>
 <p>템플릿에서 디자인 스타일을 적용할때는 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 이라는 디렉토리를 만들고 그 안에 <code class="docutils literal notranslate"><span class="pre">.css</span></code> 파일을 모아놓게 됩니다.</p>
 <p>우리는 Flask를 이용한 웹 시스템의 기능 구현에 보다 초점을 맞추고 있기 때문에 자세한 설명은 생략하도록 하겠습니다. CSS에 대하여 좀 더 깊은 이해를 원하는 사람들은 전문 교재를 구입하거나 구글 검색을 통해 블로그나 유튜브 강의를 참고하시기 바랍니다.</p>
@@ -558,10 +595,10 @@ CSS는 태그를 선택해서 스타일을 지정하는 것을  <code class="doc
 <div class="section" id="id1">
 <h2><span class="section-number">3.8.2. </span>CSS 파일을 만들고 적용해 보기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>CSS 파일을 모아두기 위한 디렉토리를 하나 만들겠습니다.
-VS code에서 작업하는 경우라면 그림 <a class="reference internal" href="#sec03-46-create-static-folder"><span class="std std-numref">Fig. 3.46</span></a>와 같이 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 디렉토리를 만들고 그 안에 <code class="docutils literal notranslate"><span class="pre">style.css</span></code>라는 파일을 하나 만듭니다.</p>
+VS code에서 작업하는 경우라면 그림 <a class="reference internal" href="#sec03-46-create-static-folder"><span class="std std-numref">Fig. 3.48</span></a>와 같이 <code class="docutils literal notranslate"><span class="pre">static/</span></code> 디렉토리를 만들고 그 안에 <code class="docutils literal notranslate"><span class="pre">style.css</span></code>라는 파일을 하나 만듭니다.</p>
 <div class="figure align-left" id="sec03-46-create-static-folder">
 <a class="reference internal image-reference" href="../../_images/sec03_46_create_static_folder.png"><img alt="flask_tutorial" src="../../_images/sec03_46_create_static_folder.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.46 </span><span class="caption-text">VS code 파일 탐색창에 <code class="docutils literal notranslate"><span class="pre">static</span></code> 디렉토리를 만들고 <code class="docutils literal notranslate"><span class="pre">sytle.css</span></code> 파일 생성</span><a class="headerlink" href="#sec03-46-create-static-folder" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.48 </span><span class="caption-text">VS code 파일 탐색창에 <code class="docutils literal notranslate"><span class="pre">static</span></code> 디렉토리를 만들고 <code class="docutils literal notranslate"><span class="pre">sytle.css</span></code> 파일 생성</span><a class="headerlink" href="#sec03-46-create-static-folder" title="Permalink to this image">¶</a></p>
 </div>
 <p>우리가 만들었던 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code>에 있는 <code class="docutils literal notranslate"><span class="pre">&lt;textare&gt;</span></code> 태그와 <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그에 스타일을 적용하기 위한 내용을 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> 파일에 아래와 같이 코딩해 줍니다.</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/* 파일 이름: /static/style.css */</span><span class="w"></span>
@@ -577,23 +614,23 @@ VS code에서 작업하는 경우라면 그림 <a class="reference internal" hre
 </div>
 <p>위 코드는 <code class="docutils literal notranslate"><span class="pre">&lt;textarea&gt;</span></code> 태그에 입력창 너비를 화면의 100%로 늘이는 스타일을 적용하고,
 <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그에는 위쪽 마진(여유)를 10 px (픽셀, pixel) 주겠다는 의미입니다.
-그림 <a class="reference internal" href="#sec03-46-create-static-folder"><span class="std std-numref">Fig. 3.46</span></a>의 오른쪽 사각형 영역에 위 코드를 입력하면 됩니다.</p>
+그림 <a class="reference internal" href="#sec03-46-create-static-folder"><span class="std std-numref">Fig. 3.48</span></a>의 오른쪽 사각형 영역에 위 코드를 입력하면 됩니다.</p>
 <p>이제 <code class="docutils literal notranslate"><span class="pre">style.css</span></code>를 템플릿 파일 <code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code>에 적용해 보도록 하겠습니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">question_detail.html</span></code> 파일을 열고 맨 윗부분에 아래 코드를 입력합니다.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>VS code에서 입력한다면 그림 <a class="reference internal" href="#sec03-47-vscode-add-code-question-detail-html"><span class="std std-numref">Fig. 3.47</span></a>를 참고하면 됩니다.</p>
+<p>VS code에서 입력한다면 그림 <a class="reference internal" href="#sec03-47-vscode-add-code-question-detail-html"><span class="std std-numref">Fig. 3.49</span></a>를 참고하면 됩니다.</p>
 <div class="figure align-left" id="sec03-47-vscode-add-code-question-detail-html">
 <a class="reference internal image-reference" href="../../_images/sec03_47_vscode_add_code_question_detail_html.png"><img alt="flask_tutorial" src="../../_images/sec03_47_vscode_add_code_question_detail_html.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.47 </span><span class="caption-text">VS code에서 css 적용 코드 입력</span><a class="headerlink" href="#sec03-47-vscode-add-code-question-detail-html" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.49 </span><span class="caption-text">VS code에서 css 적용 코드 입력</span><a class="headerlink" href="#sec03-47-vscode-add-code-question-detail-html" title="Permalink to this image">¶</a></p>
 </div>
 <p>위 코드를 입력하고 입력된 질문 중 하나를 클릭해서 들어가면 우리가 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> 파일에 설정한 스타일이 <code class="docutils literal notranslate"><span class="pre">&lt;textarea&gt;</span></code> 태그와 <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그에 적용된 것을 확인할 수 있습니다.</p>
 <div class="figure align-left" id="sec03-48-apply-css-in-question-detail-html">
 <a class="reference internal image-reference" href="../../_images/sec03_48_apply_css_in_question_detail_html.png"><img alt="flask_tutorial" src="../../_images/sec03_48_apply_css_in_question_detail_html.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.48 </span><span class="caption-text">CSS 적용 전,후 비교</span><a class="headerlink" href="#sec03-48-apply-css-in-question-detail-html" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.50 </span><span class="caption-text">CSS 적용 전,후 비교</span><a class="headerlink" href="#sec03-48-apply-css-in-question-detail-html" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-48-apply-css-in-question-detail-html"><span class="std std-numref">Fig. 3.48</span></a>의 왼쪽 그림은 CSS 적용 전 화면이고, 오른쪽은 적용 후 화면입니다. 우리가 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> 파일에서 지정한대로 잘 반영이 되었습니다. <code class="docutils literal notranslate"><span class="pre">&lt;textarea&gt;</span></code> 태그는 입력창 폭이 화면의 100% 차지하도록 넓어졌습니다. <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그 적용된 <code class="docutils literal notranslate"><span class="pre">댓글등록</span></code> 버튼은 위쪽으로 10픽셀 마진(여유공간)이 추가되었습니다.
+<p>그림 <a class="reference internal" href="#sec03-48-apply-css-in-question-detail-html"><span class="std std-numref">Fig. 3.50</span></a>의 왼쪽 그림은 CSS 적용 전 화면이고, 오른쪽은 적용 후 화면입니다. 우리가 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> 파일에서 지정한대로 잘 반영이 되었습니다. <code class="docutils literal notranslate"><span class="pre">&lt;textarea&gt;</span></code> 태그는 입력창 폭이 화면의 100% 차지하도록 넓어졌습니다. <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그 적용된 <code class="docutils literal notranslate"><span class="pre">댓글등록</span></code> 버튼은 위쪽으로 10픽셀 마진(여유공간)이 추가되었습니다.
 만약 <code class="docutils literal notranslate"><span class="pre">&lt;textarea&gt;</span></code> 태그와 <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> 태그가 여러 개 있다면 모두 공통적으로 적용됩니다.</p>
 <p>다양한 CSS 문법을 더 공부한다면 여러분들의 웹페이지를 이쁘고 아름답게 꾸밀 수 있겠죠?</p>
 <p>그런데 CSS는 HTML에 디자인 스타일을 적용하기 위한 기술입니다.

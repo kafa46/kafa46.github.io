@@ -33,7 +33,7 @@ Flask와 Django는 다음과 같은 차이점이 있습니다. 우리는 Flask�
 ORM(Object Relational Mapping)은 프레임워크에서 데이터베이스를 객체로 관리할 수 있도록 지원하는 기능입니다.
 ORM을 사용하면 별도로 공부하지 않아도 편리하게 데이터베이스를 조작할 수 있습니다.
 
-MSA와 Monolithic에 대한 구체적 설명은 [여기](./apdx01_monolithic_vs_msa.md)를 참고하기 바랍니다.
+MSA와 Monolithic에 대한 구체적 설명은 [여기](../Contents/Appendix/apdx01_monolithic_vs_msa.md)를 참고하기 바랍니다.
 
 ## 어떤 프레임워크를 더 많이 쓸까요?
 
