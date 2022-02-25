@@ -241,5 +241,3 @@ class Answer(db.Model):
 SQLAlchemy에서 지원하는 다양한 CRUD 관련 옵션은 아래 링크를 참고하세요.
 SQLAlchemy CRUD 
 ```
-
----

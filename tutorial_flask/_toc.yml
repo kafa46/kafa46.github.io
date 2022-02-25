@@ -58,5 +58,8 @@ chapters:
 - file: Contents/Appendix/apdx00_appendix_list
   sections:
   - file: Contents/Appendix/apdx01_monolithic_vs_msa
+  - file: Contents/Appendix/apdx03_aws_sing_up
+  - file: Contents/Appendix/apdx04_EC2_server_create
   - file: Contents/Appendix/apdx02_subdomain
+  
 
