@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}질문 상세내용{% endblock %}
+
+{% block content %}
+<!-- container 클래스로 답변 전체를 감싸기 -->
+<div class="container my-3">
+    <h2 class="border-bottom py-2">{{ context.title }}</h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ context.contents }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="d-flex p-2 bd-highlight">
+                    작성시간: {{ context.create_date }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="border-bottom my-3 py-2">{{ context.answer_set|length }}개의 답변이 있습니다.</h5>
+    
+    {% for answer in context.answer_set %}
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;">{{ answer.contents }}</div>
+            <div class="d-flex justify-content-end">
+                <div class="d-flex p-2 bd-highlight">
+                    작성시간: {{ context.create_date }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <!-- form 에러 처리 -->
+    {% for field, errors in form.errors.items() %}
+    <div class="alert alert-danger" role="alert">
+        <strong>{{ form[field].label }}</strong>: {{ ', '.join(errors) }}
+    </div>
+    {% endfor %}
+    
+    <!-- 댓글 입력 필드 -->  
+    <form action="{{ url_for('answer.create', question_id=context.id) }}" method="post" class="my-3">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <textarea name="content" id="content" class="form-control" rows="10"></textarea>
+        </div>
+
+        <div class="form-group my-3">
+            <input type="submit" value="댓글등록" class="btn btn-primary">    
+        </div>
+        
+    </form>
+</div>
+{% endblock %}

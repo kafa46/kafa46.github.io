@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.4. 개발자 모드 설정 &#8212; Flask Tutorial for CJU Students</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Flask 기본 구조 소개" href="Section03_building_fundamentals/sec03_ch00_intro_fundamentals.html" />
+    <link rel="prev" title="2.3. FLASK_APP 설정" href="ch08-3_setting_FLAK_APP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Flask Tutorial for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="이 책 검색 ..." aria-label="이 책 검색 ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Flask Tutorial을 시작하며
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ch01_intro_to_flask.html">
+   1. Flask 소개 (Intro)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch02_todo_list.html">
+     1.3. Flask를 위한 사전 준비 목록
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch03_prep_intro_to_vscode.html">
+     1.4. 준비 1. VS Code 소개 및 설치
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch04_prep_anaconda_env.html">
+     1.5. 준비 2. 가상환경 및
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       anaconda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch05_prep_flask_installation.html">
+     1.6. 준비 3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       flask
+      </span>
+     </code>
+     설치
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch06_prep_gitignore.html">
+     1.7. 준비 4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .gitignore
+      </span>
+     </code>
+     세팅
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch07_prep_dependancy_requirements.html">
+     1.8. 준비 5. 의존성 파일
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requirement.txt
+      </span>
+     </code>
+     생성
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ch08_hello_world_flask.html">
+   2. 맛보기로 만드는 flask app
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-1_first_app_helloCJU.html">
+     2.1. Flask app 코딩
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-2_run_flask_server.html">
+     2.2. Flask 서버 실행
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-3_setting_FLAK_APP.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FLASK_APP
+      </span>
+     </code>
+     설정
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.4. 개발자 모드 설정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Section03_building_fundamentals/sec03_ch00_intro_fundamentals.html">
+   3. Flask 기본 구조 소개
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch01_basic_project_structure.html">
+     3.1. 프로젝트 기본 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch02_application_factory.html">
+     3.2. Application Factory 패턴
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch03_Blueprint_class.html">
+     3.3. Blueprint 클래스 활용
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04_ORM_model.html">
+     3.4. ORM 모델 완벽 이해
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-01_flask_ORM_library.html">
+       3.4.1. Flask ORM 설치
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-02_design_model.html">
+       3.4.2. 모델 설계 및 만들기
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-03_create_table.html">
+       3.4.3. DB 테이블 만들기
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-04_chedk_model.html">
+       3.4.4. 시각화 도구로 모델 확인
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-05_use_model.html">
+       3.4.5. 모델에 CRUD 해보기
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05_question_coding.html">
+     3.5. 질문 게시판 만들기
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-01_make_question_list_and_read.html">
+       3.5.1. Question List 조회
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-02_read_question_detail.html">
+       3.5.2. Question 상세 조회
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-03_404_error_handling.html">
+       3.5.3. 존재하지 않는 페이지 처리 - 404 오류
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-04_blueprint_func_seperation.html">
+       3.5.4. 기능 분리 - Blueprint 활용
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch06_reply_coding.html">
+     3.6. 게시판 댓글 구현
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch07_register_question.html">
+     3.7. 질문 &amp; 댓글 등록 - Flask Form 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch08_applying_CSS.html">
+     3.8. 예쁘게 - CSS 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch09_applying_Bootstrap.html">
+     3.9. 더 예쁘게 - Bootstrap 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch10_templates_inheritance.html">
+     3.10. HTML 구조와 Template 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch11_section_closing_comment.html">
+     3.11. Flask 기본기 마치며…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Section04_system_deploy/sec04_ch00_intro_distribution.html">
+   4. 서비스 배포
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch01_server.html">
+     4.1. 서버(Server)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch02_web_server.html">
+     4.2. 웹 서버
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch03_middleware.html">
+     4.3. 미들웨어
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Appendix/apdx00_appendix_list.html">
+   5. Appendix List
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx01_monolithic_vs_msa.html">
+     5.1. Monolithic vs. MSA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx02_subdomain.html">
+     5.2. 서브도메인(Sub-domain)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx03_aws_sing_up.html">
+     5.3. 아마존 AWS 회원가입
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="탐색 전환" aria-controls="site-navigation"
+                title="탐색 전환" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="이 페이지 다운로드"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Contents/ch08-4_setting_develop_mode.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="소스 파일 다운로드" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDF로 인쇄"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="소스 저장소"><i
+                    class="fab fa-github"></i>저장소</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/ch08-4_setting_develop_mode.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="이슈 열기"><i class="fas fa-lightbulb"></i>열린 문제</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="전체 화면으로보기"
+        title="전체 화면으로보기"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>개발자 모드 설정</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1><span class="section-number">2.4. </span>개발자 모드 설정<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>개발자 모드는 flask를 개발하면서 필요한 다양한 디버깅(deburgging) 기능을 제공하는 모드입니다.</p>
+<p>개발자 모드를 활성화하는 방법은 명령창에서 flask 환경 변수 <code class="docutils literal notranslate"><span class="pre">FLASK_ENV</span></code>를 <code class="docutils literal notranslate"><span class="pre">development</span></code> 로 변경해 주면 된다.</p>
+<p>변경하는 명령어는 <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">FLASK_ENV=development</span></code> 이다. 명령창에 입력한 모양은 다음과 같다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>가상환경이름<span class="o">)</span> C:<span class="se">\여</span>러분의 컴퓨터 경로<span class="se">\S</span>ource_codes&gt;set <span class="nv">FLASK_ENV</span><span class="o">=</span>development
+</pre></div>
+</div>
+<p>Flask 환경 변수 <code class="docutils literal notranslate"><span class="pre">FLASK_ENV</span></code> 를 설정하고 서버를 다시 실행하면 다음과 같은 메시지가 출력된다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>가상환경이름<span class="o">)</span> C:<span class="se">\여</span>러분의 컴퓨터 경로<span class="se">\S</span>ource_codes&gt;flask run
+ * Serving Flask app <span class="s1">&#39;hello_cju&#39;</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ * Environment: development
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: <span class="m">262</span>-914-443
+ * Running on http://127.0.0.1:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</pre></div>
+</div>
+<p>위 메시지를 보면
+서버 환경은 개발자 모드  <code class="docutils literal notranslate"><span class="pre">Environment:</span> <span class="pre">development</span></code> 로 잘 설정되어 있습니다.
+개발자 모드를 선택하니 디버그 모드 <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">mode:</span> <span class="pre">on</span></code> 가 자동으로 설정되고,
+<code class="docutils literal notranslate"><span class="pre">Debugger</span></code>가 작동되었다는 <code class="docutils literal notranslate"><span class="pre">Debugger</span> <span class="pre">is</span> <span class="pre">active!</span></code> 메시지도 출력되었습니다.
+서버를 재시작하는 <code class="docutils literal notranslate"><span class="pre">reloader</span></code>를 <code class="docutils literal notranslate"><span class="pre">stat</span></code>를 이용하는 <code class="docutils literal notranslate"><span class="pre">Restarting</span> <span class="pre">with</span> <span class="pre">stat</span></code> 메시지를 확인할 수 있습니다.</p>
+<div class="admonition-deburg-mode-on admonition">
+<p class="admonition-title">Deburg mode: on</p>
+<p>개발자 모드 (<code class="docutils literal notranslate"><span class="pre">Environment:</span> <span class="pre">development</span></code>)가 실행되면 자동으로 디버그 모드 (<code class="docutils literal notranslate"><span class="pre">Deburg</span> <span class="pre">mode</span></code>) 가 실행(<code class="docutils literal notranslate"><span class="pre">on</span></code>) 됩니다.</p>
+<p>디버그 모드는 2가지 편리한 기능을 개발자에게 제공합니다.</p>
+<ol class="simple">
+<li><p>코드를 수정하면 서브를 자동으로 재시작하여 변경된 내용을 적용해 줍니다.</p></li>
+<li><p>에러가 발생할 경우 에러 추적 (<code class="docutils literal notranslate"><span class="pre">traceback</span></code>) 결과를 알려 줍니다.</p></li>
+</ol>
+<p>디버그 모드가 있다면 개발자는 매우 편리합니다.</p>
+</div>
+<p>특이한 것은 <code class="docutils literal notranslate"><span class="pre">Debugger</span> <span class="pre">PIN</span></code> 이라는 정보가 표시된다는 점입니다.
+<code class="docutils literal notranslate"><span class="pre">Debugger</span> <span class="pre">PIN</span></code>은 <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">mode</span></code> 가 <code class="docutils literal notranslate"><span class="pre">on</span></code> 상태일 경우에 생성됩니다.
+에러가 발생한 경우에 대화형 디버거(<code class="docutils literal notranslate"><span class="pre">interactive</span> <span class="pre">debugger</span></code>)를 실행할 수 있는데 이 때 사용하는 것이 <code class="docutils literal notranslate"><span class="pre">Debugger</span> <span class="pre">PIN</span></code> 입니다.
+대화형 디버거(<code class="docutils literal notranslate"><span class="pre">interactive</span> <span class="pre">debugger</span></code>)를 사용하면 시스템의 여러가지 기능이나 설정을 마음대로 변경할 수 있기 때문에 시스템 공격자로부터 방어하기 위한 보안(<code class="docutils literal notranslate"><span class="pre">security</span></code>) 기능으로 제공되는 것이 <code class="docutils literal notranslate"><span class="pre">Debugger</span> <span class="pre">PIN</span></code> 입니다.</p>
+<p>개발자 모드 역시 <code class="docutils literal notranslate"><span class="pre">loacalhost</span></code> 로 서비스 됩니다.
+앞 장에서 이미 설명한 것과 마찬가지로 <code class="docutils literal notranslate"><span class="pre">http</span></code>는 프로토콜 이름, <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>는 서버의 IP 주소, <code class="docutils literal notranslate"><span class="pre">5000</span></code>은 포트 번호 입니다.</p>
+<ul class="simple">
+<li><p>서버의 아이피 주소가 <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>와 같은 형태를 <code class="docutils literal notranslate"><span class="pre">localhost</span></code>(로컬호스트)라고 부릅니다.</p></li>
+<li><p>현재는 전용 서버가 없고, 여러분의 컴퓨터가 서버가 되서 여러분의 컴퓨터에 서비스하는 상황을 뜻합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(Press</span> <span class="pre">CTRL+C</span> <span class="pre">to</span> <span class="pre">quit)</span></code> 는 Flask 서버를 중단하려면 <code class="docutils literal notranslate"><span class="pre">CTL</span> <span class="pre">+</span> <span class="pre">C</span></code> 키를 누르라는 뜻입니다.</p></li>
+</ul>
+<p>인터넷 브라우저를 열고 flask 서버의 IP 주소를 입력하면 우리가 만든 웹 시스템 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">CJU</span></code> 이 정상적으로 작동한 것을 확인할 수 있습니다.</p>
+<p>그림 <a class="reference internal" href="#sec01-05-browser-response"><span class="std std-numref">Fig. 2.5</span></a> 은 크롬 브라우저를 사용해 작동한 결과입니다.</p>
+<div class="figure align-left" id="sec01-05-browser-response">
+<a class="reference internal image-reference" href="../_images/sec01_05_browser_response.png"><img alt="vscode open terminal window" src="../_images/sec01_05_browser_response.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">크롬 브라우저에서 flask 서버에 요청한 결과</span><a class="headerlink" href="#sec01-05-browser-response" title="Permalink to this image">¶</a></p>
+</div>
+<p>브라우저 주소창에 <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> 대신에 <code class="docutils literal notranslate"><span class="pre">localhost</span></code> 를 입력해도 동일한 결과를 얻을 수 있습니다.</p>
+<div class="figure align-left" id="sec01-06-browser-response-localhost">
+<a class="reference internal image-reference" href="../_images/sec01_06_browser_response_localhost.png"><img alt="vscode open terminal window" src="../_images/sec01_06_browser_response_localhost.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6 </span><span class="caption-text">크롬 브라우저에서 IP 대신 <code class="docutils literal notranslate"><span class="pre">localhost</span></code>를 입력한 결과</span><a class="headerlink" href="#sec01-06-browser-response-localhost" title="Permalink to this image">¶</a></p>
+</div>
+<p>그림 <a class="reference internal" href="#sec01-06-browser-response-localhost"><span class="std std-numref">Fig. 2.6</span></a> 은 크롬 브라우저 주소창에 숫자로 된 IP 주소 대신에 <code class="docutils literal notranslate"><span class="pre">localhost</span></code> 입력하여 flask 서버로부터 응답을 받은 결과를 보여주고 있습니다.</p>
+<p>이제 flask 서버를 작동시키고 개발환경(디버그 모드)에서 실행할 수 있게 되었습니다.</p>
+<p>지금까지 우리는 목표 웹 시스템 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">CJU</span> <span class="pre">(hello_cju.py)</span></code>를 코딩하고,
+flask 서버에 실행시키고, 웹 브라으저를 이용해 서버에 요청을 보내고, 그 결과를 웹 브라우저 화면에서 확인하였습니다.</p>
+<p>우리가 구축한 웹 시스템은 5줄짜리 파이썬 프로그램(스크립트) 입니다.</p>
+<p>어떤 인터넷 사용자가 flask 서버로 서비스나 웹사이트 접속 요청(<code class="docutils literal notranslate"><span class="pre">request</span></code>)을 하는 경우
+<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world!</span> <span class="pre">Welcome</span> <span class="pre">to</span> <span class="pre">CJU</span></code> 라는 문자열을 보내주는(<code class="docutils literal notranslate"><span class="pre">response</span></code>) 아주 간단한 시스템입니다.</p>
+<p>지금은 보잘것 없어 보이는 시스템입니다.</p>
+<p>하지만 여러분이 여기까지 성공했다면 다음과 같은 것을 이해한 것입니다.</p>
+<ol class="simple">
+<li><p>웹 시스템에서 <code class="docutils literal notranslate"><span class="pre">앱(app)</span></code> 개념</p></li>
+<li><p>Flask 서버 개념</p></li>
+<li><p>웹 서버 라우팅(<code class="docutils literal notranslate"><span class="pre">routing</span></code>) 개념</p></li>
+<li><p>서버(<code class="docutils literal notranslate"><span class="pre">Flask</span></code>) - 클라이언트(<code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">브라우저</span></code>) 개념</p></li>
+<li><p>Flask 환경 설정 개념</p></li>
+</ol>
+<p>작지만 핵심적인 경험을 바탕으로 우리는 지금까지 만든 <code class="docutils literal notranslate"><span class="pre">hello_cju</span></code> 시스템을 조금씩 업그레이드 할 것입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Next</span></code> 를 클릭하여 이동해 보세요.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Contents"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch08-3_setting_FLAK_APP.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span><code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code> 설정</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Section03_building_fundamentals/sec03_ch00_intro_fundamentals.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Flask 기본 구조 소개</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      으로 Giseop Noh<br/>
+    
+        &copy; 저작권 Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

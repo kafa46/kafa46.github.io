@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}질문 목록{% endblock %}
+
+{% block content %}
+<!-- 기존 질문 리스트를 div 태그로 둘러싸고
+    클래스 이름이 'container my-3'인 디자인을 적용 -->
+<div class="container my-3">
+
+    <!-- 질문 목록을 표로 만들기 위한 table 태그 
+        추가하고 CSS 디자인은 'table'을 적용 -->
+    <table class="table">
+
+        <!-- 표 헤더(컬럼명)를 지정, 디자인은 'table-dark' 스타일 지정 -->
+        <thead>
+            <tr class="table-dark">
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일시</th>
+            </tr>
+        </thead>
+
+        <!-- 표 내용(tbody: table body)에 질문 목록을 렌더링 -->
+        <tbody>
+            {% if question_list %}
+            {% for question in question_list %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>
+                    <a href="{{ url_for('question.detail', question_id=question.id) }}">
+                        {{ question.title }}</a>
+                </td>
+                <td>{{question.create_date}}</td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <p>질문이 없습니다.</p>
+
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- 질문 등록하기 버튼에 CSS 'btn btn-primary' 스타일 지정 -->
+    <a href="{{ url_for('question.create') }} " class="btn btn-primary">
+        질문 등록하기
+    </a>
+</div>
+{% endblock %}
