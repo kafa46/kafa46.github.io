@@ -49,17 +49,24 @@ chapters:
   - file: Contents/Section03_building_fundamentals/sec03_ch10_templates_inheritance
   - file: Contents/Section03_building_fundamentals/sec03_ch11_section_closing_comment
 
+# 서비스 배포
 - file: Contents/Section04_system_deploy/sec04_ch00_intro_distribution
   sections:
   - file: Contents/Section04_system_deploy/sec04_ch01_server
-  - file: Contents/Section04_system_deploy/sec04_ch02_web_server
-  - file: Contents/Section04_system_deploy/sec04_ch03_middleware
+  - file: Contents/Section04_system_deploy/sec04_ch02_move_to_server
+  - file: Contents/Section04_system_deploy/sec04_ch03_deploy_via_flask_server
+  - file: Contents/Section04_system_deploy/sec04_ch04_web_server
+  - file: Contents/Section04_system_deploy/sec04_ch05_middleware
 
+# Appendix
 - file: Contents/Appendix/apdx00_appendix_list
   sections:
   - file: Contents/Appendix/apdx01_monolithic_vs_msa
   - file: Contents/Appendix/apdx03_aws_sing_up
   - file: Contents/Appendix/apdx04_EC2_server_create
+  - file: Contents/Appendix/apdx05_ssh_connection_to_server
+  - file: Contents/Appendix/apdx0x_tmux
   - file: Contents/Appendix/apdx02_subdomain
+
   
 

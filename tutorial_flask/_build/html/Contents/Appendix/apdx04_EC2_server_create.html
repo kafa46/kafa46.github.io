@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.4. 서브도메인(Sub-domain)" href="apdx02_subdomain.html" />
+    <link rel="next" title="5.4. 아마존 클라우드 서버에 접속하기" href="apdx05_ssh_connection_to_server.html" />
     <link rel="prev" title="5.2. AWS 회원가입 및 MFA 설정" href="apdx03_aws_sing_up.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -381,8 +381,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="apdx05_ssh_connection_to_server.html">
+     5.4. 아마존 클라우드 서버에 접속하기
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="apdx02_subdomain.html">
-     5.4. 서브도메인(Sub-domain)
+     5.5. 서브도메인(Sub-domain)
     </a>
    </li>
   </ul>
@@ -497,7 +502,14 @@
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/appendix_20_ec2_select_menu.png"><img alt="../../_images/appendix_20_ec2_select_menu.png" class="bg-primary mb-1" src="../../_images/appendix_20_ec2_select_menu.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.23 </span><span class="caption-text">클라우드 서버 생성을 위한 메뉴 선택</span><a class="headerlink" href="#appendix-20-ec2-select-menu" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#appendix-20-ec2-select-menu"><span class="std std-numref">Fig. 5.23</span></a>에서 <code class="docutils literal notranslate"><span class="pre">EC2</span></code> 링크를 클릭하면 나오는 화면에서 다음 순서와 같이 그림 <a class="reference internal" href="#appendix-20-ec2-select-menu"><span class="std std-numref">Fig. 5.23</span></a>와 를 참고해서 우리가 원하는 서버를 선택합니다.</p>
+<p>그림 <a class="reference internal" href="#appendix-20-ec2-select-menu"><span class="std std-numref">Fig. 5.23</span></a>에서 <code class="docutils literal notranslate"><span class="pre">EC2</span></code> 링크를 클릭합니다.
+화면에 다양한 옵션 중에서 하나를 클릭해서 본인의 입맛에 맞는 클라우드 서버(인스턴스)를 생성할 수 있습니다.</p>
+<p>그 중에서 공짜 <code class="docutils literal notranslate"><span class="pre">프리</span> <span class="pre">티어</span> <span class="pre">사용</span> <span class="pre">가능</span></code>한 것 중에서 고르면 됩니다. 우리는 리눅스 운영체제가 설치된 서버가 필요합니다. 리눅스도 다양한 파생형들이 있습니다.</p>
+<p>그림 <a class="reference internal" href="#appendix-20-ec2-select-menu"><span class="std std-numref">Fig. 5.23</span></a>와 를 참고해서 우리가 원하는 서버를 선택합니다.
+물론 여러분들이 다른 형태의 <code class="docutils literal notranslate"><span class="pre">페도라</span></code>, <code class="docutils literal notranslate"><span class="pre">센토스</span></code> 같은 리눅스에 익숙하다면
+원하는 리눅스 버전을 선택할 수 있습니다.
+선택은 여러분 자유입니다. 엄청 편리하죠?</p>
+<p>우리는 세계적으로 가장 많이 사용되는 <code class="docutils literal notranslate"><span class="pre">우분투(Ubuntu)</span> <span class="pre">리눅스</span></code>가 설치된 클라우드 서버(인스턴스)를 만들어 보겠습니다. 우분투에 대한 자세한 정보는 <a class="reference external" href="https://ubuntu.com/">우분투 공식문서</a>를 참고하기 바랍니다.</p>
 <div class="figure align-left" id="appendix-21-ec2-select-instance">
 <a class="bg-primary mb-1 reference internal image-reference" href="../../_images/appendix_21_ec2_select_instance.png"><img alt="../../_images/appendix_21_ec2_select_instance.png" class="bg-primary mb-1" src="../../_images/appendix_21_ec2_select_instance.png" style="width: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.24 </span><span class="caption-text">클라우드 서버 생성을 위한 메뉴 선택</span><a class="headerlink" href="#appendix-21-ec2-select-instance" title="Permalink to this image">¶</a></p>
@@ -606,10 +618,10 @@ VS code <code class="docutils literal notranslate"><span class="pre">remote-SSH<
             <p class="prev-next-title"><span class="section-number">5.2. </span>AWS 회원가입 및 MFA 설정</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="apdx02_subdomain.html" title="next page">
+    <a class='right-next' id="next-link" href="apdx05_ssh_connection_to_server.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>서브도메인(Sub-domain)</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>아마존 클라우드 서버에 접속하기</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. 웹 서버" href="sec04_ch02_web_server.html" />
+    <link rel="next" title="4.2. 서버로 파일 옮기기" href="sec04_ch02_move_to_server.html" />
     <link rel="prev" title="4. 서비스 배포" href="sec04_ch00_intro_distribution.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -342,13 +342,23 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sec04_ch02_web_server.html">
-     4.2. 웹 서버
+    <a class="reference internal" href="sec04_ch02_move_to_server.html">
+     4.2. 서버로 파일 옮기기
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="sec04_ch03_middleware.html">
-     4.3. 미들웨어
+    <a class="reference internal" href="sec04_ch03_deploy_via_flask_server.html">
+     4.3. Flask 서버로 간단히 배포하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec04_ch04_web_server.html">
+     4.4. 웹 서버
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sec04_ch05_middleware.html">
+     4.5. 미들웨어 - WAS 서버
     </a>
    </li>
   </ul>
@@ -369,13 +379,23 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Appendix/apdx02_subdomain.html">
-     5.2. 서브도메인(Sub-domain)
+    <a class="reference internal" href="../Appendix/apdx03_aws_sing_up.html">
+     5.2. AWS 회원가입 및 MFA 설정
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Appendix/apdx03_aws_sing_up.html">
-     5.3. AWS 회원가입 및 MFA 설정
+    <a class="reference internal" href="../Appendix/apdx04_EC2_server_create.html">
+     5.3. 아마존 EC2 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx05_ssh_connection_to_server.html">
+     5.4. 아마존 클라우드 서버에 접속하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx02_subdomain.html">
+     5.5. 서브도메인(Sub-domain)
     </a>
    </li>
   </ul>
@@ -487,6 +507,11 @@
      4.1.2.2. Amazon 클라우드 서버 생성
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     4.1.2.3. Amazon 클라우드 접속 하기
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -529,6 +554,11 @@
      4.1.2.2. Amazon 클라우드 서버 생성
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     4.1.2.3. Amazon 클라우드 접속 하기
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -543,6 +573,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="server">
 <h1><span class="section-number">4.1. </span>서버(Server)<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
 <p>우리가 만든 서비스를 제공해 줄 컴퓨터가 필요하겠죠?</p>
+<p>서버는 사용자들이 앉아서 정보를 입력하고 모니터로 결과를 확인하는 컴퓨터가 아니라 다양한 연산을 수행하는 것이 목적이므로 대부분 납작한 본체처럼 생겼습니다. 서버는 여러대가 필요한 경우가 많아서 선반(랙, Rack)에 여러개를 꽃아서 사용하는 경우가 많습니다. 개별 서버인 경우 우리가 사용하는 데스크탑과 똑같이 생긴 경우도 많습니다.</p>
 <p>우리는 정보를 제공해줄 컴퓨터를 <code class="docutils literal notranslate"><span class="pre">서버(Server)</span></code>라고 부릅니다. 서브는 사용자들이 앉아서 정보를 입력하고 모니터로 결과를 확인하는 컴퓨터가 아니라 다양한 연산을 수행하는 것이 목적이므로 대부분 납작한 본체처럼 생겼습니다.</p>
 <div class="figure align-left" id="sec04-01-server">
 <a class="reference internal image-reference" href="../../_images/sec04_01_server.png"><img alt="flask_tutorial" src="../../_images/sec04_01_server.png" style="width: 700px;" /></a>
@@ -583,6 +614,15 @@
 <p>우리는 <code class="docutils literal notranslate"><span class="pre">Amazon</span> <span class="pre">EC2</span> <span class="pre">Console</span></code>에서 제공하는 메뉴를 클릭해 가면서 쉽게 만들 수 있습니다.
 클라우드 서버를 만드는 과정은 <a class="reference internal" href="../Appendix/apdx00_appendix_list.html"><span class="doc std std-doc">Appendix List</span></a>에 정리된 <a class="reference internal" href="../Appendix/apdx04_EC2_server_create.html"><span class="doc std std-doc">아마존 EC2 서버 만들기</span></a>를 참고하기 바랍니다.</p>
 </div>
+<div class="section" id="id1">
+<h3><span class="section-number">4.1.2.3. </span>Amazon 클라우드 접속 하기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Amazon</span> <span class="pre">EC2</span></code> 서버를 만들었다면 접속해야 겠죠?
+클라우드 서버는 우리 눈에 보이지 않습니다.
+어디에 있는지도 모릅니다.
+지구상 어딘가에 있다는 것만 압니다.
+서버에 접속하기 위해서는 서버의 IP주소, 포트 번호, 아이디 등이 필요합니다.</p>
+<p>클라우드 서버에 접속하기 위한 자세한 내용은 <a class="reference internal" href="../Appendix/apdx00_appendix_list.html"><span class="doc std std-doc">Appendix List</span></a>에 정리된 <a class="reference internal" href="../Appendix/apdx05_ssh_connection_to_server.html"><span class="doc std std-doc">아마존 클라우드 서버에 접속하기</span></a>를 참고하기 바랍니다.</p>
+</div>
 </div>
 </div>
 
@@ -618,10 +658,10 @@
             <p class="prev-next-title"><span class="section-number">4. </span>서비스 배포</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="sec04_ch02_web_server.html" title="next page">
+    <a class='right-next' id="next-link" href="sec04_ch02_move_to_server.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>웹 서버</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>서버로 파일 옮기기</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

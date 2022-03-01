@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.3. 미들웨어 &#8212; Flask Tutorial for CJU Students</title>
+    <title>4.4. 미들웨어 - WAS 서버 &#8212; Flask Tutorial for CJU Students</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. Appendix List" href="../Appendix/apdx00_appendix_list.html" />
-    <link rel="prev" title="4.2. 웹 서버" href="sec04_ch02_web_server.html" />
+    <link rel="prev" title="4.3. 웹 서버" href="sec04_ch02_web_server.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -86,7 +86,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="이 책 검색 ..." aria-label="이 책 검색 ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -342,13 +342,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="sec04_ch01_deploy_via_flask_server.html">
+     4.2. Flask 서버를 이용하여 간단하게 배포하기
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="sec04_ch02_web_server.html">
-     4.2. 웹 서버
+     4.3. 웹 서버
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. 미들웨어
+     4.4. 미들웨어 - WAS 서버
     </a>
    </li>
   </ul>
@@ -369,13 +374,23 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Appendix/apdx02_subdomain.html">
-     5.2. 서브도메인(Sub-domain)
+    <a class="reference internal" href="../Appendix/apdx03_aws_sing_up.html">
+     5.2. AWS 회원가입 및 MFA 설정
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Appendix/apdx03_aws_sing_up.html">
-     5.3. 아마존 AWS 회원가입
+    <a class="reference internal" href="../Appendix/apdx04_EC2_server_create.html">
+     5.3. 아마존 EC2 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx05_ssh_connection_to_server.html">
+     5.4. 아마존 클라우드 서버에 접속하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Appendix/apdx02_subdomain.html">
+     5.5. 서브도메인(Sub-domain)
     </a>
    </li>
   </ul>
@@ -405,8 +420,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="탐색 전환" aria-controls="site-navigation"
-                title="탐색 전환" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -414,7 +429,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="이 페이지 다운로드"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -422,10 +437,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../../_sources/Contents/Section04_system_deploy/sec04_ch03_middleware.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="소스 파일 다운로드" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="PDF로 인쇄"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -438,12 +453,12 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="소스 저장소"><i
-                    class="fab fa-github"></i>저장소</button></a>
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
             href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/Section04_system_deploy/sec04_ch03_middleware.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="이슈 열기"><i class="fas fa-lightbulb"></i>열린 문제</button></a>
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
@@ -451,8 +466,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="전체 화면으로보기"
-        title="전체 화면으로보기"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -463,18 +478,28 @@
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> 내용
+                <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.4.1. 웹 브라우저 작동 방식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   4.4.2. WAS의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uwsgi">
-   4.3.1. uWSGI
+   4.4.3. uWSGI
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gunicorn">
-   4.3.2. Gunicorn
+   4.4.4. Gunicorn
   </a>
  </li>
 </ul>
@@ -487,24 +512,34 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>미들웨어</h1>
+                <h1>미들웨어 - WAS 서버</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> 내용 </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.4.1. 웹 브라우저 작동 방식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   4.4.2. WAS의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uwsgi">
-   4.3.1. uWSGI
+   4.4.3. uWSGI
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gunicorn">
-   4.3.2. Gunicorn
+   4.4.4. Gunicorn
   </a>
  </li>
 </ul>
@@ -516,36 +551,22 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">4.3. </span>미들웨어<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>uWSGI와 Gunicorn의 간단한 비교</p>
-<div class="section" id="uwsgi">
-<h2><span class="section-number">4.3.1. </span>uWSGI<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h2>
-<p>가장 많이 사용</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="was">
+<h1><span class="section-number">4.4. </span>미들웨어 - WAS 서버<a class="headerlink" href="#was" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><span class="section-number">4.4.1. </span>웹 브라우저 작동 방식<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>정적요청</p></li>
+<li><p>동적요청</p></li>
+</ul>
 </div>
-<div class="section" id="gunicorn">
-<h2><span class="section-number">4.3.2. </span>Gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h2>
-<p>최근에 많이 사용</p>
-<p>기본기 <a class="reference internal" href="../Section03_building_fundamentals/sec03_ch00_intro_fundamentals.html"><span class="doc std std-doc">Flask 기본 구조 소개</span></a> 배우고 간단한 웹 시스템을 만들거나, 중급/고급 기술까지 배워서 보다 많은 기능을 갖는 웹 시스템을 만들었거나…</p>
-<p>어쨌든 지금까지는 여러분들의 로컬 컴퓨터 (PC)에서 돌아가고 테스트 했습니다.
-브라우저 검색창에 URL 주소를 <code class="docutils literal notranslate"><span class="pre">127.0.0.1:5000</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">localhost:5000</span></code> 이렇게 입력하고 접속했습니다.</p>
-<p>하지만 이런 상황이 정상일까요?</p>
-<p>웹 시스템을 개발하고 혼자서 자기만족으로 끝난다면 정상적인 상황입니다.
-하지만 혼자서 감상하려고 만드는 웹 시스템이 이 세상에 있을까요?</p>
-<p>곰곰히 생각해 보세요~
-결단코 혼자서 감상하려고 만드는 웹 시스템은 없습니다!!!
-결국 웹 시스템은 누군가에게 정보를 제공하려고 만드는 것입니다.
-정보를 제공하는 방법은 인터넷을 이용하는 것입니다.</p>
-<p>인터넷을 이용해서 정보를 요청하는 사람은 임의이 인터넷 사용자일 것입니다.
-필요하다면 로그인과 같이 권한을 제어할 수도 있지만 어쨌든 누가 요청할지는 모르는 일입니다.
-정보 요청하는 사람은 각자 컴퓨터에 있는 브라우저(크롬 등)를 띄우고 주소창에 주소를 입력하면 그만입니다.</p>
-<p>그런데 인터넷을 이용해서 정보를 제공하려면 약간 복잡해 집니다.</p>
-<p>우선 정보를 제공해줄 컴퓨터가 필요하겠죠? 우리는 정보를 제공해줄 컴퓨터를 <code class="docutils literal notranslate"><span class="pre">서버(Server)</span></code>라고 부릅니다. 서브는 사용자들이 앉아서 정보를 입력하고 모니터로 결과를 확인하는 컴퓨터가 아니라 다양한 연산을 수행하는 것이 목적이므로 대부분 납작한 본체처럼 생겼습니다. 서버는 여러대가 필요한 경우가 많아서 선반(랙, Rack)에 여러개를 꽃아서 사용하는 경우가 많습니다. 개별 서버인 경우 우리가 사용하는 데스크탑과 똑같이 생긴 경우도 많습니다.</p>
-<p>사용자가 언제 정보를 요청할지 모르기 때문에 서버는 365일 24시간 대기 하면서 사용자의 요청이 있을 때마다 바로바로 정보를 제공해 주어야 합니다.</p>
-<p>서버는 그냥 컴퓨터라고 봐도 됩니다. 사용자는 웹 시스템을 HTTP 프로토콜(전송방식)을 사용해서 요청합니다. 그렇다면 HTTP 요청을 전문으로 처리하는 프로그램이 필요하겠죠? 항상 켜져 있는 컴퓨터 <code class="docutils literal notranslate"><span class="pre">서버</span></code>에서 HTTP 요청을 처리하기 위해 항상 돌아가고 있는 프로그램을 <code class="docutils literal notranslate"><span class="pre">웹</span> <span class="pre">서버(Web</span> <span class="pre">Server)</span></code>라고 합니다.</p>
-<p>대표적인 웹 서버는 <code class="docutils literal notranslate"><span class="pre">Nginx</span></code>(엔진엑스)와 <code class="docutils literal notranslate"><span class="pre">Apache</span></code>(아파치)가 있습니다. 어떤 웹 서버를 사용해도 좋습니다. 우리는 사람들이 좀 더 많이 쓰고, 파이썬과 궁합이 잘 맞는 것으로 알려진 Nginx를 사용하도록 하겠습니다.</p>
-<p>여기서 한 가지 문제가 더 있습니다. 웹 시스템을 만드는 방법이 다양하다는 것입니다.
-우리는 지금까지 <code class="docutils literal notranslate"><span class="pre">Flask</span></code> 프레임워크를 이용해서 웹 시스템을 만들었습니다.
+<div class="section" id="id2">
+<h2><span class="section-number">4.4.2. </span>WAS의 필요성<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>우리는 서버를 하나 장만했습니다.
+비록 공짜이긴 하지만 나름대로 아마존에 클라우드 서버를 만들었습니다.
+그리고 웹 서버 <code class="docutils literal notranslate"><span class="pre">Nginx</span></code>도 클라우드 서버에 설치했습니다.</p>
+<p>그런데… 여기서 한 가지 문제가 더 있습니다. 웹 시스템을 만드는 방법이 다양하다는 것입니다.</p>
+<p>우리는 지금까지 <code class="docutils literal notranslate"><span class="pre">Flask</span></code> 프레임워크를 이용해서 웹 시스템을 만들었습니다.
 그런데 웹 시스템을 만드는 프레임워크는 <code class="docutils literal notranslate"><span class="pre">Django</span></code>, <code class="docutils literal notranslate"><span class="pre">Spring</span></code>, <code class="docutils literal notranslate"><span class="pre">STRUTS</span></code>, <code class="docutils literal notranslate"><span class="pre">AngularJS</span></code> 등 다양합니다.</p>
 <p>우리가 Nginx 웹서버를 선택했다고 하더라도 어떤 프레임워크로 만든 시스템을 작동시켜야 하는지 잘 모릅니다. Flask는 파이썬으로 만들어진 프레임워크입니다. 그러니 Nginx와 Flask 사이에서 중간 다리 역할을 해줄 무언가가 필요합니다.</p>
 <p>웹 서버와 애플리케이션(Flask, Django 등으로 만든 시스템) 사이에서 중간 다리 역할을 하는 것을  <code class="docutils literal notranslate"><span class="pre">Middleware</span></code>(미들웨어) 또는 <code class="docutils literal notranslate"><span class="pre">WAS</span></code>(Web Application Server, <code class="docutils literal notranslate"><span class="pre">와스</span></code>라고 읽음)라고 부릅니다.</p>
@@ -558,7 +579,13 @@ WSGI는 파이썬 표준으로 PEP 3333 – Python Web Server Gateway (<a class=
 대표적인 WSGI 라이브러리는 <code class="docutils literal notranslate"><span class="pre">uWSGI</span></code>와 <code class="docutils literal notranslate"><span class="pre">Gunicorn</span></code> 같은 것들이 있습니다.</p>
 <p>우리는 서버, 웹 서버, 웹 애플리케이션 서버 순으로 자세한 내용을 살펴보도록 하겠습니다.
 각각을 살펴보고 마지막에는 하나로 연결하여 최종 배포(Deploy)를 완성할 예정입니다.</p>
-<p>여러분, 준비 되셨나요?</p>
+</div>
+<div class="section" id="uwsgi">
+<h2><span class="section-number">4.4.3. </span>uWSGI<a class="headerlink" href="#uwsgi" title="Permalink to this headline">¶</a></h2>
+<p>가장 많이 사용하는 것으로 알려진 WSGI 입니다.</p>
+</div>
+<div class="section" id="gunicorn">
+<h2><span class="section-number">4.4.4. </span>Gunicorn<a class="headerlink" href="#gunicorn" title="Permalink to this headline">¶</a></h2>
 <p>그러면 차근차근 스텝을 밟아 보도록 하겠습니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Next</span></code> 아이콘을 클릭하여 시작해 보세요.</p>
 </div>
@@ -593,7 +620,7 @@ WSGI는 파이썬 표준으로 PEP 3333 – Python Web Server Gateway (<a class=
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.2. </span>웹 서버</p>
+            <p class="prev-next-title"><span class="section-number">4.3. </span>웹 서버</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Appendix/apdx00_appendix_list.html" title="next page">
@@ -610,9 +637,9 @@ WSGI는 파이썬 표준으로 PEP 3333 – Python Web Server Gateway (<a class=
     <footer class="footer">
   <p>
     
-      으로 Giseop Noh<br/>
+      By Giseop Noh<br/>
     
-        &copy; 저작권 Prof. Giseop Noh in Cheongju University.<br/>
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
       <div class="extra_footer">
         <p>
     본 책자에 적용되는 라이센스 
