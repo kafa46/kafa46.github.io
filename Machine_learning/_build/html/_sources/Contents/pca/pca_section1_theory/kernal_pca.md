@@ -1,3 +1,0 @@
-# Kernal PCA
-
-Kernal PCA
