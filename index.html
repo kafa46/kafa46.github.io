@@ -10,37 +10,59 @@
     <title>Book List</title>
 </head>
 <body>
-    <h1>청주대 학생을 위한 노기섭 교수님의 Book 시리즈</h1>
+    <div class="alert alert-primary" role="alert">
+        청주대학교 소프트웨어융합학부 학생 여러분 반갑습니다. 
+    </div>
+
+    <div class="container">
+        <p class="h3">노기섭 교수님의 Book 시리즈</p>
+        <div class="container my-3">
+            <table class="table">
+                <thead>
+                    <tr class="thead-dark">
+                        <th scope="col">책번호</th>
+                        <th scope="col">제목</th>
+                        <th>내용</th>
+                        <th>바로가기</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">1</td>
+                        <td class="text-primary"><a href="./tutorial_flask/index.html">Flask 튜토리얼</a></td>
+                        <td>CJU 학생을 위한 Flask 기반 웹 시스템 개발 가이드입니다.</td>
+                        <td><a class="btn btn-primary" href="./tutorial_flask/index.html">Click Me!</a></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td class="text-primary"><a href="./tutorial_pep8_guide/index.html">PEP 8 가이드북</a></td>
+                        <td>Python Enhancement Proposal 8:<br>
+                            파이썬 코딩 스타일 (Pythonic!) 가이드 <br>
+                            파이썬을 파이썬 답게 사용하는 기초 발걸음입니다 <br>
+                            개발자라면 누구나 알고 있지만 <br>
+                            아무도 알려주지 않는 지식을 차근차근 설명합니다.
+                        </td>
+                        <td><a class="btn btn-primary" href="./tutorial_pep8_guide/index.html">Click Me!</a></td>
+                    </tr>                
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="container my-3">
-        <table class="table">
-            <thead>
-                <tr class="thead-dark">
-                    <th scope="col">책번호</th>
-                    <th scope="col">제목</th>
-                    <th>내용</th>
-                    <th>바로가기</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>Flask 튜토리얼</td>
-                    <td>CJU 학생을 위한 Flask 기반 웹 시스템 개발 가이드입니다.</td>
-                    <td><a href="./tutorial_flask/index.html">Click Me!</a></td>
-                </tr>
-                <tr>
-                    <td scope="row">2</td>
-                    <td>PEP 8 튜토리얼</td>
-                    <td>Python Enhancement Proposal 8:<br>
-                        파이썬 코딩 스타일 (Pythonic!) 가이드 <br>
-                        파이썬을 파이썬 답게 사용하는 기초 발걸음입니다 <br>
-                        개발자라면 누구나 알고 있지만 <br>
-                        아무도 알려주지 않는 지식을 차근차근 설명합니다.
-                    </td>
-                    <td><a href="./tutorial_pep8_guide/index.html">Click Me!</a></td>
-                </tr>                
-            </tbody>
-        </table>
+        <div class="container my-3">교수님의 책은 계속해서 추가 됩니다.</div>
+        <div class="container my-3">그리고 계속해서 업데에트될 예정입니다.</div>
+    </div>
+
+    <div class="container my-3"> 
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              궁금한거? 오타발견?
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">email: kafa46@cju.ac.kr</li>
+              <li class="list-group-item">Tel: 043-229-8486</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
