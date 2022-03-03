@@ -11,6 +11,14 @@ copyright: 'Prof. Giseop Noh in Cheongju University'
 execute:
   execute_notebooks: off
 
+# Information about where the book exists on the web
+repository: 
+  url: https://github.com/kafa46/kafa46.github.io
+  path_to_book: tutorial_flask # An optional path to your book, defaults to repo root
+  branch: gh-pages  # An optional branch, defaults to `master`
+html:
+  use_edit_page_button: true
+
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
