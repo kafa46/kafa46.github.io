@@ -683,7 +683,7 @@
 <span class="cm">&lt;!-- 댓글 입력을 위해 추가한 부분 --&gt;</span>
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;answer.create&#39;, question_id=context.id) }} &quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;contents&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;contents&quot;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;댓글 등록&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;댓글 등록&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -837,10 +837,10 @@ Did you mean &#39;main.index&#39; instead?
     <span class="c1"># 다음과 같이 해도 동일하게 저장됩니다.</span>
     <span class="c1"># 아래 코드는 위 코드와 정확히 동일한 코드입니다.</span>
     <span class="c1"># answer = Answer(</span>
-        <span class="n">question</span><span class="o">=</span><span class="n">question</span><span class="p">,</span> 
-        <span class="n">contents</span><span class="o">=</span><span class="n">contents</span><span class="p">,</span> 
-        <span class="n">create_date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-    <span class="p">)</span>
+    <span class="c1">#    question=question, </span>
+    <span class="c1">#    contents=contents, </span>
+    <span class="c1">#    create_date=datetime.now()</span>
+    <span class="c1">#)</span>
     
     <span class="c1"># Answer 클래스의  db.relationship 속성 중</span>
     <span class="c1"># backref를 이용하여 Question 클래스에서 등록한</span>
@@ -925,7 +925,7 @@ ORM 모델 <code class="docutils literal notranslate"><span class="pre">Answer</
     <span class="c1"># Blueprint 객체 bp를 등록합니다.</span>
     <span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">main_views</span><span class="o">.</span><span class="n">bp</span><span class="p">)</span>
     <span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">question_views</span><span class="o">.</span><span class="n">bp</span><span class="p">)</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">answer_views</span><span class="p">)</span> <span class="c1"># answer_view 추가 등록</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">register_blueprint</span><span class="p">(</span><span class="n">answer_views</span><span class="o">.</span><span class="n">bp</span><span class="p">)</span> <span class="c1"># answer_view 추가 등록</span>
     
     <span class="k">return</span> <span class="n">app</span> 
 </pre></div>

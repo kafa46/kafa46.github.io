@@ -86,7 +86,7 @@ name: sec03_30_set_secret_key
 질문 목록이 있는 페이지 `question_list.html` 아래쪽에 질문 등록하기 링크를 만듭니다.
 
 ```{code} html
-# 파일경로: hello_cju/templates/question_detail.html
+# 파일경로: hello_cju/templates/question_list.html
       :
   (앞부분 생략)
       :

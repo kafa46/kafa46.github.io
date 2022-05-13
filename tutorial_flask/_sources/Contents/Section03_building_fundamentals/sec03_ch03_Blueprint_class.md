@@ -125,8 +125,8 @@ Parameters:
         be specified manually instead.
 ```
 
-Flask 공식 문서([클릭](https://flask.palletsprojects.com/en/2.0.x/api/?highlight=blueprint#flask.Blueprint))에는 모든 인자에 `대한 설명이 제시되어 있습니다. 
-위 코드는 우리가 사용할 3개 인자 `main`, `import_name``, `url_prefix=`에 대한 설명만 표시하였습니다.
+Flask 공식 문서([클릭](https://flask.palletsprojects.com/en/2.0.x/api/?highlight=blueprint#flask.Blueprint))에는 모든 인자에 대한 설명이 제시되어 있습니다. 
+위 코드는 우리가 사용할 3개 인자 `main`, `import_name`, `url_prefix=`에 대한 설명만 표시하였습니다.
 
 3개 인자 중에서 `main`, `import_name`는 반드시 제공해야 하는 값입니다. 
 `url_prefix=` 인자는 값을 제공해도 되고 생략해도 가능합니다. 생략하게 되면 디폴트(default) 값으로 `None`이 자동 지정됩니다. 각 인자값들이 의미하는 것에 대해 살펴보도록 하겠습니다.

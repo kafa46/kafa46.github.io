@@ -16,6 +16,9 @@ Flask 앱 이름은 개발자가 코딩한 `XXX.py`라는 모듈에서 확장자
 ```{code} bash
 (가상환경이름) C:\ 여러분의 컴퓨터 경로\ Source_codes>set FLASK_APP=hello_cju
 ```
+```{note}
+Linux 환경일 경우 `set` 명령어 대신 `export` 명령어를 사용합니다.
+```
 
 위 명령어를 실행하고 다시 `flask run` 명령어를 입력하면 
 아래와 같은 메시지를 출력하면서 flask 서버가 작동합니다.

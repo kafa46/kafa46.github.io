@@ -58,7 +58,7 @@
 <!-- 댓글 입력을 위해 추가한 부분 -->
 <form action="{{ url_for('answer.create', question_id=context.id) }} " method="post">
     <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
-    <input type="button" value="댓글 등록">
+    <input type="submit" value="댓글 등록">
 </form>
 ```
 
@@ -232,10 +232,10 @@ def create(question_id):
     # 다음과 같이 해도 동일하게 저장됩니다.
     # 아래 코드는 위 코드와 정확히 동일한 코드입니다.
     # answer = Answer(
-        question=question, 
-        contents=contents, 
-        create_date=datetime.now()
-    )
+    #    question=question, 
+    #    contents=contents, 
+    #    create_date=datetime.now()
+    #)
     
     # Answer 클래스의  db.relationship 속성 중
     # backref를 이용하여 Question 클래스에서 등록한
@@ -339,7 +339,7 @@ def create_app(): # 함수 생성
     # Blueprint 객체 bp를 등록합니다.
     app.register_blueprint(main_views.bp)
     app.register_blueprint(question_views.bp)
-    app.register_blueprint(answer_views) # answer_view 추가 등록
+    app.register_blueprint(answer_views.bp) # answer_view 추가 등록
     
     return app 
 ```
