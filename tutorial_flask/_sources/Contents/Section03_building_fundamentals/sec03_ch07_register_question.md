@@ -173,7 +173,7 @@ name: sec03_31_form_coding
 
 `create`함수에 Flask 서버에서 할 일을 처리하고 리턴 값인 템플릿 경로를 찾아가게 됩니다.
 
-아직까지 `question_list.html`에 `create` 함수가 없으므로 다음과 같이 코딩해 줍니다.
+아직까지 `question_views.html`에 `create` 함수가 없으므로 다음과 같이 코딩해 줍니다.
 
 ```{code} python
 
@@ -816,7 +816,7 @@ return render_template(
 그렇게 되면 `form`에 있는 모든 필드가 `None`으로 다시 채워지게 됩니다.
 원래 코드였던 아래 `question_form.html`에서는 각 필드를 `None`으로 다시 채울 겁니다.
 
-```{code} html
+```{code}
 
 <!-- 수기로 만든 form -->
 <div>

@@ -823,7 +823,7 @@ CSRF 토큰은 <code class="docutils literal notranslate"><span class="pre">form
 다시 한번 말하지만 <code class="docutils literal notranslate"><span class="pre">view</span></code>는 템플릿 렌더링 하기 이전에 서버에서 처리할 작업을 정의하는 것입니다.</p>
 <p>질문 목록이 있는 페이지 <code class="docutils literal notranslate"><span class="pre">question_list.html</span></code>에 정의한 코드 <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;{{</span> <span class="pre">url_for('question.create')</span> <span class="pre">}}</span> <span class="pre">&quot;&gt;질문</span> <span class="pre">등록하기&lt;/a&gt;</span></code>에 의해 서버로 요청이 오면 Flask 서버는 블루프린트 이름 <code class="docutils literal notranslate"><span class="pre">name</span></code>이 <code class="docutils literal notranslate"><span class="pre">question</span></code>인 객체를 찾고, 그 블루프린트에 등록된 <code class="docutils literal notranslate"><span class="pre">create</span></code> 함수를 찾게 됩니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">create</span></code>함수에 Flask 서버에서 할 일을 처리하고 리턴 값인 템플릿 경로를 찾아가게 됩니다.</p>
-<p>아직까지 <code class="docutils literal notranslate"><span class="pre">question_list.html</span></code>에 <code class="docutils literal notranslate"><span class="pre">create</span></code> 함수가 없으므로 다음과 같이 코딩해 줍니다.</p>
+<p>아직까지 <code class="docutils literal notranslate"><span class="pre">question_views.html</span></code>에 <code class="docutils literal notranslate"><span class="pre">create</span></code> 함수가 없으므로 다음과 같이 코딩해 줍니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 파일명: views/qeustion_views.py</span>
 
 <span class="c1"># QuestionForm 클래스를 임포트</span>
@@ -1297,7 +1297,7 @@ Flask 서버는 <code class="docutils literal notranslate"><span class="pre">for
 </div>
 <p>그렇게 되면 <code class="docutils literal notranslate"><span class="pre">form</span></code>에 있는 모든 필드가 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 다시 채워지게 됩니다.
 원래 코드였던 아래 <code class="docutils literal notranslate"><span class="pre">question_form.html</span></code>에서는 각 필드를 <code class="docutils literal notranslate"><span class="pre">None</span></code>으로 다시 채울 겁니다.</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>&lt;!-- 수기로 만든 form --&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!-- 수기로 만든 form --&gt;
 &lt;div&gt;
 
     &lt;!-- 오류 내용을 표시하는 코드 추가--&gt;

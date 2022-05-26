@@ -719,6 +719,12 @@
 <a class="reference internal image-reference" href="../../_images/sec03_57_html5_logo.png"><img alt="flask_tutorial" src="../../_images/sec03_57_html5_logo.png" style="width: 200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.59 </span><span class="caption-text">HTML5 로고</span><a class="headerlink" href="#sec03-57-html5-logo" title="Permalink to this image">¶</a></p>
 </div>
+<p>HTML을 잘 다루기 위해서는 기본적으로 HTML DOM (Document Object Mode)과 DOM 트리에 대하여 기본적인 이해가 필요합니다. 간단한 소개가 되어 있는 블로그를 살펴보며 공부해 보도록 하겠습니다.</p>
+<ul class="simple">
+<li><p>HTML 5 소개 블로그: <a class="reference external" href="https://webclub.tistory.com/491">Web Club - HTML5란 무엇인가?</a></p></li>
+<li><p>모질라 공식 문서: <a class="reference external" href="https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction">MDN web dos - DOM 소개</a></p></li>
+<li><p>DOM 트리 소개 블로그: <a class="reference external" href="https://ko.javascript.info/dom-nodes">JavaScript.Info</a></p></li>
+</ul>
 <div class="section" id="html">
 <h2><span class="section-number">3.10.1. </span>HTML 기본 구조 살펴보기<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
 <p>현재 HTML 표준 버전은 <code class="docutils literal notranslate"><span class="pre">5</span></code> 입니다. 사람들은 <code class="docutils literal notranslate"><span class="pre">HTML5</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">HTML</span> <span class="pre">파이브</span></code>라고 부릅니다. HTML5의 로고는 그림 <a class="reference internal" href="#sec03-57-html5-logo"><span class="std std-numref">Fig. 3.59</span></a>와 같습니다. HTML 로고 아랫쪽 숫자 <code class="docutils literal notranslate"><span class="pre">5</span></code>가 보이죠? HTML 버전 <code class="docutils literal notranslate"><span class="pre">5</span></code>라는 의미를 담고 있습니다.</p>
@@ -826,19 +832,25 @@ VS code에서 임의이 <code class="docutils literal notranslate"><span class="
 <p>서로 다른 메뉴를 선택했으니 다른 내용이 보이는 것은 당연하겠죠? <code class="docutils literal notranslate"><span class="pre">정치</span></code> 메뉴를 클릭하면 정치 관련 내용이 보여야 하고, <code class="docutils literal notranslate"><span class="pre">경제</span></code> 메뉴를 선택하면 경제 관련 내용이 나오는게 당연합니다.</p>
 <p>그런데 변하지 않는 부분들이 있죠?</p>
 <p>위쪽 메뉴 부분은 변하지 않습니다. 동일한 뉴스 카테고리라면 <code class="docutils literal notranslate"><span class="pre">사회</span></code>, <code class="docutils literal notranslate"><span class="pre">정치</span></code>, <code class="docutils literal notranslate"><span class="pre">경제</span></code>, <code class="docutils literal notranslate"><span class="pre">국제</span></code>, <code class="docutils literal notranslate"><span class="pre">문화</span></code>, <code class="docutils literal notranslate"><span class="pre">IT</span></code> 등 세부 메뉴로 이동하더라도 동일한 구조를 유지하는게 좋습니다. 그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a>에서 맨 꼭대기에 표시한 파란색 점선 사각형에 해당합니다. 이렇게 앞쪽(머리 부분)에 동일한 내용으로 고정되는 것을 <code class="docutils literal notranslate"><span class="pre">헤더(Header)</span></code>라고 부릅니다.</p>
-<p>맨 아래 부분도 변하지 않습니다. 그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a>  아래쪽의 파란 점선 사각형을 비교해 보세요. 내용이 동일하죠? 이렇게 아랫쪽에 변하지 않는 내용을 일관되게 보여주는 것을 <code class="docutils literal notranslate"><span class="pre">풋터(Footer)</span></code>라고 부릅니다.</p>
+<p>맨 아래 부분도 변하지 않습니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a>  아래쪽의 파란 점선 사각형을 비교해 보세요.</p>
+<p>내용이 동일하죠? 이렇게 아랫쪽에 변하지 않는 내용을 일관되게 보여주는 것을 <code class="docutils literal notranslate"><span class="pre">풋터(Footer)</span></code>라고 부릅니다.</p>
+<p>그림 {numref}``는 <a class="reference external" href="https://www.cju.ac.kr/www/index.do">청주대학교</a> 홈페이지의 풋터를 캡쳐한 내용입니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-62-footer-cju"><span class="std std-numref">Fig. 3.64</span></a>와 같이 일반적으로 홈페이지 안내, 연락 정보, 이메일 등의 공통 정보를 제공할때 자주 사용합니다.</p>
 <div class="figure align-left" id="sec03-62-footer-cju">
 <a class="reference internal image-reference" href="../../_images/sec03_62_footer_cju.png"><img alt="flask_tutorial" src="../../_images/sec03_62_footer_cju.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.64 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">풋터(Footer)</span></code> 사용 예 (청주대학교 홈페이지 footer)</span><a class="headerlink" href="#sec03-62-footer-cju" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.64 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">풋터(Footer)</span></code> 사용 예: 청주대학교 홈페이지 footer</span><a class="headerlink" href="#sec03-62-footer-cju" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-62-footer-cju"><span class="std std-numref">Fig. 3.64</span></a>와 같이 일반적으로 홈페이지 안내, 연락 정보, 이메일 등의 공통 정보를 제공할때 자주 사용합니다.</p>
+<p>다음으로 어사이드(aside)에 대해 살펴보도록 하겠습니다.</p>
 <div class="figure align-left" id="sec03-63-aside-daum-example">
 <a class="reference internal image-reference" href="../../_images/sec03_63_aside_daum_example.png"><img alt="flask_tutorial" src="../../_images/sec03_63_aside_daum_example.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.65 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">풋터(Footer)</span></code> 사용 예 (청주대학교 홈페이지 footer)</span><a class="headerlink" href="#sec03-63-aside-daum-example" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.65 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">어사이드(Aside)</span></code> 사용 예: 다음(daum) 뉴스 페이지 어사이드</span><a class="headerlink" href="#sec03-63-aside-daum-example" title="Permalink to this image">¶</a></p>
 </div>
-<p>그림 <a class="reference internal" href="#sec03-63-aside-daum-example"><span class="std std-numref">Fig. 3.65</span></a>와 같이 중앙 오른쪽에 있는 내용도 변하지 않습니다.
-그림 <a class="reference internal" href="#sec03-63-aside-daum-example"><span class="std std-numref">Fig. 3.65</span></a>은 그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a> 에서 각 브라우저 내용 중 내용이 유지되는 오른쪽 중앙 부분을 다시 잘라낸 그림입니다.</p>
-<p>그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a> 상에서는 주식시장 정보와 광고가 동일하게 보입니다. 이렇게 메인 컨텐츠(내용) 좌측 또는 우측에 배치된 것을 <code class="docutils literal notranslate"><span class="pre">어사이드(Aside)</span></code>라고 부릅니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-63-aside-daum-example"><span class="std std-numref">Fig. 3.65</span></a>에서 볼 수 있는 것과 같이 중앙 오른쪽에 있는 내용도 변하지 않습니다.
+그림 <a class="reference internal" href="#sec03-63-aside-daum-example"><span class="std std-numref">Fig. 3.65</span></a>은 그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a> 에서
+각 브라우저 내용 중 내용이 유지되는 오른쪽 중앙 부분을 다시 잘라낸 그림입니다.</p>
+<p>그림 <a class="reference internal" href="#sec03-61-template-inheritance-example-daum"><span class="std std-numref">Fig. 3.63</span></a> 상에서는 주식시장 정보와 광고가 동일하게 보입니다.
+이렇게 메인 컨텐츠(내용) 좌측 또는 우측에 배치된 것을 <code class="docutils literal notranslate"><span class="pre">어사이드(Aside)</span></code>라고 부릅니다.</p>
 <p>진짜로 하고 싶은 이야기는 여기서부터 입니다.</p>
 <p>변하지 않는 영역 <code class="docutils literal notranslate"><span class="pre">Header</span></code>, <code class="docutils literal notranslate"><span class="pre">Footer</span></code>, <code class="docutils literal notranslate"><span class="pre">Aside</span></code>는 어떻게 코딩해 주는게 좋을까요?
 물론 모든 페이지에 보이는 내용을 동일하게 하려면 템플릿 <code class="docutils literal notranslate"><span class="pre">.html</span></code> 파일에 똑같은 코드를 넣어주면 될 겁니다. 하지만 문제점이 바로 보이죠? 반복적인 <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> 태그를 집어 넣을때와 동일한 단점이 생깁니다.</p>
@@ -923,12 +935,14 @@ child 템플릿이 작성해야 할 마지막 부분에 <code class="docutils li
 </ul>
 <p>그림 <a class="reference internal" href="#sec03-65-template-inheritance-complex"><span class="std std-numref">Fig. 3.67</span></a>에서 <code class="docutils literal notranslate"><span class="pre">title</span></code> block은 <code class="docutils literal notranslate"><span class="pre">head</span></code> block 내부에 있습니다. <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> 태그의 마지막 부분에 풋터(footer)를 넣게 위한 <code class="docutils literal notranslate"><span class="pre">footer</span></code> block도 추가된 것을 확인할 수 있습니다.</p>
 <p>Block의 범위는 <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">블록이름</span> <span class="pre">%}</span></code>에서 시작하여 가장 가까운 <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endblock</span> <span class="pre">%}</span></code>까지입니다.</p>
-<p>Block 내부에 여러 개의 block이 포함될 수 있고, block 내부에 block이 포함될 수 도 있습니다. 모두 가능합니다.</p>
+<p>Block 내부에 여러 개의 block이 포함될 수 있고, block 내부에 block이 포함될 수 도 있습니다.</p>
+<p>모두 가능합니다.</p>
 </div>
 <div class="section" id="child">
 <span id="sec03-ch10-understanding-child-templae"></span><h3><span class="section-number">3.10.3.2. </span>Child(자식) 템플릿 이해하기<a class="headerlink" href="#child" title="Permalink to this headline">¶</a></h3>
 <p>부모 템플릿을 상속받아 똑같은 내용을 뿌려준 다음, 나름대로 변하는 부분을 작성하는 템플릿이 있어야 겠죠? Base 템플릿을 상속받는 템플릿을 <code class="docutils literal notranslate"><span class="pre">child</span> <span class="pre">템플릿</span></code> 이라고 부릅니다.</p>
-<p>우선 자식 템플릿 파일을 하나 만듭니다. 저는 빈 템플릿 파일을 만들고 이름을 <code class="docutils literal notranslate"><span class="pre">child.html</span></code>이라고 붙여 주었습니다.</p>
+<p>우선 자식 템플릿 파일을 하나 만듭니다.</p>
+<p>저는 빈 템플릿 파일을 만들고 이름을 <code class="docutils literal notranslate"><span class="pre">child.html</span></code>이라고 붙여 주었습니다.</p>
 <p>Child 템플릿에 어떤 base 템플릿을 상속받을지 알려주는 문법은 <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">&quot;부모템플릿</span> <span class="pre">파일명&quot;</span> <span class="pre">%}</span></code>입니다. 우리는 <code class="docutils literal notranslate"><span class="pre">base.html</span></code>을 만들었으니 다음과 같이 써주면 됩니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">&quot;base.html&quot;</span> <span class="pre">%}</span></code></p>
 <p><a class="reference internal" href="#sec03-65-template-inheritance-complex"><span class="std std-numref">Fig. 3.67</span></a>에서 지정한 4개 block에 대하여 각각 내용을 작성합니다. 내용을 작성할 때는 우리가 base 템플릿에서 지정한 이름을 활용하면 됩니다.</p>

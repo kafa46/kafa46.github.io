@@ -46,6 +46,12 @@ name: sec03_57_html5_logo
 HTML5 로고
 ```
 
+HTML을 잘 다루기 위해서는 기본적으로 HTML DOM (Document Object Mode)과 DOM 트리에 대하여 기본적인 이해가 필요합니다. 간단한 소개가 되어 있는 블로그를 살펴보며 공부해 보도록 하겠습니다.
+- HTML 5 소개 블로그: [Web Club - HTML5란 무엇인가?](https://webclub.tistory.com/491)
+- 모질라 공식 문서: [MDN web dos - DOM 소개](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction)
+- DOM 트리 소개 블로그: [JavaScript.Info](https://ko.javascript.info/dom-nodes)
+
+
 ## HTML 기본 구조 살펴보기
 
 현재 HTML 표준 버전은 `5` 입니다. 사람들은 `HTML5` 또는 `HTML 파이브`라고 부릅니다. HTML5의 로고는 그림 {numref}`sec03_57_html5_logo`와 같습니다. HTML 로고 아랫쪽 숫자 `5`가 보이죠? HTML 버전 `5`라는 의미를 담고 있습니다.
@@ -196,7 +202,15 @@ name: sec03_61_template_inheritance_example_daum
 
 위쪽 메뉴 부분은 변하지 않습니다. 동일한 뉴스 카테고리라면 `사회`, `정치`, `경제`, `국제`, `문화`, `IT` 등 세부 메뉴로 이동하더라도 동일한 구조를 유지하는게 좋습니다. 그림 {numref}`sec03_61_template_inheritance_example_daum`에서 맨 꼭대기에 표시한 파란색 점선 사각형에 해당합니다. 이렇게 앞쪽(머리 부분)에 동일한 내용으로 고정되는 것을 `헤더(Header)`라고 부릅니다.
 
-맨 아래 부분도 변하지 않습니다. 그림 {numref}`sec03_61_template_inheritance_example_daum`  아래쪽의 파란 점선 사각형을 비교해 보세요. 내용이 동일하죠? 이렇게 아랫쪽에 변하지 않는 내용을 일관되게 보여주는 것을 `풋터(Footer)`라고 부릅니다. 
+맨 아래 부분도 변하지 않습니다. 
+
+그림 {numref}`sec03_61_template_inheritance_example_daum`  아래쪽의 파란 점선 사각형을 비교해 보세요. 
+
+내용이 동일하죠? 이렇게 아랫쪽에 변하지 않는 내용을 일관되게 보여주는 것을 `풋터(Footer)`라고 부릅니다. 
+
+그림 {numref}``는 [청주대학교](https://www.cju.ac.kr/www/index.do) 홈페이지의 풋터를 캡쳐한 내용입니다.
+
+그림 {numref}`sec03_62_footer_cju`와 같이 일반적으로 홈페이지 안내, 연락 정보, 이메일 등의 공통 정보를 제공할때 자주 사용합니다.
 
 ```{figure} ../../imgs/section03_building_fundamentals/sec03_62_footer_cju.png
 ---
@@ -205,10 +219,10 @@ align: left
 alt: flask_tutorial
 name: sec03_62_footer_cju
 ---
-`풋터(Footer)` 사용 예 (청주대학교 홈페이지 footer)
+`풋터(Footer)` 사용 예: 청주대학교 홈페이지 footer
 ```
 
-그림 {numref}`sec03_62_footer_cju`와 같이 일반적으로 홈페이지 안내, 연락 정보, 이메일 등의 공통 정보를 제공할때 자주 사용합니다.
+다음으로 어사이드(aside)에 대해 살펴보도록 하겠습니다.
 
 ```{figure} ../../imgs/section03_building_fundamentals/sec03_63_aside_daum_example.png
 ---
@@ -217,13 +231,15 @@ align: left
 alt: flask_tutorial
 name: sec03_63_aside_daum_example
 ---
-`풋터(Footer)` 사용 예 (청주대학교 홈페이지 footer)
+`어사이드(Aside)` 사용 예: 다음(daum) 뉴스 페이지 어사이드
 ```
 
-그림 {numref}`sec03_63_aside_daum_example`와 같이 중앙 오른쪽에 있는 내용도 변하지 않습니다.
-그림 {numref}`sec03_63_aside_daum_example`은 그림 {numref}`sec03_61_template_inheritance_example_daum` 에서 각 브라우저 내용 중 내용이 유지되는 오른쪽 중앙 부분을 다시 잘라낸 그림입니다.
+그림 {numref}`sec03_63_aside_daum_example`에서 볼 수 있는 것과 같이 중앙 오른쪽에 있는 내용도 변하지 않습니다.
+그림 {numref}`sec03_63_aside_daum_example`은 그림 {numref}`sec03_61_template_inheritance_example_daum` 에서 
+각 브라우저 내용 중 내용이 유지되는 오른쪽 중앙 부분을 다시 잘라낸 그림입니다.
 
-그림 {numref}`sec03_61_template_inheritance_example_daum` 상에서는 주식시장 정보와 광고가 동일하게 보입니다. 이렇게 메인 컨텐츠(내용) 좌측 또는 우측에 배치된 것을 `어사이드(Aside)`라고 부릅니다. 
+그림 {numref}`sec03_61_template_inheritance_example_daum` 상에서는 주식시장 정보와 광고가 동일하게 보입니다. 
+이렇게 메인 컨텐츠(내용) 좌측 또는 우측에 배치된 것을 `어사이드(Aside)`라고 부릅니다. 
 
 진짜로 하고 싶은 이야기는 여기서부터 입니다.
 
@@ -338,14 +354,18 @@ name: sec03_65_template_inheritance_complex
 
 Block의 범위는 `{% block 블록이름 %}`에서 시작하여 가장 가까운 `{% endblock %}`까지입니다. 
 
-Block 내부에 여러 개의 block이 포함될 수 있고, block 내부에 block이 포함될 수 도 있습니다. 모두 가능합니다.
+Block 내부에 여러 개의 block이 포함될 수 있고, block 내부에 block이 포함될 수 도 있습니다. 
+
+모두 가능합니다.
 
 (sec03_ch10_understanding_child_templae)=
 ### Child(자식) 템플릿 이해하기
 
 부모 템플릿을 상속받아 똑같은 내용을 뿌려준 다음, 나름대로 변하는 부분을 작성하는 템플릿이 있어야 겠죠? Base 템플릿을 상속받는 템플릿을 `child 템플릿` 이라고 부릅니다.
 
-우선 자식 템플릿 파일을 하나 만듭니다. 저는 빈 템플릿 파일을 만들고 이름을 `child.html`이라고 붙여 주었습니다.
+우선 자식 템플릿 파일을 하나 만듭니다. 
+
+저는 빈 템플릿 파일을 만들고 이름을 `child.html`이라고 붙여 주었습니다.
 
 Child 템플릿에 어떤 base 템플릿을 상속받을지 알려주는 문법은 `{% extends "부모템플릿 파일명" %}`입니다. 우리는 `base.html`을 만들었으니 다음과 같이 써주면 됩니다.
 
