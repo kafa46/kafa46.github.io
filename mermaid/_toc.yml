@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+
+chapters:
+- file: docs/01_intro_to_mermaid
+- file: docs/02_01_flowchart
+  sections:
+  - file: docs/02_02_flowchart_node

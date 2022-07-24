@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Flask Tutorial for CJU Students
+title: Mermaid Tutorial
 author: Giseop Noh
 logo: imgs/prof_noh.jpg
 copyright: 'Prof. Giseop Noh in Cheongju University'
@@ -9,15 +9,7 @@ copyright: 'Prof. Giseop Noh in Cheongju University'
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: off
-
-# Information about where the book exists on the web
-repository: 
-  url: https://github.com/kafa46/kafa46.github.io
-  path_to_book: tutorial_flask # An optional path to your book, defaults to repo root
-  branch: gh-pages  # An optional branch, defaults to `master`
-html:
-  use_edit_page_button: true
+  execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -30,8 +22,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/kafa46/kafa46.github.io  # Online location of your book
+  path_to_book: mermaid  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -61,14 +53,6 @@ parse:
     - replacements
     - smartquotes
     - substitution
-
-sphinx:
-  extra_extensions:
-    - sphinxcontrib.mermaid
-    - sphinxcontrib.wavedrom
-    - sphinxcontrib.plantuml
-    - sphinxcontrib.tikz
-    - sphinxcontrib.blockdiag
 
 # 코드 블록에 라인 넘버 추가
 markdown: kramdown
