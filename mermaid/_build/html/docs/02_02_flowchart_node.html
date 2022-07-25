@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="2. Mermaid Tutorial - Flowchart" href="02_01_flowchart.html" />
@@ -330,10 +332,13 @@ flowchart LR
     id```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>노드 아이디에 별도의 텍스트(문자열)을 지정할 수도 있습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -341,10 +346,13 @@ flowchart LR
     id[첫 번째 노드]```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id[첫 번째 노드]
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 </ul>
 </section>

@@ -52,6 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.3. Flowchart Node" href="02_02_flowchart_node.html" />
@@ -419,17 +421,16 @@ title="Print to PDF"
 <li><p>백틱(backtick) 문자 3개: ``` + <code class="docutils literal notranslate"><span class="pre">mermaid</span></code> (참고로 백틱 문자는 키보드 숫자 <code class="docutils literal notranslate"><span class="pre">1</span></code>의 왼쪽, <code class="docutils literal notranslate"><span class="pre">tab</span></code> 키 위에 있습니다)</p></li>
 <li><p>다이어그램 종류 + 방향(orientaion) 설정: 예) <code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">LR</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart LR
-    내가_만든_노드 ```
+  flowchart LR
+      내가_만든_노드```
 </pre></div>
 </div>
 </li>
 <li><p>실행 결과</p>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
-    내가_만든_노드
-</pre></div>
-</div>
-</li>
+<div class="mermaid">
+            flowchart LR
+  내가_만든_노드
+        </div></li>
 </ul>
 </li>
 </ul>
@@ -476,10 +477,17 @@ flowchart LR
 </table>
 <ul>
 <li><p>flowcahrt 옆에 TB로 설정한 경우 (TB를 사용해도 동일하게 작동)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flowchart</span> <span class="n">TB</span>
-    <span class="n">Start</span> <span class="o">--&gt;</span> <span class="n">Stop</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
+    Start --&gt; Stop```
 </pre></div>
 </div>
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+                flowchart TB
+        Start --&gt; Stop
+        </div></li>
+</ul>
 </li>
 <li><p>flowcahrt 옆에 LR로 설정한 경우</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -487,10 +495,13 @@ flowchart LR
     Start --&gt; Stop```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     Start --&gt; Stop
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 </ul>
 </li>
@@ -507,10 +518,13 @@ flowchart LR
     id1[basic square]```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
-    id1[basic square]
-</pre></div>
-</div>
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
+  id1[basic square]
+        </div></li>
+</ul>
 </li>
 <li><p>원형 운동장 (stardium) 모양</p>
 <p>알고리즘의 시작과 끝을 표현할 때 사용합니다.</p>
@@ -519,10 +533,13 @@ flowchart LR
     id1([stardium shape])```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1([stardium shape])
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>모서리가 둥근 (round edge) 모양</p>
 <p>모서리가 둥근 모양 (stardium shape) 노드와 함께 알고리즘의 시작과 끝을 표현할 때 사용합니다.알고리즘의 시작을 표현할 때 원형 운동장 또는 모서리가 둥근 모양 노드 중에 아무거나 사용해도 무방합니다.</p>
@@ -531,10 +548,13 @@ flowchart LR
     id1(round edge)```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1(round edge)
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>서브 루틴 (subroutine) 모양</p>
 <p>사용자가 정의한 함수가 실행되는 것을 표현할 때 사용합니다.</p>
@@ -543,10 +563,13 @@ flowchart LR
     id1[[subroutine]]```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1[[subroutine]]
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>실린더(Cylindrical) 모양</p>
 <p>데이터베이스(database)를 표현할 때 사용합니다.</p>
@@ -555,10 +578,13 @@ flowchart LR
     id1[(database)]```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1[(database)]
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>원(circle) 모양</p>
 <p>Flowchart가 너무 커서 나누어 그려야 할 경우 연결 지점을 표현할 때 사용합니다.</p>
@@ -568,10 +594,13 @@ flowchart LR
     id1((연결지점))```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1((연결지점))
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>마름모(Rhombus) 모양</p>
 <p>조건문을 수행을 통해 알고리즘의 흐름이 분기되는 것을 표현할 때 사용합니다.</p>
@@ -580,10 +609,13 @@ flowchart LR
     id1{rhombus}```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1{rhombus}
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>육각형(hexagon)</p>
 <p>본격적인 작업을 수행하기 전에 처리해야 할 일들을 명시적으로 표현할 때 사용합니다.</p>
@@ -593,10 +625,13 @@ flowchart LR
     id1{{hexagon}}```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1{{hexagon}}
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>사다리꼴(paralleogram) 모양</p>
 <p>일반적인 데이터의 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
@@ -606,10 +641,13 @@ flowchart LR
     id1[/paralleogram/]```
 </pre></div>
 </div>
-<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+<ul>
+<li><p>실행 결과</p>
+<div class="mermaid">
+            flowchart LR
     id1[/paralleogram/]
-</pre></div>
-</div>
+        </div></li>
+</ul>
 </li>
 <li><p>그 이외에도 <code class="docutils literal notranslate"><span class="pre">역사다리꼴(reverse</span> <span class="pre">paralleogram)</span></code>, <code class="docutils literal notranslate"><span class="pre">부등변</span> <span class="pre">사각형(trappezoid)</span></code>, <code class="docutils literal notranslate"><span class="pre">이중</span> <span class="pre">외곽선원</span> <span class="pre">(double</span> <span class="pre">circle)</span></code> 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p></li>
 </ul>

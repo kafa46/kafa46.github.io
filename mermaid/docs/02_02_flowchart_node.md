@@ -15,7 +15,8 @@ tags: []
     flowchart LR
         id```
     ```
-    ```mermaid
+  - 실행 결과
+    ```{mermaid}
     flowchart LR
         id
     ```
@@ -25,7 +26,8 @@ tags: []
     flowchart LR
         id[첫 번째 노드]```
     ```
-    ```mermaid
+  - 실행 결과
+    ```{mermaid}
     flowchart LR
         id[첫 번째 노드]
     ```

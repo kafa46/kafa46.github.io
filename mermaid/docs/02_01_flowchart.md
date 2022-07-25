@@ -20,17 +20,15 @@ tags: []
   - 다이어그램 종류 + 방향(orientaion) 설정: 예) `flowchart LR`
     ```
     ```mermaid
-    flowchart LR
-        내가_만든_노드 ```
+      flowchart LR
+          내가_만든_노드```
     ```
 
   - 실행 결과
-    ```mermaid align=left
+    ```{mermaid}
     flowchart LR
-        내가_만든_노드
+      내가_만든_노드
     ```
-
-
 
 ### Flowchart 그래프 
 - 방향(Orientation) 설정
@@ -44,14 +42,15 @@ tags: []
 
   - flowcahrt 옆에 TB로 설정한 경우 (TB를 사용해도 동일하게 작동)
     ```
-    flowchart TB
-        Start --> Stop
+    ```flowchart TB
+        Start --> Stop```
     ```
-    
-    ```{mermaid}
-        flowchart TB
-            Start --> Stop
-    ```
+  
+    - 실행 결과    
+      ```{mermaid}
+          flowchart TB
+              Start --> Stop
+      ```
 
   - flowcahrt 옆에 LR로 설정한 경우
     ```
@@ -59,10 +58,12 @@ tags: []
     flowchart LR
         Start --> Stop```
     ```
-    ```mermaid
-    flowchart LR
-        Start --> Stop
-    ```
+  
+    - 실행 결과    
+      ```{mermaid}
+      flowchart LR
+          Start --> Stop
+      ```
 
 ### 노드의 모양(shape)
 노드의 모양을 쉽게 지정할 수 있습니다.
@@ -74,10 +75,11 @@ tags: []
   flowchart LR
       id1[basic square]```
   ```
-  ```mermaid
-  flowchart LR
+  - 실행 결과    
+    ```{mermaid}
+    flowchart LR
       id1[basic square]
-  ```
+    ```
 
 - 원형 운동장 (stardium) 모양
   
@@ -87,10 +89,11 @@ tags: []
   flowchart LR
       id1([stardium shape])```
   ```
-  ```mermaid
-  flowchart LR
-      id1([stardium shape])
-  ```
+  - 실행 결과    
+    ```{mermaid}
+    flowchart LR
+        id1([stardium shape])
+    ```
 
 - 모서리가 둥근 (round edge) 모양
   
@@ -100,10 +103,13 @@ tags: []
   flowchart LR
       id1(round edge)```
   ```
-  ```mermaid
-  flowchart LR
-      id1(round edge)
-  ```
+  
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1(round edge)
+    ```
+
 - 서브 루틴 (subroutine) 모양
   
   사용자가 정의한 함수가 실행되는 것을 표현할 때 사용합니다.
@@ -112,10 +118,11 @@ tags: []
   flowchart LR
       id1[[subroutine]]```
   ```
-  ```mermaid
-  flowchart LR
-      id1[[subroutine]]
-  ```
+  - 실행 결과  
+    ```{mermaid}
+    flowchart LR
+        id1[[subroutine]]
+    ```
 
 - 실린더(Cylindrical) 모양
   
@@ -125,10 +132,12 @@ tags: []
   flowchart LR
       id1[(database)]```
   ```
-  ```mermaid
-  flowchart LR
-      id1[(database)]
-  ```
+
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1[(database)]
+    ```
   
 - 원(circle) 모양
 
@@ -140,10 +149,12 @@ tags: []
   flowchart LR
       id1((연결지점))```
   ```
-  ```mermaid
-  flowchart LR
-      id1((연결지점))
-  ```
+  
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1((연결지점))
+    ```
 
 - 마름모(Rhombus) 모양
   
@@ -153,10 +164,12 @@ tags: []
   flowchart LR
       id1{rhombus}```
   ```
-  ```mermaid
-  flowchart LR
-      id1{rhombus}
-  ```
+  
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1{rhombus}
+    ```
 
 - 육각형(hexagon)
 
@@ -168,10 +181,12 @@ tags: []
   flowchart LR
       id1{{hexagon}}```
   ```
-  ```mermaid
-  flowchart LR
-      id1{{hexagon}}
-  ```
+
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1{{hexagon}}
+    ```
 
 - 사다리꼴(paralleogram) 모양
 
@@ -183,9 +198,11 @@ tags: []
   flowchart LR
       id1[/paralleogram/]```
   ```
-  ```mermaid
-  flowchart LR
-      id1[/paralleogram/]
-  ```
+  
+  - 실행 결과
+    ```{mermaid}
+    flowchart LR
+        id1[/paralleogram/]
+    ```
 - 그 이외에도 `역사다리꼴(reverse paralleogram)`, `부등변 사각형(trappezoid)`, `이중 외곽선원 (double circle)` 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 [공식문서](https://mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes)를 참고하기 바랍니다.
 

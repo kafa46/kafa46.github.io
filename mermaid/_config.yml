@@ -61,3 +61,9 @@ kramdown:
     syntax_highlighter_opts:
         block:
             line_numbers: true
+
+# Sphinx / Jupyter Book Diagramming Plugins
+# Reference: https://opencomputinglab.github.io/SubjectMatterNotebooks/diagram/sphinx-diagrammers.html
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
