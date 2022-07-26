@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Mermaid Tutorial &#8212; Mermaid Tutorial</title>
+    <title>1. Mermaid Intro &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -120,7 +120,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Mermaid Tutorial
+   1. Mermaid Intro
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -135,7 +135,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_node.html">
-     2.3. Flowchart Node
+     2.3. Flowchart 노드(Node)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_03_flowchart_graph.html">
+     2.4. Flowchart 그래프
     </a>
    </li>
   </ul>
@@ -319,7 +324,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mermaid">
-   1.1. Mermaid 튜토리얼
+   1.1. Mermaid 문서 및 동영상 링크 안내
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -351,7 +356,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Mermaid Tutorial</h1>
+                <h1>Mermaid Intro</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -363,7 +368,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mermaid">
-   1.1. Mermaid 튜토리얼
+   1.1. Mermaid 문서 및 동영상 링크 안내
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -396,10 +401,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mermaid-tutorial">
-<h1><span class="section-number">1. </span>Mermaid Tutorial<a class="headerlink" href="#mermaid-tutorial" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="mermaid-intro">
+<h1><span class="section-number">1. </span>Mermaid Intro<a class="headerlink" href="#mermaid-intro" title="Permalink to this headline">#</a></h1>
 <section id="mermaid">
-<h2><span class="section-number">1.1. </span>Mermaid 튜토리얼<a class="headerlink" href="#mermaid" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.1. </span>Mermaid 문서 및 동영상 링크 안내<a class="headerlink" href="#mermaid" title="Permalink to this headline">#</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>순번</p></th>
@@ -441,10 +446,16 @@ title="Print to PDF"
 <h2><span class="section-number">1.2. </span>소개<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Mermaid?</span> <span class="pre">인어?</span></code></p>
-<p align='left'>
-<img src="https://t1.daumcdn.net/movie/f5cb87cef68dfd1df9ff9a4b612056500f632a8a" alt="Mermaid" style="width:20%"></p>
-<p><figcaption align = "left"><b>Fig.1. 영화 인어공주 포스터</b></figcaption></p>
+<figure class="align-center" id="mermaid-poster">
+<a class="reference internal image-reference" href="https://t1.daumcdn.net/movie/f5cb87cef68dfd1df9ff9a4b612056500f632a8a"><img alt="mermaid" src="https://t1.daumcdn.net/movie/f5cb87cef68dfd1df9ff9a4b612056500f632a8a" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">영화 인어공주 포스터</span><a class="headerlink" href="#mermaid-poster" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
+</ul>
+<br>
+<ul class="simple">
 <li><p>Official Docs: <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a></p></li>
 <li><p>자바스크립트 기반 다이어그램 및 순서도 제작 도구입니다.</p></li>
 <li><p>마크다운(markdown) 문법과 완벽히 호환됩니다.</p></li>
@@ -453,48 +464,62 @@ title="Print to PDF"
 </section>
 <section id="id2">
 <h2><span class="section-number">1.3. </span>설치<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<ul>
-<li><p>VS Code 익스텐션 설치 <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Preview</span> <span class="pre">Mermaid</span> <span class="pre">Support</span></code></p>
-  <p align='left'>
-  <img src="./figs/01.markdown_mermaid_extension.jpg" alt="VS code Mermaid extension" style="width:50%"></p>
-  <p><figcaption align = "left"><b>Fig.2. VS code Mermaid 익스텐션</b></figcaption></p>
-</li>
-<li><p>VS Code에서 활용</p>
+<p>VS Code 익스텐션 설치 <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Preview</span> <span class="pre">Mermaid</span> <span class="pre">Support</span></code></p>
+<figure class="align-center" id="vs-code-mermaid">
+<a class="reference internal image-reference" href="../_images/01.markdown_mermaid_extension.jpg"><img alt="mermaid" src="../_images/01.markdown_mermaid_extension.jpg" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">VS code Mermaid 익스텐션</span><a class="headerlink" href="#vs-code-mermaid" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>VS Code에서 활용은 다음과 같습니다.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Preview</span> <span class="pre">Mermaid</span> <span class="pre">Support</span></code> 익스텐션이 <code class="docutils literal notranslate"><span class="pre">enable</span></code> 상태임을 확인합니다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Markdown</span> <span class="pre">Preview</span> <span class="pre">Mermaid</span> <span class="pre">Support</span></code> 설치하면 기본적으로 <code class="docutils literal notranslate"><span class="pre">enable</span></code> 상태로 설정됩니다.</p></li>
 <li><p>사용을 원하지 않으면 <code class="docutils literal notranslate"><span class="pre">disable</span></code> 설정합니다.</p>
-<p align='left'>
-<img src="./figs/03.mermaid_enable.png" alt="Mermaid enable" style="width:50%"></p>
-<p><figcaption align = "left"><b>Fig.3. Mermaid enable 설정</b></figcaption></p>
-</li>
+<figure class="align-center" id="mermaid-enable-config">
+<a class="reference internal image-reference" href="../_images/01.markdown_mermaid_extension.jpg"><img alt="mermaid" src="../_images/01.markdown_mermaid_extension.jpg" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Mermaid enable 설정</span><a class="headerlink" href="#mermaid-enable-config" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ul>
 <li><p>VS Code에서 임의의 .md 파일을 생성하고 샘플 코드를 입력합니다. Tutorial 진행을 위해 <code class="docutils literal notranslate"><span class="pre">test.md</span></code> 파일을 만들고 다음 코드를 입력합니다.</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>  # Hello world
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Hello world
 
-  ```mermaid
-  flowchart
-      A[설날 아침] --&gt;|세뱃돈| B(쇼핑 가기)
-      B --&gt; C{뭘 사야하나?}
-      C --&gt;|선택1| D[노트북]
-      C --&gt;|선택2| E[스마트폰]
-      C --&gt;|선택3| F[자동차] ```
+```mermaid
+flowchart
+    A[설날 아침] --&gt;|세뱃돈| B(쇼핑 가기)
+    B --&gt; C{뭘 사야하나?}
+    C --&gt;|선택1| D[노트북]
+    C --&gt;|선택2| E[스마트폰]
+    C --&gt;|선택3| F[자동차] 
+```
 </pre></div>
 </div>
 </li>
 <li><p>Markdown 파일의 미리보기를 위해서는 아래 아이콘을 클릭하면 됩니다.</p>
-<p align='left'>
-<img src="./figs/06.open_preview_icon.png" alt="open preview using icon" style="width:30%"></p>
-<p><figcaption align = "left"><b>Fig.4. Mermaid enable 설정</b></figcaption></p>
+<figure class="align-center" id="open-preview-using-icon">
+<a class="reference internal image-reference" href="../_images/06.open_preview_icon.png"><img alt="open preview using icon" src="../_images/06.open_preview_icon.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Mermaid 미리보기 아이콘</span><a class="headerlink" href="#open-preview-using-icon" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Mermaid 익스텐션이 <code class="docutils literal notranslate"><span class="pre">enable</span></code> 되기 이전 상태에서 (다시 말해 <code class="docutils literal notranslate"><span class="pre">disable</span></code> 상태) 미리보기 아이콘을 누르면 VS Code에서 기본(default)으로 지원하는 미리보기 창이 열립니다.</p>
-<p align='left'>
-<img src="./figs/04.mermaid_preview_before_enable.png" alt="open preview using icon" style="width:100%"></p>
-<p><figcaption align = "left"><b>Fig.5. Mermaid enable 설정</b></figcaption></p>
+<figure class="align-center" id="preview-window-disabled">
+<a class="reference internal image-reference" href="../_images/04.mermaid_preview_before_enable.png"><img alt="preview window" src="../_images/04.mermaid_preview_before_enable.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Mermaid가 지원되지 않는 상태에서 미리보기</span><a class="headerlink" href="#preview-window-disabled" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Mermaid 익스텐션이 <code class="docutils literal notranslate"><span class="pre">enable</span></code>된 상태일 경우 아래 그림과 같이 다이어그램을 볼 수 있습니다.</p>
-<p align='left'>
-  <img src="./figs/05.mermaid_preview_after_enable.png" alt="open preview using icon" style="width:100%"></p>
-  <p><figcaption align = "left"><b>Fig.6. Mermaid enable 설정</b></figcaption></p>
+<figure class="align-center" id="preview-window-enabled">
+<a class="reference internal image-reference" href="../_images/05.mermaid_preview_after_enable.png"><img alt="preview window" src="../_images/05.mermaid_preview_after_enable.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Mermaid 활성화 된 상태에서 미리보기</span><a class="headerlink" href="#preview-window-enabled" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </li>
 </ul>
 </li>
@@ -502,19 +527,23 @@ title="Print to PDF"
 </section>
 <section id="id3">
 <h2><span class="section-number">1.4. </span>Mermaid 라이브 버전<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
+<ul>
 <li><p>VS code 익스텐션은 이미지 저장 기능을 지원하지 않습니다.</p></li>
 <li><p>완성된 이미지를 저장하기 위해서는 <a class="reference external" href="https://mermaid.live/">Mermaid Live</a> 버전을 활욜할 수 있습니다.</p>
-<ul>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.png</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code> 파일 형식으로 저장 가능합니다.</p></li>
 <li><p>사용자 기호에 따라 색상 테마(theme)를 변경할 수 있습니다.</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://mermaid.live/">Mermaid Live</a>의 UI는 다음과 같습니다.</p></li>
+<li><p><a class="reference external" href="https://mermaid.live/">Mermaid Live</a>의 UI는 다음과 같습니다.</p>
+<figure class="align-center" id="mermaid-live-version">
+<a class="reference internal image-reference" href="../_images/02.mermaid-live.png"><img alt="mermaid live version" src="../_images/02.mermaid-live.png" style="width: 700px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Mermaid 라이브 버전(온라인)</span><a class="headerlink" href="#mermaid-live-version" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
 </ul>
-<p align='left'>
-<img src="./figs/02.mermaid-live.png" alt="VS code Mermaid extension" style="width:60%"></p>
-<p><figcaption align = "left"><b>Fig.2 - Mermaid 라이브 버전(온라인)</b></figcaption></p>
 </section>
 <section id="id4">
 <h2><span class="section-number">1.5. </span>유용한 동영상<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>

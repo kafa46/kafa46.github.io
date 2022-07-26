@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Flowchart 노드(Node) &#8212; Mermaid Tutorial</title>
+    <title>2.1. Flowchart 노드(Node) &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. Flowchart 그래프" href="02_03_flowchart_graph.html" />
+    <link rel="next" title="2.2. Flowchart 그래프" href="02_04_flowchart_graph.html" />
     <link rel="prev" title="2. Mermaid Tutorial - Flowchart" href="02_01_flowchart.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -118,29 +118,41 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_intro_to_mermaid.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_01_intro_to_mermaid.html">
    1. Mermaid Intro
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_intro_to_live_version.html">
+     1.1. Mermaid 라이브 버전
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. Flowchart 노드(Node)
+     2.1. Flowchart 노드(Node)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_03_flowchart_graph.html">
-     2.4. Flowchart 그래프
+    <a class="reference internal" href="02_04_flowchart_graph.html">
+     2.2. Flowchart 그래프
     </a>
    </li>
   </ul>
@@ -235,7 +247,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_02_flowchart_node.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_03_flowchart_node.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -263,7 +275,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_02_flowchart_node.md"
+        <a href="../_sources/docs/02_03_flowchart_node.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -324,12 +336,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   2.3.1. 노드의 개념
+   2.1.1. 노드의 개념
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shape">
-   2.3.2. 노드의 모양(shape)
+   2.1.2. 노드의 모양(shape)
   </a>
  </li>
 </ul>
@@ -353,12 +365,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   2.3.1. 노드의 개념
+   2.1.1. 노드의 개념
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shape">
-   2.3.2. 노드의 모양(shape)
+   2.1.2. 노드의 모양(shape)
   </a>
  </li>
 </ul>
@@ -372,9 +384,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="flowchart-node">
-<h1><span class="section-number">2.3. </span>Flowchart 노드(Node)<a class="headerlink" href="#flowchart-node" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.1. </span>Flowchart 노드(Node)<a class="headerlink" href="#flowchart-node" title="Permalink to this headline">#</a></h1>
 <section id="id1">
-<h2><span class="section-number">2.3.1. </span>노드의 개념<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.1. </span>노드의 개념<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>노드(node)</p>
 <ul class="simple">
@@ -414,7 +426,7 @@ flowchart LR
 </ul>
 </section>
 <section id="shape">
-<h2><span class="section-number">2.3.2. </span>노드의 모양(shape)<a class="headerlink" href="#shape" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.2. </span>노드의 모양(shape)<a class="headerlink" href="#shape" title="Permalink to this headline">#</a></h2>
 <p>노드의 모양을 쉽게 지정할 수 있습니다.</p>
 <ul>
 <li><p>직사각형(square) 모양</p>
@@ -603,10 +615,10 @@ flowchart LR
             <p class="prev-next-title"><span class="section-number">2. </span>Mermaid Tutorial - Flowchart</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_03_flowchart_graph.html" title="next page">
+    <a class='right-next' id="next-link" href="02_04_flowchart_graph.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Flowchart 그래프</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Flowchart 그래프</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
