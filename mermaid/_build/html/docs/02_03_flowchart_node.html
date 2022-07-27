@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.1. Flowchart 노드(Node) &#8212; Mermaid Tutorial</title>
+    <title>2.2. Flowchart 노드(Node) &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Flowchart 그래프" href="02_04_flowchart_graph.html" />
-    <link rel="prev" title="2. Mermaid Tutorial - Flowchart" href="02_01_flowchart.html" />
+    <link rel="next" title="2.3. Flowchart 그래프" href="02_04_flowchart_graph.html" />
+    <link rel="prev" title="2.1. Flowchart 기본 문법" href="02_02_flowchart_hello_world.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -145,14 +145,59 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_flowchart_hello_world.html">
+     2.1. Flowchart 기본 문법
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1. Flowchart 노드(Node)
+     2.2. Flowchart 노드(Node)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_04_flowchart_graph.html">
-     2.2. Flowchart 그래프
+     2.3. Flowchart 그래프
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_05_flowchart_links.html">
+     2.4. 노드와 노드 연결
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_06_flowchart_special_characters.html">
+     2.5. 특수 문자 사용하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_07_flowchart_subgraph.html">
+     2.6. Subgraph 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_08_flowchart_flowchart.html">
+     2.7. Subgraph 이용한 flowchart
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_09_flowchart_direction_in_subgraph.html">
+     2.8. Subgraph 연결 및 방향 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_10_flowchart_interaction.html">
+     2.9. 노드 상호작용 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_11_flowchart_styling.html">
+     2.10. 노드 스타일 지정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_12_flowchart_configuration.html">
+     2.11. Flowchart 크기 설정
     </a>
    </li>
   </ul>
@@ -312,41 +357,12 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2.1.1. 노드의 개념
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape">
-   2.1.2. 노드의 모양(shape)
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
@@ -358,24 +374,6 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   2.1.1. 노드의 개념
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shape">
-   2.1.2. 노드의 모양(shape)
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -384,38 +382,33 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="flowchart-node">
-<h1><span class="section-number">2.1. </span>Flowchart 노드(Node)<a class="headerlink" href="#flowchart-node" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2><span class="section-number">2.1.1. </span>노드의 개념<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h1><span class="section-number">2.2. </span>Flowchart 노드(Node)<a class="headerlink" href="#flowchart-node" title="Permalink to this headline">#</a></h1>
 <ul>
-<li><p>노드(node)</p>
-<ul class="simple">
+<li><p>노드의 개념</p>
+<ul>
+<li><p>노드(node)</p></li>
 <li><p>노드는 flowchart를 구성하는 개별 도형을 의미합니다.</p></li>
 <li><p>노드와 노드를 연결하여 flowchart를 그립니다.</p></li>
 <li><p>Flowchart에는 반드시 하나 이상의 노드가 존재해야 합니다.</p></li>
-</ul>
-</li>
 <li><p>노드에 아이디 <code class="docutils literal notranslate"><span class="pre">id</span></code> 를 부여해서 1개를 만들어 보면 다음과 같습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id```
 </pre></div>
 </div>
-<ul>
+</li>
 <li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id
         </div></li>
-</ul>
-</li>
 <li><p>노드 아이디에 별도의 텍스트(문자열)을 지정할 수도 있습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id[첫 번째 노드]```
 </pre></div>
 </div>
-<ul>
+</li>
 <li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
@@ -423,13 +416,11 @@ flowchart LR
         </div></li>
 </ul>
 </li>
+<li><p>노드의 모양(shape)
+노드의 모양을 쉽게 지정할 수 있습니다.</p>
+<ul class="simple">
+<li><p>직사각형(square) 모양</p></li>
 </ul>
-</section>
-<section id="shape">
-<h2><span class="section-number">2.1.2. </span>노드의 모양(shape)<a class="headerlink" href="#shape" title="Permalink to this headline">#</a></h2>
-<p>노드의 모양을 쉽게 지정할 수 있습니다.</p>
-<ul>
-<li><p>직사각형(square) 모양</p>
 <p>알고리즘에서 수행되는 명령어, 작업, 처리 등을 표현하는 기본단위 입니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -441,11 +432,10 @@ flowchart LR
 <li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
-  id1[basic square]
+id1[basic square]
         </div></li>
+<li><p>원형 운동장 (stardium) 모양</p></li>
 </ul>
-</li>
-<li><p>원형 운동장 (stardium) 모양</p>
 <p>알고리즘의 시작과 끝을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -459,9 +449,8 @@ flowchart LR
             flowchart LR
     id1([stardium shape])
         </div></li>
+<li><p>모서리가 둥근 (round edge) 모양</p></li>
 </ul>
-</li>
-<li><p>모서리가 둥근 (round edge) 모양</p>
 <p>모서리가 둥근 모양 (stardium shape) 노드와 함께 알고리즘의 시작과 끝을 표현할 때 사용합니다.알고리즘의 시작을 표현할 때 원형 운동장 또는 모서리가 둥근 모양 노드 중에 아무거나 사용해도 무방합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -475,9 +464,8 @@ flowchart LR
             flowchart LR
     id1(round edge)
         </div></li>
+<li><p>서브 루틴 (subroutine) 모양</p></li>
 </ul>
-</li>
-<li><p>서브 루틴 (subroutine) 모양</p>
 <p>사용자가 정의한 함수가 실행되는 것을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -491,9 +479,8 @@ flowchart LR
             flowchart LR
     id1[[subroutine]]
         </div></li>
+<li><p>실린더(Cylindrical) 모양</p></li>
 </ul>
-</li>
-<li><p>실린더(Cylindrical) 모양</p>
 <p>데이터베이스(database)를 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -507,9 +494,8 @@ flowchart LR
             flowchart LR
     id1[(database)]
         </div></li>
+<li><p>원(circle) 모양</p></li>
 </ul>
-</li>
-<li><p>원(circle) 모양</p>
 <p>Flowchart가 너무 커서 나누어 그려야 할 경우 연결 지점을 표현할 때 사용합니다.</p>
 <p>또는, 여러 논리 흐름이 합쳐지는 포인트를 표현할 때 사용하기도 합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -524,9 +510,8 @@ flowchart LR
             flowchart LR
     id1((연결지점))
         </div></li>
+<li><p>마름모(Rhombus) 모양</p></li>
 </ul>
-</li>
-<li><p>마름모(Rhombus) 모양</p>
 <p>조건문을 수행을 통해 알고리즘의 흐름이 분기되는 것을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
@@ -540,9 +525,8 @@ flowchart LR
             flowchart LR
     id1{rhombus}
         </div></li>
+<li><p>육각형(hexagon)</p></li>
 </ul>
-</li>
-<li><p>육각형(hexagon)</p>
 <p>본격적인 작업을 수행하기 전에 처리해야 할 일들을 명시적으로 표현할 때 사용합니다.</p>
 <p>주로 사용자 입력, 변수값 입력 등을 명확히 표현하고자 할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -557,9 +541,8 @@ flowchart LR
             flowchart LR
     id1{{hexagon}}
         </div></li>
+<li><p>사다리꼴(paralleogram) 모양</p></li>
 </ul>
-</li>
-<li><p>사다리꼴(paralleogram) 모양</p>
 <p>일반적인 데이터의 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code> 명령어를 이용한 콘솔(모니터) 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력, <code class="docutils literal notranslate"><span class="pre">파일(file)</span></code> 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -574,11 +557,10 @@ flowchart LR
             flowchart LR
     id1[/paralleogram/]
         </div></li>
-</ul>
-</li>
 <li><p>그 이외에도 <code class="docutils literal notranslate"><span class="pre">역사다리꼴(reverse</span> <span class="pre">paralleogram)</span></code>, <code class="docutils literal notranslate"><span class="pre">부등변</span> <span class="pre">사각형(trappezoid)</span></code>, <code class="docutils literal notranslate"><span class="pre">이중</span> <span class="pre">외곽선원</span> <span class="pre">(double</span> <span class="pre">circle)</span></code> 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p></li>
 </ul>
-</section>
+</li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -608,17 +590,17 @@ flowchart LR
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_01_flowchart.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_02_flowchart_hello_world.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Mermaid Tutorial - Flowchart</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Flowchart 기본 문법</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="02_04_flowchart_graph.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Flowchart 그래프</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Flowchart 그래프</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

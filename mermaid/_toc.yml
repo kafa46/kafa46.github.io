@@ -16,3 +16,11 @@ chapters:
   - file: docs/02_02_flowchart_hello_world
   - file: docs/02_03_flowchart_node
   - file: docs/02_04_flowchart_graph
+  - file: docs/02_05_flowchart_links
+  - file: docs/02_06_flowchart_special_characters
+  - file: docs/02_07_flowchart_subgraph
+  - file: docs/02_08_flowchart_flowchart
+  - file: docs/02_09_flowchart_direction_in_subgraph
+  - file: docs/02_10_flowchart_interaction
+  - file: docs/02_11_flowchart_styling
+  - file: docs/02_12_flowchart_configuration
