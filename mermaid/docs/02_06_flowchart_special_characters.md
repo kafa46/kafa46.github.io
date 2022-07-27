@@ -1,3 +1,9 @@
+---
+noteId: "a7270ea20de511ed8320517ca45ff5f6"
+tags: []
+
+---
+
 # 특수 문자 사용하기
 
 Markdown(`.md` 파일) 문서는 기본적으로 Markup Language의 일종이기 때문에 HTML 문서에서 지원하는 다양한 특수 문자를 사용할 수 있습니다.

@@ -383,9 +383,8 @@ title="Print to PDF"
 <h1><span class="section-number">2.8. </span>Subgraph 연결 및 방향 설정<a class="headerlink" href="#subgraph" title="Permalink to this headline">#</a></h1>
 <p>Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 지원합니다.</p>
 <p>다양한 subgraph를 만들고 연결해 보는 실습을 해보겠습니다.</p>
-<ul class="simple">
-<li><p>Subgraph 내부에 subgraph 생성</p></li>
-</ul>
+<ul>
+<li><p>Subgraph 내부에 subgraph 생성</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
     flowchart LR
         subgraph top[최상위 구역]
@@ -422,7 +421,9 @@ title="Print to PDF"
             i2[start2] --&gt; f2[end2]
         end
     end
-        </div><p>위에서 <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code>에 포함된 <code class="docutils literal notranslate"><span class="pre">구역1</span></code> 에서 <code class="docutils literal notranslate"><span class="pre">구역2</span></code>로 두꺼운 화살표로 연결해 보겠습니다.</p>
+        </div></li>
+</ul>
+<p>위에서 <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code>에 포함된 <code class="docutils literal notranslate"><span class="pre">구역1</span></code> 에서 <code class="docutils literal notranslate"><span class="pre">구역2</span></code>로 두꺼운 화살표로 연결해 보겠습니다.</p>
 <p>기존 코드 마지막에 구역을 연결하도록 코드 1줄 <code class="docutils literal notranslate"><span class="pre">구역1</span> <span class="pre">==&gt;</span> <span class="pre">구역2</span></code> 추가하였습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
     flowchart LR

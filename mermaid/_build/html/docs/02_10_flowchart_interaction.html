@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_05_flowchart_links.html">
-     2.4. 노드와 노드 연결하기
+     2.4. 노드와 노드 연결
     </a>
    </li>
    <li class="toctree-l2">
@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_08_flowchart_flowchart.html">
-     2.7. Subgraph를 이용하여 flowchart 그리기
+     2.7. Subgraph 이용한 flowchart
     </a>
    </li>
    <li class="toctree-l2">
@@ -381,12 +381,165 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1><span class="section-number">2.9. </span>노드 상호작용 설정<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>노드에 다양한 설정을 적용하여 기능을 추가할 수 있습니다.</p>
-<p>지원하는 기능은 다음과 같습니다.</p>
+<p>Mermaid 노드에 다양한 상호작용(interaction) 설정을 추가하여 추가적인 효과를 구현할 수 있습니다.</p>
+<p>Mermaid를 이용해 만들어진 노드를 클릭(click) 했을때 자바스크립트를 실행시킬 수도 있으며, 노드를 클릭했을 때 새로운 웹 페이지를 열 수도 있습니다.</p>
 <ul class="simple">
+<li><p>지원하는 기능은 다음과 같습니다.</p>
+<ul>
 <li><p>자바스크립트를 이용한 효과 부여</p></li>
-<li><p>웹 링크를 부여하여 노드를 클릭할 때 웹페이지 이동</p></li>
+<li><p>웹 링크를 연결하여 노드를 클릭할 때 웹페이지 이동</p></li>
 </ul>
+</li>
+</ul>
+<p>그래프 노드에 자바스크립트 실행을 연결하는 방법은 2가지 입니다.</p>
+<ul>
+<li><p>자바스크립트 연결 문법</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">click</span> <span class="n">nodeId</span> <span class="n">callback</span>
+    
+    <span class="n">또는</span><span class="p">,</span>
+    
+    <span class="n">click</span> <span class="n">nodeId</span> <span class="n">call</span> <span class="n">callback</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nodeID</span></code>: Mermaid를 이용해서 생성한 노드의 아이디(ID)를 의미합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">callback</span></code>: 그래프를 보여주는 페이지에 정의된 자바스크립트 함수 이름입니다. 자바스크립트 함수가 호출될 때 <code class="docutils literal notranslate"><span class="pre">nodeID</span></code>가 파라미터(parameter)로 전달됩니다.</p></li>
+</ul>
+</li>
+</ul>
+<p>그래프 노드에 웹 링크를  연결하는 방법도 2가지 가능합니다.</p>
+<ul>
+<li><p>웹 링크 연결 문법</p>
+<ul class="simple">
+<li><p>기존 브라우저 창을 유지하면서 새로운 창을 열어서 이동하려면 <code class="docutils literal notranslate"><span class="pre">_blank</span></code>를 추가해 줍니다. <code class="docutils literal notranslate"><span class="pre">_blank</span></code>를 설정하지 않으면 현재 창이 설정한 웹페이지로 변경됩니다. 웹 브라우저 창을 설정할 수 있는 다른 옵션은 <code class="docutils literal notranslate"><span class="pre">_self</span></code>, <code class="docutils literal notranslate"><span class="pre">_parent</span></code>,  <code class="docutils literal notranslate"><span class="pre">_top</span></code>이 있습니다. 자세한 설명은 W3C Scools에서 제공하는 <a class="reference external" href="https://www.w3schools.com/jsref/met_win_open.asp">Window open()</a>을 참고하기 바랍니다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">click</span> <span class="n">nodeId</span> <span class="s2">&quot;Web URL&quot;</span> <span class="n">_blank</span>
+    
+    <span class="n">또는</span><span class="p">,</span>
+    
+    <span class="n">click</span> <span class="n">nodeId</span> <span class="n">href</span> <span class="s2">&quot;Web URL&quot;</span> <span class="n">_blank</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nodeID</span></code>: Mermaid를 이용해서 생성한 노드의 아이디(ID)를 의미합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Web</span> <span class="pre">URL&quot;</span></code>: 노드를 클릭했을 때 이동할 웹 페이지 주소입니다.</p></li>
+</ul>
+</li>
+</ul>
+<p>툴팁(Tooltip) 설정</p>
+<div class="admonition-tooltip admonition">
+<p class="admonition-title">툴팁(Tooltip)이란?</p>
+<p>툴팁은 마우스 포인터가 가리키는 객체에 말풍선이나 설명이 나타나고, 마우스를 다른 곳으로 이동하면 사라지는 기능입니다. 말풍선, 위젯, 도움말 등으로 불리기도 합니다. 참고문헌: <a class="reference external" href="https://en.wikipedia.org/wiki/Tooltip">온라인 위키</a></p>
+</div>
+<ul>
+<li><p>자바스크립트 또는 웹 연결 명령어 마지막 부분에 큰 따옴표 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>로 둘러싸고, 툴팁으로 보여줄 메시지를 입력하면 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">click</span> <span class="n">nodeId</span> <span class="n">callback</span> <span class="s2">&quot;Tooltip message&quot;</span>
+  <span class="n">click</span> <span class="n">nodeId</span> <span class="n">call</span> <span class="n">callback</span><span class="p">()</span> <span class="s2">&quot;Tooltip message&quot;</span> 
+  <span class="n">click</span> <span class="n">nodeId</span> <span class="s2">&quot;Web URL&quot;</span> <span class="s2">&quot;Tooltip message&quot;</span> <span class="n">_blank</span>
+  <span class="n">click</span> <span class="n">nodeId</span> <span class="n">href</span> <span class="s2">&quot;Web URL&quot;</span> <span class="s2">&quot;Tooltip message&quot;</span> <span class="n">_blank</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>위 사항들을 한꺼번에 실습해 보겠습니다.</p>
+<ul>
+<li><p>실습을 위해 간단한 자바스크립트 함수를 하나 정의합니다.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;callback 함수가 호출되었습니다.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>노드 4개가 순차적으로 연결된 그래프를 그립니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
+    A--&gt;B[B: web1]
+    A--&gt;C[C: web2]
+    B--&gt;D
+    C--&gt;D
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart TB
+    A--&gt;B[B: web1]
+    A--&gt;C[C: web2]
+    B--&gt;D
+    C--&gt;D
+    
+        </div></li>
+<li><p>다음과 같은 작업을 추가해 봅니다.합니다.</p></li>
+<li><p>노드 <code class="docutils literal notranslate"><span class="pre">A</span></code>와 <code class="docutils literal notranslate"><span class="pre">D</span></code>를 클릭하면 <code class="docutils literal notranslate"><span class="pre">callback</span></code> 함수가 실행되고, 노드 <code class="docutils literal notranslate"><span class="pre">B</span></code>를 클릭하면 <code class="docutils literal notranslate"><span class="pre">네이버(naver.com)</span></code>로 이동하고, 노드 <code class="docutils literal notranslate"><span class="pre">C</span></code>를 클릭하면 <code class="docutils literal notranslate"><span class="pre">다음(daum.net)</span></code> 이동하는 설정입니다. 세부 내용은 아래에 표로 정리하였습니다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>노드</p></th>
+<th class="text-align:left head"><p>마우스가 노드 위에<br>있을 때 메시지 (툴팁)</p></th>
+<th class="text-align:left head"><p>마우스로 노드를<br>클릭할 때</p></th>
+<th class="text-align:left head"><p>Mermaid 명령어</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>A</p></td>
+<td class="text-align:left"><p>안녕하세요</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> 실행</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">A</span> <span class="pre">callback</span> <span class="pre">&quot;툴팁</span> <span class="pre">메시지&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>B</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">네이버</span></code>로 이동</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">https://naver.com</span></code> 이동</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">B</span> <span class="pre">&quot;https://naver.com&quot;</span> <span class="pre">&quot;네이버로</span> <span class="pre">이동&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>C</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">다음</span></code>으로 이동</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">https://daum.net</span></code> 이동</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">C</span> <span class="pre">href</span> <span class="pre">&quot;https://daum.net&quot;</span> <span class="pre">&quot;다음으로</span> <span class="pre">이동&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>D</p></td>
+<td class="text-align:left"><p>callback 실행</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">callback</span></code> 실행</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">click</span> <span class="pre">D</span> <span class="pre">call</span> <span class="pre">callback</span> <span class="pre">&quot;callback</span> <span class="pre">실행&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>코드로 작성하고 실행하면 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
+    A--&gt;B[B: web1]
+    A--&gt;C[C: web2]
+    B--&gt;D
+    C--&gt;D
+    click A callback &quot;툴팁 메시지&quot;
+    click B &quot;https://naver.com&quot; &quot;네이버로 이동&quot; _blank
+    click C href &quot;https://daum.net&quot; &quot;다음으로 이동&quot; _blank
+    click D call callback() &quot;callback 실행&quot;
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart TB
+    A--&gt;B[B: web1]
+    A--&gt;C[C: web2]
+    B--&gt;D
+    C--&gt;D
+    click A callback &quot;툴팁 메시지&quot;
+    click B &quot;https://naver.com&quot; &quot;네이버로 이동&quot; _blank
+    click C href &quot;https://daum.net&quot; &quot;다음으로 이동&quot; _top
+    click D call callback() &quot;callback 실행&quot;
+        </div></li>
+</ul>
+<div class="admonition- admonition">
+<p class="admonition-title">인터액션이 제대로 작동하지 않는 경우</p>
+<ul class="simple">
+<li><p>위에서 Mermaid가 생성한 flowchart의 노드에서 웹 링크를 설정한 것은 잘 작동할 것입니다.</p></li>
+<li><p>하지만 마우스를 가져가도 툴팁이 제공되지 않거나 자바스크립트 함수가 작동하지 않는 경우가 있을 수 있습니다.</p></li>
+<li><p>지금 현재 여러분이 보고 있는 페이지가 Markdown으로 작성되어 자바스크립트 또는 툴팁 지원에 한계가 있습니다.</p></li>
+<li><p>HTML 파일을 별도로 작성하여 설명하도록 하겠습니다.</p></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

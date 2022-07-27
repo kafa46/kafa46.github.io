@@ -1,3 +1,9 @@
+---
+noteId: "a726e7950de511ed8320517ca45ff5f6"
+tags: []
+
+---
+
 # Subgraph 연결 및 방향 설정
 
 Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 지원합니다.
@@ -5,8 +11,27 @@ Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 �
 다양한 subgraph를 만들고 연결해 보는 실습을 해보겠습니다.
 
 - Subgraph 내부에 subgraph 생성
-````
-    ```mermaid
+    ````
+        ```mermaid
+        flowchart LR
+            subgraph top[최상위 구역]
+                direction TB
+                
+                subgraph 구역1
+                    direction LR
+                    i1[start1] --> f1[end1]
+                end
+                
+                subgraph 구역2
+                    direction BT
+                    i2[start2] --> f2[end2]
+                end
+            end
+        ```
+    ````
+
+    - 실행 결과
+    ```{mermaid}
     flowchart LR
         subgraph top[최상위 구역]
             direction TB
@@ -22,25 +47,6 @@ Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 �
             end
         end
     ```
-````
-
-- 실행 결과
-```{mermaid}
-flowchart LR
-    subgraph top[최상위 구역]
-        direction TB
-        
-        subgraph 구역1
-            direction LR
-            i1[start1] --> f1[end1]
-        end
-        
-        subgraph 구역2
-            direction BT
-            i2[start2] --> f2[end2]
-        end
-    end
-```
 
 위에서 `최상위 구역`에 포함된 `구역1` 에서 `구역2`로 두꺼운 화살표로 연결해 보겠습니다.
 

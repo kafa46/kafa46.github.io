@@ -1,3 +1,9 @@
+---
+noteId: "a72672610de511ed8320517ca45ff5f6"
+tags: []
+
+---
+
 # Flowchart 기본 문법
 
 - Flowchart - Hellow world

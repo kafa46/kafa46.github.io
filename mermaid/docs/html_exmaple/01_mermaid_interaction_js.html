@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상호작용</title>
+</head>
+<body>
+    <div class="mermaid">
+        flowchart LR
+            A-->B
+            B-->C
+            C-->D
+            click A callback "Tooltip"
+            click B "https://www.github.com" "This is a link"
+            click C call callback() "Tooltip"
+            click D href "https://www.github.com" "This is a link"
+      </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <script>
+        var callback = function () {
+            alert('A callback was triggered');
+        };
+        var config = {
+            startOnLoad: true,
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'cardinal' },
+            securityLevel:'loose'
+        };
+        mermaid.initialize(config);
+      </script>    
+</body>
+</html>

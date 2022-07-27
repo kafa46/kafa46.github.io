@@ -1,3 +1,9 @@
+---
+noteId: "a726e7930de511ed8320517ca45ff5f6"
+tags: []
+
+---
+
 # Subgraph를 이용하여 flowchart 그리기
 
 Subgraph를 여러개 만들경우 개별 subgraph와 node를 다양한 형태로 연결할 수 있습니다.
