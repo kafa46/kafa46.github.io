@@ -30,7 +30,6 @@ Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 �
         ```
     ````
 
-    - 실행 결과
     ```{mermaid}
     flowchart LR
         subgraph top[최상위 구역]
@@ -71,7 +70,7 @@ Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 �
     ```
 ````
 
-- 실행 결과
+
 ```{mermaid}
 flowchart LR
     subgraph top[최상위 구역]
@@ -118,7 +117,6 @@ flowchart LR
     ```
 ````
 
-- 실행 결과
 ```{mermaid}
 flowchart LR
     subgraph top[최상위 구역]

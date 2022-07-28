@@ -40,7 +40,6 @@ Mermaid 공식 문법은 다음과 같습니다.
     ```
 ````
 
-- 실행 결과
 ```{mermaid}
 flowchart TB
     c1 --> a2
@@ -64,18 +63,17 @@ Subgraph의 위치(layout)은 mermaid가 자동으로 계산해서 최적 위치
 
 물론 노드 아이디에 설명을 추가하여 작성할 수도 있습니다.
 ````
-    ```mermaid
-    flowchart TB
-        c1[외부 입력]
-        c1-->a2
-        
-        subgraph id1 [첫번째 블록]
-        a1[시작]-->a2([종료])
-        end
-    ```
+```mermaid
+flowchart TB
+    c1[외부 입력]
+    c1-->a2
+    
+    subgraph id1 [첫번째 블록]
+    a1[시작]-->a2([종료])
+    end
+```
 ````
 
-- 실행 결과
 ```{mermaid}
 flowchart TB
     c1[외부 입력]

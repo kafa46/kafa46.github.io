@@ -67,3 +67,5 @@ kramdown:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
+  html_extra_path: 
+    - docs/html_example/01_mermaid_interaction_js.html

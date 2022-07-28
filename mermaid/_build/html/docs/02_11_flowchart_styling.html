@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.11. Flowchart 크기 설정" href="02_12_flowchart_configuration.html" />
     <link rel="prev" title="2.9. 노드 상호작용 설정" href="02_10_flowchart_interaction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -191,11 +190,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      2.10. 노드 스타일 지정
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_configuration.html">
-     2.11. Flowchart 크기 설정
     </a>
    </li>
   </ul>
@@ -384,8 +378,71 @@ title="Print to PDF"
 <p>노드에 스타일 속성을 부여하여 다양한 형태로 가공할 수 있습니다.</p>
 <p>Mermaid에서 지원하는 내용은 다음과 같습니다.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> 키워드를 이용한 설정</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> 키워드를 이용하여 노두에 직접 스타일 지정</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>를 정의하여 설정</p></li>
+</ul>
+<p>스타일 지정 문법은 다음과 같습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">style1</span></code> + <code class="docutils literal notranslate"><span class="pre">노드</span> <span class="pre">ID</span></code> + <code class="docutils literal notranslate"><span class="pre">속성1</span></code> + [<code class="docutils literal notranslate"><span class="pre">속성2</span></code>, …]</p>
+<p>그래프에 노드 2개를 만들고 <code class="docutils literal notranslate"><span class="pre">style</span></code> 키워드를 이용하여 스타일을 지정해 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR
+    id1(Start) --&gt; id2(Stop here!)
+    style id1 fill:#AFEEEE, stroke:#ffe666, stroke-width:4px, 
+    style id2 fill:#9966ff, stroke:#FF1493, stroke-width:2px, stroke-dasharray: 8 4
+```
+
+</pre></div>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>: 스타일 지정의 시작을 알립니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id1</span></code>, <code class="docutils literal notranslate"><span class="pre">id2</span></code>: 노드의 아이디 입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fill</span></code>: 노드 안의 채우기 색상 입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stroke</span></code>: 외곽선의 색상입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stroke-width</span></code>: 외곽선 굵기 입니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stroke-dassarray</span></code>: 노드 외곽선을 점선으로 표현하고 싶을때 사용합니다. 만약 점선 값을 <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">4</span></code>로 지정한 경우 실선 길이는 <code class="docutils literal notranslate"><span class="pre">8</span></code> 픽셀, 선이 없는 부분은 <code class="docutils literal notranslate"><span class="pre">4</span></code> 픽셀로 처리됩니다.</p>
+<div class="mermaid">
+            flowchart LR
+    id1(Start) --&gt; id2(Stop here!)
+    style id1 fill:#AFEEEE, stroke:#ffe666, stroke-width:4px, 
+    style id2 fill:#9966ff, stroke:#FF1493, stroke-width:2px, stroke-dasharray: 8 4
+        </div></li>
+</ul>
+<div class="admonition- admonition">
+<p class="admonition-title">핵사 코드로 된 색상값</p>
+<ul class="simple">
+<li><p>컬러 코드는 구글 검색을 하면 쉽게 찾을 수 있습니다.</p></li>
+<li><p>추천 웹페이지는 W3C Scools <a class="reference external" href="https://www.w3schools.com/colors/colors_hex.asp">Color Values</a> 입니다.</p></li>
+</ul>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">CSS</span></code>와 마찬가지로 동일한 스타일을 미리 <code class="docutils literal notranslate"><span class="pre">class</span></code>로 정의하고 편리하게 사용할 수도 있습니다.</p>
+<ul>
+<li><p>스타일 <code class="docutils literal notranslate"><span class="pre">class</span></code> 지정하기</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDef</span> <span class="n">className</span>  <span class="n">속성1</span> <span class="o">+</span> <span class="p">[</span><span class="n">속성2</span><span class="p">,</span> <span class="o">....</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p>지정한 <code class="docutils literal notranslate"><span class="pre">class</span></code> 적용하기</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">nodeID</span> <span class="n">className</span>
+</pre></div>
+</div>
+</li>
+<li><p>스타일 <code class="docutils literal notranslate"><span class="pre">class</span></code> 지정 및 불러다 사용하기 실흡</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR;
+    classDef myclass fill:#f9f,stroke:#333,stroke-width:4px;
+    A--&gt;B[AAA&lt;span&gt;BBB&lt;/span&gt;]
+    B--&gt;D
+    class A cssClass
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart LR;
+    classDef myclass fill:#f9f,stroke:#333,stroke-width:4px;
+    A --&gt; B[AAA&lt;span&gt;BBB&lt;/span&gt;]
+    B --&gt; D
+    class A myclass
+        </div></li>
 </ul>
 </section>
 
@@ -422,13 +479,6 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">2.9. </span>노드 상호작용 설정</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="02_12_flowchart_configuration.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.11. </span>Flowchart 크기 설정</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

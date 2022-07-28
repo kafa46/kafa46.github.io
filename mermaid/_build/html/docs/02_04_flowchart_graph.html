@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_configuration.html">
-     2.11. Flowchart 크기 설정
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -383,9 +378,8 @@ title="Print to PDF"
 <h1><span class="section-number">2.3. </span>Flowchart 그래프<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
 <p>노드와 노드를 선(edge)으로 연결한 형태를 그래프(graph)라고 합니다.</p>
 <p>Mermaid에서 활용하는 그래프의 개념에 대해 살펴보도록 합니다.</p>
-<ul class="simple">
-<li><p>그래프 방향(Orientation) 설정</p></li>
-</ul>
+<ul>
+<li><p>그래프 방향(Orientation) 설정</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>순번</p></th>
@@ -422,32 +416,48 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<ul class="simple">
-<li><p>flowcahrt 옆에 TB로 설정한 경우 (TB를 사용해도 동일하게 작동)</p></li>
-</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">TB</span></code>로 설정한 경우 (<code class="docutils literal notranslate"><span class="pre">TD</span></code>를 사용해도 동일하게 작동)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
     Start --&gt; Stop
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
                 flowchart TB
         Start --&gt; Stop
         </div></li>
-<li><p>flowcahrt 옆에 LR로 설정한 경우</p></li>
-</ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">BT</span></code>로 설정한 경우</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart BT
+    Start --&gt; Stop
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart BT
+    Start --&gt; Stop
+        </div></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">LR</span></code>로 설정한 경우</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     Start --&gt; Stop
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
+    Start --&gt; Stop
+        </div></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">RL</span></code>로 설정한 경우</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart RL
+    Start --&gt; Stop
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart RL
     Start --&gt; Stop
         </div></li>
 </ul>

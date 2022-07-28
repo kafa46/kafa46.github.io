@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.8. Subgraph 연결 및 방향 설정 &#8212; Mermaid Tutorial</title>
+    <title>3. Sequence Diagram &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.9. 노드 상호작용 설정" href="02_10_flowchart_interaction.html" />
-    <link rel="prev" title="2.7. Subgraph 이용한 flowchart" href="02_08_flowchart_flowchart.html" />
+    <link rel="next" title="3.1. Sequence Diagram 기본 문법" href="03_01_sequence_basic_syntax.html" />
+    <link rel="prev" title="2.10. 노드 스타일 지정" href="02_11_flowchart_styling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,16 +133,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -178,8 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.7. Subgraph 이용한 flowchart
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_09_flowchart_direction_in_subgraph.html">
      2.8. Subgraph 연결 및 방향 설정
     </a>
    </li>
@@ -191,6 +191,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="02_11_flowchart_styling.html">
      2.10. 노드 스타일 지정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   3. Sequence Diagram
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_sequence_basic_syntax.html">
+     3.1. Sequence Diagram 기본 문법
     </a>
    </li>
   </ul>
@@ -285,7 +302,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_09_flowchart_direction_in_subgraph.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/03_00_sequence_intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,7 +330,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_09_flowchart_direction_in_subgraph.md"
+        <a href="../_sources/docs/03_00_sequence_intro.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -362,7 +379,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Subgraph 연결 및 방향 설정</h1>
+                <h1>Sequence Diagram</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -374,130 +391,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="subgraph">
-<h1><span class="section-number">2.8. </span>Subgraph 연결 및 방향 설정<a class="headerlink" href="#subgraph" title="Permalink to this headline">#</a></h1>
-<p>Mermaid는 subgraph 사이의 방향을 쉽게 설정할 수 있는 기능을 지원합니다.</p>
-<p>다양한 subgraph를 만들고 연결해 보는 실습을 해보겠습니다.</p>
-<ul>
-<li><p>Subgraph 내부에 subgraph 생성</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
-    flowchart LR
-        subgraph top[최상위 구역]
-            direction TB
-            
-            subgraph 구역1
-                direction LR
-                i1[start1] --&gt; f1[end1]
-            end
-            
-            subgraph 구역2
-                direction BT
-                i2[start2] --&gt; f2[end2]
-            end
-        end
-    ```
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="sequence-diagram">
+<h1><span class="section-number">3. </span>Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permalink to this headline">#</a></h1>
+<p>시퀀스 다이어그램은 다양한 참여자(객체) 사이의 메시지 전달 과정을 시각화하여 시스템을 설명하는 그림입니다.</p>
+<div class="toctree-wrapper compound">
 </div>
-<div class="mermaid">
-            flowchart LR
-    subgraph top[최상위 구역]
-        direction TB
-        
-        subgraph 구역1
-            direction LR
-            i1[start1] --&gt; f1[end1]
-        end
-        
-        subgraph 구역2
-            direction BT
-            i2[start2] --&gt; f2[end2]
-        end
-    end
-        </div></li>
-</ul>
-<p>위에서 <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code>에 포함된 <code class="docutils literal notranslate"><span class="pre">구역1</span></code> 에서 <code class="docutils literal notranslate"><span class="pre">구역2</span></code>로 두꺼운 화살표로 연결해 보겠습니다.</p>
-<p>기존 코드 마지막에 구역을 연결하도록 코드 1줄 <code class="docutils literal notranslate"><span class="pre">구역1</span> <span class="pre">==&gt;</span> <span class="pre">구역2</span></code> 추가하였습니다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
-    flowchart LR
-        subgraph top[최상위 구역]
-            direction TB
-            
-            subgraph 구역1
-                direction LR
-                i1[start1] --&gt; f1[end1]
-            end
-            
-            subgraph 구역2
-                direction BT
-                i2[start2] --&gt; f2[end2]
-            end
-        end
-        구역1 ==&gt; 구역2
-    ```
-</pre></div>
-</div>
-<div class="mermaid">
-            flowchart LR
-    subgraph top[최상위 구역]
-        direction TB
-        
-        subgraph 구역1
-            direction LR
-            i1[start1] --&gt; f1[end1]
-        end
-        
-        subgraph 구역2
-            direction BT
-            i2[start2] --&gt; f2[end2]
-        end
-    end
-
-    구역1 ==&gt; 구역2
-        </div><p>이번에는 <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code> 외부에 <code class="docutils literal notranslate"><span class="pre">시작</span></code> 노드와 <code class="docutils literal notranslate"><span class="pre">종료</span></code> 노드를 추가하겠습니다.
-<code class="docutils literal notranslate"><span class="pre">시작</span></code> 노드는 <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code>으로 연결하고, <code class="docutils literal notranslate"><span class="pre">최상위</span> <span class="pre">구역</span></code>은 <code class="docutils literal notranslate"><span class="pre">종료</span></code> 노드로 연결하겠습니다.</p>
-<p>기존 코드에서 추가되는 내용은 다음과 같습니다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a[시작]</span> <span class="pre">--&gt;</span> <span class="pre">최상위</span> <span class="pre">구역</span> <span class="pre">--&gt;</span> <span class="pre">b[종료]</span></code></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
-    flowchart LR
-        subgraph top[최상위 구역]
-            direction TB
-            
-            subgraph 구역1
-                direction LR
-                i1[start1] --&gt; f1[end1]
-            end
-            
-            subgraph 구역2
-                direction BT
-                i2[start2] --&gt; f2[end2]
-            end
-        end
-        구역1 ==&gt; 구역2
-        a[시작] --&gt; top --&gt; b[종료]
-    ```
-</pre></div>
-</div>
-<div class="mermaid">
-            flowchart LR
-    subgraph top[최상위 구역]
-        direction TB
-        
-        subgraph 구역1
-            direction LR
-            i1[start1] --&gt; f1[end1]
-        end
-        
-        subgraph 구역2
-            direction BT
-            i2[start2] --&gt; f2[end2]
-        end
-    end
-
-    구역1 ==&gt; 구역2
-    a[시작] --&gt; top --&gt; b[종료]
-        </div></section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -526,17 +425,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_08_flowchart_flowchart.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_11_flowchart_styling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.7. </span>Subgraph 이용한 flowchart</p>
+            <p class="prev-next-title"><span class="section-number">2.10. </span>노드 스타일 지정</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_10_flowchart_interaction.html" title="next page">
+    <a class='right-next' id="next-link" href="03_01_sequence_basic_syntax.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.9. </span>노드 상호작용 설정</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>Sequence Diagram 기본 문법</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

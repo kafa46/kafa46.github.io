@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_configuration.html">
-     2.11. Flowchart 크기 설정
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -411,9 +406,6 @@ end
     ```
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>실행 결과</p></li>
-</ul>
 <div class="mermaid">
             flowchart TB
     c1 --&gt; a2
@@ -434,20 +426,17 @@ end
 <p>Subgraph의 위치(layout)은 mermaid가 자동으로 계산해서 최적 위치를 잡아 줍니다. 사용자가 특별히 위치를 잡기 위해 노력할 필요는 없습니다.</p>
 </div>
 <p>물론 노드 아이디에 설명을 추가하여 작성할 수도 있습니다.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ```mermaid
-    flowchart TB
-        c1[외부 입력]
-        c1--&gt;a2
-        
-        subgraph id1 [첫번째 블록]
-        a1[시작]--&gt;a2([종료])
-        end
-    ```
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart TB
+    c1[외부 입력]
+    c1--&gt;a2
+    
+    subgraph id1 [첫번째 블록]
+    a1[시작]--&gt;a2([종료])
+    end
+```
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>실행 결과</p></li>
-</ul>
 <div class="mermaid">
             flowchart TB
     c1[외부 입력]

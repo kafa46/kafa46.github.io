@@ -195,11 +195,6 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_configuration.html">
-     2.11. Flowchart 크기 설정
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -396,8 +391,6 @@ flowchart LR
     id```
 </pre></div>
 </div>
-</li>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id
@@ -408,156 +401,114 @@ flowchart LR
     id[첫 번째 노드]```
 </pre></div>
 </div>
-</li>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id[첫 번째 노드]
         </div></li>
 </ul>
 </li>
-<li><p>노드의 모양(shape)
-노드의 모양을 쉽게 지정할 수 있습니다.</p>
-<ul class="simple">
-<li><p>직사각형(square) 모양</p></li>
-</ul>
-<p>알고리즘에서 수행되는 명령어, 작업, 처리 등을 표현하는 기본단위 입니다.</p>
+<li><p>노드의 모양(shape): 노드의 모양을 쉽게 지정할 수 있습니다.</p>
+<ul>
+<li><p>직사각형(square) 모양: 알고리즘에서 수행되는 명령어, 작업, 처리 등을 표현하는 기본단위 입니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1[basic square]
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
 id1[basic square]
         </div></li>
-<li><p>원형 운동장 (stardium) 모양</p></li>
-</ul>
-<p>알고리즘의 시작과 끝을 표현할 때 사용합니다.</p>
+<li><p>원형 운동장 (stardium) 모양: 알고리즘의 시작과 끝을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1([stardium shape])
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1([stardium shape])
         </div></li>
-<li><p>모서리가 둥근 (round edge) 모양</p></li>
-</ul>
-<p>모서리가 둥근 모양 (stardium shape) 노드와 함께 알고리즘의 시작과 끝을 표현할 때 사용합니다.알고리즘의 시작을 표현할 때 원형 운동장 또는 모서리가 둥근 모양 노드 중에 아무거나 사용해도 무방합니다.</p>
+<li><p>모서리가 둥근 (round edge) 모양: 모서리가 둥근 모양 (stardium shape) 노드와 함께 알고리즘의 시작과 끝을 표현할 때 사용합니다.알고리즘의 시작을 표현할 때 원형 운동장 또는 모서리가 둥근 모양 노드 중에 아무거나 사용해도 무방합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1(round edge)
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1(round edge)
         </div></li>
-<li><p>서브 루틴 (subroutine) 모양</p></li>
-</ul>
-<p>사용자가 정의한 함수가 실행되는 것을 표현할 때 사용합니다.</p>
+<li><p>서브 루틴 (subroutine) 모양: 사용자가 정의한 함수가 실행되는 것을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1[[subroutine]]
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1[[subroutine]]
         </div></li>
-<li><p>실린더(Cylindrical) 모양</p></li>
-</ul>
-<p>데이터베이스(database)를 표현할 때 사용합니다.</p>
+<li><p>실린더(Cylindrical) 모양: 데이터베이스(database)를 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1[(database)]
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1[(database)]
         </div></li>
-<li><p>원(circle) 모양</p></li>
-</ul>
-<p>Flowchart가 너무 커서 나누어 그려야 할 경우 연결 지점을 표현할 때 사용합니다.</p>
-<p>또는, 여러 논리 흐름이 합쳐지는 포인트를 표현할 때 사용하기도 합니다.</p>
+<li><p>원(circle) 모양: Flowchart가 너무 커서 나누어 그려야 할 경우 연결 지점을 표현할 때 사용합니다. 또는, 여러 논리 흐름이 합쳐지는 포인트를 표현할 때 사용하기도 합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1((연결지점))
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1((연결지점))
         </div></li>
-<li><p>마름모(Rhombus) 모양</p></li>
-</ul>
-<p>조건문을 수행을 통해 알고리즘의 흐름이 분기되는 것을 표현할 때 사용합니다.</p>
+<li><p>마름모(Rhombus) 모양: 조건문을 수행을 통해 알고리즘의 흐름이 분기되는 것을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1{rhombus}
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1{rhombus}
         </div></li>
-<li><p>육각형(hexagon)</p></li>
-</ul>
-<p>본격적인 작업을 수행하기 전에 처리해야 할 일들을 명시적으로 표현할 때 사용합니다.</p>
-<p>주로 사용자 입력, 변수값 입력 등을 명확히 표현하고자 할 때 사용합니다.</p>
+<li><p>육각형(hexagon): 본격적인 작업을 수행하기 전에 처리해야 할 일들을 명시적으로 표현할 때 사용합니다. 주로 사용자 입력, 변수값 입력 등을 명확히 표현하고자 할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1{{hexagon}}
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1{{hexagon}}
         </div></li>
-<li><p>사다리꼴(paralleogram) 모양</p></li>
-</ul>
-<p>일반적인 데이터의 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code> 명령어를 이용한 콘솔(모니터) 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력, <code class="docutils literal notranslate"><span class="pre">파일(file)</span></code> 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
+<li><p>사다리꼴(paralleogram) 모양: 일반적인 데이터의 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다. <code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code> 명령어를 이용한 콘솔(모니터) 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력, <code class="docutils literal notranslate"><span class="pre">파일(file)</span></code> 입<span class="math notranslate nohighlight">\(\cdot\)</span>출력을 표현할 때 사용합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id1[/paralleogram/]
 ```
 </pre></div>
 </div>
-<ul>
-<li><p>실행 결과</p>
 <div class="mermaid">
             flowchart LR
     id1[/paralleogram/]
         </div></li>
-<li><p>그 이외에도 <code class="docutils literal notranslate"><span class="pre">역사다리꼴(reverse</span> <span class="pre">paralleogram)</span></code>, <code class="docutils literal notranslate"><span class="pre">부등변</span> <span class="pre">사각형(trappezoid)</span></code>, <code class="docutils literal notranslate"><span class="pre">이중</span> <span class="pre">외곽선원</span> <span class="pre">(double</span> <span class="pre">circle)</span></code> 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p></li>
+<li><p>그 이외에도 <code class="docutils literal notranslate"><span class="pre">역사다리꼴(reverse</span> <span class="pre">paralleogram)</span></code>, <code class="docutils literal notranslate"><span class="pre">부등변</span> <span class="pre">사각형(trappezoid)</span></code>, <code class="docutils literal notranslate"><span class="pre">이중</span> <span class="pre">외곽선원</span> <span class="pre">(double</span> <span class="pre">circle)</span></code> 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://%60mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p></li>
 </ul>
 </li>
 </ul>

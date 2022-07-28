@@ -193,11 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_configuration.html">
-     2.11. Flowchart 크기 설정
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -534,12 +529,54 @@ title="Print to PDF"
 <div class="admonition- admonition">
 <p class="admonition-title">인터액션이 제대로 작동하지 않는 경우</p>
 <ul class="simple">
-<li><p>위에서 Mermaid가 생성한 flowchart의 노드에서 웹 링크를 설정한 것은 잘 작동할 것입니다.</p></li>
+<li><p>위에서 Mermaid가 생성한 flowchart의 노드에서 웹 링크를 설정한 것은 잘 작동할 것입니다. 링크 걸어둔 노드를 클릭하면 해당 웹 페이지로 잘 이동하는 것을 확인할 수 있습니다.</p></li>
 <li><p>하지만 마우스를 가져가도 툴팁이 제공되지 않거나 자바스크립트 함수가 작동하지 않는 경우가 있을 수 있습니다.</p></li>
 <li><p>지금 현재 여러분이 보고 있는 페이지가 Markdown으로 작성되어 자바스크립트 또는 툴팁 지원에 한계가 있습니다.</p></li>
 <li><p>HTML 파일을 별도로 작성하여 설명하도록 하겠습니다.</p></li>
 </ul>
 </div>
+<p>HTML 코드로 인터액션을 구현한 코드는 다음과 같습니다</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>상호작용<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;callback 함수가 호출되었습니다.&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">};</span><span class="w"></span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">startOnLoad</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">flowchart</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useMaxWidth</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">htmlLabels</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">curve</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cardinal&#39;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nx">securityLevel</span><span class="o">:</span><span class="s1">&#39;loose&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="p">};</span><span class="w"></span>
+<span class="w">        </span><span class="nx">mermaid</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>    
+ 
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mermaid&quot;</span><span class="p">&gt;</span>
+        flowchart TD
+            A--&gt;B[B: web1]
+            A--&gt;C[C: web2]
+            B--&gt;D
+            C--&gt;D
+            click A callback &quot;툴팁 메시지&quot;
+            click B &quot;https://naver.com&quot; &quot;네이버로 이동&quot; _blank
+            click C href &quot;https://daum.net&quot; &quot;다음으로 이동&quot; _top
+            click D call callback() &quot;callback 실행&quot;
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>위 HTML 코드로 구현된 페이지는 <code class="docutils literal notranslate"><span class="pre">여기</span></code>를 참고하기 바랍니다.</p>
+<p>[여기]는 나중에 다시 편집해야 함.</p>
 </section>
 
     <script type="text/x-thebe-config">

@@ -126,3 +126,52 @@ Mermaid를 이용해 만들어진 노드를 클릭(click) 했을때 자바스크
 - 지금 현재 여러분이 보고 있는 페이지가 Markdown으로 작성되어 자바스크립트 또는 툴팁 지원에 한계가 있습니다. 
 - HTML 파일을 별도로 작성하여 설명하도록 하겠습니다.
 ```
+
+HTML 코드로 인터액션을 구현한 코드는 다음과 같습니다 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상호작용</title>
+</head>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    
+    <script>
+        var callback = function () {
+            alert('callback 함수가 호출되었습니다.');
+        };
+        var config = {
+            startOnLoad: true,
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'cardinal' },
+            securityLevel:'loose'
+        };
+        mermaid.initialize(config);
+    </script>    
+ 
+    <div class="mermaid">
+        flowchart TD
+            A-->B[B: web1]
+            A-->C[C: web2]
+            B-->D
+            C-->D
+            click A callback "툴팁 메시지"
+            click B "https://naver.com" "네이버로 이동" _blank
+            click C href "https://daum.net" "다음으로 이동" _top
+            click D call callback() "callback 실행"
+    </div>
+</body>
+</html>
+```
+
+
+위 HTML 코드로 구현된 페이지는 `여기`를 참고하기 바랍니다.
+
+
+[여기]는 나중에 다시 편집해야 함.
+
