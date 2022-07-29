@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.2. 메세지(Messages)" href="03_02_sequence_messages.html" />
     <link rel="prev" title="3. Sequence Diagram" href="03_00_sequence_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -207,6 +208,21 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      3.1. Sequence Diagram 기본 문법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_sequence_messages.html">
+     3.2. 메세지(Messages)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_sequence_activations.html">
+     3.3. Activation 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_sequence_notes.html">
+     3.4. 설명문(note) 추가
     </a>
    </li>
   </ul>
@@ -392,8 +408,69 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="sequence-diagram">
 <h1><span class="section-number">3.1. </span>Sequence Diagram 기본 문법<a class="headerlink" href="#sequence-diagram" title="Permalink to this headline">#</a></h1>
+<p>Mermaid를 이용해 sequence diagram을 그릴 때는 <code class="docutils literal notranslate"><span class="pre">sequenceDiagram</span></code> 이라는 키워드를 사용합니다.</p>
 <p>시퀀스 다이어그램의 기본 문법은 참여자(participants), 행위자(actors), 별칭(aliases) 구성됩니다.</p>
 <p>간단한 내용이니 잠깐 짚고 넘어가도록 하겠습니다.</p>
+<ul>
+<li><p>참여자(participants)</p>
+<p>참여자는 시스템 작동에 참여하는 객체를 표현합니다. 주로 사각형 모양을 사용하고, 사각형 안에 이름을 적어 줍니다.</p>
+<p>Mermaid에서는 참여자를 표현하기 위해 <code class="docutils literal notranslate"><span class="pre">participant</span></code>라는 키워드를 사용합니다. 참여자는 정의한 순서대로 나타납니다.</p>
+<p>참여자와 참여자 사이는 연결선(직선, 점선, 화살표 등)을 이용하여 메시지 전달을 표현합니다. 연결선에 대한 내용은 <a class="reference internal" href="03_02_sequence_messages.html"><span class="doc std std-doc">메시지</span></a>에서 구체적으로 설명합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    participant A
+    participant B
+    A -&gt;&gt; B: DB 접속 요청
+    B -&gt;&gt; A: 접속 승인
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    participant A
+    participant B
+    A -&gt;&gt; B: DB 접속 요청
+    B -&gt;&gt; A: 접속 승인
+        </div></li>
+<li><p>행위자(actors)</p>
+<p>행위자는 일반적인 객체보다는 참여자가 사람인 경우에 사용합니다. 시</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    actor 홍길동
+    actor 이순신
+    홍길동 -&gt;&gt; 이순신: 안녕하세요?
+    이순신 -&gt;&gt; 홍길동: 반갑습니다.
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    actor 홍길동
+    actor 이순신
+    홍길동 -&gt;&gt; 이순신: 안녕하세요?
+    이순신 -&gt;&gt; 홍길동: 반갑습니다.
+        </div></li>
+<li><p>별칭(aliases)</p>
+<p>별칭은 참여자(participants)를 선언하고 별명을 붙여주고자 할 경우에 사용합니다. <code class="docutils literal notranslate"><span class="pre">as</span></code>라는 키워드를 사용합니다.</p>
+<p>참여자 이름을 짧게 붙여주면 다른 작업을 할 때 편리하지만, 너무 간단한 이름은 시퀀스 다이어그램을 보는 사람들에게 가독성이 떨어지는 문제점이 있습니다.</p>
+<p>별명을 붙여주면 참여자 이름을 편리하게 코딩하고 관리할 수 있고, 읽는 사람들에게는 가독성을 부여할 수 있기 때문에 자주 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    participant A as 프로세서
+    participant B as 데이터베이스
+    A -&gt;&gt; B: DB 접속 요청
+    B -&gt;&gt; A: 접속 승인
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    participant A as 프로세서
+    participant B as 데이터베이스
+    A -&gt;&gt; B: DB 접속 요청
+    B -&gt;&gt; A: 접속 승인
+        </div></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -429,6 +506,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">3. </span>Sequence Diagram</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_02_sequence_messages.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>메세지(Messages)</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

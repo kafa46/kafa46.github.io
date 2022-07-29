@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.8. 노드 스타일 지정 &#8212; Mermaid Tutorial</title>
+    <title>3.2. 메세지(Messages) &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.9. Flowchart 크기 설정" href="02_11_flowchart_configuration.html" />
-    <link rel="prev" title="2.7. 노드 상호작용 설정" href="02_09_flowchart_interaction.html" />
+    <link rel="next" title="3.3. Activation 표시" href="03_03_sequence_activations.html" />
+    <link rel="prev" title="3.1. Sequence Diagram 기본 문법" href="03_01_sequence_basic_syntax.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,16 +135,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -159,33 +161,70 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_06_flowchart_subgraph.html">
-     2.4. Subgraph 그리기
+    <a class="reference internal" href="02_05_flowchart_links.html">
+     2.4. 노드와 노드 연결
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_07_flowchart_flowchart.html">
-     2.5. Subgraph를 이용하여 flowchart 그리기
+    <a class="reference internal" href="02_06_flowchart_special_characters.html">
+     2.5. 특수 문자 사용하기
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_08_flowchart_direction_in_subgraph.html">
-     2.6. Subgraph 연결 및 방향 설정
+    <a class="reference internal" href="02_07_flowchart_subgraph.html">
+     2.6. Subgraph 그리기
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_09_flowchart_interaction.html">
-     2.7. 노드 상호작용 설정
+    <a class="reference internal" href="02_08_flowchart_flowchart.html">
+     2.7. Subgraph 이용한 flowchart
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_09_flowchart_direction_in_subgraph.html">
+     2.8. Subgraph 연결 및 방향 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_10_flowchart_interaction.html">
+     2.9. 노드 상호작용 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_11_flowchart_styling.html">
+     2.10. 노드 스타일 지정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03_00_sequence_intro.html">
+   3. Sequence Diagram
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_sequence_basic_syntax.html">
+     3.1. Sequence Diagram 기본 문법
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.8. 노드 스타일 지정
+     3.2. 메세지(Messages)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="02_11_flowchart_configuration.html">
-     2.9. Flowchart 크기 설정
+    <a class="reference internal" href="03_03_sequence_activations.html">
+     3.3. Activation 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_sequence_notes.html">
+     3.4. 설명문(note) 추가
     </a>
    </li>
   </ul>
@@ -280,7 +319,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_10_flowchart_styling.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/03_02_sequence_messages.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -308,7 +347,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_10_flowchart_styling.md"
+        <a href="../_sources/docs/03_02_sequence_messages.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -357,7 +396,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>노드 스타일 지정</h1>
+                <h1>메세지(Messages)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -369,15 +408,83 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><span class="section-number">2.8. </span>노드 스타일 지정<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
-<p>노드에 스타일 속성을 부여하여 다양한 형태로 가공할 수 있습니다.</p>
-<p>Mermaid에서 지원하는 내용은 다음과 같습니다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code> 키워드를 이용한 설정</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>를 정의하여 설정</p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="messages">
+<h1><span class="section-number">3.2. </span>메세지(Messages)<a class="headerlink" href="#messages" title="Permalink to this headline">#</a></h1>
+<p>참여자 또는 행위자들 사이에서 발생하는 메시지를 표현하는 방법을 정의합니다.</p>
+<p>기본 문법은 다음과 같습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">참여자[또는</span> <span class="pre">행위자]</span></code>  <code class="docutils literal notranslate"><span class="pre">연결선</span></code>  <code class="docutils literal notranslate"><span class="pre">참여자[또는</span> <span class="pre">행위자]</span></code>: <code class="docutils literal notranslate"><span class="pre">메시지</span> <span class="pre">내용</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">연결선</span></code> 종류는 다음과 같습니다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>표현</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-&gt;</span></code></p></td>
+<td class="text-align:left"><p>화살표가 없는 실선</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--&gt;</span></code></p></td>
+<td class="text-align:left"><p>화살표가 없는 점선</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p>화살표가 있는 실선</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p>화살표가 있는 점선</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-x</span></code></p></td>
+<td class="text-align:left"><p>마지막에 <code class="docutils literal notranslate"><span class="pre">X</span></code> 표시가 있는 실선</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--x</span></code></p></td>
+<td class="text-align:left"><p>마지막에 <code class="docutils literal notranslate"><span class="pre">X</span></code> 표시가 있는 점선</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-)</span></code></p></td>
+<td class="text-align:left"><p>열린 화살표가 있는 실선(비동기 async 실행)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--)</span></code></p></td>
+<td class="text-align:left"><p>열린 화살표가 있는 점선(비동기 async 실행)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>비동기(<code class="docutils literal notranslate"><span class="pre">async</span></code>hronous) 실행은 요청을 보낸 후 답변이 올때까지 기다리지 않고 다른 작업을 수행한다는 의미입니다. 일반적으로 <code class="docutils literal notranslate"><span class="pre">async</span></code> 처리는 화살표 끝모양이 개방된 형태로 -&gt; 표현합니다.</p>
+<p>한편, 동기(<code class="docutils literal notranslate"><span class="pre">sync</span></code>hronous) 실행은 요청을 보내 후 답변이 올때까지 기다리는 동작을 의미합니다. <code class="docutils literal notranslate"><span class="pre">sync</span></code> 작업은 화살표 끝이 검정색으로 채워진 삼각형 모양을 -<span class="math notranslate nohighlight">\(\blacktriangleright\)</span> 이용해 표현합니다.</p>
+<p>위 표에서 설명한 연결선을 이용한 메시지 표현을 실습해 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    participant A as 프로세서
+    participant B as 데이터베이스
+    
+    # 연결선 모양
+    A -&gt; B: 화살표가 없는 실선
+    A -&gt;&gt; B: 화살표가 있는 실선
+    A --&gt; B: 화살표가 없는 점선
+    A --&gt;&gt; B: 화살표가 있는 점선
+    A -x B: 마지막에 `X` 표시가 있는 실선
+    A --x B: 마지막에 `X` 표시가 있는 점선
+    A -) B: 열린 화살표가 있는 실선(비동기 async 실행)
+    A --) B: 열린 화살표가 있는 점선(비동기 async 실행)
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    participant A as 프로세서
+    participant B as 데이터베이스
+    
+    # 연결선 모양
+    A -&gt; B: 화살표가 없는 실선
+    A -&gt;&gt; B: 화살표가 있는 실선
+    A --&gt; B: 화살표가 없는 점선
+    A --&gt;&gt; B: 화살표가 있는 점선
+    A -x B: 마지막에 `X` 표시가 있는 실선
+    A --x B: 마지막에 `X` 표시가 있는 점선
+    A -) B: 열린 화살표가 있는 실선(비동기 async 실행)
+    A --) B: 열린 화살표가 있는 점선(비동기 async 실행)
+        </div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -406,17 +513,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_09_flowchart_interaction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_01_sequence_basic_syntax.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.7. </span>노드 상호작용 설정</p>
+            <p class="prev-next-title"><span class="section-number">3.1. </span>Sequence Diagram 기본 문법</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_11_flowchart_configuration.html" title="next page">
+    <a class='right-next' id="next-link" href="03_03_sequence_activations.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.9. </span>Flowchart 크기 설정</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Activation 표시</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

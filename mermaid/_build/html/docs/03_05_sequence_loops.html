@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.11. Flowchart 크기 설정 &#8212; Mermaid Tutorial</title>
+    <title>3.5. 반복(loop) 표현 &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="2.10. 노드 스타일 지정" href="02_11_flowchart_styling.html" />
+    <link rel="prev" title="3.4. 설명문(note) 추가" href="03_04_sequence_notes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -132,16 +132,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -192,9 +192,41 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03_00_sequence_intro.html">
+   3. Sequence Diagram
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_sequence_basic_syntax.html">
+     3.1. Sequence Diagram 기본 문법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_sequence_messages.html">
+     3.2. 메세지(Messages)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_sequence_activations.html">
+     3.3. Activation 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_sequence_notes.html">
+     3.4. 설명문(note) 추가
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.11. Flowchart 크기 설정
+     3.5. 반복(loop) 표현
     </a>
    </li>
   </ul>
@@ -289,7 +321,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_12_flowchart_configuration.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/03_05_sequence_loops.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -317,7 +349,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_12_flowchart_configuration.md"
+        <a href="../_sources/docs/03_05_sequence_loops.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -366,7 +398,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flowchart 크기 설정</h1>
+                <h1>반복(loop) 표현</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -378,10 +410,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="flowchart">
-<h1><span class="section-number">2.11. </span>Flowchart 크기 설정<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
-<p>완성된 flowchart의 크기를 확대하거나 축소할 수 있습니다.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="loop">
+<h1><span class="section-number">3.5. </span>반복(loop) 표현<a class="headerlink" href="#loop" title="Permalink to this headline">#</a></h1>
+<p>시퀀스 다이어그램에서 작업이 반복적으로 수행되는 영역 <code class="docutils literal notranslate"><span class="pre">loop</span></code> 라고 부릅니다.</p>
+<p>Mermaid에서 loop를 표현하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loop</span> <span class="n">반복내용</span>
+<span class="o">...</span> <span class="n">작업내용</span> <span class="o">...</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>어떤 시스템이 데이터베이스에 1시간에 1번씩 자료 업데이트 요청을 보내는 예제를 실습해 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    participant A as Data Updater
+    participant B as DB
+    loop 1시간마다 수행
+        A -&gt;&gt; B: send update data
+        B --&gt;&gt; A: update result
+    end
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    participant A as Data Updater
+    participant B as DB
+    loop 1시간마다 수행
+        A -&gt;&gt; B: send update data
+        B --&gt;&gt; A: update result
+    end
+
+        </div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -410,11 +469,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_11_flowchart_styling.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_04_sequence_notes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.10. </span>노드 스타일 지정</p>
+            <p class="prev-next-title"><span class="section-number">3.4. </span>설명문(note) 추가</p>
         </div>
     </a>
 </div>

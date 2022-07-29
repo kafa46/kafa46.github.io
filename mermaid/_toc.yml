@@ -27,3 +27,9 @@ chapters:
 - file: docs/03_00_sequence_intro
   sections:
   - file: docs/03_01_sequence_basic_syntax
+  - file: docs/03_02_sequence_messages
+  - file: docs/03_03_sequence_activations
+  - file: docs/03_04_sequence_notes
+  - file: docs/03_05_sequence_loops
+  - file: docs/03_06_sequence_alternatives
+  - file: docs/03_07_sequence_parallel
