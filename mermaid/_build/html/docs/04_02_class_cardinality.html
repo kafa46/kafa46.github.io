@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. Mermaid 라이브 버전 &#8212; Mermaid Tutorial</title>
+    <title>4.2. 다중성 표시 &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Mermaid Tutorial - Flowchart" href="02_01_flowchart.html" />
-    <link rel="prev" title="1. Mermaid Intro" href="01_01_intro_to_mermaid.html" />
+    <link rel="prev" title="4.1. 구성요소 정의" href="04_01_class_defining_components.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,18 +115,18 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01_intro_to_mermaid.html">
    1. Mermaid Intro
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_intro_to_live_version.html">
      1.1. Mermaid 라이브 버전
     </a>
    </li>
@@ -242,24 +241,24 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04_00_class_intro.html">
    4. Class Diagram
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_class_defining_components.html">
      4.1. 구성요소 정의
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_02_class_cardinality.html">
-     4.2. 다중성(Multiplicity, Cardinality)
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.2. 다중성 표시
     </a>
    </li>
   </ul>
@@ -354,7 +353,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/01_02_intro_to_live_version.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/04_02_class_cardinality.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -382,7 +381,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/01_02_intro_to_live_version.md"
+        <a href="../_sources/docs/04_02_class_cardinality.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -431,7 +430,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Mermaid 라이브 버전</h1>
+                <h1>다중성 표시</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -443,26 +442,67 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mermaid">
-<h1><span class="section-number">1.1. </span>Mermaid 라이브 버전<a class="headerlink" href="#mermaid" title="Permalink to this headline">#</a></h1>
-<ul>
-<li><p>VS code 익스텐션은 이미지 저장 기능을 지원하지 않습니다.</p></li>
-<li><p>완성된 이미지를 저장하기 위해서는 <a class="reference external" href="https://mermaid.live/">Mermaid Live</a> 버전을 활욜할 수 있습니다.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">4.2. </span>다중성 표시<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>다중성은 클래스와 클래스의 관계(연결선)에서 발생하는 인스턴스의 수를 의미합니다. 다중성은 <code class="docutils literal notranslate"><span class="pre">multiplicity</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">cardinality</span></code>라고 부르기도 합니다.</p>
+<p>학생 클래스가 있고, 수업 클래스가 있을 경우를  생각할 수 있습니다. 시스템을 <code class="docutils literal notranslate"><span class="pre">학생은</span> <span class="pre">수업을</span> <span class="pre">듣는다.</span></code>라고 설계한다고 가정해 봅니다.</p>
+<p>이런 경우라면, 연관관계 <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>를 통해 다음과 같이 클래스 다이어그램을 그릴 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    Class &lt;-- Student
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    direction LR
+    Class &lt;-- Student
+        </div><p>만약 <code class="docutils literal notranslate"><span class="pre">&quot;한</span> <span class="pre">학생이</span> <span class="pre">듣는</span> <span class="pre">수업은</span> <span class="pre">하나</span> <span class="pre">이상이다.&quot;</span></code> 라고 시스템을 설계하려면 위에서 제시한 클래스 다이어그램으로는 이 상황을 알려줄 수 없습니다.</p>
+<p>이런 경우에 유용하게 사용하는 것이 다중성 표시 입니다.</p>
+<p>다중성 표시는 다음과 같이 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`클래스 이름` + `&quot;다중성&quot;` + `연결선` + `&quot;다중성&quot;` + `클래스 이름` : `설명`
+</pre></div>
+</div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.png</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code> 파일 형식으로 저장 가능합니다.</p></li>
-<li><p>사용자 기호에 따라 색상 테마(theme)를 변경할 수 있습니다.</p></li>
+<li><p>다중성을 표기할 때는 반드시 쌍따옴표 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>로 감싸주어야 합니다.</p></li>
 </ul>
-</li>
-<li><p><a class="reference external" href="https://mermaid.live/">Mermaid Live</a>의 UI는 다음과 같습니다.</p>
-<figure class="align-center" id="mermaid-live-version">
-<a class="reference internal image-reference" href="../_images/02.mermaid-live.png"><img alt="mermaid live version" src="../_images/02.mermaid-live.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Mermaid 라이브 버전(온라인)</span><a class="headerlink" href="#mermaid-live-version" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</li>
-</ul>
-</section>
+<p>앞에서 사용한 학생 - 수업 관계에 다중성을 표시하려면 다음과 같이 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    Course &quot;1..*&quot; &lt;-- &quot;1&quot; Student  
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    direction LR
+    Course &quot;1..*&quot; &lt;-- &quot;1&quot; Student  
+        </div><p>다중성 표현에 사용되는 표현식은 다음과 같습니다.</p>
+<p>|표현|설명|
+|<code class="docutils literal notranslate"><span class="pre">1</span></code>|오직 1개의 객체 허용|
+|<code class="docutils literal notranslate"><span class="pre">0..1</span></code>|없거나(0개) 또는 1개의 객체 허용|
+|<code class="docutils literal notranslate"><span class="pre">1..*</span></code>|1개 이상의 객체 허용|
+|<code class="docutils literal notranslate"><span class="pre">*</span></code>|다수 객체 허용|
+|<code class="docutils literal notranslate"><span class="pre">n</span></code>|<code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
+|<code class="docutils literal notranslate"><span class="pre">0..n</span></code>|<code class="docutils literal notranslate"><span class="pre">0</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
+|<code class="docutils literal notranslate"><span class="pre">1..n</span></code>|<code class="docutils literal notranslate"><span class="pre">1</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
+|||</p>
+<p>추가 예제는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket
+    Student &quot;1&quot; --&gt; &quot;1..*&quot; Course
+    우주 --&gt; &quot;many&quot; star : Contains
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    direction LR
+    Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket
+    Student &quot;1&quot; --&gt; &quot;1..*&quot; Course
+    Universe --&gt; &quot;many&quot; star : Contains
+        </div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -491,19 +531,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01_01_intro_to_mermaid.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04_01_class_defining_components.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Mermaid Intro</p>
+            <p class="prev-next-title"><span class="section-number">4.1. </span>구성요소 정의</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="02_01_flowchart.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Mermaid Tutorial - Flowchart</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

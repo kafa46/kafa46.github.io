@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.1. 구성요소 정의 &#8212; Mermaid Tutorial</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.2. 다중성 표시" href="04_02_class_cardinality.html" />
+    <link rel="prev" title="4. Class Diagram" href="04_00_class_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mermaid Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Mermaid Tutorial을 시작하며
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="01_01_intro_to_mermaid.html">
+   1. Mermaid Intro
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_intro_to_live_version.html">
+     1.1. Mermaid 라이브 버전
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02_01_flowchart.html">
+   2. Mermaid Tutorial - Flowchart
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_flowchart_hello_world.html">
+     2.1. Flowchart 기본 문법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_03_flowchart_node.html">
+     2.2. Flowchart 노드(Node)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_flowchart_graph.html">
+     2.3. Flowchart 그래프
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_05_flowchart_links.html">
+     2.4. 노드와 노드 연결
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_06_flowchart_special_characters.html">
+     2.5. 특수 문자 사용하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_07_flowchart_subgraph.html">
+     2.6. Subgraph 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_08_flowchart_flowchart.html">
+     2.7. Subgraph 이용한 flowchart
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_09_flowchart_direction_in_subgraph.html">
+     2.8. Subgraph 연결 및 방향 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_10_flowchart_interaction.html">
+     2.9. 노드 상호작용 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_11_flowchart_styling.html">
+     2.10. 노드 스타일 지정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03_00_sequence_intro.html">
+   3. Sequence Diagram
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_sequence_basic_syntax.html">
+     3.1. Sequence Diagram 기본 문법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_sequence_messages.html">
+     3.2. 메세지(Messages)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_sequence_activations.html">
+     3.3. Activation 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_sequence_notes.html">
+     3.4. 설명문(note) 추가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_05_sequence_loops.html">
+     3.5. 반복(loop) 표현
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_06_sequence_alternatives.html">
+     3.6. 대안 경로 (alternatives)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_07_sequence_parallel.html">
+     3.7. 병렬 경로 (parallel)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="04_00_class_intro.html">
+   4. Class Diagram
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. 구성요소 정의
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_class_cardinality.html">
+     4.2. 다중성 표시
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/kafa46/kafa46.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/04_01_class_defining_components.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/04_01_class_defining_components.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   4.1.1. 클래스 표현 규칙
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   4.1.2. 클래스 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4.1.3. 클래스 멤버 정의
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.1.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       이름:
+      </span>
+      <span class="pre">
+       멤버
+      </span>
+     </code>
+     형태로 정의
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.1.3.2. 중괄호
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {}
+      </span>
+     </code>
+     를 이용한 정의
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   4.1.4. 클래스 멤버 가시성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   4.1.5. 클래스 관계 정의
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>구성요소 정의</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   4.1.1. 클래스 표현 규칙
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   4.1.2. 클래스 정의
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4.1.3. 클래스 멤버 정의
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.1.3.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       이름:
+      </span>
+      <span class="pre">
+       멤버
+      </span>
+     </code>
+     형태로 정의
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.1.3.2. 중괄호
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       {}
+      </span>
+     </code>
+     를 이용한 정의
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   4.1.4. 클래스 멤버 가시성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   4.1.5. 클래스 관계 정의
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><span class="section-number">4.1. </span>구성요소 정의<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>클래스 다이어그램은 클래스와 클래스 사이의 관계로 표현할 수 있습니다.</p>
+<p>우리는 다음과 같은 순서로 실습을 진행하겠습니다.</p>
+<ol class="simple">
+<li><p>클래스 표현 규칙</p></li>
+<li><p>클래스 멤버 정의</p></li>
+<li><p>클래스 가시성 정의</p></li>
+<li><p>클래스 관계 정의</p></li>
+</ol>
+<section id="id2">
+<h2><span class="section-number">4.1.1. </span>클래스 표현 규칙<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>사람마다 클래스를 표현하는 방법이 다르다면 클래스 다이어그램을 보는 사람들은 매우 혼란스러울 것입니다. 그래서 소프트웨어 설계자/개발자들이 모여서 다양한 다이어그램을 그리는 규칙을 정의해 놓았습니다.</p>
+<p>통일된 그리기 규칙을 <code class="docutils literal notranslate"><span class="pre">UML</span> <span class="pre">(Unified</span> <span class="pre">Modeling</span> <span class="pre">Language)</span></code> 라고 부릅니다.</p>
+<div class="admonition-uml admonition">
+<p class="admonition-title">UML에 대한 구체적인 내용</p>
+<p>UML을 보다 구체적으로 알고 싶은 사람은 소프트웨어공학(Software Engineering) 관련 서적을 공부하시거나, UML 관련 인터넷 <a class="reference external" href="https://sparxsystems.com/resources/tutorials/uml/part1.html">튜토리얼</a>을 참고하기 바랍니다.</p>
+</div>
+<p>클래스 다이어그램도 자주 사용하기 때문에 당연히 UML에 그리는 방법이 정해져 있습니다.</p>
+<p>먼저 클래스를 그리는 규칙은 3가지 입니다.</p>
+<ul class="simple">
+<li><p>클래스 이름(name): 가장 상단에 클래스의 이름을 씁니다. 가운데 정렬하고 굵게 씁니다. 각 단어의 첫 단어는 대문자를 사용하고, 설명문(annotation)을 추가할 수 있습니다.</p></li>
+<li><p>클래스 속성(attributes): 가운데에 클래스가 사용하는 속성을 씁니다. 왼쪽 정렬하고 속성 이름은 소문자로 씁니다.</p></li>
+<li><p>클래스 동작(operations): 바닥 부분에는 클래스의 실행을 표현하는 동작(operation)들을 씁니다. 속성과 마찬가지로 왼쪽 정렬하고 소문자로 씁니다.</p></li>
+</ul>
+<p>클래스 그리기 규칙을 적용한 실습은 다음과 같습니다.</p>
+<p>우선은 클래스가 세로 3개로 구분된 직사각형으로 표현하고 각 직사각형에 클래스 이름, 속성, 동작에 대한 내용을 적어 준다는 것만 살펴보도록 합니다.</p>
+<p>실습을 진행하면서 좀 더 구체적으로 살펴보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    class BankAccount
+    BankAccount: String owner
+    BankAccount: Bigdecimal balance
+    BankAccount: deposit(amount)
+    BankAccount: withdrawal(amount)
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class BankAccount
+    BankAccount : String owner
+    BankAccount : Bigdecimal balance
+    BankAccount : deposit(amount)
+    BankAccount : withdrawal(amount)
+        </div></section>
+<section id="id3">
+<h2><span class="section-number">4.1.2. </span>클래스 정의<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<p>Mermaid에서 클래스를 정의하기 위해서는 <code class="docutils literal notranslate"><span class="pre">classDiagram</span></code> 이라는 키워드를 써주는 것으로 시작합니다.</p>
+<p>개별 클래스를 정의하는 방법은 2가지 입니다.</p>
+<p>첫째, <code class="docutils literal notranslate"><span class="pre">class</span></code> 라는 키워드를 사용해 명시적으로 정의하는 방법입니다.</p>
+<p>다음 예제는 <code class="docutils literal notranslate"><span class="pre">class</span></code> 키워드를 사용해서 Animal 이라는 클래스를 정의한 경우입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    class Animal
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class Animal
+        </div><p>둘째, 클래스 사이의 상속 관계를 표현하는 <code class="docutils literal notranslate"><span class="pre">--|&gt;</span></code> 키워드를 이용하는 방법입니다.</p>
+<p>다음 예제는 Dog 클래스가 Animal 클래스를 상속 받은 경우입니다. <code class="docutils literal notranslate"><span class="pre">class</span></code> 라는 키워드를 사용하지 않아도 필요한 클래스를 자동으로 새성해 줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram 
+    Animal &lt;|--  Dog
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram 
+    Animal &lt;|--  Dog
+        </div></section>
+<section id="id4">
+<h2><span class="section-number">4.1.3. </span>클래스 멤버 정의<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>UML은 클래스 속성과 메서드를 정의하고 추가 설명을 추가할 수 있는 규칙을 정의하고 있습니다.</p>
+<p>물론 Mermaid도 UML에서 정한 규칙을 지원합니다.</p>
+<p>클래스의 멤버는 속성(attributs)와 메서드(methods)로 구분할 수 있습니다.</p>
+<p>Mermaid는 클래스의 속성과 메서드를 구분하기 위하여 소괄호 <code class="docutils literal notranslate"><span class="pre">()</span></code>를 사용합니다. <code class="docutils literal notranslate"><span class="pre">()</span></code>와 같이 사용되는 것은 메서드 또는 함수로 인식합니다. <code class="docutils literal notranslate"><span class="pre">()</span></code>가 없다면 속성으로 인식합니다.</p>
+<p>클래스 멤버를 정의하는 방법은 2가지 입니다.</p>
+<section id="id5">
+<h3><span class="section-number">4.1.3.1. </span><code class="docutils literal notranslate"><span class="pre">이름:</span> <span class="pre">멤버</span></code> 형태로 정의<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>클래스 멤버를 정의하는 첫번째 방법은 <code class="docutils literal notranslate"><span class="pre">클래스</span> <span class="pre">이름</span> <span class="pre">:</span> <span class="pre">멤버</span></code> 형태로 정의하는 것입니다.</p>
+<p>클래스 멤버가 몇 개 안되는 간단한 클래스를 정의할 때 유용합니다.</p>
+<p>예를 들어 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram BankAccount
+    class 
+        BankAccount: +String 소유자
+        BankAccount: -Int 잔액
+        BankAccount: +입금(금액)
+        BankAccount: +출금(금액)
+```
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>이 예제에서 <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>는 자료형(data type) 입니다. <code class="docutils literal notranslate"><span class="pre">+</span></code> 기호는 <code class="docutils literal notranslate"><span class="pre">public</span></code>을, <code class="docutils literal notranslate"><span class="pre">-</span></code> 기호는 <code class="docutils literal notranslate"><span class="pre">private</span></code>을 의미합니다. <code class="docutils literal notranslate"><span class="pre">소유자</span></code>, <code class="docutils literal notranslate"><span class="pre">잔액</span></code>은 <code class="docutils literal notranslate"><span class="pre">()</span></code>가 없기 때문에 속성(attributs) 입니다.</p></li>
+<li><p>이 예제에서 <code class="docutils literal notranslate"><span class="pre">+입금()</span></code>, <code class="docutils literal notranslate"><span class="pre">+출금금()</span></code>은 <code class="docutils literal notranslate"><span class="pre">()</span></code>와 같이 사용되었기 때문에 클래스의 메서드 입니다.</p></li>
+</ul>
+<div class="mermaid">
+            classDiagram
+    class BankAccount
+        BankAccount: +String 소유자
+        BankAccount: -Int 잔액
+        BankAccount: +입금(금액)
+        BankAccount: +출금(금액)
+        </div></section>
+<section id="id6">
+<h3><span class="section-number">4.1.3.2. </span>중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code>를 이용한 정의<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>클래스를 정의하는 다른 방법은  <code class="docutils literal notranslate"><span class="pre">클래스</span> <span class="pre">이름</span> <span class="pre">:</span> <span class="pre">멤버</span></code>을 사용하는 대신, 중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code>를 사용하는 방법입니다. 클래스의 멤버가 많을 경우 일일히 <code class="docutils literal notranslate"><span class="pre">클래스</span> <span class="pre">이름:</span> </code> 타이핑 해야하는 번거로움을 줄일 수 있습니다. 앞 예제를 <code class="docutils literal notranslate"><span class="pre">{}</span></code>를 이용해 구현해 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    class BankAccount{
+        +String 소유자
+        -Int 잔액
+        +입금(금액)
+        +출금(금액)
+    }
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class BankAccount{
+        +String 소유자
+        -Int 잔액
+        +입금(금액)
+        +출금(금액)
+    }
+        </div><p>클래스 메서드가 반환값이 있을 경우 반환형(return type)을 정의할 수 있습니다. <code class="docutils literal notranslate"><span class="pre">메서드이름(메서드</span> <span class="pre">입력)</span> <span class="pre">반환형</span></code>와 같이 사용하면 됩니다. 메서드이름 이후에 <code class="docutils literal notranslate"><span class="pre">)</span></code> 다음 한칸 띄우고 반환형을 적어 주면 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    class BankAccount{
+        +String 소유자
+        -Int 잔액
+        +deposit(금액) bool
+        +withdrawl(금액) int
+    }
+```
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>반환형이 있는 경우 한글 메서드 이름을 지원하지 않아 메서드 이름을 <code class="docutils literal notranslate"><span class="pre">deposit</span></code>, <code class="docutils literal notranslate"><span class="pre">withdrawl</span></code>로 변경하였습니다.</p></li>
+</ul>
+<div class="mermaid">
+            classDiagram
+    class BankAccount{
+        +String 소유자
+        -Int 잔액
+        +deposit(금액) bool
+        +withdrawl(금액) int
+    }
+        </div></section>
+</section>
+<section id="id7">
+<h2><span class="section-number">4.1.4. </span>클래스 멤버 가시성<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<p>객체지향 설계에는 <code class="docutils literal notranslate"><span class="pre">정보은닉(information</span> <span class="pre">hiding)</span></code>이라는 개념이 있습니다. 사용자에게 필요한 멤버는 접근을 허용하고, 불필요한 정보는 감추는 개념입니다. 앞 예제에는 <code class="docutils literal notranslate"><span class="pre">+</span></code>와 <code class="docutils literal notranslate"><span class="pre">-</span></code> 기호를 정보은닉을 표현하였습니다.</p>
+<p>소프트웨어 설계자/개발자가 지정한 정보 은닉 수준에 따라 다른 클래스나 함수에서 볼 수 있는 멤버가 있고, 보이지 않는 멤버들도 있습니다. 이러한 특징을 <code class="docutils literal notranslate"><span class="pre">가시성(visibility)</span></code> 이라고 부릅니다.</p>
+<p>Mermaid에서 지원하는 <code class="docutils literal notranslate"><span class="pre">visibuilty</span></code> 표현 연산자는 다음과 같습니다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>문법</p></th>
+<th class="text-align:left head"><p>정의</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-align:left"><p>public</p></td>
+<td class="text-align:left"><p>클래스 외부에서 모두 접근 가능</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-align:left"><p>private</p></td>
+<td class="text-align:left"><p>클래스 외부에서 모두 접근 불가, 클래스 멤버만 접근 가능</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">#</span></code></p></td>
+<td class="text-align:left"><p>protected</p></td>
+<td class="text-align:left"><p>클래스를 상속받은 클래스의 멤버들만 접근 가능</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">~</span></code></p></td>
+<td class="text-align:left"><p>package(internal)</p></td>
+<td class="text-align:left"><p>패키지로 묶인 클래스의 멤버들만 접근 가능</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-package admonition">
+<p class="admonition-title">package</p>
+<p><code class="docutils literal notranslate"><span class="pre">package</span></code>는 비슷한 기능을 모아 두는 것을 의미합니다. 주로 하나의 폴더에 비슷한 기능을 담당하는 것들을 모아 둡니다. Java 언어의 경우 <code class="docutils literal notranslate"><span class="pre">package</span></code>라는 명령어를 사용합니다. <code class="docutils literal notranslate"><span class="pre">Python</span></code> 언어의 경우 폴더 구조 자체를 자동으로 <code class="docutils literal notranslate"><span class="pre">package</span></code>로 인식합니다 (<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.3</span></code> 이전의 구버전(old version)에서는 폴더마다 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> 파일을 생성해 주어야 합니다.)</p>
+</div>
+<p>구현(코딩) 하다보면 종종 <code class="docutils literal notranslate"><span class="pre">추상(abstract)</span> <span class="pre">메서드</span></code>를 선언하거나 <code class="docutils literal notranslate"><span class="pre">정적(static)</span> <span class="pre">속성/메서드</span></code>를 정의해야 할 경우가 있습니다.  경우  추상 클래스는 <code class="docutils literal notranslate"><span class="pre">*</span></code> 연산자를, 정적 속성/메서드는 <code class="docutils literal notranslate"><span class="pre">$</span></code> 연산자를 이용하여 표현합니다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>문법</p></th>
+<th class="text-align:left head"><p>정의</p></th>
+<th class="text-align:left head"><p>사용법</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-align:left"><p>abstract class</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">추상_클래스_이름*</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">$</span></code></p></td>
+<td class="text-align:left"><p>static attribute/method</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">정적_메서드/정적_속성$</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>다음 예시는 속성 <code class="docutils literal notranslate"><span class="pre">ower</span></code>와 메서드 <code class="docutils literal notranslate"><span class="pre">withdraw</span></code>를 static으로 지정하고, 속성 <code class="docutils literal notranslate"><span class="pre">deposit</span></code>을 추상 메서드로 지정한 것입니다.</p>
+<p>Static으로 지정된 멤버는 밑줄이 그어지고, 추상 메서드로 지정된 멤버는 이탤릭(기울어진) 모양으로 표시됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    class BankAccount{
+        +String owner$
+        -Int 잔액
+        +deposit(금액)* int
+        +withdrawl(금액)$ int
+    }
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class BankAccount{
+        +String owner$
+        -Int 잔액
+        +deposit(금액)* int
+        +withdrawl(금액)$ int
+    }
+        </div></section>
+<section id="id8">
+<h2><span class="section-number">4.1.5. </span>클래스 관계 정의<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<p>클래스와 클래스 사이의 관계를 표현하는 문법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`클래스이름  연결선  클래스이름`
+</pre></div>
+</div>
+<p>클래스 사이의 관계를 정의하는 <code class="docutils literal notranslate"><span class="pre">연결선</span></code> 종류는 다음과 같습니다.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>종류</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;|--</span></code></p></td>
+<td class="text-align:left"><p>상속(inheritance)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*--</span></code></p></td>
+<td class="text-align:left"><p>합성(composition)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">o--</span></code></p></td>
+<td class="text-align:left"><p>집합(aggregation)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--&gt;</span></code></p></td>
+<td class="text-align:left"><p>연관(association)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">..&gt;</span></code></p></td>
+<td class="text-align:left"><p>의존(dependency)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">..|&gt;</span></code></p></td>
+<td class="text-align:left"><p>실체화(realization)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td class="text-align:left"><p>연결(link), 실선 표시</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td class="text-align:left"><p>연결(link), 점선 표시</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>위 관계를 종류별로 간단히 구현하면 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    classA &lt;|-- classB
+    classC *-- classD
+    classE o-- classF
+    classG &lt;-- classH
+    classI &lt;.. classJ
+    classK &lt;|.. classL
+    classM -- classN
+    classO .. classP
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    direction LR
+    classA &lt;|-- classB
+    classC *-- classD
+    classE o-- classF
+    classG &lt;-- classH
+    classI &lt;.. classJ
+    classK &lt;|.. classL
+    classM -- classN
+    classO .. classP
+        </div><p>연결선의 의미를 명확하 하기 위하여 연결선에 설명을 추가할 수 있습니다.</p>
+<p>설명선 추가 실습 코드는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+classDiagram
+    direction LR
+    classA --|&gt; classB : Inheritance
+    classC --* classD : Composition
+    classE --o classF : Aggregation
+    classG --&gt; classH : Association
+    classI ..&gt; classJ : Dependency
+    classK ..|&gt; classL : Realization
+    classM -- classN : Link(Solid)
+    classO .. classP : Link(Dashed)
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    direction LR
+    classA --|&gt; classB : Inheritance
+    classC --* classD : Composition
+    classE --o classF : Aggregation
+    classG --&gt; classH : Association
+    classI ..&gt; classJ : Dependency
+    classK ..|&gt; classL : Realization
+    classM -- classN : Link(Solid)
+    classO .. classP : Link(Dashed)
+        </div><p>필요에 따라 연결선의 양 끝을 사용자가 자유롭게 설정할 수 있습니다.</p>
+<p>연결선의 양 끝 모양은 다음과 같이 지정합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">연결선</span> <span class="pre">끝모양</span></code> + <code class="docutils literal notranslate"><span class="pre">선</span> <span class="pre">종류</span></code> + <code class="docutils literal notranslate"><span class="pre">연결선</span> <span class="pre">끝모양</span></code></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>연결선 끝모양</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;|</span></code></p></td>
+<td class="text-align:left"><p>상속(inheritance)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-align:left"><p>합성(composition)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">o</span></code></p></td>
+<td class="text-align:left"><p>집합(aggregation)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="text-align:left"><p>연관(association)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="text-align:left"><p>연관(association)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">|&gt;</span></code></p></td>
+<td class="text-align:left"><p>실체화(realization)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>연결선 종류</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">--</span></code></p></td>
+<td class="text-align:left"><p>실선 표시</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td class="text-align:left"><p>점선 표시</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>예를 들면 다음과 같이 연결선을 지정할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    Animal &lt;|--|&gt; Zebra
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    Animal &lt;|--|&gt; Zebra
+        </div></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="04_00_class_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Class Diagram</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_02_class_cardinality.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>다중성 표시</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Giseop Noh<br/>
+  
+      &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+    <div class="extra_footer">
+      <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

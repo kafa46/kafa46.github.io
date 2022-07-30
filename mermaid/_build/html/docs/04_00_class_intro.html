@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. Mermaid 라이브 버전 &#8212; Mermaid Tutorial</title>
+    <title>4. Class Diagram &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Mermaid Tutorial - Flowchart" href="02_01_flowchart.html" />
-    <link rel="prev" title="1. Mermaid Intro" href="01_01_intro_to_mermaid.html" />
+    <link rel="next" title="4.1. 구성요소 정의" href="04_01_class_defining_components.html" />
+    <link rel="prev" title="3.7. 병렬 경로 (parallel)" href="03_07_sequence_parallel.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,18 +116,18 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="01_01_intro_to_mermaid.html">
    1. Mermaid Intro
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_intro_to_live_version.html">
      1.1. Mermaid 라이브 버전
     </a>
    </li>
@@ -242,11 +242,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="04_00_class_intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    4. Class Diagram
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
@@ -259,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_class_cardinality.html">
-     4.2. 다중성(Multiplicity, Cardinality)
+     4.2. 다중성 표시
     </a>
    </li>
   </ul>
@@ -354,7 +354,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/01_02_intro_to_live_version.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/04_00_class_intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -382,7 +382,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/01_02_intro_to_live_version.md"
+        <a href="../_sources/docs/04_00_class_intro.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -431,7 +431,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Mermaid 라이브 버전</h1>
+                <h1>Class Diagram</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -443,25 +443,20 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mermaid">
-<h1><span class="section-number">1.1. </span>Mermaid 라이브 버전<a class="headerlink" href="#mermaid" title="Permalink to this headline">#</a></h1>
-<ul>
-<li><p>VS code 익스텐션은 이미지 저장 기능을 지원하지 않습니다.</p></li>
-<li><p>완성된 이미지를 저장하기 위해서는 <a class="reference external" href="https://mermaid.live/">Mermaid Live</a> 버전을 활욜할 수 있습니다.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.png</span></code>, <code class="docutils literal notranslate"><span class="pre">.svg</span></code> 파일 형식으로 저장 가능합니다.</p></li>
-<li><p>사용자 기호에 따라 색상 테마(theme)를 변경할 수 있습니다.</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://mermaid.live/">Mermaid Live</a>의 UI는 다음과 같습니다.</p>
-<figure class="align-center" id="mermaid-live-version">
-<a class="reference internal image-reference" href="../_images/02.mermaid-live.png"><img alt="mermaid live version" src="../_images/02.mermaid-live.png" style="width: 700px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Mermaid 라이브 버전(온라인)</span><a class="headerlink" href="#mermaid-live-version" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="class-diagram">
+<h1><span class="section-number">4. </span>Class Diagram<a class="headerlink" href="#class-diagram" title="Permalink to this headline">#</a></h1>
+<p>클래스 다이어그램 (class diagram)은 시스템의 정적(static) 구조를 클래스를 이용하여 표현하는 그림으로 UML (Unified Modeling Language)에서 정의하고 있는 그림입니다.</p>
+<p>클래스 다이어그램은 클래스의 속성(attribute), 작동(operation)을 표현하고, 클래스와 클래스 사이의 관계를 표시하게 됩니다.</p>
+<p>객체지향 설계 (Object Oriented Programmming)에서 클래스 다이어그램은  가장 중요한 구성 요소이며 데이터 모델링에서도 자주 활용합니다.</p>
+<p>클래스는 클래스 다이어그램의 핵심 요소이며, 클래스와 클래스 사이에는 상호작용(interaction)이 발생합니다. 그리고 클래스는 프로그래맹이 가능해야 합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>본 튜토리얼은 클래스를 이용한 설계가 끝난 이후 시각화를 위한 단계에서 필요한 내용을 제공합니다. 클래스를 어떻게 설계하고 프로그래밍 하는지에 대해서는 설명하지 않습니다. 클래스 설계 및 구현(코딩)은 Java, Python 등과 같은 객체지향 언어를 공부하시기 바랍니다.</p>
+</div>
+<p>클래스 다이어그램은 객체지향 설계/프로그래밍에서 많이 사용하기 때문에 그림으로 표현해야 할 경우도 많습니다.</p>
+<p>Mermaid를 이용하여 클래스 다이어그램을 그리는 방법에 대하여 구체적으로 알아보도록 하겠습니다.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -491,17 +486,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01_01_intro_to_mermaid.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_07_sequence_parallel.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Mermaid Intro</p>
+            <p class="prev-next-title"><span class="section-number">3.7. </span>병렬 경로 (parallel)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_01_flowchart.html" title="next page">
+    <a class='right-next' id="next-link" href="04_01_class_defining_components.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Mermaid Tutorial - Flowchart</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>구성요소 정의</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

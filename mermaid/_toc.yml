@@ -33,3 +33,8 @@ chapters:
   - file: docs/03_05_sequence_loops
   - file: docs/03_06_sequence_alternatives
   - file: docs/03_07_sequence_parallel
+
+- file: docs/04_00_class_intro
+  sections:
+  - file: docs/04_01_class_defining_components
+  - file: docs/04_02_class_cardinality
