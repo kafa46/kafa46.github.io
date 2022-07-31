@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Flowchart 그래프 &#8212; Mermaid Tutorial</title>
+    <title>5.3. 크로우 풋 ERD 살펴보기 &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. 노드와 노드 연결" href="02_05_flowchart_links.html" />
-    <link rel="prev" title="2.2. Flowchart 노드(Node)" href="02_03_flowchart_node.html" />
+    <link rel="next" title="5.4. 개체와 관계" href="05_02_er_diagram_entities_and_relations.html" />
+    <link rel="prev" title="5. ER Diagram 소개" href="05_00_er_diagram_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,16 +133,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -153,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. Flowchart 노드(Node)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_flowchart_graph.html">
      2.3. Flowchart 그래프
     </a>
    </li>
@@ -274,6 +274,28 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="05_00_er_diagram_intro.html">
+   5. ER Diagram 소개
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.3. 크로우 풋 ERD 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_er_diagram_entities_and_relations.html">
+     5.4. 개체와 관계
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -364,7 +386,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_04_flowchart_graph.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/05_01_er_diagram_overview.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -392,7 +414,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_04_flowchart_graph.md"
+        <a href="../_sources/docs/05_01_er_diagram_overview.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -441,7 +463,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flowchart 그래프</h1>
+                <h1>크로우 풋 ERD 살펴보기</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -453,93 +475,75 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="flowchart">
-<span id="flowchart-graph"></span><h1><span class="section-number">2.3. </span>Flowchart 그래프<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
-<p>노드와 노드를 선(edge)으로 연결한 형태를 그래프(graph)라고 합니다.</p>
-<p>Mermaid에서 활용하는 그래프의 개념에 대해 살펴보도록 합니다.</p>
-<ul>
-<li><p>그래프 방향(Orientation) 설정</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>순번</p></th>
-<th class="text-align:left head"><p>명령어</p></th>
-<th class="text-align:left head"><p>설명</p></th>
-<th class="text-align:left head"><p>활용 예시</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>1</p></td>
-<td class="text-align:left"><p>TB (또는 TD)</p></td>
-<td class="text-align:left"><p>순서도가 위(Top)에서 아래(Bottom, Down)로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">TB</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
-<td class="text-align:left"><p>LR</p></td>
-<td class="text-align:left"><p>순서도가 왼쪽(Left)에서 오른쪽(Right)으로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">LR</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>3</p></td>
-<td class="text-align:left"><p>BT</p></td>
-<td class="text-align:left"><p>순서도가 아래(Down)에서 위(Top)로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">BT</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>4</p></td>
-<td class="text-align:left"><p>RL</p></td>
-<td class="text-align:left"><p>순서도가 오른쪽(Right)에서 왼쪽(Left)으로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">RL</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
-<td class="text-align:left"><p></p></td>
-<td class="text-align:left"><p></p></td>
-<td class="text-align:left"><p></p></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">TB</span></code>로 설정한 경우 (<code class="docutils literal notranslate"><span class="pre">TD</span></code>를 사용해도 동일하게 작동)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
-    Start --&gt; Stop
-```
-</pre></div>
-</div>
-<div class="mermaid">
-                flowchart TB
-        Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">BT</span></code>로 설정한 경우</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="erd">
+<h1><span class="section-number">5.3. </span>크로우 풋 ERD 살펴보기<a class="headerlink" href="#erd" title="Permalink to this headline">#</a></h1>
+<p>Mermaid로 ERD를 그리는 것은 <code class="docutils literal notranslate"><span class="pre">erDiagram</span></code> 이라는 키워드를 사용하면 됩니다.</p>
+<p>구체적인 내용을 살펴보기 전에 대략적인 구성을 통해 ERD 감잡기를 하겠습니다. 이후에 구체적인 설명을 통해 보다 깊이 크로우 풋 ERD를 이해할 수 있도록 실습을 진행하겠습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart BT
-    Start --&gt; Stop
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
 </pre></div>
 </div>
 <div class="mermaid">
-            flowchart BT
-    Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">LR</span></code>로 설정한 경우</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart LR
-    Start --&gt; Stop
+            erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+        </div><p>위 ERD에는 4개의 개체(<code class="docutils literal notranslate"><span class="pre">CUSTOMER</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">DELIVERY-ADDRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">LINE-ITEM</span></code>)를 생성하였습니다. 개체(entity)는 일반적으로 대문자로 표기하지만 아직 정해진 규칙은 없습니다.</p>
+<p>개체와 개체의 관계(relationship)는 선으로 표현되었습니다. 편의상 <code class="docutils literal notranslate"><span class="pre">관계선</span></code>이라고 부르겠습니다.
+관계선의 끝 부분에는 제약조건(cardinality)dmf 표현하는 기호(그림 모양)가 붙었습니다. 자세한 내용은 <a class="reference internal" href="05_00_er_diagram_intro.html#erd-intro"><span class="std std-ref">ER Diagram 소개</span></a>에서 설명한  <a class="reference internal" href="05_00_er_diagram_intro.html#crow-foot-cardinality-table"><span class="std std-numref">Table 5.1</span></a>을 참고하기 바랍니다.</p>
+<p>각 개체는 속성(attributs)값을 가질 수 있습니다. 개체 선언 이후 중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 내부에 <code class="docutils literal notranslate"><span class="pre">자료형(type)</span></code>과 <code class="docutils literal notranslate"><span class="pre">속성</span> <span class="pre">이름(name)</span></code>을 순서대로 적어주면 됩니다.</p>
+<p>위에서 사용한 예제에서 각 개체에 속성을 부여하는 방식은 대략적으로 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+erDiagram
+    CUSTOMER {
+        string name
+        string custNumber
+        string sector
+    }
+    
+    ORDER {
+        int orderNumber
+        string deliveryAddress
+    }
+    
+    LINE-ITEM {
+        string productCode
+        int quantity
+        float pricePerUnit
+    }
+    
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
 ```
 </pre></div>
 </div>
 <div class="mermaid">
-            flowchart LR
-    Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">RL</span></code>로 설정한 경우</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart RL
-    Start --&gt; Stop
-```
-</pre></div>
-</div>
-<div class="mermaid">
-            flowchart RL
-    Start --&gt; Stop
-        </div></li>
-</ul>
+            erDiagram 
+    CUSTOMER {
+        string name
+        string custNumber
+        string sector
+    }
+    
+    ORDER {
+        int orderNumber
+        string deliveryAddress
+    }
+    
+    LINE-ITEM {
+        string productCode
+        int quantity
+        float pricePerUnit
+    }
+    
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+        </div><p>개략적으로 크로우 풋 ERD 그리는 방법을 살펴보았습니다.</p>
+<p>이제부터 조금 더 구체적으로</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -569,17 +573,17 @@ flowchart RL
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_03_flowchart_node.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="05_00_er_diagram_intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>Flowchart 노드(Node)</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>ER Diagram 소개</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_05_flowchart_links.html" title="next page">
+    <a class='right-next' id="next-link" href="05_02_er_diagram_entities_and_relations.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>노드와 노드 연결</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>개체와 관계</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

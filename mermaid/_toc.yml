@@ -38,3 +38,13 @@ chapters:
   sections:
   - file: docs/04_01_class_defining_components
   - file: docs/04_02_class_cardinality
+  - file: docs/04_03_class_annotations
+  - file: docs/04_04_class_directions
+
+- file: docs/05_00_er_diagram_intro
+  sections:
+  - file: docs/05_01_er_diagram_overview
+  - file: docs/05_02_er_diagram_entities_and_relations
+  - file: docs/05_03_er_diagram_identification
+  - file: docs/05_04_er_diagram_attributes
+

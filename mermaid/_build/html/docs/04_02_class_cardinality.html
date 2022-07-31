@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.3. Annotations &amp; Comments" href="04_03_class_annotations.html" />
     <link rel="prev" title="4.1. 구성요소 정의" href="04_01_class_defining_components.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -259,6 +260,16 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.2. 다중성 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_class_annotations.html">
+     4.3. Annotations &amp; Comments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_class_directions.html">
+     4.4. 클래스 방향 설정
     </a>
    </li>
   </ul>
@@ -478,15 +489,39 @@ classDiagram
     direction LR
     Course &quot;1..*&quot; &lt;-- &quot;1&quot; Student  
         </div><p>다중성 표현에 사용되는 표현식은 다음과 같습니다.</p>
-<p>|표현|설명|
-|<code class="docutils literal notranslate"><span class="pre">1</span></code>|오직 1개의 객체 허용|
-|<code class="docutils literal notranslate"><span class="pre">0..1</span></code>|없거나(0개) 또는 1개의 객체 허용|
-|<code class="docutils literal notranslate"><span class="pre">1..*</span></code>|1개 이상의 객체 허용|
-|<code class="docutils literal notranslate"><span class="pre">*</span></code>|다수 객체 허용|
-|<code class="docutils literal notranslate"><span class="pre">n</span></code>|<code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
-|<code class="docutils literal notranslate"><span class="pre">0..n</span></code>|<code class="docutils literal notranslate"><span class="pre">0</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
-|<code class="docutils literal notranslate"><span class="pre">1..n</span></code>|<code class="docutils literal notranslate"><span class="pre">1</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함|
-|||</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>표현</p></th>
+<th class="text-align:left head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>오직 1개의 객체 허용</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">0..1</span></code></p></td>
+<td class="text-align:left"><p>없거나(0개) 또는 1개의 객체 허용</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1..*</span></code></p></td>
+<td class="text-align:left"><p>1개 이상의 객체 허용</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-align:left"><p>다수 객체 허용</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">0..n</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">0</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1..n</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span></code>개 부터 <code class="docutils literal notranslate"><span class="pre">n</span></code>개 객체 허용, <code class="docutils literal notranslate"><span class="pre">n</span></code>은 1보다 커야함</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
 <p>추가 예제는 다음과 같습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
 classDiagram
@@ -537,6 +572,13 @@ classDiagram
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">4.1. </span>구성요소 정의</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_03_class_annotations.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>Annotations &amp; Comments</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

@@ -259,7 +259,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_02_class_cardinality.html">
-     4.2. 다중성(Multiplicity, Cardinality)
+     4.2. 다중성 표시
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_class_annotations.html">
+     4.3. Annotations &amp; Comments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_class_directions.html">
+     4.4. 클래스 방향 설정
     </a>
    </li>
   </ul>
@@ -419,12 +429,51 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   3.3.1. 기본 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3.3.2. 단축 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3.3.3. 중첩 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   3.3.4. 메시지 넘버링
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -436,6 +485,34 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   3.3.1. 기본 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   3.3.2. 단축 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   3.3.3. 중첩 표현
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   3.3.4. 메시지 넘버링
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -445,8 +522,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="activation">
 <h1><span class="section-number">3.3. </span>Activation 표시<a class="headerlink" href="#activation" title="Permalink to this headline">#</a></h1>
-<ul>
-<li><p>기본 표현</p>
+<section id="id1">
+<h2><span class="section-number">3.3.1. </span>기본 표현<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Activation은 객체의 작동이 시작됨을 표시합니다.</p>
 <p>반대로 deactivation은 객체의 작동이 끝난 것을 표현해 줍니다.</p>
 <p>사용자가 아이디와 비밀번호를 입력하면 웹 시스템은 인증 절차를 시작하게 되는데 이 경우는 인증 기능이 activation 되었다고 할 수 있습니다.</p>
@@ -471,28 +548,30 @@ sequenceDiagram
     activate B
     B --&gt;&gt; A: 인증완료
     deactivate B
-        </div></li>
-<li><p>단축 표현</p>
+        </div></section>
+<section id="id2">
+<h2><span class="section-number">3.3.2. </span>단축 표현<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <p>위 예제에서 Activation/deactivation을 표현하기 위해 각각 <code class="docutils literal notranslate"><span class="pre">activate</span></code>와 <code class="docutils literal notranslate"><span class="pre">deactivate</span></code>라는 키워드를 사용했습니다.</p>
 <p>코딩하는 사람 입장에서 생각해 라인수가 길어져서 번거로울 수 있습니다. 문서 작성자가 편리하도록 <code class="docutils literal notranslate"><span class="pre">activation</span></code> 대신에 연결선 끝부분에 <code class="docutils literal notranslate"><span class="pre">+</span></code> 기호를 붙이면 <code class="docutils literal notranslate"><span class="pre">activation</span></code> 키워드를 대체할 수 있습니다. <code class="docutils literal notranslate"><span class="pre">deactivation</span></code>은 <code class="docutils literal notranslate"><span class="pre">-</span></code> 기호를 붙여 줍니다.</p>
 <p>위 예제는 아래와 같이 작성하여도 동일한 결과를 보여줍니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 sequenceDiagram
-    actor A as 사용자
-    participant B as 인증 시스템
-    A -&gt;&gt;+ B: 아이디/비밀번호 입력
-    B --&gt;&gt;- A: 인증완료
+actor A as 사용자
+participant B as 인증 시스템
+A -&gt;&gt;+ B: 아이디/비밀번호 입력
+B --&gt;&gt;- A: 인증완료
 ```
 </pre></div>
 </div>
 <div class="mermaid">
             sequenceDiagram
-    actor A as 사용자
-    participant B as 인증 시스템
-    A -&gt;&gt;+ B: 아이디/비밀번호 입력
-    B --&gt;&gt;- A: 인증완료
-        </div></li>
-<li><p>중첩 표현</p>
+actor A as 사용자
+participant B as 인증 시스템
+A -&gt;&gt;+ B: 아이디/비밀번호 입력
+B --&gt;&gt;- A: 인증완료
+        </div></section>
+<section id="id3">
+<h2><span class="section-number">3.3.3. </span>중첩 표현<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <p>Activation은 중첩 표현 가능합니다.</p>
 <p>하나의 activation이 시작된 이후에 다른 activation을 추가하면 중첩된 activation으로 표현됩니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -514,8 +593,35 @@ sequenceDiagram
     A -&gt;&gt;+ B: catcha 입력
     B --&gt;&gt;- A: catcha 성공
     B --&gt;&gt;- A: 인증 완료
-        </div></li>
-</ul>
+        </div></section>
+<section id="id4">
+<h2><span class="section-number">3.3.4. </span>메시지 넘버링<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>시퀀스 다이어그램에서 발생하는 다양한 메시지 전달 과정에 번호를 달아줄 수 있다면 가독성이 향상되고 시스템 작동을 좀 더 쉽게 이해할 수 있을 것입니다.</p>
+<p>Mermaid는 간단하게 메시지 작동 순서에 번호를 부여할 수 있습니다.</p>
+<p>설정 방법은 단순히 <code class="docutils literal notranslate"><span class="pre">autonumber</span></code> 옵션을 부여하면 됩니다.</p>
+<p>위에서 사용한 예제에 번호를 부여해 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+sequenceDiagram
+    autonumber
+    actor A as 사용자
+    participant B as 인증 시스템
+    A -&gt;&gt;+ B: 아이디/비밀번호 입력
+    A -&gt;&gt;+ B: catcha 입력
+    B --&gt;&gt;- A: catcha 성공
+    B --&gt;&gt;- A: 인증 완료
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            sequenceDiagram
+    autonumber
+    actor A as 사용자
+    participant B as 인증 시스템
+    A -&gt;&gt;+ B: 아이디/비밀번호 입력
+    A -&gt;&gt;+ B: catcha 입력
+    B --&gt;&gt;- A: catcha 성공
+    B --&gt;&gt;- A: 인증 완료
+        </div></section>
 </section>
 
     <script type="text/x-thebe-config">

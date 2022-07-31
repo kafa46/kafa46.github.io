@@ -4,6 +4,7 @@ tags: []
 
 ---
 
+(flowchart-graph)=
 # Flowchart 그래프 
 노드와 노드를 선(edge)으로 연결한 형태를 그래프(graph)라고 합니다.
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Flowchart 그래프 &#8212; Mermaid Tutorial</title>
+    <title>4.3. Annotations &amp; Comments &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.4. 노드와 노드 연결" href="02_05_flowchart_links.html" />
-    <link rel="prev" title="2.2. Flowchart 노드(Node)" href="02_03_flowchart_node.html" />
+    <link rel="next" title="4.4. 클래스 방향 설정" href="04_04_class_directions.html" />
+    <link rel="prev" title="4.2. 다중성 표시" href="04_02_class_cardinality.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -133,16 +133,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="02_01_flowchart.html">
    2. Mermaid Tutorial - Flowchart
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -153,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.2. Flowchart 노드(Node)
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_04_flowchart_graph.html">
      2.3. Flowchart 그래프
     </a>
    </li>
@@ -242,16 +242,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04_00_class_intro.html">
    4. Class Diagram
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="04_01_class_defining_components.html">
      4.1. 구성요소 정의
@@ -262,8 +262,8 @@ const thebe_selector_output = ".output, .cell_output"
      4.2. 다중성 표시
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_03_class_annotations.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      4.3. Annotations &amp; Comments
     </a>
    </li>
@@ -364,7 +364,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_04_flowchart_graph.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/04_03_class_annotations.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -392,7 +392,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_04_flowchart_graph.md"
+        <a href="../_sources/docs/04_03_class_annotations.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -441,7 +441,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flowchart 그래프</h1>
+                <h1>Annotations & Comments</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -453,94 +453,110 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="flowchart">
-<span id="flowchart-graph"></span><h1><span class="section-number">2.3. </span>Flowchart 그래프<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
-<p>노드와 노드를 선(edge)으로 연결한 형태를 그래프(graph)라고 합니다.</p>
-<p>Mermaid에서 활용하는 그래프의 개념에 대해 살펴보도록 합니다.</p>
-<ul>
-<li><p>그래프 방향(Orientation) 설정</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="annotations-comments">
+<h1><span class="section-number">4.3. </span>Annotations &amp; Comments<a class="headerlink" href="#annotations-comments" title="Permalink to this headline">#</a></h1>
+<p>클래스 다이어그램을 그리다 보면 이런 저런 클래스를 다양하게 생성하게 됩니다.</p>
+<p>클래스 갯수가 많아지면 개별 클래스의 역할이 헷갈릴 수 있습니다.</p>
+<p>이런 경우 클래스에 메타 데이터 처럼 주석을 달아주면 좋을 것입니다.</p>
+<p>Mermaid는 클래스에 대한 명확한 이해를 위해 클래스에 마커(marker, 표시 딱지)와 같은 설명문을 추가할 수 있습니다. 이렇게 추가되는 설명문을 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">annotation</span></code> 이라고 부릅니다.</p>
+<p>Annotation을 정의하기 위해서는 <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>로 시작하고 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>로 닫습니다. <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>와 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 사이에 원하는 annotation 종류를 적어주면 됩니다.</p>
+<p>주로 사용하는 annotation 종류는 다음과 같습니다.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>순번</p></th>
-<th class="text-align:left head"><p>명령어</p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>표현</p></th>
 <th class="text-align:left head"><p>설명</p></th>
-<th class="text-align:left head"><p>활용 예시</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>1</p></td>
-<td class="text-align:left"><p>TB (또는 TD)</p></td>
-<td class="text-align:left"><p>순서도가 위(Top)에서 아래(Bottom, Down)로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">TB</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;interface&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p>인터페이스 역할을 하는 클래스</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
-<td class="text-align:left"><p>LR</p></td>
-<td class="text-align:left"><p>순서도가 왼쪽(Left)에서 오른쪽(Right)으로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">LR</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;abstract&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p>추상 클래스</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>3</p></td>
-<td class="text-align:left"><p>BT</p></td>
-<td class="text-align:left"><p>순서도가 아래(Down)에서 위(Top)로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">BT</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;service&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p>서비스 클래스</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>4</p></td>
-<td class="text-align:left"><p>RL</p></td>
-<td class="text-align:left"><p>순서도가 오른쪽(Right)에서 왼쪽(Left)으로 자라남</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">RL</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;enumeration&gt;&gt;</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">enum</span></code> 역할을 하는 클래스</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p></p></td>
-<td class="text-align:left"><p></p></td>
-<td class="text-align:left"><p></p></td>
 <td class="text-align:left"><p></p></td>
 </tr>
 </tbody>
 </table>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">TB</span></code>로 설정한 경우 (<code class="docutils literal notranslate"><span class="pre">TD</span></code>를 사용해도 동일하게 작동)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
-    Start --&gt; Stop
-```
-</pre></div>
-</div>
-<div class="mermaid">
-                flowchart TB
-        Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">BT</span></code>로 설정한 경우</p>
+<p>이제 실습해 보겠습니다.</p>
+<p>인터페이스 클래스를 만들어 봅니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart BT
-    Start --&gt; Stop
+classDiagram
+    class Shape
+    &lt;&lt;interface&gt;&gt; Shape
+    Shape: num_of_vertices
+    Shape: draw()
 ```
 </pre></div>
 </div>
-<div class="mermaid">
-            flowchart BT
-    Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">LR</span></code>로 설정한 경우</p>
+<p>중괄호 <code class="docutils literal notranslate"><span class="pre">{}</span></code>를 이용한 표현을 사용해도 annotation은 잘 작동합니다. 다음 코드는 정확히 동일한 결과를 생성합니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart LR
-    Start --&gt; Stop
+classDiagram 
+    class Shape {
+        &lt;&lt;interface&gt;&gt; 
+        num_of_vertices
+        draw()
+    }
 ```
 </pre></div>
 </div>
 <div class="mermaid">
-            flowchart LR
-    Start --&gt; Stop
-        </div></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">RL</span></code>로 설정한 경우</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
-flowchart RL
-    Start --&gt; Stop
+            classDiagram 
+    class Shape {
+        &lt;&lt;interface&gt;&gt; 
+        num_of_vertices
+        draw()
+    }
+        </div><p>이번에는 추상 클래스를 그려 봅니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram 
+    class Shape {
+        &lt;&lt;abstract&gt;&gt; 
+        num_of_vertices
+        draw()*
+    }
 ```
 </pre></div>
 </div>
 <div class="mermaid">
-            flowchart RL
-    Start --&gt; Stop
-        </div></li>
-</ul>
-</section>
+            classDiagram 
+    class Shape {
+        &lt;&lt;abstract&gt;&gt; 
+        num_of_vertices
+        draw()*
+    }
+        </div><p><code class="docutils literal notranslate"><span class="pre">enum</span></code> 클래스를 그려 보겠습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{mermaid}
+classDiagram
+    class Color{
+        &lt;&lt;enumberation&gt;&gt;
+        RED
+        GREEN
+        BLUE
+        WHITE
+        BLACK
+    }
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class Color{
+        &lt;&lt;enumberation&gt;&gt;
+        RED
+        GREEN
+        BLUE
+        WHITE
+        BLACK
+    }
+        </div></section>
 
     <script type="text/x-thebe-config">
     {
@@ -569,17 +585,17 @@ flowchart RL
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_03_flowchart_node.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04_02_class_cardinality.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>Flowchart 노드(Node)</p>
+            <p class="prev-next-title"><span class="section-number">4.2. </span>다중성 표시</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_05_flowchart_links.html" title="next page">
+    <a class='right-next' id="next-link" href="04_04_class_directions.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>노드와 노드 연결</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>클래스 방향 설정</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
