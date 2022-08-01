@@ -77,3 +77,5 @@ flowchart LR
         B --> D
         class A myclass
     ```
+
+    - 웹 브라우저 확인은 [여기](https://kafa46.github.io/mermaid/docs/html_exmaple/02_flowchart_css_class.html)를 클릭해 주세요.

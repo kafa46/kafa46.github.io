@@ -169,9 +169,4 @@ HTML 코드로 인터액션을 구현한 코드는 다음과 같습니다
 </html>
 ```
 
-
-위 HTML 코드로 구현된 페이지는 {doc}`./html_example/01_mermaid_interaction_js.html`를 참고하기 바랍니다.
-
-
-[여기]는 나중에 다시 편집해야 함.
-
+위 HTML 코드로 구현된 페이지는 [여기](https://kafa46.github.io/mermaid/docs/html_example/01_mermaid_interaction_js.html)를 참고하기 바랍니다.
