@@ -45,6 +45,6 @@ chapters:
   sections:
   - file: docs/05_01_er_diagram_overview
   - file: docs/05_02_er_diagram_entities_and_relations
-  - file: docs/05_03_er_diagram_identification
-  - file: docs/05_04_er_diagram_attributes
+  - file: docs/05_03_er_diagram_attributes
 
+- file: docs/06_00_er_diagram_others
