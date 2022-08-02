@@ -1,0 +1,51 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+
+chapters:
+- file: docs/01_01_intro_to_mermaid
+  sections:
+  - file: docs/01_02_intro_to_live_version
+  
+- file: docs/02_01_flowchart
+  sections:
+  - file: docs/02_02_flowchart_hello_world
+  - file: docs/02_03_flowchart_node
+  - file: docs/02_04_flowchart_graph
+  - file: docs/02_05_flowchart_links
+  - file: docs/02_06_flowchart_special_characters
+  - file: docs/02_07_flowchart_subgraph
+  - file: docs/02_08_flowchart_flowchart
+  - file: docs/02_09_flowchart_direction_in_subgraph
+  - file: docs/02_10_flowchart_interaction
+  - file: docs/02_11_flowchart_styling
+  - file: docs/02_12_flowchart_excercise
+
+- file: docs/03_00_sequence_intro
+  sections:
+  - file: docs/03_01_sequence_basic_syntax
+  - file: docs/03_02_sequence_messages
+  - file: docs/03_03_sequence_activations
+  - file: docs/03_04_sequence_notes
+  - file: docs/03_05_sequence_loops
+  - file: docs/03_06_sequence_alternatives
+  - file: docs/03_07_sequence_parallel
+
+- file: docs/04_00_class_intro
+  sections:
+  - file: docs/04_01_class_defining_components
+  - file: docs/04_02_class_cardinality
+  - file: docs/04_03_class_annotations
+  - file: docs/04_04_class_directions
+
+- file: docs/05_00_er_diagram_intro
+  sections:
+  - file: docs/05_01_er_diagram_overview
+  - file: docs/05_02_er_diagram_entities_and_relations
+  - file: docs/05_03_er_diagram_attributes
+
+- file: docs/06_00_er_diagram_others
