@@ -135,7 +135,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02_01_flowchart.html">
-   2. Mermaid Tutorial - Flowchart
+   2. Flowchart
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -191,6 +191,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="02_11_flowchart_styling.html">
      2.10. 노드 스타일 지정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_12_flowchart_excercise.html">
+     2.11. Flowchart 실습
     </a>
    </li>
   </ul>
@@ -489,9 +494,9 @@ title="Print to PDF"
 <span id="flowchart-graph"></span><h1><span class="section-number">2.3. </span>Flowchart 그래프<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
 <p>노드와 노드를 선(edge)으로 연결한 형태를 그래프(graph)라고 합니다.</p>
 <p>Mermaid에서 활용하는 그래프의 개념에 대해 살펴보도록 합니다.</p>
-<ul>
-<li><p>그래프 방향(Orientation) 설정</p>
-<table class="colwidths-auto table">
+<p>그래프 방향(Orientation) 설정방법은 <a class="reference internal" href="#graph-orientation"><span class="std std-numref">Table 2.1</span></a>와 같습니다.</p>
+<table class="colwidths-auto table" id="graph-orientation">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Flowchart 그래프 방향 설정</span><a class="headerlink" href="#graph-orientation" title="Permalink to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>순번</p></th>
 <th class="text-align:left head"><p>명령어</p></th>
@@ -501,23 +506,23 @@ title="Print to PDF"
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p>1</p></td>
-<td class="text-align:left"><p>TB (또는 TD)</p></td>
-<td class="text-align:left"><p>순서도가 위(Top)에서 아래(Bottom, Down)로 자라남</p></td>
+<td class="text-align:left"><p>TB <br> (또는 TD)</p></td>
+<td class="text-align:left"><p>위(Top)에서 아래(Bottom, Down)로 자라남</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">TB</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>2</p></td>
 <td class="text-align:left"><p>LR</p></td>
-<td class="text-align:left"><p>순서도가 왼쪽(Left)에서 오른쪽(Right)으로 자라남</p></td>
+<td class="text-align:left"><p>왼쪽(Left)에서 오른쪽(Right)으로 자라남</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">LR</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>3</p></td>
 <td class="text-align:left"><p>BT</p></td>
-<td class="text-align:left"><p>순서도가 아래(Down)에서 위(Top)로 자라남</p></td>
+<td class="text-align:left"><p>아래(Down)에서 위(Top)로 자라남</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">BT</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>4</p></td>
 <td class="text-align:left"><p>RL</p></td>
-<td class="text-align:left"><p>순서도가 오른쪽(Right)에서 왼쪽(Left)으로 자라남</p></td>
+<td class="text-align:left"><p>오른쪽(Right)에서 왼쪽(Left)으로 자라남</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">flowchart</span> <span class="pre">RL</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p></p></td>
@@ -527,7 +532,7 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-</li>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">flowcahrt</span></code> 옆에 <code class="docutils literal notranslate"><span class="pre">TB</span></code>로 설정한 경우 (<code class="docutils literal notranslate"><span class="pre">TD</span></code>를 사용해도 동일하게 작동)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```flowchart TB
     Start --&gt; Stop

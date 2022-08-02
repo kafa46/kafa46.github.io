@@ -23,6 +23,7 @@ chapters:
   - file: docs/02_09_flowchart_direction_in_subgraph
   - file: docs/02_10_flowchart_interaction
   - file: docs/02_11_flowchart_styling
+  - file: docs/02_12_flowchart_excercise
 
 - file: docs/03_00_sequence_intro
   sections:

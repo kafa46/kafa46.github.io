@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Flowchart &#8212; Mermaid Tutorial</title>
+    <title>2.11. Flowchart 실습 &#8212; Mermaid Tutorial</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1. Flowchart 기본 문법" href="02_02_flowchart_hello_world.html" />
-    <link rel="prev" title="1.1. Mermaid 라이브 버전" href="01_02_intro_to_live_version.html" />
+    <link rel="next" title="3. Sequence Diagram" href="03_00_sequence_intro.html" />
+    <link rel="prev" title="2.10. 노드 스타일 지정" href="02_11_flowchart_styling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -134,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="02_01_flowchart.html">
    2. Flowchart
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -142,7 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_flowchart_hello_world.html">
      2.1. Flowchart 기본 문법
@@ -193,8 +195,8 @@ const thebe_selector_output = ".output, .cell_output"
      2.10. 노드 스타일 지정
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_12_flowchart_excercise.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.11. Flowchart 실습
     </a>
    </li>
@@ -401,7 +403,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_01_flowchart.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/kafa46/kafa46.github.io/issues/new?title=Issue%20on%20page%20%2Fdocs/02_12_flowchart_excercise.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -429,7 +431,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/docs/02_01_flowchart.md"
+        <a href="../_sources/docs/02_12_flowchart_excercise.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -466,23 +468,96 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mermaid">
+   2.11.1. Mermaid 실습 코드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowchart-top-to-down">
+   2.11.2. 완성된 Flowchart (Top
+   <span class="math notranslate nohighlight">
+    \(\to\)
+   </span>
+   Down)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowchart-left-to-right">
+   2.11.3. 완성된 Flowchart (Left
+   <span class="math notranslate nohighlight">
+    \(\to\)
+   </span>
+   Right)
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Flowchart</h1>
+                <h1>Flowchart 실습</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mermaid">
+   2.11.1. Mermaid 실습 코드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowchart-top-to-down">
+   2.11.2. 완성된 Flowchart (Top
+   <span class="math notranslate nohighlight">
+    \(\to\)
+   </span>
+   Down)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flowchart-left-to-right">
+   2.11.3. 완성된 Flowchart (Left
+   <span class="math notranslate nohighlight">
+    \(\to\)
+   </span>
+   Right)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -491,16 +566,104 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="flowchart">
-<h1><span class="section-number">2. </span>Flowchart<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>Flowchart(플로우차트, 순서도)는 여러분이 만드는 SW 시스템(모델)의 흐름을 설명하는데 유용합니다.</p></li>
-<li><p>사용자가 여러분의 시스템과 어떻게 상호작용(interaction)하게 될 것인지를 설명할 수 있습니다.</p></li>
-<li><p>SW 시스템의 다양한 경로와 작업 흐름을 쉽게 설명할 수 있습니다.</p></li>
-<li><p>알고리즘, SW 설계 등에서 가장 많이 활용되는 Diagram(그림)입니다.</p></li>
-<li><p>이제부터 flowchart의 활용법에 대하여 알아보도록 하겠습니다.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+<h1><span class="section-number">2.11. </span>Flowchart 실습<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h1>
+<p>아래 그림을 가지고 실습해 보겠습니다.</p>
+<figure class="align-center" id="flowchart-example">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/flowchart_example.png"><img alt="../_images/flowchart_example.png" class="bg-primary mb-1" src="../_images/flowchart_example.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Flowchart 실습 예제 (이미지 출처: <a class="reference external" href="https://codingisgame.tistory.com/10">순서도(flowchart)</a>)</span><a class="headerlink" href="#flowchart-example" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="mermaid">
+<h2><span class="section-number">2.11.1. </span>Mermaid 실습 코드<a class="headerlink" href="#mermaid" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart TD %% 좌우 배치일 경우 `LR` 적용
+    a([밥을 먹지 않았다])
+    b{{String status = hunger &lt;br&gt; String = nothing}}
+    c{배가 고픈가?}
+    d{먹을 것이 있는가?}
+    e[밥을 먹는다]
+    f[밥을 먹었다]
+    g([End])
+    a --&gt; b --&gt; c --&gt;|YES| d --&gt;|YES| e --&gt; f --&gt; g
+
+    f ---|출력| f
+    
+
+    h[안 먹는다]
+    c --&gt;|NO| h
+    d --&gt; |NO| h
+
+
+    i[먹지 않는다]
+    i ---|출력| i
+    h --&gt; i
+    i --&gt; g
+    
+    %% 6번, 9번 연결선을 투명하게 설정
+    linkStyle 6,9 stroke:#fff, stroke-width:0px;
+```
+</pre></div>
 </div>
+</section>
+<section id="flowchart-top-to-down">
+<h2><span class="section-number">2.11.2. </span>완성된 Flowchart (Top <span class="math notranslate nohighlight">\(\to\)</span> Down)<a class="headerlink" href="#flowchart-top-to-down" title="Permalink to this headline">#</a></h2>
+<div class="mermaid">
+            flowchart TD %% 좌우 배치일 경우 `LR` 적용
+    a([밥을 먹지 않았다])
+    b{{String status = hunger &lt;br&gt; String = nothing}}
+    c{배가 고픈가?}
+    d{먹을 것이 있는가?}
+    e[밥을 먹는다]
+    f[/밥을 먹었다/]
+    g([End])
+    a --&gt; b --&gt; c --&gt;|YES| d --&gt;|YES| e --&gt; f --&gt; g
+
+    f ---|출력| f
+    
+
+    h[안 먹는다]
+    c --&gt;|NO| h
+    d --&gt; |NO| h
+
+
+    i[/먹지 않는다/]
+    i ---|출력| i
+    h --&gt; i
+    i --&gt; g
+    
+    %% 6번, 9번 연결선을 투명하게 설정
+    linkStyle 6,9 stroke:#fff,stroke-width:0px;
+        </div></section>
+<section id="flowchart-left-to-right">
+<h2><span class="section-number">2.11.3. </span>완성된 Flowchart (Left <span class="math notranslate nohighlight">\(\to\)</span> Right)<a class="headerlink" href="#flowchart-left-to-right" title="Permalink to this headline">#</a></h2>
+<div class="mermaid">
+            flowchart LR
+    a([밥을 먹지 않았다])
+    b{{String status = hunger &lt;br&gt; String = nothing}}
+    c{배가 고픈가?}
+    d{먹을 것이 있는가?}
+    e[밥을 먹는다]
+    f[/밥을 먹었다/]
+    g([End])
+    a --&gt; b --&gt; c --&gt;|YES| d --&gt;|YES| e --&gt; f --&gt; g
+
+    f ---|출력| f
+    
+
+    h[안 먹는다]
+    c --&gt;|NO| h
+    d --&gt; |NO| h
+
+
+    i[/먹지 않는다/]
+    i ---|출력| i
+    h --&gt; i
+    i --&gt; g
+    
+    %% 6번, 9번 연결선을 투명하게 설정
+    linkStyle 6,9 stroke:#fff,stroke-width:0px;
+        </div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -530,17 +693,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="01_02_intro_to_live_version.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_11_flowchart_styling.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.1. </span>Mermaid 라이브 버전</p>
+            <p class="prev-next-title"><span class="section-number">2.10. </span>노드 스타일 지정</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_02_flowchart_hello_world.html" title="next page">
+    <a class='right-next' id="next-link" href="03_00_sequence_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.1. </span>Flowchart 기본 문법</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Sequence Diagram</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

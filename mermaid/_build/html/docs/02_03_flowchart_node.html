@@ -137,7 +137,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02_01_flowchart.html">
-   2. Mermaid Tutorial - Flowchart
+   2. Flowchart
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -193,6 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="02_11_flowchart_styling.html">
      2.10. 노드 스타일 지정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_12_flowchart_excercise.html">
+     2.11. Flowchart 실습
     </a>
    </li>
   </ul>
@@ -463,12 +468,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2.2.1. 노드의 개념
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shape">
+   2.2.2. 노드의 모양(shape)
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -480,6 +514,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   2.2.1. 노드의 개념
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shape">
+   2.2.2. 노드의 모양(shape)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -489,14 +541,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="flowchart-node">
 <h1><span class="section-number">2.2. </span>Flowchart 노드(Node)<a class="headerlink" href="#flowchart-node" title="Permalink to this headline">#</a></h1>
-<ul>
-<li><p>노드의 개념</p>
-<ul>
-<li><p>노드(node)</p></li>
+<section id="id1">
+<h2><span class="section-number">2.2.1. </span>노드의 개념<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Flowchart에서 노드(node)란?</p>
+<ul class="simple">
 <li><p>노드는 flowchart를 구성하는 개별 도형을 의미합니다.</p></li>
 <li><p>노드와 노드를 연결하여 flowchart를 그립니다.</p></li>
 <li><p>Flowchart에는 반드시 하나 이상의 노드가 존재해야 합니다.</p></li>
-<li><p>노드에 아이디 <code class="docutils literal notranslate"><span class="pre">id</span></code> 를 부여해서 1개를 만들어 보면 다음과 같습니다.</p>
+</ul>
+<p>노드에 아이디 <code class="docutils literal notranslate"><span class="pre">id</span></code> 를 부여해서 1개를 만들어 보면 다음과 같습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id```
@@ -505,8 +558,7 @@ flowchart LR
 <div class="mermaid">
             flowchart LR
     id
-        </div></li>
-<li><p>노드 아이디에 별도의 텍스트(문자열)을 지정할 수도 있습니다.</p>
+        </div><p>노드 아이디에 별도의 텍스트(문자열)을 지정할 수도 있습니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
 flowchart LR
     id[첫 번째 노드]```
@@ -515,10 +567,9 @@ flowchart LR
 <div class="mermaid">
             flowchart LR
     id[첫 번째 노드]
-        </div></li>
-</ul>
-</li>
-<li><p>노드의 모양(shape): 노드의 모양을 쉽게 지정할 수 있습니다.</p>
+        </div></section>
+<section id="shape">
+<h2><span class="section-number">2.2.2. </span>노드의 모양(shape)<a class="headerlink" href="#shape" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>직사각형(square) 모양: 알고리즘에서 수행되는 명령어, 작업, 처리 등을 표현하는 기본단위 입니다.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
@@ -619,10 +670,55 @@ flowchart LR
             flowchart LR
     id1[/paralleogram/]
         </div></li>
-<li><p>그 이외에도 <code class="docutils literal notranslate"><span class="pre">역사다리꼴(reverse</span> <span class="pre">paralleogram)</span></code>, <code class="docutils literal notranslate"><span class="pre">부등변</span> <span class="pre">사각형(trappezoid)</span></code>, <code class="docutils literal notranslate"><span class="pre">이중</span> <span class="pre">외곽선원</span> <span class="pre">(double</span> <span class="pre">circle)</span></code> 모양 등을 지원합니다. 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://%60mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p></li>
+<li><p>대체 사다리꼴(reverse paralleogram) 모양: 사다리꼴의 좌우 경사 방향이 반대인 도형입니다. 입력, 출력(print)를 다르게 표현할 때 사용할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR
+    id1[\alterative paralleogram\]
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart LR
+    id1[\alterative paralleogram\]
+        </div></li>
+<li><p>부등변 사각형(trapezoid): 수동 작동을 표현할 때 사용합니다. 프로그램에 의해 자동으로 실행되는 것이 아니라 사람이 실행해야 하는 절차를 의미합니다. 주로 데이터를 저장 장치에 별도로 저장하는 경우에 해당합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR
+    id1[/trapezoid\]
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart LR
+    id1[/trapezoid\]
+        </div></li>
+<li><p>대체 부등변 사각형(trapezoid): 부등변 사각형을 다른 형태로 표현할 때 사용할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR
+    id1[\trapezoid/]
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart LR
+    id1[\trapezoid/]
+
+        </div></li>
+<li><p>이중 외곽선원 (double circle): 정확히 flowchart에서 어떤 용도로 사용하는지 정확히 모르겠습니다. 어찌됐든 mermaid에서 지원하는 모양(shape)입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```mermaid
+flowchart LR
+    id1(((double circle)))
+```
+</pre></div>
+</div>
+<div class="mermaid">
+            flowchart LR
+    id1(((double circle)))
+
+        </div></li>
 </ul>
-</li>
-</ul>
+<p>보다 자세한 내용은 Mermaid 도형 문법을 설명하는 <a class="reference external" href="https://%60mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes">공식문서</a>를 참고하기 바랍니다.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

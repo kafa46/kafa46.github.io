@@ -4,7 +4,7 @@ tags: []
 
 ---
 
-# Mermaid Tutorial - Flowchart
+# Flowchart
 
 - Flowchart(플로우차트, 순서도)는 여러분이 만드는 SW 시스템(모델)의 흐름을 설명하는데 유용합니다.
 - 사용자가 여러분의 시스템과 어떻게 상호작용(interaction)하게 될 것인지를 설명할 수 있습니다.
