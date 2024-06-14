@@ -1,0 +1,1831 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.2. 파일 모드 (r, w, a) &#8212; Python Programming - A Comprehensive Guide</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="12.3. 연습 문제" href="11_03_excercise.html" />
+    <link rel="prev" title="12.1. 파일 입출력" href="11_01_file_read_write.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/cover_img2.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Python Programming - A Comprehensive Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_table_of_contents.html">
+   1. 목차
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_01_preface/01_book_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_02_author_intro/02_author_intro.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_03_intro_and_install/03_00_intro.html">
+   4. 인트로
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_01_what_is_python.html">
+     4.1. 파이썬이란 무엇인가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_02_python_history_and_characteristics.html">
+     4.2. 파이썬의 역사 및 특징
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_03_Zen_of_Python.html">
+     4.3. Zen of Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_04_Python_Installation.html">
+     4.4. 파이썬 설치 방법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_05_vs_code_intro_python.html">
+     4.5. VS Code 소개 및 파이썬 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_06_first_prog_hello_world.html">
+     4.6. 첫 번째 프로그램 작성하기 (Hello World)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_07_excercise.html">
+     4.7. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_04_basic_grammer/04_00_chap_04_intro.html">
+   5. 파이썬 기초 문법
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_01_comments.html">
+     5.1. 주석 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_02_basic_data_type.html">
+     5.2. 기본 데이터 타입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_03_variable_declare_useage.html">
+     5.3. 변수 선언 및 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_04_excercise.html">
+     5.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_05_datatype_and_variables/05_00_chap_05_intro.html">
+   6. 데이터 타입 및 변수
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_01_number_types.html">
+     6.1. 데이터 타입 및 변수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_02_string_types.html">
+     6.2. 문자열 (string)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_03_list_tuple_set_dict.html">
+     6.3. 리스트, 튜플, 세트, 딕셔너리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_04_excercise.html">
+     6.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_06_operators/06_00_chap_06_intro.html">
+   7. 파이썬 연산자
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_01_arithmetic_operators.html">
+     7.1. 파이썬 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_02_comparison_operators.html">
+     7.2. 비교 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_03_logical_operators.html">
+     7.3. 논리 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_04_allocation_operators.html">
+     7.4. 할당 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_05_bitwise_operators.html">
+     7.5. 비트wise 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_06_membership_operators.html">
+     7.6. 멤버십 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_07_identity_operators.html">
+     7.7. 아이덴티티 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_08_excercise.html">
+     7.8. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_07_condition_iteration/07_00_chap_07_intro.html">
+   8. 조건문 및 반복문
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_01_if_elif_else.html">
+     8.1. 조건문 및 반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_02_for_loop.html">
+     8.2. for 반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_03_while_loop.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_04_excercise.html">
+     8.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_08_functions/08_00_chap_intro.html">
+   9. 함수(functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_01_func_define_and_call.html">
+     9.1. 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_02_parameters.html">
+     9.2. 매개변수와 반환값
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_03_lambda_function.html">
+     9.3. 람다 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_04_excercise.html">
+     9.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_09_builtin_functions/09_00_chap_intro.html">
+   10. 내장 함수 (Built-in Functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_01_builtin_func.html">
+     10.1. 내장 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_02_freq_builtin_func.html">
+     10.2. 자주 쓰는 내장 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_03_excercise.html">
+     10.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_10_modules_pakages/10_00_chap_intro.html">
+   11. 모듈 및 패키지
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_01_module_import.html">
+     11.1. 모듈 및 패키지
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_02_package_structure.html">
+     11.2. 패키지 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_03_absolute_relative_import.html">
+     11.3. 패키지 상대참조 절대참조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_04_circular_import.html">
+     11.4. 순환참조 문제
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_05_excercise.html">
+     11.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="11_00_chap_intro.html">
+   12. 파일 입출력
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="11_01_file_read_write.html">
+     12.1. 파일 입출력
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     12.2. 파일 모드 (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       r
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       w
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       a
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11_03_excercise.html">
+     12.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_12_exceptions/12_00_chap_intro.html">
+   13. 예외 처리
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_01_concept_and_exception_types.html">
+     13.1. 예외 처리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_02_try_except_finally.html">
+     13.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       try
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       except
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       finally
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_03_assert.html">
+     13.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       assert
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_04_raise.html">
+     13.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       raise
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_05_excercise.html">
+     13.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_13_oop/13_00_chap_intro.html">
+   14. 객체 지향 프로그래밍
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_01_class_object.html">
+     14.1. 클래스와 객체
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_02_inheritance.html">
+     14.2. 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_03_magic_method.html">
+     14.3. 매직 메소드 (Magic Methods)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_04_visibility_mangling.html">
+     14.4. 가시성(visibility) 및 맹글링(Name Mangling)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_05_decorators.html">
+     14.5. 데코레이터(Decorator)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_06_excercise.html">
+     14.6. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_14_logging/14_00_chap_intro.html">
+   15. 로깅(
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     logging
+    </span>
+   </code>
+   )
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_01_logging_importance.html">
+     15.1. 로깅의 개념과 역할
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_02_intro_to_logging_module.html">
+     15.2. 파이썬 로깅 모듈 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_03_basic_logger_conf.html">
+     15.3. 기본 로깅 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_04_handler_formatter.html">
+     15.4. 핸들러(Handler)와 포매터(Formatter)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_05_configurateion_file.html">
+     15.5. 로깅 설정 파일 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_06_excercise.html">
+     15.6. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/chap_11_file_io/11_02_file_mode.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_11_file_io/11_02_file_mode.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   12.2.1. 파일 모드 종류
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r">
+   12.2.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     r
+    </span>
+   </code>
+   (읽기 모드)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     12.2.2.1. 파일 읽기 메서드
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     12.2.2.2. 파일 읽기 모드 사용 시 주의사항
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w">
+   12.2.3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     w
+    </span>
+   </code>
+   (쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   12.2.4. 새로운 파일에 쓰기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   12.2.5. 기존 파일에 쓰기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   12.2.6. 여러 줄 쓰기 예제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a">
+   12.2.7.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   (추가 모드)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     12.2.7.1. 파일에 내용 추가
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     12.2.7.2. 파일 추가 모드 사용 시 주의사항
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     12.2.7.3. 여러 번 추가하기
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   12.2.8. 사용자 입력을 파일에 추가하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   12.2.9.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 - 로그 파일 작성 예제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   12.2.10.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 - 여러 줄 추가하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b">
+   12.2.11.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     b
+    </span>
+   </code>
+   (바이너리 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wb">
+   12.2.12. 바이너리 파일 쓰기 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wb
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rb">
+   12.2.13. 바이너리 파일 읽기 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rb
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ab">
+   12.2.14. 바이너리 파일 추가 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ab
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   12.2.15. 이미지 파일 복사 예제 -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rb
+    </span>
+   </code>
+   모드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   12.2.16. 바이너리 파일 부분적으로 읽기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   12.2.17.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     b
+    </span>
+   </code>
+   모드 주의사항
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-pickle">
+     12.2.17.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       b
+      </span>
+     </code>
+     모드와
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pickle
+      </span>
+     </code>
+     모듈
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pickle">
+   12.2.18.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   모듈
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   12.2.19. 파이썬 객체 직렬화
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   12.2.20.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   이용한 객체 저장
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   12.2.21.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   모듈 이용한 객체 역직렬화
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t">
+   12.2.22.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     t
+    </span>
+   </code>
+   (텍스트 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   12.2.23.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     +
+    </span>
+   </code>
+   (읽기 및 쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id20">
+   12.2.24.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     r+
+    </span>
+   </code>
+   (읽기 및 쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id21">
+   12.2.25.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     w+
+    </span>
+   </code>
+   (쓰기 및 읽기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   12.2.26.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a+
+    </span>
+   </code>
+   (추가 및 읽기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   12.2.27. 텍스트 파일에서 특정 단어 찾기 및 수정하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id24">
+   12.2.28.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 주의사항
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>파일 모드 (r, w, a)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   12.2.1. 파일 모드 종류
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r">
+   12.2.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     r
+    </span>
+   </code>
+   (읽기 모드)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     12.2.2.1. 파일 읽기 메서드
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     12.2.2.2. 파일 읽기 모드 사용 시 주의사항
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#w">
+   12.2.3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     w
+    </span>
+   </code>
+   (쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   12.2.4. 새로운 파일에 쓰기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   12.2.5. 기존 파일에 쓰기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   12.2.6. 여러 줄 쓰기 예제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a">
+   12.2.7.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   (추가 모드)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     12.2.7.1. 파일에 내용 추가
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     12.2.7.2. 파일 추가 모드 사용 시 주의사항
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     12.2.7.3. 여러 번 추가하기
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   12.2.8. 사용자 입력을 파일에 추가하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   12.2.9.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 - 로그 파일 작성 예제
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   12.2.10.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 - 여러 줄 추가하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b">
+   12.2.11.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     b
+    </span>
+   </code>
+   (바이너리 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wb">
+   12.2.12. 바이너리 파일 쓰기 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     wb
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rb">
+   12.2.13. 바이너리 파일 읽기 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rb
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ab">
+   12.2.14. 바이너리 파일 추가 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ab
+    </span>
+   </code>
+   모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   12.2.15. 이미지 파일 복사 예제 -
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     rb
+    </span>
+   </code>
+   모드
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   12.2.16. 바이너리 파일 부분적으로 읽기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   12.2.17.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     b
+    </span>
+   </code>
+   모드 주의사항
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-pickle">
+     12.2.17.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       b
+      </span>
+     </code>
+     모드와
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pickle
+      </span>
+     </code>
+     모듈
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pickle">
+   12.2.18.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   모듈
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id16">
+   12.2.19. 파이썬 객체 직렬화
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id17">
+   12.2.20.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   이용한 객체 저장
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   12.2.21.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pickle
+    </span>
+   </code>
+   모듈 이용한 객체 역직렬화
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#t">
+   12.2.22.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     t
+    </span>
+   </code>
+   (텍스트 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   12.2.23.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     +
+    </span>
+   </code>
+   (읽기 및 쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id20">
+   12.2.24.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     r+
+    </span>
+   </code>
+   (읽기 및 쓰기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id21">
+   12.2.25.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     w+
+    </span>
+   </code>
+   (쓰기 및 읽기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id22">
+   12.2.26.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a+
+    </span>
+   </code>
+   (추가 및 읽기 모드)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id23">
+   12.2.27. 텍스트 파일에서 특정 단어 찾기 및 수정하기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id24">
+   12.2.28.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     a
+    </span>
+   </code>
+   모드 주의사항
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="r-w-a">
+<h1><span class="section-number">12.2. </span>파일 모드 (<code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>)<a class="headerlink" href="#r-w-a" title="Permalink to this headline">¶</a></h1>
+<p>파이썬에서 파일을 열 때 사용할 수 있는 다양한 파일 모드가 있습니다. 각 모드는 파일에 대한 읽기, 쓰기, 추가 작업을 어떻게 수행할지 정의합니다. 파일 모드를 올바르게 이해하고 사용하면 파일 입출력을 더 효과적으로 관리할 수 있습니다.</p>
+<div class="section" id="id1">
+<h2><span class="section-number">12.2.1. </span>파일 모드 종류<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> : 읽기 모드. 파일이 존재해야 합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> : 쓰기 모드. 파일이 존재하지 않으면 새로 생성합니다. 파일이 존재하면 내용을 덮어씁니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> : 추가 모드. 파일이 존재하지 않으면 새로 생성합니다. 파일이 존재하면 파일 끝에 내용을 추가합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b</span></code> : 바이너리 모드. 바이너리 파일을 읽거나 쓸 때 사용합니다. (<code class="docutils literal notranslate"><span class="pre">rb</span></code>, <code class="docutils literal notranslate"><span class="pre">wb</span></code>, <code class="docutils literal notranslate"><span class="pre">ab</span></code> 등과 함께 사용)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> : 텍스트 모드. 텍스트 파일을 읽거나 쓸 때 사용합니다. 기본값입니다. (<code class="docutils literal notranslate"><span class="pre">rt</span></code>, <code class="docutils literal notranslate"><span class="pre">wt</span></code>, <code class="docutils literal notranslate"><span class="pre">at</span></code> 등과 함께 사용)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> : 읽기와 쓰기를 모두 허용합니다. (<code class="docutils literal notranslate"><span class="pre">r+</span></code>, <code class="docutils literal notranslate"><span class="pre">w+</span></code>, <code class="docutils literal notranslate"><span class="pre">a+</span></code> 등과 함께 사용)</p></li>
+</ul>
+</div>
+<div class="section" id="r">
+<h2><span class="section-number">12.2.2. </span><code class="docutils literal notranslate"><span class="pre">r</span></code> (읽기 모드)<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h2>
+<p>파일을 읽기 전용으로 엽니다. 파일이 존재하지 않으면 오류가 발생합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 읽기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">12.2.2.1. </span>파일 읽기 메서드<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">read()</span></code>: 파일의 전체 내용을 하나의 문자열로 읽어옵니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 파일의 전체 내용을 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readline()</span></code>: 파일의 한 줄을 읽어옵니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 파일의 한 줄씩 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">line</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readlines()</span></code>: 파일의 모든 줄을 읽어와서 각 줄을 요소로 갖는 리스트로 반환합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 파일의 모든 줄을 리스트로 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">12.2.2.2. </span>파일 읽기 모드 사용 시 주의사항<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>파일이 존재하지 않으면 FileNotFoundError가 발생합니다.</p></li>
+<li><p>파일의 내용을 변경할 수 없습니다. (읽기 전용)</p></li>
+<li><p>예제: 파일이 존재하지 않을 때 오류 처리</p>
+<ul class="simple">
+<li><p>파일이 존재하지 않을 경우 <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>를 잡아서 적절한 메시지 출력</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;non_existent_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The file does not exist.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>파일 읽기 모드는 파일의 내용을 안전하게 읽어올 때 매우 유용합니다.</p>
+<p>파일이 존재하는지 확인하고, 파일을 닫는 것을 잊지 않도록 with 문을 사용하는 것이 좋습니다.</p>
+</div>
+</div>
+<div class="section" id="w">
+<h2><span class="section-number">12.2.3. </span><code class="docutils literal notranslate"><span class="pre">w</span></code> (쓰기 모드)<a class="headerlink" href="#w" title="Permalink to this headline">¶</a></h2>
+<p>파일을 쓰기 전용으로 엽니다. 파일이 존재하지 않으면 새로 생성합니다. 파일이 존재하면 기존 내용을 덮어씁니다. 이 모드는 파일을 처음부터 다시 작성할 때 유용합니다.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">12.2.4. </span>새로운 파일에 쓰기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 쓰기 모드로 새로운 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is a test.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>이 코드는 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code>라는 파일을 쓰기 모드로 열고, 파일이 존재하지 않으면 새로 생성한 후,</p>
+<p>“This is a test.”라는 문자열을 파일에 작성합니다.</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">12.2.5. </span>기존 파일에 쓰기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 기존 파일을 쓰기 모드로 열기 (내용 덮어쓰기)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This will overwrite the previous content.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>기존의 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일을 열고, 파일의 기존 내용을 덮어쓰고 “This will overwrite the previous content.”라는 문자열을 작성합니다.</p>
+<p><strong>주의사항</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> 모드로 파일을 열면, 파일이 존재하는 경우 기존 내용을 모두 지우고 새로 작성합니다.</p></li>
+<li><p>파일이 존재하지 않으면 새로 생성합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 처음 파일 작성</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;First line of the file.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 파일 내용 덮어쓰기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Second line of the file.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>이 예제에서 첫 번째 <code class="docutils literal notranslate"><span class="pre">with</span></code> 블록은 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일에 “First line of the file.”을 작성합니다.</p>
+<p>두 번째 <code class="docutils literal notranslate"><span class="pre">with</span></code> 블록은 같은 파일을 다시 열어 “Second line of the file.”을 작성하며, 기존 내용은 지워지고 새 내용으로 덮어씁니다.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">12.2.6. </span>여러 줄 쓰기 예제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;First line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Second line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Third line.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="a">
+<h2><span class="section-number">12.2.7. </span><code class="docutils literal notranslate"><span class="pre">a</span></code> (추가 모드)<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h2>
+<p>파일을 추가 모드로 엽니다. 파일이 존재하지 않으면 새로 생성합니다.</p>
+<p>파일이 존재하면 파일의 끝에 내용을 추가합니다.</p>
+<p>기존 내용은 유지되고, 새 내용만 추가됩니다.</p>
+<div class="section" id="id7">
+<h3><span class="section-number">12.2.7.1. </span>파일에 내용 추가<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 추가 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is additional content.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">example.txt</span></code>라는 파일을 추가 모드로 열고, 파일의 끝에 “This is additional content.”라는 문자열을 추가합니다.</p>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">12.2.7.2. </span>파일 추가 모드 사용 시 주의사항<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>파일이 존재하지 않으면 새로 생성합니다.</p></li>
+<li><p>파일의 기존 내용은 유지되고, 새 내용이 파일의 끝에 추가됩니다.</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">12.2.7.3. </span>여러 번 추가하기<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일을 두 번 열고, 각각 “First addition.”과 “Second addition.”이라는 문자열을 파일의 끝에 추가합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 첫 번째 추가</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;First addition.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 두 번째 추가</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Second addition.</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>결과적으로 파일의 내용은 다음과 같습니다:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>First addition.
+Second addition.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="section-number">12.2.8. </span>사용자 입력을 파일에 추가하기<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>사용자로부터 입력을 받아 파일에 추가하는 프로그램입니다.
+이 코드는 사용자로부터 입력을 받아 example.txt 파일의 끝에 추가합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a string to add to the file: &quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">user_input</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">12.2.9. </span><code class="docutils literal notranslate"><span class="pre">a</span></code> 모드 - 로그 파일 작성 예제<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>로그 파일을 작성하여 프로그램 실행 정보를 기록하는 예제입니다.
+이 코드는 logfile.txt 파일에 타임스탬프와 함께 로그 메시지를 추가합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="k">def</span> <span class="nf">log_message</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;logfile.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;[</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s1">] </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">log_message</span><span class="p">(</span><span class="s1">&#39;Program started&#39;</span><span class="p">)</span>
+<span class="n">log_message</span><span class="p">(</span><span class="s1">&#39;An error occurred&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">12.2.10. </span><code class="docutils literal notranslate"><span class="pre">a</span></code> 모드 - 여러 줄 추가하기<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>여러 줄의 문자열을 한 번에 파일에 추가하는 예제입니다.</p>
+<p>이 코드는 example.txt 파일의 끝에 여러 줄의 문자열을 한 번에 추가합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;First line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Second line.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Third line.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>파일 추가 모드는 기존 파일의 내용을 유지하면서 새로운 내용을 덧붙일 때 매우 유용합니다.</p>
+<p>파일이 존재하지 않는 경우 자동으로 파일을 생성하므로, 파일 존재 여부를 신경 쓸 필요가 없습니다.</p>
+</div>
+<div class="section" id="b">
+<h2><span class="section-number">12.2.11. </span><code class="docutils literal notranslate"><span class="pre">b</span></code> (바이너리 모드)<a class="headerlink" href="#b" title="Permalink to this headline">¶</a></h2>
+<p>바이너리 모드는 텍스트가 아닌 바이너리 데이터를 읽거나 쓸 때 사용됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">b</span></code> 모드는 다른 모드(<code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> 등)와 함께 사용되며, 파일을 바이너리 형태로 처리합니다.</p>
+<p>주로 이미지, 오디오 파일, 비디오 파일 등을 처리할 때 사용됩니다.</p>
+</div>
+<div class="section" id="wb">
+<h2><span class="section-number">12.2.12. </span>바이너리 파일 쓰기 (<code class="docutils literal notranslate"><span class="pre">wb</span></code> 모드)<a class="headerlink" href="#wb" title="Permalink to this headline">¶</a></h2>
+<p>바이너리 파일을 쓰기 모드로 열고 데이터를 쓰는 예제입니다.</p>
+<p>이 코드는 example.bin이라는 파일을 바이너리 쓰기 모드로 열고, 바이너리 데이터를 파일에 작성합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 바이너리 쓰기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;This is a binary file.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rb">
+<h2><span class="section-number">12.2.13. </span>바이너리 파일 읽기 (<code class="docutils literal notranslate"><span class="pre">rb</span></code> 모드)<a class="headerlink" href="#rb" title="Permalink to this headline">¶</a></h2>
+<p>바이너리 파일을 읽기 모드로 열고 데이터를 읽는 예제입니다.</p>
+<p>이 코드는 example.bin이라는 파일을 바이너리 읽기 모드로 열고, 파일의 내용을 읽어와 출력합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 바이너리 읽기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">binary_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">binary_content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ab">
+<h2><span class="section-number">12.2.14. </span>바이너리 파일 추가 (<code class="docutils literal notranslate"><span class="pre">ab</span></code> 모드)<a class="headerlink" href="#ab" title="Permalink to this headline">¶</a></h2>
+<p>바이너리 파일을 추가 모드로 열고 데이터를 추가하는 예제입니다.</p>
+<p>이 코드는 example.bin이라는 파일을 바이너리 추가 모드로 열고, 파일의 끝에 바이너리 데이터를 추가합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 바이너리 추가 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39; Adding more binary content.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2><span class="section-number">12.2.15. </span>이미지 파일 복사 예제 - <code class="docutils literal notranslate"><span class="pre">rb</span></code> 모드<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>이미지 파일을 바이너리 모드로 읽고 다른 파일로 복사하는 예제입니다.</p>
+<p>이 코드는 source_image.jpg 파일을 바이너리 읽기 모드로 열고, 그 내용을 destination_image.jpg 파일에 바이너리 쓰기 모드로 작성하여 이미지를 복사합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 이미지 파일 복사</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;source_image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source_file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;destination_image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dest_file</span><span class="p">:</span>
+        <span class="n">dest_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2><span class="section-number">12.2.16. </span>바이너리 파일 부분적으로 읽기<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>큰 바이너리 파일을 부분적으로 읽어 처리하는 예제입니다.</p>
+<p>이 코드는 large_file.bin 파일을 1024 바이트씩 부분적으로 읽어 출력합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 바이너리 파일을 부분적으로 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;large_file.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>  <span class="c1"># 1024 바이트씩 읽기</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2><span class="section-number">12.2.17. </span><code class="docutils literal notranslate"><span class="pre">b</span></code> 모드 주의사항<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>바이너리 모드는 텍스트가 아닌 데이터를 처리할 때 사용됩니다.</p></li>
+<li><p>데이터를 읽거나 쓸 때는 반드시 바이너리 데이터로 처리해야 합니다 (b’’ 형식).</p></li>
+</ul>
+<div class="section" id="b-pickle">
+<h3><span class="section-number">12.2.17.1. </span><code class="docutils literal notranslate"><span class="pre">b</span></code> 모드와 <code class="docutils literal notranslate"><span class="pre">pickle</span></code> 모듈<a class="headerlink" href="#b-pickle" title="Permalink to this headline">¶</a></h3>
+<p>바이너리 모드는 텍스트가 아닌 바이너리 데이터를 읽거나 쓸 때 사용됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> 모듈은 파이썬 객체를 바이너리 형식으로 직렬화(serialize)하거나 역직렬화(deserialize)하는 데 사용됩니다.</p>
+<p>이를 통해 파이썬 객체를 파일에 저장하거나 네트워크를 통해 전송할 수 있습니다.</p>
+</div>
+</div>
+<div class="section" id="pickle">
+<h2><span class="section-number">12.2.18. </span><code class="docutils literal notranslate"><span class="pre">pickle</span></code> 모듈<a class="headerlink" href="#pickle" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pickle</span></code> 모듈을 사용하여 파이썬 객체를 파일에 저장하거나 파일에서 불러오는 예제를 살펴보겠습니다.</p>
+</div>
+<div class="section" id="id16">
+<h2><span class="section-number">12.2.19. </span>파이썬 객체 직렬화<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<p>파이썬 객체를 파일에 저장하려면 <code class="docutils literal notranslate"><span class="pre">pickle.dump()</span></code> 함수를 사용합니다.</p>
+<p>파일은 <code class="docutils literal notranslate"><span class="pre">wb</span></code> (바이너리 쓰기) 모드로 열어야 합니다.</p>
+</div>
+<div class="section" id="id17">
+<h2><span class="section-number">12.2.20. </span><code class="docutils literal notranslate"><span class="pre">pickle</span></code> 이용한 객체 저장<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># 객체를 바이너리 파일에 저장</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2><span class="section-number">12.2.21. </span><code class="docutils literal notranslate"><span class="pre">pickle</span></code> 모듈 이용한 객체 역직렬화<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>파일에서 파이썬 객체를 불러오려면 pickle.load() 함수를 사용합니다.</p>
+<p>파일은 <code class="docutils literal notranslate"><span class="pre">rb</span></code> (바이너리 읽기) 모드로 열어야 합니다.</p>
+<p>이 코드는 <code class="docutils literal notranslate"><span class="pre">data.pkl</span></code> 파일에서 데이터를 불러와 <code class="docutils literal notranslate"><span class="pre">loaded_data</span></code> 변수에 저장하고, 이를 출력합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+
+<span class="c1"># 바이너리 파일에서 객체 불러오기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">loaded_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="t">
+<h2><span class="section-number">12.2.22. </span><code class="docutils literal notranslate"><span class="pre">t</span></code> (텍스트 모드)<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h2>
+<p>텍스트 파일을 읽거나 쓸 때 사용합니다.</p>
+<p>기본값으로 설정되어 있어 명시적으로 지정하지 않아도 됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 텍스트 모드로 파일 열기 (명시적으로 지정)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id19">
+<h2><span class="section-number">12.2.23. </span><code class="docutils literal notranslate"><span class="pre">+</span></code> (읽기 및 쓰기 모드)<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">+</span></code> 모드는 파일을 읽기와 쓰기 모두 가능하게 엽니다. 다른 모드(<code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> 등)와 함께 사용되며, 파일을 읽고 쓸 수 있게 합니다.</p>
+</div>
+<div class="section" id="id20">
+<h2><span class="section-number">12.2.24. </span><code class="docutils literal notranslate"><span class="pre">r+</span></code> (읽기 및 쓰기 모드)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">r+</span></code> 모드는 파일을 읽기와 쓰기 모드로 엽니다. 파일이 존재해야 하며, 파일의 내용을 읽고 수정할 수 있습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 읽기 및 쓰기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original content:&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; Adding more content.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 파일 내용을 다시 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated content:&quot;</span><span class="p">,</span> <span class="n">updated_content</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>이 코드는 example.txt 파일을 읽기와 쓰기 모드로 열고, 파일의 내용을 읽은 후, 파일 끝에 새로운 내용을 추가합니다.</p>
+</div>
+<div class="section" id="id21">
+<h2><span class="section-number">12.2.25. </span><code class="docutils literal notranslate"><span class="pre">w+</span></code> (쓰기 및 읽기 모드)<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">w+</span></code> 모드는 파일을 쓰기와 읽기 모드로 엽니다.</p>
+<p>파일이 존재하지 않으면 새로 생성하고, 파일이 존재하면 기존 내용을 덮어씁니다.</p>
+<p>이 코드는 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일을 쓰기와 읽기 모드로 열고, 파일의 내용을 새로 작성한 후, 파일의 처음으로 이동하여 새로운 내용을 읽습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 쓰기 및 읽기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is new content.&#39;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 파일의 처음으로 이동</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Content after writing:&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h2><span class="section-number">12.2.26. </span><code class="docutils literal notranslate"><span class="pre">a+</span></code> (추가 및 읽기 모드)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">a+</span></code> 모드는 파일을 추가와 읽기 모드로 엽니다.</p>
+<p>파일이 존재하지 않으면 새로 생성하고, 파일 끝에 새로운 내용을 추가할 수 있으며, 파일의 기존 내용을 읽을 수 있습니다.</p>
+<p>이 코드는 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일을 추가와 읽기 모드로 열고, 파일 끝에 새로운 내용을 추가한 후, 파일의 처음으로 이동하여 전체 내용을 읽습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 추가 및 읽기 모드로 파일 열기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; Adding more content.&#39;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># 파일의 처음으로 이동</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Content after appending:&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h2><span class="section-number">12.2.27. </span>텍스트 파일에서 특정 단어 찾기 및 수정하기<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>파일의 특정 단어를 찾아 다른 단어로 바꾸는 예제입니다.</p>
+<p>이 코드는 <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> 파일을 읽기와 쓰기 모드로 열고, 파일의 내용을 읽어 특정 단어를 다른 단어로 바꾼 후, 파일에 다시 작성합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 파일의 특정 단어를 찾아 다른 단어로 바꾸기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;old_word&#39;</span><span class="p">,</span> <span class="s1">&#39;new_word&#39;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>  <span class="c1"># 파일의 나머지 부분을 잘라내기</span>
+
+<span class="c1"># 파일 내용을 다시 읽기</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated content:&quot;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id24">
+<h2><span class="section-number">12.2.28. </span><code class="docutils literal notranslate"><span class="pre">a</span></code> 모드 주의사항<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>파일을 읽고 쓸 수 있는 모드이므로, 파일의 내용을 수정하거나 덮어쓸 때 주의해야 합니다.</p></li>
+<li><p>파일의 처음으로 이동하거나(<code class="docutils literal notranslate"><span class="pre">seek(0)</span></code>), 파일의 나머지 부분을 잘라내는(<code class="docutils literal notranslate"><span class="pre">truncate()</span></code>) 작업을 통해 파일을 관리할 수 있습니다.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\chap_11_file_io"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="11_01_file_read_write.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">12.1. </span>파일 입출력</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="11_03_excercise.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">12.3. </span>연습 문제</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

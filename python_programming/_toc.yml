@@ -1,0 +1,107 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+
+chapters:
+- file: contents/00_table_of_contents.md
+- file: contents/chap_01_preface/01_book_preface.md
+- file: contents/chap_02_author_intro/02_author_intro.md
+# chap 03. 소개 및 설치
+- file: contents/chap_03_intro_and_install/03_00_intro.md
+  sections:
+  - file: contents/chap_03_intro_and_install/03_01_what_is_python.md
+  - file: contents/chap_03_intro_and_install/03_02_python_history_and_characteristics.md
+  - file: contents/chap_03_intro_and_install/03_03_Zen_of_Python.md
+  - file: contents/chap_03_intro_and_install/03_04_Python_Installation.md
+  - file: contents/chap_03_intro_and_install/03_05_vs_code_intro_python.md
+  - file: contents/chap_03_intro_and_install/03_06_first_prog_hello_world.md
+  - file: contents/chap_03_intro_and_install/03_07_excercise.md
+# chap 04. 파이썬 기초문법
+- file: contents/chap_04_basic_grammer/04_00_chap_04_intro.md
+  sections:
+  - file: contents/chap_04_basic_grammer/04_01_comments.md
+  - file: contents/chap_04_basic_grammer/04_02_basic_data_type.md
+  - file: contents/chap_04_basic_grammer/04_03_variable_declare_useage.md
+  - file: contents/chap_04_basic_grammer/04_04_excercise.md
+# chap 05. 데이터 타입 및 변수
+- file: contents/chap_05_datatype_and_variables/05_00_chap_05_intro.md
+  sections:
+  - file: contents/chap_05_datatype_and_variables/05_01_number_types.md
+  - file: contents/chap_05_datatype_and_variables/05_02_string_types.md
+  - file: contents/chap_05_datatype_and_variables/05_03_list_tuple_set_dict.md
+  - file: contents/chap_05_datatype_and_variables/05_04_excercise.md
+# chap 06. 파이썬 연산자
+- file: contents/chap_06_operators/06_00_chap_06_intro.md
+  sections:
+  - file: contents/chap_06_operators/06_01_arithmetic_operators.md
+  - file: contents/chap_06_operators/06_02_comparison_operators.md
+  - file: contents/chap_06_operators/06_03_logical_operators.md
+  - file: contents/chap_06_operators/06_04_allocation_operators.md
+  - file: contents/chap_06_operators/06_05_bitwise_operators.md
+  - file: contents/chap_06_operators/06_06_membership_operators.md
+  - file: contents/chap_06_operators/06_07_identity_operators.md
+  - file: contents/chap_06_operators/06_08_excercise.md
+# chap 07. 조건문 및 반복문
+- file: contents/chap_07_condition_iteration/07_00_chap_07_intro.md
+  sections:
+  - file: contents/chap_07_condition_iteration/07_01_if_elif_else.md
+  - file: contents/chap_07_condition_iteration/07_02_for_loop.md
+  - file: contents/chap_07_condition_iteration/07_03_while_loop.md
+  - file: contents/chap_07_condition_iteration/07_04_excercise.md
+# chap 08. 함수
+- file: contents/chap_08_functions/08_00_chap_intro.md
+  sections:
+  - file: contents/chap_08_functions/08_01_func_define_and_call.md
+  - file: contents/chap_08_functions/08_02_parameters.md
+  - file: contents/chap_08_functions/08_03_lambda_function.md
+  - file: contents/chap_08_functions/08_04_excercise.md
+# chap 09. 내장 함수
+- file: contents/chap_09_builtin_functions/09_00_chap_intro.md
+  sections:
+  - file: contents/chap_09_builtin_functions/09_01_builtin_func.md
+  - file: contents/chap_09_builtin_functions/09_02_freq_builtin_func.md
+  - file: contents/chap_09_builtin_functions/09_03_excercise.md
+# chap 10. 모듈 및 패키지
+- file: contents/chap_10_modules_pakages/10_00_chap_intro.md
+  sections:
+  - file: contents/chap_10_modules_pakages/10_01_module_import.md
+  - file: contents/chap_10_modules_pakages/10_02_package_structure.md
+  - file: contents/chap_10_modules_pakages/10_03_absolute_relative_import.md
+  - file: contents/chap_10_modules_pakages/10_04_circular_import.md
+  - file: contents/chap_10_modules_pakages/10_05_excercise.md
+# chap 11. 파일 입출력
+- file: contents/chap_11_file_io/11_00_chap_intro.md
+  sections:
+  - file: contents/chap_11_file_io/11_01_file_read_write.md
+  - file: contents/chap_11_file_io/11_02_file_mode.md
+  - file: contents/chap_11_file_io/11_03_excercise.md
+# chap 12. 예외 처리
+- file: contents/chap_12_exceptions/12_00_chap_intro.md
+  sections:
+  - file: contents/chap_12_exceptions/12_01_concept_and_exception_types.md
+  - file: contents/chap_12_exceptions/12_02_try_except_finally.md
+  - file: contents/chap_12_exceptions/12_03_assert.md
+  - file: contents/chap_12_exceptions/12_04_raise.md
+  - file: contents/chap_12_exceptions/12_05_excercise.md
+# chap 13. 객체 지향 프로그래밍
+- file: contents/chap_13_oop/13_00_chap_intro.md
+  sections:
+  - file: contents/chap_13_oop/13_01_class_object.md
+  - file: contents/chap_13_oop/13_02_inheritance.md
+  - file: contents/chap_13_oop/13_03_magic_method.md
+  - file: contents/chap_13_oop/13_04_visibility_mangling.md
+  - file: contents/chap_13_oop/13_05_decorators.md
+  - file: contents/chap_13_oop/13_06_excercise.md
+# chap 14. 로깅
+- file: contents/chap_14_logging/14_00_chap_intro.md
+  sections: 
+  - file: contents/chap_14_logging/14_01_logging_importance.md
+  - file: contents/chap_14_logging/14_02_intro_to_logging_module.md
+  - file: contents/chap_14_logging/14_03_basic_logger_conf.md
+  - file: contents/chap_14_logging/14_04_handler_formatter.md
+  - file: contents/chap_14_logging/14_05_configurateion_file.md
+  - file: contents/chap_14_logging/14_06_excercise.md
