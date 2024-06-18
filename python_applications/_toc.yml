@@ -1,0 +1,23 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+
+chapters:
+# chap 01. 목차
+- file: contents/01_table_of_contents/01-01_table_of_contents.md
+# chap 02. 책 소개말(preface)
+- file: contents/02_preface/02-01_preface.md
+# chap 03. 저자 소개
+- file: contents/03_author_intro/03-01_author.md
+
+# 데이터 분석 및 시각화 (4개 챕터)
+# chap 04. 데이터 분석 기초
+- file: contents/04_data_analysis_basic/04-01_intro.md
+  sections:
+  - file: contents/04_data_analysis_basic/04-02_pandas.md
+  - file: contents/04_data_analysis_basic/04-03_csv_tsv_statistics.md
+  - file: contents/04_data_analysis_basic/04-04_project.md
