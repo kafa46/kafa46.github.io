@@ -35,8 +35,13 @@ align: left
 또한, 그는 다양한 학회 및 컨퍼런스에서 활발히 활동하고 있으며, 기술 커뮤니티에서 중요한 역할을 하고 있습니다. 그의 지식과 경험은 많은 학생들과 전문가들에게 영감을 주고 있으며, 그의 강의와 연구는 항상 높은 평가를 받고 있습니다.
 
 <img src="../images/02_02_play_with_python.webp" width="90%" style="margin-left: auto; margin-right: auto; margin-bottom: 50px; display: block;">
-
-<br>
+```{figure} ../images/02_02_play_with_python.webp
+---
+width: 100%
+name: class-object-02_02_play_with_python
+---
+저자가 꿈꾸는 세상 ^^.
+```
 
 그는 여가 시간에는 음악을 즐기며, 특히 드럼 연주에 열정을 가지고 있습니다. 이는 그의 창의성과 에너지를 유지하는 데 큰 도움이 되고 있습니다. 학생들과 학문적 대화하는 것을 즐기며 다양한 분야의 융합적 활동을 매우 즐겨합니다. 자세한 내용은 저자 <a href="https://prof.acin.kr">홈페이지</a>를 방문하여 보다 많은 정보를 확인하기 바랍니다.
 
