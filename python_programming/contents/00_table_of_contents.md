@@ -1,16 +1,10 @@
----
-noteId: "0180fb9029be11efa37e9ba4cdeb29f6"
-tags: []
-
----
-
-
+(toc)=
 # 목차
 
-1. **책 소개말 (Preface)**
+1. [책 소개말 (Preface)](./chap_01_preface/01_book_preface.md)
 
 
-2. **저자 소개**
+2. [저자 소개](./chap_02_author_intro/02_author_intro.md)
 
 
 
@@ -89,7 +83,7 @@ tags: []
 
 8. **함수**
 
-    - 8.1 [함수 정의 및 호출](contents/chap_08_functions/08_01_func_define_and_call.md)
+    - 8.1 [함수 정의 및 호출](chap_08_functions/08_01_func_define_and_call.md)
 
     - 8.2 [매개변수와 반환값](chap_08_functions/08_02_parameters.md)
 
@@ -111,9 +105,9 @@ tags: []
 
 10. **모듈 및 패키지**
 
-    - 10.1 [모듈 임포트](chap_10_modules_pakages/10_01_module_import.md)
+    - 10.1 [모듈](chap_10_modules_pakages/10_01_module_import.md)
 
-    - 10.2 [패키지 구조](chap_10_modules_pakages/10_02_package_structure.md)
+    - 10.2 [패키지](chap_10_modules_pakages/10_02_package_structure.md)
 
     - 10.3 [절대참조와 상대참조](chap_10_modules_pakages/10_03_absolute_relative_import.md)
 
@@ -177,4 +171,4 @@ tags: []
 
     - 14.8 [연습 문제](chap_14_logging/14_06_excercise.md)
 
-
+[맨 위로 이동](toc)

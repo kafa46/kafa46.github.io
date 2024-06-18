@@ -1,6 +1,17 @@
+(13_01)=
 # 클래스와 객체
 
 파이썬은 객체 지향 프로그래밍(Object-Oriented Programming, OOP)을 지원하는 언어입니다. 객체 지향 프로그래밍은 클래스와 객체를 중심으로 프로그램을 구성하는 방식입니다. 이 절에서는 클래스와 객체의 개념, 사용법, 그리고 예제를 통해 객체 지향 프로그래밍의 기본을 알아보겠습니다.
+
+
+```{figure} ../images/13_01_1_fish_bread_frame.webp
+---
+width: 400px
+name: class-object-relation
+---
+"붕어빵틀"은 클래스(class), <br>
+"붕어빵"은 객체(object)
+```
 
 ## 클래스(`class`)
 
@@ -143,3 +154,6 @@ print(dog2.bark())  # 출력: Max says Woof!
     print(circle1.area())  # 출력: 78.53975
     print(circle2.area())  # 출력: 314.159
     ```
+
+[맨 위로 이동](13_01)
+

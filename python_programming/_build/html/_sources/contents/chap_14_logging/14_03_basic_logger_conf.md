@@ -1,3 +1,4 @@
+(14_03)=
 # 기본 로깅 설정
 
 파이썬의 `logging` 모듈을 사용하여 로깅을 설정하는 기본 방법을 알아보겠습니다. 기본 로깅 설정은 `logging.basicConfig()` 함수를 사용하여 간단하게 설정할 수 있습니다.
@@ -129,3 +130,6 @@ logging.warning("This is a warning message")
 logging.error("This is an error message")
 logging.critical("This is a critical message")
 ```
+
+[맨 위로 이동](14_03)
+

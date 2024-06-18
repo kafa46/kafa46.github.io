@@ -1,4 +1,4 @@
-
+(03_02)=
 # 파이썬의 역사 및 특징
 
 파이썬은 현대 프로그래밍 언어 중 가장 널리 사용되는 언어 중 하나로, 그 역사와 특징을 이해하는 것은 파이썬을 효과적으로 사용하는 데 중요한 요소입니다. 이 장에서는 파이썬의 역사와 주요 특징에 대해 자세히 살펴보겠습니다.
@@ -32,13 +32,13 @@
 
 | 버전 | 출시일 | 주요 특징 |
 |------|--------|----------|
-| 3.6  | 2016년 12월 | f-문자열 (formatted string literals), 변수 주석 (variable annotations), underscore in numeric literals |
-| 3.7  | 2018년 6월  | 데이터 클래스 (dataclasses), `async` 및 `await` 키워드, `time` 모듈의 성능 향상 |
-| 3.8  | 2019년 10월 | 월러스 연산자 (:=), `positional-only parameters`, `f-string`의 개선, `typing` 모듈의 개선 |
-| 3.9  | 2020년 10월 | 딕셔너리 병합 및 업데이트 연산자 추가, 개선된 `type hinting` |
-| 3.10 | 2021년 10월 | 패턴 매칭 (pattern matching), `precise line numbers` for debugging, `parenthesized context managers` |
-| 3.11 | 2022년 10월 | 성능 향상, 오류 메시지의 개선, 개선된 `asyncio` 모듈 |
-| 3.12 | 2023년 10월 | 보다 빠른 성능, 더 많은 최적화, 추가된 `type` 힌트 기능 |
+| 3.6  | '16년 12월 | `f-string` 도입, 변수 주석 도입, 숫자에 언더 스코어 삽입 가능 |
+| 3.7  | '18년 6월  | `dataclasses`, `async/await` 키워드, `time` 모듈 성능 향상 |
+| 3.8  | '19년 10월 | 월러스 연산자 (`:=`), `f-string`의 개선, `typing` 모듈의 개선 |
+| 3.9  | '20년 10월 | 딕셔너리 병합 및 업데이트 연산자 추가, `type hinting` 개선 |
+| 3.10 | '21년 10월 | 패턴 매칭, `precise line numbers`, `parenthesized context managers` |
+| 3.11 | '22년 10월 | 성능 향상, 오류 메시지 개선, `asyncio` 모듈 개선 |
+| 3.12 | '23년 10월 | 보다 빠른 성능, 더 많은 최적화, 추가된 `type` 힌트 |
 
 ## 파이썬의 주요 특징
 
@@ -89,3 +89,21 @@ dog.bark()  # Buddy says woof!
         return 0;
     }
     ```
+```{admonition} 인터프리터 vs. 컴파일러 비교
+| 특징 | 인터프리터 언어 | 컴파일러 언어 |
+|-----|----------------|---------------|
+| **실행 방식** | 소스 코드를 한 줄씩 읽고 실행 | 전체 코드를 컴파일하여 실행 파일 생성  |
+| **실행 속도** | 일반적으로 느림 | 일반적으로 빠름 |
+| **디버깅** | 코드 수정 후 즉시 실행 가능, 디버깅이 용이 | 전체 코드 재컴파일, 디버깅 상대적으로 어려움 |
+| **메모리 사용** | 실행 시 동적 메모리 할당  | 실행 파일 생성 시 정적 메모리 할당 |
+| **개발 속도** | 빠른 테스트와 반복적인 개발 가능 | 코드 변경 시 전체 재컴파일 필요 |
+| **예제 언어** | Python, JavaScript, Ruby | C, C++, Java |
+
+- 출처
+    - [GeeksforGeeks: Difference between Compiler and Interpreter](https://www.geeksforgeeks.org/difference-between-compiler-and-interpreter/)
+    - [Programiz: Compiler vs Interpreter](https://www.programiz.com/article/difference-compiler-interpreter)
+    - [Wikipedia: Interpreter (computing)](https://en.wikipedia.org/wiki/Interpreter_(computing))
+```
+
+[맨 위로 이동](03_02)
+

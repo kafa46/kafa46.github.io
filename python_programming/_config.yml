@@ -4,7 +4,7 @@
 title: Python Programming - A Comprehensive Guide
 author: Giseop Noh
 # logo: contents/images/prof_noh.jpg
-logo: contents/images/cover_img2.jpg
+logo: contents/images/00_cover_img2.jpg
 copyright: 'Prof. Giseop Noh in Cheongju University'
 
 # Force re-execution of notebooks on each build.
@@ -13,7 +13,7 @@ execute:
   execute_notebooks: off
 
 # Information about where the book exists on the web
-repository: 
+repository:
   url: https://github.com/kafa46/kafa46.github.io
   path_to_book: python_programming # An optional path to your book, defaults to repo root
   branch: gh-pages  # An optional branch, defaults to `master`
@@ -31,9 +31,9 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming  # Online location of your book
+  path_to_book: python_programming  # Optional path to your book, relative to the repository root
+  branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -42,7 +42,7 @@ html:
   use_repository_button: true
   extra_footer: |
       <p>
-          본 책자에 적용되는 라이센스 
+          본 책자에 적용되는 라이센스
           <a href="https://opensource.org/licenses/MIT">
             MIT License
           </a>.

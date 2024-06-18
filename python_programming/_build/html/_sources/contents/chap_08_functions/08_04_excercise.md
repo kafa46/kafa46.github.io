@@ -1,3 +1,4 @@
+(08_04)=
 # 연습 문제
 
 1. 두 숫자를 더하는 함수 `add(a, b)`를 정의하고, 이 함수를 호출하여 결과를 출력하세요.
@@ -76,3 +77,5 @@
     evens_squared = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, numbers)))
     print(evens_squared)
     ```
+
+[맨 위로 이동](09_03)

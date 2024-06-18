@@ -1,3 +1,4 @@
+(12_04)=
 # `raise` 문
 
 `raise` 문은 예외를 명시적으로 발생시키는 데 사용됩니다. 
@@ -21,7 +22,7 @@ raise ExceptionType(message)
 
 ## 기본 사용법
 
-다음 코드는 ValueError 예외를 발생시키고, "This is a ValueError" 메시지를 출력합니다.
+다음 코드는 `ValueError` 예외를 발생시키고, "`This is a ValueError`"  메시지를 출력합니다.
 
 ```python
 # 기본 raise 사용 예제
@@ -30,7 +31,7 @@ raise ValueError("This is a ValueError")
 
 ## 조건에 따른 예외 발생
 
-다음 코드는 x가 음수일 때 ValueError 예외를 발생시킵니다.
+다음 코드는 `x`가 음수일 때 `ValueError` 예외를 발생시킵니다.
 
 ```python
 def calculate_positive_square_root(x):
@@ -44,7 +45,7 @@ print(calculate_positive_square_root(-1))  # ValueError: x must be non-negative
 
 ## 사용자 정의 예외
 
-다음 코드는 CustomError라는 사용자 정의 예외를 정의하고, 이를 발생시킨 후 처리합니다.
+다음 코드는 `CustomError` 라는 사용자 정의 예외를 정의하고, 이를 발생시킨 후 처리합니다.
 
 ```python
 class CustomError(Exception):
@@ -61,7 +62,7 @@ except CustomError as e:
 
 ### 예제: 사용자 입력 검사
 
-다음 코드는 사용자가 입력한 숫자가 양수가 아닌 경우 ValueError 예외를 발생시킵니다.
+다음 코드는 사용자가 입력한 숫자가 양수가 아닌 경우 `ValueError` 예외를 발생시킵니다.
 
 
 ```python
@@ -79,7 +80,7 @@ except ValueError as e:
 ```
 ###  예제: 파일 처리
 
-다음 코드는 파일이 존재하지 않는 경우 FileNotFoundError 예외를 발생시킵니다.
+다음 코드는 파일이 존재하지 않는 경우 `FileNotFoundError` 예외를 발생시킵니다.
 
 ```python
 class FileNotFoundError(Exception):
@@ -101,7 +102,7 @@ except FileNotFoundError as e:
 
 ### 예제: 여러 예외 발생
 
-다음 코드는 입력 값이 정수가 아니거나 음수일 때 각각 TypeError와 ValueError 예외를 발생시킵니다.
+다음 코드는 입력 값이 정수가 아니거나 음수일 때 각각 `TypeError`와 `ValueError` 예외를 발생시킵니다.
 
 ```python
 def process_value(value):
@@ -120,3 +121,6 @@ try:
 except (TypeError, ValueError) as e:
     print(e)
 ```
+
+[맨 위로 이동](12_04)
+

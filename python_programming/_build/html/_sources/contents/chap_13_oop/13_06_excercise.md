@@ -1,3 +1,4 @@
+(13_06)=
 # 연습 문제
 
 1. **클래스와 객체**
@@ -146,3 +147,6 @@
 
     # emp.salary = -1000  # ValueError: Salary cannot be negative
     ```
+
+[맨 위로 이동](13_06)
+
