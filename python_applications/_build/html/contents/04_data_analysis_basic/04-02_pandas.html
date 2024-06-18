@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9.1. pandas를 이용한 데이터 처리 및 분석 &#8212; Python Programming - A Comprehensive Guide</title>
+    <title>4.1. 데이터 처리 with pandas &#8212; Python Programming - A Comprehensive Guide</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/04_data_analysis_basic/04-02_pandas';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.2. Project" href="04-04_project.html" />
-    <link rel="prev" title="9. Chapter intro" href="04-01_intro.html" />
+    <link rel="next" title="4.2. CSV, TSV 이용한 기본 통계 분석" href="04-03_csv_tsv_statistics.html" />
+    <link rel="prev" title="4. 데이터 분석" href="04-01_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,8 +146,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../_static/00-01_cover.webp" class="logo__image only-light" alt="Python Programming - A Comprehensive Guide - Home"/>
+    <script>document.write(`<img src="../../_static/00-01_cover.webp" class="logo__image only-dark" alt="Python Programming - A Comprehensive Guide - Home"/>`);</script>
   
-    <p class="title logo__title">Python Programming - A Comprehensive Guide</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -172,17 +178,13 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. 1. 데이터 분석 및 시각화 (4개 챕터)</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">7. 책 소개말 (Preface)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">8. 저자 소개</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="04-01_intro.html">9. Chapter intro</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.1. <code class="docutils literal notranslate"><span class="pre">pandas</span></code>를 이용한 데이터 처리 및 분석</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04-04_project.html">9.2. Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="04-01_intro.html">4. 데이터 분석</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. 데이터 처리 with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-03_csv_tsv_statistics.html">4.2. <code class="docutils literal notranslate"><span class="pre">CSV</span></code>, <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 이용한 기본 통계 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-04_project.html">4.3. Project</a></li>
 </ul>
 </details></li>
 </ul>
@@ -368,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>pandas를 이용한 데이터 처리 및 분석</h1>
+    <h1>데이터 처리 with pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,8 +384,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
-<span id="id1"></span><h1><span class="section-number">9.1. </span><code class="docutils literal notranslate"><span class="pre">pandas</span></code>를 이용한 데이터 처리 및 분석<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="with-pandas">
+<span id="id1"></span><h1><span class="section-number">4.1. </span>데이터 처리 with <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#with-pandas" title="Link to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code>를 이용한 데이터 처리 및 분석</p>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
 </section>
 
@@ -400,7 +403,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./contents/04_data_analysis_basic"
+            path: "./contents\04_data_analysis_basic"
         },
         predefinedOutput: true
     }
@@ -423,15 +426,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Chapter intro</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>데이터 분석</p>
       </div>
     </a>
     <a class="right-next"
-       href="04-04_project.html"
+       href="04-03_csv_tsv_statistics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>Project</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span><code class="docutils literal notranslate"><span class="pre">CSV</span></code>, <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 이용한 기본 통계 분석</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
