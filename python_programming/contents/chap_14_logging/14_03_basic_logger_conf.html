@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.3. 기본 로깅 설정 &#8212; Python Programming - A Comprehensive Guide</title>
+    <title>15.4. 기본 로깅 설정 &#8212; Python Programming - A Comprehensive Guide</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.4. 핸들러(Handler)와 포매터(Formatter)" href="14_04_handler_formatter.html" />
-    <link rel="prev" title="15.2. 파이썬 로깅 모듈 소개" href="14_02_intro_to_logging_module.html" />
+    <link rel="next" title="15.5. 핸들러(Handler)와 포매터(Formatter)" href="14_04_handler_formatter.html" />
+    <link rel="prev" title="15.3. 파이썬 로깅 모듈 소개" href="14_02_intro_to_logging_module.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/cover_img2.jpg" class="logo" alt="logo">
+      <img src="../../_static/00_cover_img2.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chap_03_intro_and_install/03_00_intro.html">
-   4. 인트로
+   4. 소개 및 설치
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -149,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_03_intro_and_install/03_06_first_prog_hello_world.html">
-     4.6. 첫 번째 프로그램 작성하기 (Hello World)
+     4.6. 첫 번째 프로그램 작성
     </a>
    </li>
    <li class="toctree-l2">
@@ -208,7 +208,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_05_datatype_and_variables/05_02_string_types.html">
-     6.2. 문자열 (string)
+     6.2. 문자열(
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       string
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toctree-l2">
@@ -235,7 +241,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_06_operators/06_01_arithmetic_operators.html">
-     7.1. 파이썬 연산자
+     7.1. 산술 연산자
     </a>
    </li>
    <li class="toctree-l2">
@@ -287,12 +293,36 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_07_condition_iteration/07_01_if_elif_else.html">
-     8.1. 조건문 및 반복문
+     8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     조건문
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_07_condition_iteration/07_02_for_loop.html">
-     8.2. for 반복문
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     반복문
     </a>
    </li>
    <li class="toctree-l2">
@@ -325,7 +355,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_08_functions/08_01_func_define_and_call.html">
-     9.1. 함수
+     9.1. 함수 정의 및 호출
     </a>
    </li>
    <li class="toctree-l2">
@@ -357,7 +387,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_09_builtin_functions/09_01_builtin_func.html">
-     10.1. 내장 함수
+     10.1. 내장 함수란 무엇인가
     </a>
    </li>
    <li class="toctree-l2">
@@ -384,12 +414,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_10_modules_pakages/10_01_module_import.html">
-     11.1. 모듈 및 패키지
+     11.1. 모듈
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_10_modules_pakages/10_02_package_structure.html">
-     11.2. 패키지 구조
+     11.2. 패키지
     </a>
    </li>
    <li class="toctree-l2">
@@ -580,32 +610,32 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="14_01_logging_importance.html">
-     15.1. 로깅의 개념과 역할
+     15.2. 로깅의 개념과 역할
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_02_intro_to_logging_module.html">
-     15.2. 파이썬 로깅 모듈 소개
+     15.3. 파이썬 로깅 모듈 소개
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15.3. 기본 로깅 설정
+     15.4. 기본 로깅 설정
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_04_handler_formatter.html">
-     15.4. 핸들러(Handler)와 포매터(Formatter)
+     15.5. 핸들러(Handler)와 포매터(Formatter)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_05_configurateion_file.html">
-     15.5. 로깅 설정 파일 사용
+     15.6. 로깅 설정 파일 사용
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_06_excercise.html">
-     15.6. 연습 문제
+     15.7. 연습 문제
     </a>
    </li>
   </ul>
@@ -667,11 +697,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_14_logging/14_03_basic_logger_conf.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_14_logging/14_03_basic_logger_conf.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -698,43 +728,43 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   15.3.1. 기본 설정
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   15.3.2. 예제: 기본 설정
+   15.4.1. 기본 설정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   15.3.3. 매개변수
+   15.4.2. 예제: 기본 설정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   15.3.4. 예제: 파일에 로그 기록
+   15.4.3. 매개변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   15.3.5. 로그 메시지 형식
+   15.4.4. 예제: 파일에 로그 기록
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   15.3.6. 예제: 로그 메시지 형식 지정
+   15.4.5. 로그 메시지 형식
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   15.3.7. 날짜 형식
+   15.4.6. 예제: 로그 메시지 형식 지정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   15.3.8. 예제: 날짜 형식 지정
+   15.4.7. 날짜 형식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   15.4.8. 예제: 날짜 형식 지정
   </a>
  </li>
 </ul>
@@ -758,43 +788,43 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   15.3.1. 기본 설정
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   15.3.2. 예제: 기본 설정
+   15.4.1. 기본 설정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id4">
-   15.3.3. 매개변수
+   15.4.2. 예제: 기본 설정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   15.3.4. 예제: 파일에 로그 기록
+   15.4.3. 매개변수
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id6">
-   15.3.5. 로그 메시지 형식
+   15.4.4. 예제: 파일에 로그 기록
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id7">
-   15.3.6. 예제: 로그 메시지 형식 지정
+   15.4.5. 로그 메시지 형식
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id8">
-   15.3.7. 날짜 형식
+   15.4.6. 예제: 로그 메시지 형식 지정
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id9">
-   15.3.8. 예제: 날짜 형식 지정
+   15.4.7. 날짜 형식
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   15.4.8. 예제: 날짜 형식 지정
   </a>
  </li>
 </ul>
@@ -807,14 +837,14 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">15.3. </span>기본 로깅 설정<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<span id="id2"></span><h1><span class="section-number">15.4. </span>기본 로깅 설정<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>파이썬의 <code class="docutils literal notranslate"><span class="pre">logging</span></code> 모듈을 사용하여 로깅을 설정하는 기본 방법을 알아보겠습니다. 기본 로깅 설정은 <code class="docutils literal notranslate"><span class="pre">logging.basicConfig()</span></code> 함수를 사용하여 간단하게 설정할 수 있습니다.</p>
-<div class="section" id="id2">
-<h2><span class="section-number">15.3.1. </span>기본 설정<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2><span class="section-number">15.4.1. </span>기본 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">logging.basicConfig()</span></code> 함수를 사용하여 기본적인 로깅 설정을 할 수 있습니다. 이 함수는 로그 메시지를 기록할 때 사용할 로거, 핸들러, 포매터를 자동으로 구성합니다.</p>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">15.3.2. </span>예제: 기본 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2><span class="section-number">15.4.2. </span>예제: 기본 설정<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>다음 코드에서 <code class="docutils literal notranslate"><span class="pre">basicConfig</span></code> 함수는 로그 레벨을 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>로 설정하여 모든 레벨의 로그 메시지를 기록</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -831,8 +861,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h2><span class="section-number">15.3.3. </span>매개변수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2><span class="section-number">15.4.3. </span>매개변수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">logging.basicConfig()</span></code> 함수는 다양한 매개변수를 통해 로깅 설정을 세부 조정할 수 있습니다.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: 로그 메시지를 기록할 파일 이름을 지정</p></li>
@@ -843,8 +873,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">stream</span></code>: 로그 메시지를 출력할 스트림을 지정. <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>을 사용할 수 있습니다.</p></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2><span class="section-number">15.3.4. </span>예제: 파일에 로그 기록<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2><span class="section-number">15.4.4. </span>예제: 파일에 로그 기록<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">basicConfig</span></code> 함수는 로그 메시지를 <code class="docutils literal notranslate"><span class="pre">app.log</span></code> 파일에 기록하고, 파일 모드를 <code class="docutils literal notranslate"><span class="pre">w</span></code>로 설정하여 파일을 덮어씁니다.</p>
 <p>로그 메시지의 형식과 날짜 형식도 지정합니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -863,8 +893,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h2><span class="section-number">15.3.5. </span>로그 메시지 형식<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2><span class="section-number">15.4.5. </span>로그 메시지 형식<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">format</span></code> 매개변수를 사용하여 로그 메시지의 형식을 지정할 수 있습니다.</p>
 <p>다음은 로그 메시지 형식에서 사용할 수 있는 일부 포맷 문자열입니다:</p>
 <ul class="simple">
@@ -877,8 +907,8 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">%(name)s</span></code>: 로거 이름</p></li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2><span class="section-number">15.3.6. </span>예제: 로그 메시지 형식 지정<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2><span class="section-number">15.4.6. </span>예제: 로그 메시지 형식 지정<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>다음 코드에서 로그 메시지는 시간, 로거 이름, 로그 레벨, 메시지 순서로 출력됩니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -895,13 +925,13 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h2><span class="section-number">15.3.7. </span>날짜 형식<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2><span class="section-number">15.4.7. </span>날짜 형식<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">datefmt</span></code> 매개변수를 사용하여 로그 메시지의 날짜 형식을 지정할 수 있습니다.</p>
 <p>날짜 형식은 <code class="docutils literal notranslate"><span class="pre">strftime</span></code> 형식을 따릅니다.</p>
 </div>
-<div class="section" id="id9">
-<h2><span class="section-number">15.3.8. </span>예제: 날짜 형식 지정<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2><span class="section-number">15.4.8. </span>예제: 날짜 형식 지정<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>다음 코드 에서 날짜 형식은 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span> <span class="pre">HH:MM:SS</span></code> 형식으로 지정됩니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 
@@ -918,6 +948,7 @@
 <span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;This is a critical message&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
 </div>
 </div>
 
@@ -950,13 +981,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">15.2. </span>파이썬 로깅 모듈 소개</p>
+            <p class="prev-next-title"><span class="section-number">15.3. </span>파이썬 로깅 모듈 소개</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="14_04_handler_formatter.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.4. </span>핸들러(Handler)와 포매터(Formatter)</p>
+        <p class="prev-next-title"><span class="section-number">15.5. </span>핸들러(Handler)와 포매터(Formatter)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -972,7 +1003,7 @@
         &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
       <div class="extra_footer">
         <p>
-    본 책자에 적용되는 라이센스 
+    본 책자에 적용되는 라이센스
     <a href="https://opensource.org/licenses/MIT">
       MIT License
     </a>.

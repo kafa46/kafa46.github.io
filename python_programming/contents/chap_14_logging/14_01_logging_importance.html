@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.1. 로깅의 개념과 역할 &#8212; Python Programming - A Comprehensive Guide</title>
+    <title>15.2. 로깅의 개념과 역할 &#8212; Python Programming - A Comprehensive Guide</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="15.2. 파이썬 로깅 모듈 소개" href="14_02_intro_to_logging_module.html" />
+    <link rel="next" title="15.3. 파이썬 로깅 모듈 소개" href="14_02_intro_to_logging_module.html" />
     <link rel="prev" title="15. 로깅(logging)" href="14_00_chap_intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/cover_img2.jpg" class="logo" alt="logo">
+      <img src="../../_static/00_cover_img2.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../chap_03_intro_and_install/03_00_intro.html">
-   4. 인트로
+   4. 소개 및 설치
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -149,7 +149,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_03_intro_and_install/03_06_first_prog_hello_world.html">
-     4.6. 첫 번째 프로그램 작성하기 (Hello World)
+     4.6. 첫 번째 프로그램 작성
     </a>
    </li>
    <li class="toctree-l2">
@@ -208,7 +208,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_05_datatype_and_variables/05_02_string_types.html">
-     6.2. 문자열 (string)
+     6.2. 문자열(
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       string
+      </span>
+     </code>
+     )
     </a>
    </li>
    <li class="toctree-l2">
@@ -235,7 +241,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_06_operators/06_01_arithmetic_operators.html">
-     7.1. 파이썬 연산자
+     7.1. 산술 연산자
     </a>
    </li>
    <li class="toctree-l2">
@@ -287,12 +293,36 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_07_condition_iteration/07_01_if_elif_else.html">
-     8.1. 조건문 및 반복문
+     8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     조건문
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_07_condition_iteration/07_02_for_loop.html">
-     8.2. for 반복문
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     반복문
     </a>
    </li>
    <li class="toctree-l2">
@@ -325,7 +355,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_08_functions/08_01_func_define_and_call.html">
-     9.1. 함수
+     9.1. 함수 정의 및 호출
     </a>
    </li>
    <li class="toctree-l2">
@@ -357,7 +387,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_09_builtin_functions/09_01_builtin_func.html">
-     10.1. 내장 함수
+     10.1. 내장 함수란 무엇인가
     </a>
    </li>
    <li class="toctree-l2">
@@ -384,12 +414,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_10_modules_pakages/10_01_module_import.html">
-     11.1. 모듈 및 패키지
+     11.1. 모듈
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../chap_10_modules_pakages/10_02_package_structure.html">
-     11.2. 패키지 구조
+     11.2. 패키지
     </a>
    </li>
    <li class="toctree-l2">
@@ -580,32 +610,32 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15.1. 로깅의 개념과 역할
+     15.2. 로깅의 개념과 역할
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_02_intro_to_logging_module.html">
-     15.2. 파이썬 로깅 모듈 소개
+     15.3. 파이썬 로깅 모듈 소개
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_03_basic_logger_conf.html">
-     15.3. 기본 로깅 설정
+     15.4. 기본 로깅 설정
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_04_handler_formatter.html">
-     15.4. 핸들러(Handler)와 포매터(Formatter)
+     15.5. 핸들러(Handler)와 포매터(Formatter)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_05_configurateion_file.html">
-     15.5. 로깅 설정 파일 사용
+     15.6. 로깅 설정 파일 사용
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14_06_excercise.html">
-     15.6. 연습 문제
+     15.7. 연습 문제
     </a>
    </li>
   </ul>
@@ -667,11 +697,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_14_logging/14_01_logging_importance.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_14_logging/14_01_logging_importance.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -698,38 +728,38 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   15.1.1. 로깅이란?
+  <a class="reference internal nav-link" href="#id3">
+   15.2.1. 로깅이란?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   15.1.2. 로깅의 역할
+  <a class="reference internal nav-link" href="#id4">
+   15.2.2. 로깅의 역할
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     15.1.2.1. 문제 진단 및 디버깅
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     15.1.2.2. 성능 모니터링
+     15.2.2.1. 문제 진단 및 디버깅
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     15.1.2.3. 사용자의 행동 추적
+     15.2.2.2. 성능 모니터링
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     15.1.2.4. 보안 감사
+     15.2.2.3. 사용자의 행동 추적
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     15.1.2.5. 법적 증거
+     15.2.2.4. 보안 감사
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     15.2.2.5. 법적 증거
     </a>
    </li>
   </ul>
@@ -755,38 +785,38 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   15.1.1. 로깅이란?
+  <a class="reference internal nav-link" href="#id3">
+   15.2.1. 로깅이란?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   15.1.2. 로깅의 역할
+  <a class="reference internal nav-link" href="#id4">
+   15.2.2. 로깅의 역할
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     15.1.2.1. 문제 진단 및 디버깅
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     15.1.2.2. 성능 모니터링
+     15.2.2.1. 문제 진단 및 디버깅
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id6">
-     15.1.2.3. 사용자의 행동 추적
+     15.2.2.2. 성능 모니터링
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id7">
-     15.1.2.4. 보안 감사
+     15.2.2.3. 사용자의 행동 추적
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id8">
-     15.1.2.5. 법적 증거
+     15.2.2.4. 보안 감사
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     15.2.2.5. 법적 증거
     </a>
    </li>
   </ul>
@@ -801,18 +831,18 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><span class="section-number">15.1. </span>로깅의 개념과 역할<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2><span class="section-number">15.1.1. </span>로깅이란?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>소프트웨어에서 로깅(logging)은 프로그램의 실행 과정에서 발생하는 다양한 이벤트나 상태 정보를 기록하는 과정입니다. 로깅은 디버깅, 문제 해결, 성능 모니터링, 감사 추적 등을 위해 매우 중요합니다. 로깅을 통해 프로그램의 실행 흐름을 추적하고, 오류나 비정상적인 동작을 쉽게 파악할 수 있습니다.</p>
-</div>
+<span id="id2"></span><h1><span class="section-number">15.2. </span>로깅의 개념과 역할<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id3">
-<h2><span class="section-number">15.1.2. </span>로깅의 역할<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.2.1. </span>로깅이란?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>소프트웨어에서 로깅(<code class="docutils literal notranslate"><span class="pre">logging</span></code>)은 프로그램의 실행 과정에서 발생하는 다양한 이벤트나 상태 정보를 기록하는 과정입니다. 로깅은 디버깅, 문제 해결, 성능 모니터링, 감사 추적 등을 위해 매우 중요합니다. 로깅을 통해 프로그램의 실행 흐름을 추적하고, 오류나 비정상적인 동작을 쉽게 파악할 수 있습니다.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">15.2.2. </span>로깅의 역할<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>로깅(<code class="docutils literal notranslate"><span class="pre">logging</span></code>)은 소프트웨어 개발에서 매우 중요한 역할을 합니다.</p>
 <p>로깅을 통해 애플리케이션의 실행 상태를 기록하고, 디버깅 및 문제 해결을 위한 유용한 정보를 제공합니다.</p>
 <p>로깅의 주요 중요성과 역할은 다음과 같습니다:</p>
-<div class="section" id="id4">
-<h3><span class="section-number">15.1.2.1. </span>문제 진단 및 디버깅<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3><span class="section-number">15.2.2.1. </span>문제 진단 및 디버깅<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>로깅은 애플리케이션에서 발생하는 문제를 진단하고 디버깅하는 데 필수적입니다.</p>
 <p>로그를 통해 언제, 어디서, 어떤 문제가 발생했는지 정확히 파악할 수 있습니다.</p>
 <p>다음 코드에서 로깅은 나눗셈 작업의 흐름을 추적하고, 0으로 나눌 때 오류를 기록합니다.</p>
@@ -831,8 +861,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h3><span class="section-number">15.1.2.2. </span>성능 모니터링<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3><span class="section-number">15.2.2.2. </span>성능 모니터링<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>로깅은 애플리케이션의 성능을 모니터링하고, 성능 병목 현상을 식별하는 데 도움을 줍니다.</p>
 <p>이를 통해 시스템의 효율성을 높이고, 최적화를 위한 데이터를 제공합니다.</p>
 <p>다음 코드에서 로깅은 작업의 시작과 완료 시간을 기록하여 작업에 걸린 시간을 모니터링합니다.</p>
@@ -852,8 +882,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h3><span class="section-number">15.1.2.3. </span>사용자의 행동 추적<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3><span class="section-number">15.2.2.3. </span>사용자의 행동 추적<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>로깅은 사용자의 행동을 추적하고, 사용 패턴을 분석하는 데 유용합니다.</p>
 <p>이를 통해 사용자 경험을 개선하고, 사용자 요구에 맞는 기능을 제공할 수 있습니다.</p>
 <p>다음 코드에서 로깅은 사용자의 행동을 기록하여 사용 패턴을 분석할 수 있습니다.</p>
@@ -870,8 +900,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3><span class="section-number">15.1.2.4. </span>보안 감사<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3><span class="section-number">15.2.2.4. </span>보안 감사<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>로깅은 보안 감사 및 컴플라이언스 요구 사항을 충족하는 데 필수적입니다.</p>
 <p>로그를 통해 보안 이벤트를 추적하고, 잠재적인 보안 위협을 식별할 수 있습니다.</p>
 <p>다음 코드에서 로깅은 비정상적인 접근 시도를 기록하여 보안 위협을 감지할 수 있습니다.</p>
@@ -889,8 +919,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id8">
-<h3><span class="section-number">15.1.2.5. </span>법적 증거<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3><span class="section-number">15.2.2.5. </span>법적 증거<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>로그는 법적 문제 발생 시 중요한 증거로 사용될 수 있습니다.</p>
 <p>특히 금융, 의료, 전자상거래와 같은 분야에서는 로그가 법적 증거로서의 역할을 할 수 있습니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -904,6 +934,7 @@
 <span class="n">transaction</span><span class="p">(</span><span class="s2">&quot;user2&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
 </div>
 </div>
 </div>
@@ -943,7 +974,7 @@
     <a class='right-next' id="next-link" href="14_02_intro_to_logging_module.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">15.2. </span>파이썬 로깅 모듈 소개</p>
+        <p class="prev-next-title"><span class="section-number">15.3. </span>파이썬 로깅 모듈 소개</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -959,7 +990,7 @@
         &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
       <div class="extra_footer">
         <p>
-    본 책자에 적용되는 라이센스 
+    본 책자에 적용되는 라이센스
     <a href="https://opensource.org/licenses/MIT">
       MIT License
     </a>.

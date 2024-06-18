@@ -1,3 +1,4 @@
+(12_02)=
 # `try`, `except`, `finally`
 
 파이썬에서 예외 처리를 위해 `try`, `except`, `finally` 블록을 사용합니다. 이를 통해 프로그램의 오류를 처리하고, 예외 발생 시 적절한 대응을 할 수 있습니다. 각 블록의 사용법과 예제를 통해 자세히 알아보겠습니다.
@@ -24,7 +25,7 @@ finally:
 
 ## 기본 예외 처리
 
-아래 코드는 ZeroDivisionError 예외를 처리하여, 예외가 발생했을 때 적절한 메시지를 출력합니다.
+아래 코드는 `ZeroDivisionError` 예외를 처리하여, 예외가 발생했을 때 적절한 메시지를 출력합니다.
 
 ```python
 try:
@@ -35,7 +36,7 @@ except ZeroDivisionError:
 
 ## 여러 예외 처리
 
-아래 코드는 ValueError와 ZeroDivisionError를 처리하여, 각각의 예외 상황에 맞는 메시지를 출력합니다.
+아래 코드는 `ValueError와` `ZeroDivisionError를` 처리하여, 각각의 예외 상황에 맞는 메시지를 출력합니다.
 
 ```python
 try:
@@ -73,6 +74,10 @@ try:
 except FileNotFoundError:
     print("The file does not exist.")
 finally:
+    # 에러가 발생해서 작업을 하지 못했지만 
+    # 여전히 파일은 열려 있는 상태
+    # finally를 이용해 파일을 닫아준다
+    # (우아한 종료)
     file.close()
 ```
 
@@ -80,7 +85,8 @@ finally:
 
 `else` 블록은 예외가 발생하지 않았을 때 실행됩니다.
 
-다음 코드는 사용자가 유효한 숫자를 입력했을 때 결과를 출력하고, 예외 발생 여부와 관계없이 "Execution completed." 메시지를 출력합니다.
+다음 코드는 사용자가 유효한 숫자를 입력했을 때 결과를 출력하고, 
+예외 발생 여부와 관계없이 "`Execution completed.`" 메시지를 출력합니다.
 
 ```python
 try:
@@ -119,3 +125,6 @@ def divide_numbers():
 
 divide_numbers()
 ```
+
+[맨 위로 이동](12_02)
+

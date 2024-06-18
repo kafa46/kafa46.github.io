@@ -1,3 +1,4 @@
+(05_04)=
 # 연습 문제
 
 1. 정수형과 부동 소수점형의 차이점을 설명하고, 각각의 예제를 작성하세요.
@@ -85,7 +86,7 @@
         del person['country']  # 존재하지 않는 키 삭제 시도
     except KeyError as e:
         print(e)  # 오류 출력
-    
+
     country = person.get('country')  # 키 에러 방지
     print(country)  # None 출력
     ```
@@ -100,3 +101,5 @@
             except ZeroDivisionError as e:
                 print("오류가 발생했습니다:", e)  # 오류 메시지를 출력합니다.
             ```
+
+[맨 위로 이동](06_08)
