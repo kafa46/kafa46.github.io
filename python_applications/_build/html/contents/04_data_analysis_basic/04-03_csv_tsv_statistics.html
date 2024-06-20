@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.2. CSV, TSV 이용한 기본 통계 분석 &#8212; Python Programming - A Comprehensive Guide</title>
+    <title>4.2. 기본 데이터 분석 &#8212; Python Programming - A Comprehensive Guide</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.3. Project" href="04-04_project.html" />
-    <link rel="prev" title="4.1. 데이터 처리 with pandas" href="04-02_pandas.html" />
+    <link rel="prev" title="4.1. 데이터 처리 with Pandas" href="04-02_pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,8 +182,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="04-01_intro.html">4. 데이터 분석</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="04-02_pandas.html">4.1. 데이터 처리 with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. <code class="docutils literal notranslate"><span class="pre">CSV</span></code>, <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 이용한 기본 통계 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-02_pandas.html">4.1. 데이터 처리 with Pandas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. 기본 데이터 분석</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04-04_project.html">4.3. Project</a></li>
 </ul>
 </details></li>
@@ -359,7 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -370,11 +372,31 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CSV, TSV 이용한 기본 통계 분석</h1>
+    <h1>기본 데이터 분석</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-comma-separated-values">4.2.1. CSV (Comma-Separated Values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-tab-separated-values">4.2.2. TSV (Tab-Separated Values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.3. 파일 데이터 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.2.4. 데이터 분석</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2.4.1. 데이터 탐색</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.2.4.2. 데이터 선택 및 필터링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.2.4.3. 데이터 정렬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.2.4.4. 데이터 그룹화 및 집계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2.4.5. 서로 다른 데이터 합치기(병합)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.2.4.6. 데이터 시각화</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2.4.7. 전체 예제 코드</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -384,9 +406,206 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="csv-tsv">
-<span id="id1"></span><h1><span class="section-number">4.2. </span><code class="docutils literal notranslate"><span class="pre">CSV</span></code>, <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 이용한 기본 통계 분석<a class="headerlink" href="#csv-tsv" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<span id="id2"></span><h1><span class="section-number">4.2. </span>기본 데이터 분석<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>컴퓨터가 관리하는 데이터는 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 형태로 관리되는 경우가 많습니다. CSV와 TSV는 모두 데이터를 저장하고 교환하는 데 매우 유용한 형식입니다. CSV는 더 널리 사용되지만, TSV는 필드 값에 콤마가 포함된 경우 더 유리할 수 있습니다. 적절한 형식을 선택하는 것은 데이터의 특성과 사용 목적에 따라 달라집니다.</p>
+<section id="csv-comma-separated-values">
+<h2><span class="section-number">4.2.1. </span>CSV (Comma-Separated Values)<a class="headerlink" href="#csv-comma-separated-values" title="Link to this heading">#</a></h2>
+<p>CSV 파일은 콤마(,)로 구분된 데이터를 저장하는 파일 형식입니다. 각 줄은 데이터 레코드를 나타내며, 각 레코드는 쉼표로 구분된 필드(열)로 구성됩니다. CSV 파일은 간단하고 널리 사용되며, 다양한 프로그램에서 지원됩니다.</p>
+<p><strong>특징</strong></p>
+<ul>
+<li><p>구분자: 콤마(,).</p></li>
+<li><p>사용 사례: 스프레드시트 프로그램(예: MS Excel, Google Sheets), DBMS, 데이터 분석 도구 등</p></li>
+<li><p>장점: 간단한 구조, 다양한 애플리케이션에서 쉽게 사용 가능</p></li>
+<li><p>단점: 데이터에 콤마가 포함될 경우 이스케이프(제거 또는 다른 문자로 치환) 처리가 필요</p></li>
+<li><p>데이터 예시</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Name,Age,City
+John,28,New York
+Anna,24,Paris
+Peter,35,Berlin
+Linda,32,London
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="tsv-tab-separated-values">
+<h2><span class="section-number">4.2.2. </span>TSV (Tab-Separated Values)<a class="headerlink" href="#tsv-tab-separated-values" title="Link to this heading">#</a></h2>
+<p>TSV 파일은 탭(tab) 문자로 구분된 데이터를 저장하는 파일 형식입니다. CSV와 유사하게, 각 줄은 데이터 레코드를 나타내며, 각 레코드는 탭 문자 (<code class="docutils literal notranslate"><span class="pre">\t</span></code>)로 구분된 필드로 구성됩니다. TSV 파일은 특히 텍스트 편집기와 스프레드시트 프로그램에서 쉽게 읽을 수 있습니다.</p>
+<p><strong>특징</strong></p>
+<ul>
+<li><p>구분자: 탭 문자(<code class="docutils literal notranslate"><span class="pre">\t</span></code>)</p></li>
+<li><p>사용 사례: 스프레드시트 프로그램, DBMS, 데이터 분석 도구 등</p></li>
+<li><p>장점: 필드 값에 콤마가 포함되어도 문제가 되지 않음, 구분자가 명확하여 가독성 높음</p></li>
+<li><p>단점: CSV에 비해 덜 일반적이며, 일부 애플리케이션에서는 기본적으로 지원하지 않을 수 있음</p></li>
+<li><p>데이터 예시</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Name    Age    City
+John    28    New York
+Anna    24    Paris
+Peter    35    Berlin
+Linda    32    London
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2><span class="section-number">4.2.3. </span>파일 데이터 불러오기<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>파일을 읽어오려면 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>의  <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드를 사용하면 됩니다. 파일에서 데이터를 읽어오면  데이터 프레임으로 리턴합니다.</p>
+<p>자세한 사용법은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas-read-csv">pandas.read_dsv</a>를 참고하면 됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드 파라미터는 2개만 신경쓰면 됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;filepath_or_buffer&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'filepath_or_buffer'</span></code>: 파일 이름입니다. 만약 파일 내용이 메인 메모리에 적재되고 변수로 관리되고 있다면 변수 이름을 입력하면 됩니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>는 구분자를 의미합니다. 기본값은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>) 입니다. 아무것도 입력하지 않으면 콤마를 기준으로 데이터 열을 구분합니다. <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 파일은 콤마로 구분되기 때문에 별도로 입력할 필요가 없습니다. <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 파일은 탭으로 구분하기 때문에 <code class="docutils literal notranslate"><span class="pre">sep='\t'</span></code>라고 입력해 주어야 합니다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># CSV 파일을 읽어 데이터 프레임으로 변환</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="c1"># sep=&#39;,&#39; 생략 가능</span>
+
+<span class="c1"># TSV 파일을 읽어 데이터 프레임으로 변환</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 데이터 프레임 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2><span class="section-number">4.2.4. </span>데이터 분석<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h3><span class="section-number">4.2.4.1. </span>데이터 탐색<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><strong>데이터의 기본 정보를 확인하고, 통계 요약을 출력하기</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 데이터 프레임의 정보 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># 데이터 프레임의 통계 요약 출력</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># 첫 n개 데이터만 보기</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 첫 5줄만 보기</span>
+
+<span class="c1"># 마지막 n개 데이터만 보기</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1"># 마지막 7줄만 보기</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3><span class="section-number">4.2.4.2. </span>데이터 선택 및 필터링<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>특정 열을 선택하고, 조건에 맞는 데이터를 필터링합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 특정 열 선택</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+
+<span class="c1"># 조건에 맞는 데이터 필터링 (예: Age가 30보다 큰 경우)</span>
+<span class="n">adults</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adults</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3><span class="section-number">4.2.4.3. </span>데이터 정렬<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>특정 열을 기준으로 데이터를 정렬합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Age 열을 기준으로 데이터 정렬</span>
+<span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3><span class="section-number">4.2.4.4. </span>데이터 그룹화 및 집계<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>특정 열을 기준으로 데이터를 그룹화하고, 집계 연산을 수행합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Country 열을 기준으로 데이터 그룹화 후 평균값 계산</span>
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3><span class="section-number">4.2.4.5. </span>서로 다른 데이터 합치기(병합)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pandas.merge()</span></code> 메서드를 이용하면 서로 다른 데이터 테이블을 합칠 수 있습니다.</p>
+<p>자세한 내용은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge">pandas.merge()</a>를 참고하세요.</p>
+<p>데이터 프레임(데이터베이스의 경우 DB Table)을 병합하는 방법은 다양합니다. 대표적으로는 <code class="docutils literal notranslate"><span class="pre">merge()</span></code>, <code class="docutils literal notranslate"><span class="pre">join()</span></code>, <code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>, <code class="docutils literal notranslate"><span class="pre">stack()</span></code> 등이 있습니다.</p>
+<p>그림을 이용한 간단한 설명은 <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/merging.html#merge">여기를 클릭</a>하면 확인할 수 있습니다.</p>
+<p>우리는 <code class="docutils literal notranslate"><span class="pre">merge()</span></code> 메서드를 활용하여 2개 데이터 테이블을 합치는 실습을 간단하게 해 보겠습니다.</p>
+<p>아래 코드는 2개의 데이터 프레임을 <code class="docutils literal notranslate"><span class="pre">EmployeeID</span></code>라는 컬럼명(column name) 기준으로 병합하는 코드입니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 1. 데이터 로드</span>
+<span class="n">employees</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;employees.csv&#39;</span><span class="p">)</span>
+<span class="n">sales</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;sales.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2. 데이터 탐색</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">employees</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sales</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">employees</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sales</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># 3. 데이터 병합</span>
+<span class="n">merged_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">employees</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;EmployeeID&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">merged_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3><span class="section-number">4.2.4.6. </span>데이터 시각화<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Matplotlib과 통합하여 데이터를 시각화할 수 있습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Age 열의 히스토그램 그리기</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age Distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h3><span class="section-number">4.2.4.7. </span>전체 예제 코드<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>아래는 위의 모든 단계를 포함한 전체 예제 코드입니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># 1. TSV 파일을 읽어 데이터 프레임으로 변환</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># 2. 데이터 탐색</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># 3. 데이터 선택 및 필터링</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="n">adults</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">adults</span><span class="p">)</span>
+
+<span class="c1"># 4. 데이터 정렬</span>
+<span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_df</span><span class="p">)</span>
+
+<span class="c1"># 5. 데이터 그룹화 및 집계</span>
+<span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span>
+
+<span class="c1"># 6. 데이터 시각화</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Age Distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -425,7 +644,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>데이터 처리 with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>데이터 처리 with Pandas</p>
       </div>
     </a>
     <a class="right-next"
@@ -443,6 +662,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-comma-separated-values">4.2.1. CSV (Comma-Separated Values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-tab-separated-values">4.2.2. TSV (Tab-Separated Values)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.3. 파일 데이터 불러오기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.2.4. 데이터 분석</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2.4.1. 데이터 탐색</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.2.4.2. 데이터 선택 및 필터링</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.2.4.3. 데이터 정렬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.2.4.4. 데이터 그룹화 및 집계</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2.4.5. 서로 다른 데이터 합치기(병합)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.2.4.6. 데이터 시각화</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2.4.7. 전체 예제 코드</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
