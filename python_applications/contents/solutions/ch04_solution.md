@@ -1,3 +1,8 @@
+(ch04-solution)=
+# 4장 데이터 분석 프로젝트
+
+참고 코드 입니다.
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -48,3 +53,5 @@ plt.title('Total Sales by Country')
 plt.show()
 
 ```
+
+[맨 위로 이동](ch04-solution)

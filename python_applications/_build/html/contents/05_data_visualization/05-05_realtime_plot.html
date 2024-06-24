@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.5. Realtime Plot &#8212; Python Programming - A Comprehensive Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/05_data_visualization/05-05_realtime_plot';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.6. Challenge Project" href="05-06_project.html" />
+    <link rel="prev" title="5.4. Multi-plot 그리기" href="05-04_multi_plot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/00-01_cover.webp" class="logo__image only-light" alt="Python Programming - A Comprehensive Guide - Home"/>
+    <script>document.write(`<img src="../../_static/00-01_cover.webp" class="logo__image only-dark" alt="Python Programming - A Comprehensive Guide - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_data_analysis_basic/04-01_intro.html">4. 데이터 분석</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-02_pandas.html">4.1. 데이터 처리 with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-03_csv_tsv_statistics.html">4.2. 기본 데이터 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-04_project.html">4.3. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="05-00_intro.html">5. 데이터 시각화</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="05-01_visualization_tools.html">5.1. 데이터 시각화 도구</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-02_matplotlib_basics.html">5.2. Matplotlib 기본 사용법</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-03_datasets.html">5.3. 시각화에 자주 사용되는 Dataset 소개</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-04_multi_plot.html">5.4. Multi-plot 그리기</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.5. Realtime Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-06_project.html">5.6. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_gui_application/06-00_intro.html">6. GUI 애플리케이션</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">6.1. Tkinter 기초</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-02_base_app.html">6.2. 기본 GUI 애플리케이션</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../solutions/00_solutions.html">7. 정답 (Solutions)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/ch04_solution.html">7.1. 4장 데이터 분석 프로젝트</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solutions/ch05_solution.html">7.2. 날씨 정보 API를 이용한 Realtime Plot</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/05_data_visualization/05-05_realtime_plot.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/05_data_visualization/05-05_realtime_plot.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Realtime Plot</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.5.1. 실시간 플롯의 필요성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animantion">5.5.2. <code class="docutils literal notranslate"><span class="pre">animantion</span></code> 모듈 소개</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.5.3. Realtime Plot 예제</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="realtime-plot">
+<span id="id1"></span><h1><span class="section-number">5.5. </span>Realtime Plot<a class="headerlink" href="#realtime-plot" title="Link to this heading">#</a></h1>
+<p>실시간 플롯은 시간에 따라 변하는 데이터를 동적으로 시각화하는 도구로, 여러 응용 분야에서 필수적인 역할을 합니다. 데이터가 실시간으로 수집되고 처리되는 상황에서, 실시간 플롯은 데이터를 즉각적으로 분석하고 이해하는 데 중요한 역할을 합니다. 이는 다양한 산업과 연구 분야에서 데이터 기반의 신속한 의사결정을 지원하는 데 필수적입니다.</p>
+<section id="id2">
+<h2><span class="section-number">5.5.1. </span>실시간 플롯의 필요성<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>실시간 모니터링
+실시간 플롯은 시스템이나 프로세스를 실시간으로 모니터링하는 데 필수적입니다. 예를 들어, 제조 공정에서 센서 데이터를 실시간으로 모니터링하여 기계의 성능을 확인하고, 이상 징후를 조기에 감지할 수 있습니다. 이를 통해 기계 고장을 예방하고, 유지보수 비용을 절감할 수 있습니다.</p></li>
+<li><p>즉각적인 피드백 제공
+실시간 플롯은 데이터 변화에 대한 즉각적인 피드백을 제공하여 사용자나 운영자가 신속하게 대응할 수 있도록 합니다. 금융 거래 시스템에서 실시간 주가 데이터를 시각화하여 투자자가 빠르게 시장 상황을 파악하고, 적절한 투자 결정을 내릴 수 있습니다.</p></li>
+<li><p>이상 감지 및 문제 해결
+실시간 데이터를 시각화함으로써 데이터의 이상치를 즉시 감지할 수 있습니다. 네트워크 관리에서는 실시간 트래픽 데이터를 모니터링하여 비정상적인 패턴을 발견하고, 네트워크 침입이나 성능 저하 문제를 빠르게 해결할 수 있습니다.</p></li>
+<li><p>데이터 흐름의 이해
+실시간 플롯은 데이터 흐름과 그 변화를 시각적으로 이해하는 데 도움을 줍니다. IoT(사물 인터넷) 환경에서는 다양한 센서로부터 수집된 데이터를 실시간으로 시각화하여, 전체 시스템의 상태와 성능을 한눈에 파악할 수 있습니다.</p></li>
+</ul>
+</section>
+<section id="animantion">
+<h2><span class="section-number">5.5.2. </span><code class="docutils literal notranslate"><span class="pre">animantion</span></code> 모듈 소개<a class="headerlink" href="#animantion" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 동적이고 애니메이션된 시각화를 쉽게 생성할 수 있는 강력한 도구입니다. 이 모듈을 사용하면 시간에 따라 변화하는 데이터를 시각적으로 표현할 수 있습니다. 특히 실시간 데이터 스트림이나 시뮬레이션 데이터를 시각화하는 데 유용합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/animation_api.html">여기</a>를 참고하세요.</p>
+<p><strong>주요 클래스와 함수</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 기본 클래스인 <code class="docutils literal notranslate"><span class="pre">Animation</span></code>를 상속받아 <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code> 클래스를 만들고, <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code>로부터 함수를 주기적으로 호출하는 <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> 클래스와 일정 길이의 데이터셋을 애니메이션 해주는 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code>로 구성되어 있습니다.</p>
+<figure class="align-default" id="ch05-07-animation-classes">
+<a class="reference internal image-reference" href="../../_images/ch05_07_animation_classes.png"><img alt="../../_images/ch05_07_animation_classes.png" src="../../_images/ch05_07_animation_classes.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">animation 클래스 구조</span><a class="headerlink" href="#ch05-07-animation-classes" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code></p>
+<p>가장 많이 사용되는 애니메이션 클래스 중 하나로, 주기적으로 함수를 호출하여 플롯을 업데이트합니다.</p>
+<ul>
+<li><p>초기화</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">func</span><span class="p">,</span>
+    <span class="n">frames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">init_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">fargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>매개변수</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: 각 프레임에서 호출되는 함수로, 플롯을 업데이트하는 역할</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frames</span></code>: 애니메이션의 프레임 수 또는 프레임 생성기</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init_func</span></code>: 애니메이션 시작 전에 한 번 호출되는 초기화 함수의 이름</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fargs</span></code>: func에 전달할 추가 인수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_count</span></code>: 저장할 프레임 수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
+</ul>
+</li>
+<li><p>간단 예제</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+
+<span class="c1"># 데이터 생성 함수</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">frame</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>  <span class="c1"># 업데이트할 데이터</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># 초기화 함수</span>
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># 데이터 준비</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># 애니메이션 생성</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Artist</span></code> 객체의 리스트를 사용하여 애니메이션을 생성합니다.
+각 프레임에서 플롯이 어떻게 보일지를 명시적으로 정의하여 주어진 데이터를 실시간으로 표현하면 어떻게 보이는지 확인하기 위하여 사용합니다.</p>
+<ul>
+<li><p>초기화</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">ArtistAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">artists</span><span class="p">,</span>
+    <span class="n">interval</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">repeat_delay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">blit</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>매개변수</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">artists</span></code>: 각 프레임에 대한 Artist 객체의 리스트</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interval</span></code>: 프레임 간의 시간 간격(밀리초)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeat_delay</span></code>: 애니메이션 반복 간의 지연 시간</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
+</ul>
+</li>
+<li><p>간단 예제</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">artists</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">point</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+    <span class="n">artists</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">point</span><span class="p">])</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">ArtistAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">animation</span></code> 동영상 저장</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 현재 디렉토리에 animation.mp4 이름의 파일로 저장</span>
+<span class="n">ani</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;animation.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2><span class="section-number">5.5.3. </span>Realtime Plot 예제<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Python에서 실시간 플롯을 생성하는 방법을 실습해 봅니다.</p>
+<p>Matplotlib의 animation 모듈을 사용하여 데이터를 실시간으로 업데이트하는 방법을 설명합니다.</p>
+<p>다음 코드는 Matplotlib을 사용하여 실시간 플롯을 생성하는 예제입니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">RealTimePlot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_gen_func</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_gen_func</span> <span class="o">=</span> <span class="n">data_gen_func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_gen_func</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="n">xmax</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 데이터 생성 함수</span>
+<span class="k">def</span> <span class="nf">data_gen</span><span class="p">():</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">data_gen</span><span class="o">.</span><span class="n">t</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">cnt</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="mf">0.1</span>
+        <span class="k">yield</span> <span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
+
+<span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># RealTimePlot 클래스 인스턴스 생성 및 플롯 표시</span>
+<span class="n">rt_plot</span> <span class="o">=</span> <span class="n">RealTimePlot</span><span class="p">(</span><span class="n">data_gen</span><span class="p">)</span>
+<span class="n">rt_plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>코드 설명</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RealTimePlot</span> <span class="pre">클래스</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 메서드
+클래스 초기화.
+<code class="docutils literal notranslate"><span class="pre">data_gen_func</span></code>: 데이터 생성 함수,
+<code class="docutils literal notranslate"><span class="pre">interval</span></code>: 업데이트 간격
+Matplotlib의 FuncAnimation을 사용하여 애니메이션을 초기화합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init</span></code> 메서드
+플롯의 초기 상태를 설정
+애니메이션 시작 전에 호출</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">update</span></code> 메서드
+새로운 데이터 포인트를 받아서 플롯을 업데이트
+<code class="docutils literal notranslate"><span class="pre">x</span></code> 축의 범위를 넘어가면 <code class="docutils literal notranslate"><span class="pre">x</span></code> 축의 범위를 두 배로 증가</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show</span></code> 메서드
+플롯을 화면에 표시</p></li>
+</ul>
+</li>
+<li><p>데이터 생성 함수 (<code class="docutils literal notranslate"><span class="pre">data_gen</span></code>):
+새로운 데이터 포인트를 생성하는 제너레이터 함수
+예제이서는 단순히 시뮬레이션된 사인 함수를 생성</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents\05_data_visualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05-04_multi_plot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Multi-plot 그리기</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05-06_project.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>Challenge Project</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">5.5.1. 실시간 플롯의 필요성</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animantion">5.5.2. <code class="docutils literal notranslate"><span class="pre">animantion</span></code> 모듈 소개</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">5.5.3. Realtime Plot 예제</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Giseop Noh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Prof. Giseop Noh in Cheongju University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

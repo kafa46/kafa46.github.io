@@ -1,8 +1,7 @@
----
-noteId: "41a37c102f5a11efa968a98bcccdf9e7"
-tags: []
+(ch04_solution)=
+# 4장 데이터 분석 프로젝트
 
----
+참고 코드 입니다.
 
 ```python
 import pandas as pd
@@ -54,3 +53,5 @@ plt.title('Total Sales by Country')
 plt.show()
 
 ```
+
+[맨 위로 이동](ch04_solution)

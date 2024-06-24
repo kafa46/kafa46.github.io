@@ -14,10 +14,31 @@ chapters:
 # chap 03. 저자 소개
 - file: contents/03_author_intro/03-01_author.md
 
-# 데이터 분석 및 시각화 (4개 챕터)
-# chap 04. 데이터 분석 기초
+# chap 04. 데이터 분석
 - file: contents/04_data_analysis_basic/04-01_intro.md
   sections:
   - file: contents/04_data_analysis_basic/04-02_pandas.md
   - file: contents/04_data_analysis_basic/04-03_csv_tsv_statistics.md
   - file: contents/04_data_analysis_basic/04-04_project.md
+
+# chap 05. 데이터 시각화
+- file: contents/05_data_visualization/05-00_intro.md
+  sections:
+  - file: contents/05_data_visualization/05-01_visualization_tools.md
+  - file: contents/05_data_visualization/05-02_matplotlib_basics.md
+  - file: contents/05_data_visualization/05-03_datasets.md
+  - file: contents/05_data_visualization/05-04_multi_plot.md
+  - file: contents/05_data_visualization/05-05_realtime_plot.md
+  - file: contents/05_data_visualization/05-06_project.md
+
+# chap 06. GUI 애플리케이션
+- file: contents/06_gui_application/06-00_intro.md
+  sections:
+  - file: contents/06_gui_application/06-01_tkinter_basic.md
+  - file: contents/06_gui_application/06-02_base_app.md
+
+# 정답
+- file: contents/solutions/00_solutions.md
+  sections:
+  - file: contents/solutions/ch04_solution.md
+  - file: contents/solutions/ch05_solution.md
