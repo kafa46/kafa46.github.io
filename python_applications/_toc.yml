@@ -15,11 +15,11 @@ chapters:
 - file: contents/03_author_intro/03-01_author.md
 
 # chap 04. 데이터 분석
-- file: contents/04_data_analysis_basic/04-01_intro.md
+- file: contents/04_data_analysis_basic/04-00_intro.md
   sections:
-  - file: contents/04_data_analysis_basic/04-02_pandas.md
-  - file: contents/04_data_analysis_basic/04-03_csv_tsv_statistics.md
-  - file: contents/04_data_analysis_basic/04-04_project.md
+  - file: contents/04_data_analysis_basic/04-01_pandas.md
+  - file: contents/04_data_analysis_basic/04-02_csv_tsv_statistics.md
+  - file: contents/04_data_analysis_basic/04-03_project.md
 
 # chap 05. 데이터 시각화
 - file: contents/05_data_visualization/05-00_intro.md
@@ -36,9 +36,18 @@ chapters:
   sections:
   - file: contents/06_gui_application/06-01_tkinter_basic.md
   - file: contents/06_gui_application/06-02_base_app.md
+  - file: contents/06_gui_application/06-03_calculator.md
+  - file: contents/06_gui_application/06-04_advanced_func.md
+  - file: contents/06_gui_application/06-05_notepad_app.md
+  - file: contents/06_gui_application/06-06_project.md
+
+# chap 07. 간단한 게임 만들기
+- file: contents/07_game/07-00_intro.md
+  sections:
+  - file: contents/07_game/07-01_number_guess.md
+  - file: contents/07_game/07-02_shooting.md
+  - file: contents/07_game/07-03_packaging_distribution.md
+  - file: contents/07_game/07-04_project.md
 
 # 정답
 - file: contents/solutions/00_solutions.md
-  sections:
-  - file: contents/solutions/ch04_solution.md
-  - file: contents/solutions/ch05_solution.md

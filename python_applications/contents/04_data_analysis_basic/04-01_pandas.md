@@ -1,3 +1,9 @@
+---
+noteId: "4bac1e80333111efa494b9c488b1f522"
+tags: []
+
+---
+
 (04-02)=
 # 데이터 처리 with Pandas
 

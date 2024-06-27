@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Python Programming - A Comprehensive Guide
+title: 도전! Python Applications
 author: Giseop Noh
 # logo: contents/images/prof_noh.jpg
 logo: contents/imgs/00-01_cover.webp

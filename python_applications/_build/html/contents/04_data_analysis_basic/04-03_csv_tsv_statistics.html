@@ -1,435 +1,465 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="../../" >
-
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4.2. 기본 데이터 분석 &#8212; Python Programming - A Comprehensive Guide</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+    
+      
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/04_data_analysis_basic/04-03_csv_tsv_statistics';</script>
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.3. Challenge Project" href="04-04_project.html" />
     <link rel="prev" title="4.1. 데이터 처리 with Pandas" href="04-02_pandas.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    
 
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      
-      
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-  
-    
-    
       
-    
-    
-    <img src="../../_static/00-01_cover.webp" class="logo__image only-light" alt="Python Programming - A Comprehensive Guide - Home"/>
-    <script>document.write(`<img src="../../_static/00-01_cover.webp" class="logo__image only-dark" alt="Python Programming - A Comprehensive Guide - Home"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="04-01_intro.html">4. 데이터 분석</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="04-02_pandas.html">4.1. 데이터 처리 with Pandas</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. 기본 데이터 분석</a></li>
-<li class="toctree-l2"><a class="reference internal" href="04-04_project.html">4.3. Challenge Project</a></li>
+      
+      <img src="../../_static/00-01_cover.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
 </ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05_data_visualization/05-00_intro.html">5. 데이터 시각화</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">5.1. 데이터 시각화 도구</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">5.2. Matplotlib 기본 사용법</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-03_datasets.html">5.3. 시각화에 자주 사용되는 Dataset 소개</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-04_multi_plot.html">5.4. Multi-plot 그리기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-05_realtime_plot.html">5.5. Realtime Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-06_project.html">5.6. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06_gui_application/06-00_intro.html">6. GUI 애플리케이션</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">6.1. Tkinter 기초</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-02_base_app.html">6.2. 기본 GUI 애플리케이션</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../solutions/00_solutions.html">7. 정답 (Solutions)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../solutions/ch04_solution.html">7.1. 4장 데이터 분석 프로젝트</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solutions/ch05_solution.html">7.2. 날씨 정보 API를 이용한 Realtime Plot</a></li>
-</ul>
-</details></li>
-</ul>
-
-    </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/04_data_analysis_basic/04-03_csv_tsv_statistics.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">
+   1. Table of Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_preface/02-01_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_author_intro/03-01_author.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="04-01_intro.html">
+   4. 데이터 분석
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-02_pandas.html">
+     4.1. 데이터 처리 with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.2. 기본 데이터 분석
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-04_project.html">
+     4.3. Challenge Project
+    </a>
+   </li>
   </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/contents/04_data_analysis_basic/04-03_csv_tsv_statistics.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_data_visualization/05-00_intro.html">
+   5. 데이터 시각화
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
+     5.1. 데이터 시각화 도구
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
+     5.2. Matplotlib 기본 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
+     5.3. 시각화에 자주 사용되는 Dataset 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-04_multi_plot.html">
+     5.4. Multi-plot 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-05_realtime_plot.html">
+     5.5. Realtime Plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-06_project.html">
+     5.6. Challenge Project
+    </a>
+   </li>
   </ul>
-</div>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_gui_application/06-00_intro.html">
+   6. GUI 애플리케이션
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">
+     6.1. Tkinter 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-02_base_app.html">
+     6.2. 기본 GUI 애플리케이션
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   7. 정답 (Solutions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/ch04_solution.html">
+     7.1. 4장 데이터 분석 프로젝트
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/ch05_solution.html">
+     7.2. 날씨 정보 API를 이용한 Realtime Plot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
     </div>
-  
-</div>
-</div>
-              
-              
+</nav> <!-- To handle the deprecated key -->
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>기본 데이터 분석</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div>
-                <h2> Contents </h2>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/04_data_analysis_basic/04-03_csv_tsv_statistics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/04_data_analysis_basic/04-03_csv_tsv_statistics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-comma-separated-values">4.2.1. CSV (Comma-Separated Values)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-tab-separated-values">4.2.2. TSV (Tab-Separated Values)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.3. 파일 데이터 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.2.4. 데이터 분석</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2.4.1. 데이터 탐색</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.2.4.2. 데이터 선택 및 필터링</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.2.4.3. 데이터 정렬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.2.4.4. 데이터 그룹화 및 집계</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2.4.5. 서로 다른 데이터 합치기(병합)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.2.4.6. 데이터 시각화</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2.4.7. 전체 예제 코드</a></li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csv-comma-separated-values">
+   4.2.1. CSV (Comma-Separated Values)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsv-tab-separated-values">
+   4.2.2. TSV (Tab-Separated Values)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   4.2.3. 파일 데이터 불러오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4.2.4. 데이터 분석
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.2.4.1. 데이터 탐색
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.2.4.2. 데이터 선택 및 필터링
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     4.2.4.3. 데이터 정렬
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     4.2.4.4. 데이터 그룹화 및 집계
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     4.2.4.5. 서로 다른 데이터 합치기(병합)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.2.4.6. 데이터 시각화
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.2.4.7. 전체 예제 코드
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
 </div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>기본 데이터 분석</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#csv-comma-separated-values">
+   4.2.1. CSV (Comma-Separated Values)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsv-tab-separated-values">
+   4.2.2. TSV (Tab-Separated Values)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   4.2.3. 파일 데이터 불러오기
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   4.2.4. 데이터 분석
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.2.4.1. 데이터 탐색
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.2.4.2. 데이터 선택 및 필터링
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     4.2.4.3. 데이터 정렬
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     4.2.4.4. 데이터 그룹화 및 집계
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     4.2.4.5. 서로 다른 데이터 합치기(병합)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     4.2.4.6. 데이터 시각화
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     4.2.4.7. 전체 예제 코드
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-              
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
                 
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<span id="id2"></span><h1><span class="section-number">4.2. </span>기본 데이터 분석<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<span id="id2"></span><h1><span class="section-number">4.2. </span>기본 데이터 분석<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>컴퓨터가 관리하는 데이터는 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 형태로 관리되는 경우가 많습니다. CSV와 TSV는 모두 데이터를 저장하고 교환하는 데 매우 유용한 형식입니다. CSV는 더 널리 사용되지만, TSV는 필드 값에 콤마가 포함된 경우 더 유리할 수 있습니다. 적절한 형식을 선택하는 것은 데이터의 특성과 사용 목적에 따라 달라집니다.</p>
-<section id="csv-comma-separated-values">
-<h2><span class="section-number">4.2.1. </span>CSV (Comma-Separated Values)<a class="headerlink" href="#csv-comma-separated-values" title="Link to this heading">#</a></h2>
+<div class="section" id="csv-comma-separated-values">
+<h2><span class="section-number">4.2.1. </span>CSV (Comma-Separated Values)<a class="headerlink" href="#csv-comma-separated-values" title="Permalink to this headline">¶</a></h2>
 <p>CSV 파일은 콤마(,)로 구분된 데이터를 저장하는 파일 형식입니다. 각 줄은 데이터 레코드를 나타내며, 각 레코드는 쉼표로 구분된 필드(열)로 구성됩니다. CSV 파일은 간단하고 널리 사용되며, 다양한 프로그램에서 지원됩니다.</p>
 <p><strong>특징</strong></p>
 <ul>
@@ -447,9 +477,9 @@ Linda,32,London
 </div>
 </li>
 </ul>
-</section>
-<section id="tsv-tab-separated-values">
-<h2><span class="section-number">4.2.2. </span>TSV (Tab-Separated Values)<a class="headerlink" href="#tsv-tab-separated-values" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="tsv-tab-separated-values">
+<h2><span class="section-number">4.2.2. </span>TSV (Tab-Separated Values)<a class="headerlink" href="#tsv-tab-separated-values" title="Permalink to this headline">¶</a></h2>
 <p>TSV 파일은 탭(tab) 문자로 구분된 데이터를 저장하는 파일 형식입니다. CSV와 유사하게, 각 줄은 데이터 레코드를 나타내며, 각 레코드는 탭 문자 (<code class="docutils literal notranslate"><span class="pre">\t</span></code>)로 구분된 필드로 구성됩니다. TSV 파일은 특히 텍스트 편집기와 스프레드시트 프로그램에서 쉽게 읽을 수 있습니다.</p>
 <p><strong>특징</strong></p>
 <ul>
@@ -467,9 +497,9 @@ Linda    32    London
 </div>
 </li>
 </ul>
-</section>
-<section id="id3">
-<h2><span class="section-number">4.2.3. </span>파일 데이터 불러오기<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">4.2.3. </span>파일 데이터 불러오기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>파일을 읽어오려면 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>의  <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드를 사용하면 됩니다. 파일에서 데이터를 읽어오면  데이터 프레임으로 리턴합니다.</p>
 <p>자세한 사용법은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas-read-csv">pandas.read_dsv</a>를 참고하면 됩니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드 파라미터는 2개만 신경쓰면 됩니다.</p>
@@ -494,11 +524,11 @@ Linda    32    London
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
-<h2><span class="section-number">4.2.4. </span>데이터 분석<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
-<section id="id5">
-<h3><span class="section-number">4.2.4.1. </span>데이터 탐색<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">4.2.4. </span>데이터 분석<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><span class="section-number">4.2.4.1. </span>데이터 탐색<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p><strong>데이터의 기본 정보를 확인하고, 통계 요약을 출력하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 데이터 프레임의 정보 출력</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
@@ -513,9 +543,9 @@ Linda    32    London
 <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1"># 마지막 7줄만 보기</span>
 </pre></div>
 </div>
-</section>
-<section id="id6">
-<h3><span class="section-number">4.2.4.2. </span>데이터 선택 및 필터링<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">4.2.4.2. </span>데이터 선택 및 필터링<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>특정 열을 선택하고, 조건에 맞는 데이터를 필터링합니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 특정 열 선택</span>
 <span class="n">names</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
@@ -526,27 +556,27 @@ Linda    32    London
 <span class="nb">print</span><span class="p">(</span><span class="n">adults</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id7">
-<h3><span class="section-number">4.2.4.3. </span>데이터 정렬<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id7">
+<h3><span class="section-number">4.2.4.3. </span>데이터 정렬<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>특정 열을 기준으로 데이터를 정렬합니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Age 열을 기준으로 데이터 정렬</span>
 <span class="n">sorted_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">sorted_df</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id8">
-<h3><span class="section-number">4.2.4.4. </span>데이터 그룹화 및 집계<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id8">
+<h3><span class="section-number">4.2.4.4. </span>데이터 그룹화 및 집계<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>특정 열을 기준으로 데이터를 그룹화하고, 집계 연산을 수행합니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Country 열을 기준으로 데이터 그룹화 후 평균값 계산</span>
 <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id9">
-<h3><span class="section-number">4.2.4.5. </span>서로 다른 데이터 합치기(병합)<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id9">
+<h3><span class="section-number">4.2.4.5. </span>서로 다른 데이터 합치기(병합)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pandas.merge()</span></code> 메서드를 이용하면 서로 다른 데이터 테이블을 합칠 수 있습니다.</p>
 <p>자세한 내용은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge">pandas.merge()</a>를 참고하세요.</p>
 <p>데이터 프레임(데이터베이스의 경우 DB Table)을 병합하는 방법은 다양합니다. 대표적으로는 <code class="docutils literal notranslate"><span class="pre">merge()</span></code>, <code class="docutils literal notranslate"><span class="pre">join()</span></code>, <code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>, <code class="docutils literal notranslate"><span class="pre">stack()</span></code> 등이 있습니다.</p>
@@ -571,9 +601,9 @@ Linda    32    London
 <span class="nb">print</span><span class="p">(</span><span class="n">merged_data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
-</section>
-<section id="id10">
-<h3><span class="section-number">4.2.4.6. </span>데이터 시각화<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id10">
+<h3><span class="section-number">4.2.4.6. </span>데이터 시각화<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Matplotlib과 통합하여 데이터를 시각화할 수 있습니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -585,9 +615,9 @@ Linda    32    London
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="id11">
-<h3><span class="section-number">4.2.4.7. </span>전체 예제 코드<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+</div>
+<div class="section" id="id11">
+<h3><span class="section-number">4.2.4.7. </span>전체 예제 코드<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>아래는 위의 모든 단계를 포함한 전체 예제 코드입니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -623,9 +653,9 @@ Linda    32    London
 </pre></div>
 </div>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -639,7 +669,7 @@ Linda    32    London
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./contents\04_data_analysis_basic"
         },
         predefinedOutput: true
@@ -647,124 +677,53 @@ Linda    32    London
     </script>
     <script>kernelName = 'python3'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="04-02_pandas.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>데이터 처리 with Pandas</p>
-      </div>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04-02_pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.1. </span>데이터 처리 with Pandas</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="04-04_project.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="04-04_project.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">4.3. </span>Challenge Project</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
-                </footer>
-              
-            </div>
             
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-comma-separated-values">4.2.1. CSV (Comma-Separated Values)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tsv-tab-separated-values">4.2.2. TSV (Tab-Separated Values)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.3. 파일 데이터 불러오기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.2.4. 데이터 분석</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2.4.1. 데이터 탐색</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.2.4.2. 데이터 선택 및 필터링</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.2.4.3. 데이터 정렬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.2.4.4. 데이터 그룹화 및 집계</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.2.4.5. 서로 다른 데이터 합치기(병합)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.2.4.6. 데이터 시각화</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.2.4.7. 전체 예제 코드</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Giseop Noh
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright Prof. Giseop Noh in Cheongju University.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
+        </div>
+    </div>
+    <footer class="footer">
   <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
     본 책자에 적용되는 라이센스
     <a href="https://opensource.org/licenses/MIT">
       MIT License
     </a>.
 </p>
 
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
+      </div>
+  </p>
+</footer>
+</main>
 
-      </main>
+
+      </div>
     </div>
-  </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  <footer class="bd-footer">
-  </footer>
   </body>
 </html>
