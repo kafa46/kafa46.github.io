@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. 정답 (Solutions)" href="../solutions/00_solutions.html" />
+    <link rel="next" title="7.4. Challenge Project" href="07-04_project.html" />
     <link rel="prev" title="7.2. 슈팅 게임" href="07-02_shooting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -248,6 +248,11 @@
      7.3. 패키징 및 배포
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -337,6 +342,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyinstaller">
+   7.3.1. PyInstaller 설치
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   7.3.2. 파이썬 스크립트를 실행 파일로 변환
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   7.3.3. 실행 파일 실행
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -349,6 +377,29 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyinstaller">
+   7.3.1. PyInstaller 설치
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   7.3.2. 파이썬 스크립트를 실행 파일로 변환
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   7.3.3. 실행 파일 실행
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -357,7 +408,53 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <span id="id2"></span><h1><span class="section-number">7.3. </span>패키징 및 배포<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>지금까지 만든 게임을 실행파일로 만들어 보겠습니다.</p>
+<p>파이썬 코드로 작성된 게임을 실행 파일로 만드는 방법은 여러 가지가 있지만, <code class="docutils literal notranslate"><span class="pre">pyinstaller</span></code>를 사용하는 방법을 소개합니다. <code class="docutils literal notranslate"><span class="pre">pyinstaller</span></code>는 파이썬 스크립트를 독립 실행형 실행 파일로 변환해 주는 도구입니다.</p>
+<div class="section" id="pyinstaller">
+<h2><span class="section-number">7.3.1. </span>PyInstaller 설치<a class="headerlink" href="#pyinstaller" title="Permalink to this headline">¶</a></h2>
+<p>먼저, PyInstaller를 설치해야 합니다. 터미널이나 명령 프롬프트에서 다음 명령을 실행하면 쉽게 설치할 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pyinstaller
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">7.3.2. </span>파이썬 스크립트를 실행 파일로 변환<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>작성한 파이썬 스크립트를 실행 파일로 변환해야 합니다.</p>
+<p>예를 들어, 스크립트 파일의 이름이 game.py라고 가정해 보겠습니다.</p>
+<p>터미널이나 명령 프롬프트에서 다음 명령을 실행하면 됩니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyinstaller --onefile game.py
+</pre></div>
+</div>
+<p>아래 그림을 참고해 주세요.</p>
+<div class="figure align-default" id="ch07-03-01-pyinstall-1">
+<a class="reference internal image-reference" href="../../_images/ch07_03_01_pyinstall_1.png"><img alt="../../_images/ch07_03_01_pyinstall_1.png" src="../../_images/ch07_03_01_pyinstall_1.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.5 </span><span class="caption-text">pyinstaller를 이용하기 위한 터미널 실행 및 명령어 입력</span><a class="headerlink" href="#ch07-03-01-pyinstall-1" title="Permalink to this image">¶</a></p>
+</div>
+<p>명령어를 실행하면 현재 폴더에 다음과 같은 폴더와 파일이 생성됩니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">build</span></code> 폴더: 실행 파일을 만들기 위해 사용한 임시 생성 파일</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dist</span></code> 폴더: 최종 실행 파일이 저장된 폴더</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">script_name.spec</span></code> 파일: 실행 파일을 생성하기 위한 명세서(specification, Spec) 내용이 기록됩니다.</p></li>
+</ul>
+<p>아래 그림을 참고하세요.</p>
+<div class="figure align-default" id="ch07-03-02-pyinstall-after">
+<a class="reference internal image-reference" href="../../_images/ch07_03_02_pyinstall_after.png"><img alt="../../_images/ch07_03_02_pyinstall_after.png" src="../../_images/ch07_03_02_pyinstall_after.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7.6 </span><span class="caption-text">pyinstaller를 이용하기 위한 터미널 실행 및 명령어 입력</span><a class="headerlink" href="#ch07-03-02-pyinstall-after" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">build</span></code> 폴더와 <code class="docutils literal notranslate"><span class="pre">.spec</span></code> 파일은 삭제해도 무방합니다. <code class="docutils literal notranslate"><span class="pre">dist</span></code> 폴더에 있는 실행 파일을 다른 위치로 옮기거나 친구에게 이메일을 보내도 잘 작동합니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>pyinstaller 실행할 때 –onefile 옵션을 사용하지 않은 경우</p>
+<p>build 폴더와 .spec 파일은 계속 동일한 폴더에 유지해야 하는 상황이 발생할 수도 있습니다. 자세한 내용은 PyInstaller 공식문서(<a class="reference external" href="https://pyinstaller.org/en/stable/">https://pyinstaller.org/en/stable/</a>)를 참고하기 바랍니다.</p>
+</div>
+<p>이 명령은 <a class="reference external" href="http://game.py">game.py</a> 스크립트를 한개의 실행 파일로 변환합니다.</p>
+<p>변환이 완료되면 현재 작업 폴더에 <code class="docutils literal notranslate"><span class="pre">dist</span></code> 폴더가 생깁니다. <code class="docutils literal notranslate"><span class="pre">dist</span></code> 폴더 안에 <code class="docutils literal notranslate"><span class="pre">game</span></code>이라는 실행 파일이 생성됩니다.</p>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">7.3.3. </span>실행 파일 실행<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dist</span></code> 디렉토리 안의 실행 파일을 더블 클릭하여 게임을 실행할 수 있습니다.</p>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -392,10 +489,10 @@
             <p class="prev-next-title"><span class="section-number">7.2. </span>슈팅 게임</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../solutions/00_solutions.html" title="next page">
+    <a class='right-next' id="next-link" href="07-04_project.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>정답 (Solutions)</p>
+        <p class="prev-next-title"><span class="section-number">7.4. </span>Challenge Project</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

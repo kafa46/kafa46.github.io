@@ -26,11 +26,8 @@ class ShootingGame:
         self.score = 0    # 적을 맞췄을 때 점수
         self.failures = 0   # 적을 놓친 횟수
         self.collisions = 0 # 적과 충돌한 횟수
+
         self.running = False # 상태 관리 변수
-        
-        self.level = 1          # 시작 레벨
-        self.enemy_speed = 5    # 적 속도
-        
 
         # 키보드에서 화살표 키를 눌렀을 때 작동할 함수 등록
         self.window.bind("<Left>", self.move_left)
@@ -75,12 +72,6 @@ class ShootingGame:
             self.window, text="Collisions: 0", fg="white", bg="black"
         )
         self.collision_label.pack(side=tk.RIGHT)
-        
-        # 현재 점수 표시 라벨
-        self.score_label = tk.Label(
-            self.window, text="Score: 0", fg="white", bg="black"
-        )
-        self.score_label.pack(side=tk.RIGHT, padx=10)
 
     def exit_game(self):
         self.running = False
@@ -105,9 +96,7 @@ class ShootingGame:
             - distance: 이동할 거리: 음(-)의 방향으로 20만큼
         '''
         if self.running:
-            player_coords = self.canvas.coords(self.player)
-            if player_coords[0] > 0:
-                self.canvas.move(self.player, -20, 0)
+            self.canvas.move(self.player, distance, 0)
 
     def move_right(self, event, distance: int = 20):
         '''오른쪽쪽으로 distance 값 만큼 이동
@@ -115,9 +104,7 @@ class ShootingGame:
             - distance: 이동할 거리: 양(+)의 방향으로 20만큼
         '''
         if self.running:
-            player_coords = self.canvas.coords(self.player)
-            if player_coords[2] < self.width:
-                self.canvas.move(self.player, 20, 0)
+            self.canvas.move(self.player, distance, 0)
 
     def shoot(self, event, color='yellow'):
         '''총알 발사 함수'''
@@ -138,7 +125,6 @@ class ShootingGame:
             self.check_collisions() # 충돌 확인
             self.check_game_over() # 게임 종료 상황 확인
             self.update_labels()  # 라벨 업데이트
-            self.update_level() # 게임 레벨 업데이트 
             # 일정 시간이 지나면 업데이트를 반복적으로 수행
             self.window.after(
                 ms=interval, # 시간 간격 설정: 50 밀리초(0.05초) 이후에 실행
@@ -172,17 +158,13 @@ class ShootingGame:
             enemy = self.canvas.create_rectangle(x0, y0, x1, y1, fill=color)
             self.enemies.append(enemy)
 
-    # def move_enemies(self, distance=5):
-    def move_enemies(self):
-        '''적 객체 이동
-        - Args:
-            - distance: 한번에 5픽셀 이동(적 이동 속도)
-        '''
+    def move_enemies(self, distance=5):
+        '''적 객체 이동'''
         for enemy in self.enemies:
             self.canvas.move(
                 enemy, # 캔버스 내에서 이동할 객체 이름
                 0, # 이동할 객체의 좌측 상단 x좌표로부터 이동할 값(픽셀)
-                self.enemy_speed, # 이동할 객체의 좌측 상단 y좌표로부터 이동할 값(픽셀)
+                distance, # 이동할 객체의 좌측 상단 y좌표로부터 이동할 값(픽셀)
             )
             # 적이 캔버스 밖으로 나갔는지 확인
             # canvas.coords(객체이름)
@@ -251,8 +233,6 @@ class ShootingGame:
         self.score = 0
         self.failures = 0
         self.collisions = 0
-        self.level = 1
-        self.enemy_speed = 5
         for bullet in self.bullets:
             self.canvas.delete(bullet)
         for enemy in self.enemies:
@@ -272,21 +252,6 @@ class ShootingGame:
         self.collision_label.config(
             text=f"Collisions: {self.collisions}"
         )  
-        self.score_label.config(
-            text=f"Score: {self.score}"
-        )  
-        
-    def update_level(self):
-        if self.score >= 30:
-            self.level = 3
-            self.enemy_speed = 15
-        elif self.score >= 15:
-            self.level = 2
-            self.enemy_speed = 10
-        else:
-            self.level = 1
-            self.enemy_speed = 5
-                    
 if __name__ == "__main__":
     game = ShootingGame()
     game.window.mainloop()
