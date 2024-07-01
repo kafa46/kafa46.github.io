@@ -5,7 +5,7 @@
 가장 대표적인 도구는 matplotlib와 seaborn입니다.
 Matplotlib는 개발자가 자유롭게 커스터마이징 할 수 있고, seaborn은 다양한 테마를 기반으로 쉽게 시각화를 할 수 있다는 특징이 있습니다.
 
-```{figure} ../imgs/05-02-01_matplotlib_vs_seaborn.webp
+```{figure} ../imgs/chap_05/05-02-01_matplotlib_vs_seaborn.webp
 ---
 width: 50%
 name: 05-02-01_matplotlib_vs_seaborn

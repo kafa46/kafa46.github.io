@@ -1,7 +1,7 @@
 (00)=
 # Introduction
 
-```{figure} contents/imgs/00-01_cover.webp
+```{figure} contents/imgs/chap_00/ch00-01_cover.webp
 ---
 width: 100%
 name: cover-img

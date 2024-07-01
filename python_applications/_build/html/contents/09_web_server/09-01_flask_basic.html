@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9.1. 플라스크 기초 &#8212; 도전! Python Applications</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/09_web_server/09-01_flask_basic';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10. 정답 (Solutions)" href="../solutions/00_solutions.html" />
+    <link rel="prev" title="9. 웹 서버 만들기" href="09-00_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ch00-01_cover.webp" class="logo__image only-light" alt="도전! Python Applications - Home"/>
+    <script>document.write(`<img src="../../_static/ch00-01_cover.webp" class="logo__image only-dark" alt="도전! Python Applications - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">4. 데이터 분석</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">4.1. 데이터 처리 with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">4.2. 기본 데이터 분석</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">4.3. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05_data_visualization/05-00_intro.html">5. 데이터 시각화</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">5.1. 데이터 시각화 도구</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">5.2. Matplotlib 기본 사용법</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-03_datasets.html">5.3. 시각화에 자주 사용되는 Dataset 소개</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-04_multi_plot.html">5.4. Multi-plot 그리기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-05_realtime_plot.html">5.5. Realtime Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-06_project.html">5.6. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06_gui_application/06-00_intro.html">6. GUI 애플리케이션</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">6.1. Tkinter 기초</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-02_base_app.html">6.2. 기본 GUI 애플리케이션</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-03_calculator.html">6.3. 계산기 애플리케이션</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">6.4. 고급 기능 맛보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">6.5. 메모장 애플리케이션 만들기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-06_project.html">6.6. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07_game/07-00_intro.html">7. 간단한게임만들기</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07_game/07-01_number_guess.html">7.1. 숫자 맞추기 게임</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_game/07-02_shooting.html">7.2. 슈팅 게임</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_game/07-03_packaging_distribution.html">7.3. 패키징 및 배포</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07_game/07-04_project.html">7.4. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08_server_client/08-00_intro.html">8. 인터넷과 파이썬</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-01_server_client.html">8.1. 서버-클라이언트 구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-02_request_types.html">8.2. Request 종류</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-03_requests_module.html">8.3. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈 둘러보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-04_response.html">8.4. <code class="docutils literal notranslate"><span class="pre">Response</span></code> 객체 살펴보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-05_requests_api.html">8.5. API 활용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-06_project.html">8.6. Challenge Project</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="09-00_intro.html">9. 웹 서버 만들기</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.1. 플라스크 기초</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../solutions/00_solutions.html">10. 정답 (Solutions)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/09_web_server/09-01_flask_basic.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/09_web_server/09-01_flask_basic.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>플라스크 기초</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.1.1. 플라스크 소개</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.1.2. 플라스크 특징</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.1.3. 플라스크 설치</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<span id="id2"></span><h1><span class="section-number">9.1. </span>플라스크 기초<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id3">
+<h2><span class="section-number">9.1.1. </span>플라스크 소개<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Flask는 파이썬으로 작성된 경량 웹 프레임워크로, 간결하고 유연한 웹 애플리케이션 개발을 가능하게 합니다.</p>
+<figure class="align-default" id="ch09-01-01-flask-logo">
+<a class="reference internal image-reference" href="../../_images/ch09_01_01_flask_logo.png"><img alt="../../_images/ch09_01_01_flask_logo.png" src="../../_images/ch09_01_01_flask_logo.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.2 </span><span class="caption-text">플라스크 프레임워크 공식 로고</span><a class="headerlink" href="#ch09-01-01-flask-logo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Flask는 2010년 아르민 론허가 개발한 마이크로 프레임워크로 시작되었으며, 이후 오픈 소스 프로젝트로 발전하여 많은 개발자들 사이에서 인기를 얻고 있습니다.</p>
+</section>
+<section id="id4">
+<h2><span class="section-number">9.1.2. </span>플라스크 특징<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p><strong>간결함과 유연성</strong></p>
+<p>Flask의 가장 큰 장점은 간결함과 유연성입니다. 다른 많은 프레임워크들과 달리, Flask는 최소한의 핵심 기능만을 포함하고 있습니다. 이는 개발자가 필요에 따라 원하는 기능을 선택적으로 추가할 수 있도록 합니다. Flask는 개발자가 자유롭게 애플리케이션 구조를 설계하고, 필요한 기능을 플러그인 형태로 추가할 수 있게 함으로써 매우 유연한 개발 환경을 제공합니다.</p>
+<p><strong>단순한 애플리케이션 구조</strong></p>
+<p>Flask 애플리케이션의 기본 구조는 매우 단순합니다. 기본적으로 하나의 파이썬 파일로 시작하며, 몇 줄의 코드만으로도 간단한 웹 애플리케이션을 구축할 수 있습니다.</p>
+<p>Flask 애플리케이션은 Flask 클래스를 사용하여 애플리케이션 객체를 생성하고, <code class="docutils literal notranslate"><span class="pre">&#64;app.route</span></code> 데코레이터를 사용하여 특정 URL 경로에 대한 요청을 처리하는 함수를 정의합니다. Flask는 간단한 구조와 사용법을 제공하여 초보자도 쉽게 시작할 수 있습니다.</p>
+<p><strong>강력한 확장 기능</strong></p>
+<p>Flask는 경량 프레임워크이지만, 확장 기능을 통해 강력한 기능을 구현할 수 있습니다. Flask는 다양한 확장 모듈을 제공하여 데이터베이스 연동, 폼 처리, 사용자 인증, RESTful API 구축 등 다양한 기능을 쉽게 추가할 수 있습니다. 확장 모듈들은 Flask의 유연성을 더욱 높여주며, 개발자가 필요한 기능을 신속하게 구현할 수 있도록 도와줍니다.</p>
+<p><strong>커뮤니티와 지원</strong></p>
+<p>Flask는 활발한 커뮤니티와 풍부한 문서화를 자랑합니다. 공식 문서와 다양한 튜토리얼, 예제 코드들은 Flask를 배우고 사용하는 데 큰 도움이 됩니다. 또한, Stack Overflow와 같은 개발자 커뮤니티에서도 Flask 관련 질문과 답변을 쉽게 찾을 수 있어, 개발 중 발생하는 문제를 빠르게 해결할 수 있습니다.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>커뮤니티</p></th>
+<th class="head"><p>특징</p></th>
+<th class="head"><p>링크</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Flask 공식 문서</strong></p></td>
+<td><p>Flask의 공식 문서로, 설치 방법, 기본 사용법, 고급 기능 등 다양한 내용을 포괄적으로 다룹니다. 예제 코드와 함께 자세한 설명이 포함되어 있어, Flask를 처음 접하는 초보자에게도 유용합니다.</p></td>
+<td><p><a class="reference external" href="https://flask.palletsprojects.com/">Flask 공식 문서</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stack Overflow</strong></p></td>
+<td><p>프로그래밍 관련 질문과 답변을 주고받는 대형 커뮤니티로, Flask와 관련된 다양한 문제 해결 방법을 찾을 수 있습니다. 검색 기능을 통해 기존 질문과 답변을 참고하거나, 직접 질문을 올려 커뮤니티의 도움을 받을 수 있습니다.</p></td>
+<td><p><a class="reference external" href="https://stackoverflow.com/questions/tagged/flask">Stack Overflow</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Reddit</strong></p></td>
+<td><p>여러 프로그래밍 관련 서브레딧에서 Flask에 대한 토론이 이루어집니다. 특히 <code class="docutils literal notranslate"><span class="pre">r/flask</span></code> 서브레딧에서는 Flask와 관련된 최신 정보, 질문, 프로젝트 공유 등이 활발하게 이루어집니다.</p></td>
+<td><p><a class="reference external" href="https://www.reddit.com/r/flask/">Reddit - Flask</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>GitHub</strong></p></td>
+<td><p>Flask의 소스 코드가 호스팅되는 곳으로, 이슈 트래커를 통해 버그 신고 및 기능 요청을 할 수 있습니다. 또한, 다양한 Flask 관련 오픈 소스 프로젝트를 찾고 기여할 수 있는 플랫폼입니다.</p></td>
+<td><p><a class="reference external" href="https://github.com/pallets/flask">GitHub - Flask</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gitter</strong></p></td>
+<td><p>실시간 채팅을 통해 Flask 개발자들과 소통할 수 있는 플랫폼입니다. 질문을 하고 답변을 받거나, 새로운 아이디어를 공유할 수 있습니다.</p></td>
+<td><p><a class="reference external" href="https://gitter.im/pallets/flask">Gitter - Flask</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Discord</strong></p></td>
+<td><p>Flask와 관련된 여러 디스코드 서버에서 실시간으로 다른 개발자들과 교류할 수 있습니다. 특히, 파이썬 커뮤니티 서버 내의 Flask 채널을 통해 다양한 정보를 얻을 수 있습니다.</p></td>
+<td><p><a class="reference external" href="https://discord.com/invite/python">Discord - 파이썬 커뮤니티</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Flask Google Group</strong></p></td>
+<td><p>이메일을 통해 Flask 관련 질문과 답변을 주고받을 수 있는 그룹입니다. 구글 그룹스를 통해 가입하여 다양한 주제에 대해 논의할 수 있습니다.</p></td>
+<td><p><a class="reference external" href="https://groups.google.com/g/flask">Flask Google Group</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Local Meetups</strong></p></td>
+<td><p>Flask 및 파이썬 관련 오프라인 모임으로, Meetup.com을 통해 지역별로 Flask 개발자 모임을 찾을 수 있습니다. 네트워킹과 경험 공유의 기회를 제공합니다.</p></td>
+<td><p><a class="reference external" href="https://www.meetup.com/topics/flask/">Meetup - Flask</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>실제 사용 사례</strong></p>
+<p>Flask는 그 간결함과 유연성 덕분에 많은 스타트업과 대기업에서 사용되고 있습니다. 예를 들어, Pinterest, LinkedIn, Netflix와 같은 회사들은 Flask를 사용하여 다양한 웹 애플리케이션을 구축하고 있습니다. Flask는 소규모 프로젝트부터 대규모 프로젝트까지 다양한 규모의 애플리케이션에 적합하며, 개발 속도가 매우 빠르고 유지보수 또한 편리합니다.</p>
+<p>Flask는 간결하고 유연한 파이썬 웹 프레임워크로, 개발자가 필요한 기능을 자유롭게 추가하고, 애플리케이션 구조를 설계할 수 있습니다. 경량 프레임워크로 시작하여 다양한 확장 모듈을 통해 강력한 기능을 구현할 수 있는 Flask는 초보자와 숙련된 개발자 모두에게 적합한 도구입니다. 활발한 커뮤니티와 풍부한 문서화 덕분에, Flask를 통해 웹 애플리케이션 개발을 시작하기에는 좋은 선택입니다.</p>
+</section>
+<section id="id5">
+<h2><span class="section-number">9.1.3. </span>플라스크 설치<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Flask는 간단하게 설치할 수 있는 파이썬 기반의 웹 프레임워크입니다. 다음은 Flask를 설치하고 기본 애플리케이션을 설정하는 내용입니다.</p>
+<ol class="arabic">
+<li><p>가상 환경 설정 (선택 사항)</p>
+<p>여기서 myenv는 가상 환경의 이름입니다. 원하는 이름으로 변경할 수 있습니다.</p>
+<ul>
+<li><p>가상 환경은 프로젝트별로 독립된 파이썬 패키지를 관리할 수 있게 도와줍니다.</p>
+<p>가상 환경을 사용하면 시스템 전체에 영향을 주지 않고 필요한 패키지를 설치하고 관리할 수 있습니다.</p>
+</li>
+<li><p>가상 환경 생성</p>
+<p>먼저 가상 환경을 생성합니다. 터미널을 열고 다음 명령을 입력합니다:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>myenv
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>가상 환경 활성화</p>
+<ul>
+<li><p>Windows</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myenv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</pre></div>
+</div>
+</li>
+<li><p>macOS 및 Linux</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>myenv/bin/activate
+</pre></div>
+</div>
+</li>
+</ul>
+<p>가상 환경을 활성화하면 터미널 프롬프트에 (myenv)가 표시됩니다.</p>
+</li>
+<li><p>Flask 설치</p>
+<p>가상 환경이 활성화된 상태에서 Flask를 설치합니다. 다음 명령을 입력합니다:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>코드<span class="w"> </span>복사
+pip<span class="w"> </span>install<span class="w"> </span>Flask
+</pre></div>
+</div>
+<p>설치가 완료되면 Flask를 사용할 준비가 된 것입니다.</p>
+</li>
+</ol>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents\09_web_server"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09-00_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>웹 서버 만들기</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../solutions/00_solutions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>정답 (Solutions)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.1.1. 플라스크 소개</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.1.2. 플라스크 특징</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">9.1.3. 플라스크 설치</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Giseop Noh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright Prof. Giseop Noh in Cheongju University.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

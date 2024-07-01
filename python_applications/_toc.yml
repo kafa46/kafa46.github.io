@@ -49,5 +49,24 @@ chapters:
   - file: contents/07_game/07-03_packaging_distribution.md
   - file: contents/07_game/07-04_project.md
 
+# chap 08. 인터넷과 파이썬
+- file: contents/08_server_client/08-00_intro.md
+  sections:
+  - file: contents/08_server_client/08-01_server_client.md
+  - file: contents/08_server_client/08-02_request_types.md
+  - file: contents/08_server_client/08-03_requests_module.md
+  - file: contents/08_server_client/08-04_response.md
+  - file: contents/08_server_client/08-05_requests_api.md
+  - file: contents/08_server_client/08-06_project.md
+
+# chap 09. 웹 서버 만들기
+- file: contents/09_web_server/09-00_intro.md
+  sections:
+  - file: contents/09_web_server/09-01_flask_basic.md
+  - file: contents/09_web_server/09-02_hello_world_server.md
+  - file: contents/09_web_server/09-03_mtv_model.md
+  - file: contents/09_web_server/09-04_apply_was.md
+  - file: contents/09_web_server/09-05_project.md
+
 # 정답
 - file: contents/solutions/00_solutions.md

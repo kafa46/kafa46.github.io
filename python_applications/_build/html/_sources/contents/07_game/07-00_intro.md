@@ -64,3 +64,5 @@ name: ch07_00_01_game_intro
 | GameMaker Studio| GML (GameMaker Language)| - 쉬운 게임 개발, 빠른 프로토타이핑 가능|
 ||| - 2D 게임에 특화|
 ||| - 다양한 플랫폼에 배포 가능|
+
+[맨 위로 이동]((07-00))

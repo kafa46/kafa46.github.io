@@ -15,7 +15,7 @@ tags: []
 
 데이터를 이해하는 과정에서도 데이터 분석은 필수적입니다. 탐색적 데이터 분석(EDA)을 통해 데이터를 시각화하고 기본 통계를 분석하여 데이터의 분포, 패턴, 이상치를 이해하는 것이 중요합니다. 이를 통해 데이터에 대한 깊은 이해를 바탕으로 유용한 특징을 생성하고, 모델의 성능을 향상시킬 수 있습니다.
 
-```{figure} ../imgs/04-01-01_data_analysis.webp
+```{figure} ../imgs/chap_04/04-01-01_data_analysis.webp
 ---
 width: 100%
 name: 04-01-01_data_analysis
@@ -38,7 +38,7 @@ name: 04-01-01_data_analysis
 
 데이터 분석에 널리 사용되는 Python, MATLAB, 그리고 R은 각각 독특한 특징과 강점을 가지고 있어 다양한 데이터 분석 작업에 적합합니다. 이 세 가지 언어는 각기 다른 강점을 가지고 있어, 특정 데이터 분석 작업에 따라 적절한 언어를 선택하여 사용할 수 있습니다. Python은 일반적인 데이터 처리와 머신러닝에 강점이 있고, MATLAB은 수치 계산과 공학적 문제 해결에, R은 통계 분석과 시각화에 최적화되어 있습니다.
 
-```{figure} ../imgs/04-01-02_python,matlab,r.webp
+```{figure} ../imgs/chap_04/04-01-02_python,matlab,r.webp
 ---
 width: 100%
 name: 04-01-02_python,matlab,r

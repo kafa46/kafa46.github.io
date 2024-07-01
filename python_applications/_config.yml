@@ -4,7 +4,7 @@
 title: 도전! Python Applications
 author: Giseop Noh
 # logo: contents/images/prof_noh.jpg
-logo: contents/imgs/00-01_cover.webp
+logo: contents/imgs/chap_00/ch00-01_cover.webp
 copyright: 'Prof. Giseop Noh in Cheongju University'
 
 # Force re-execution of notebooks on each build.
