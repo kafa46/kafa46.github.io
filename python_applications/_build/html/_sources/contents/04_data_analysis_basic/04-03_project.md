@@ -15,12 +15,18 @@ tags: []
 
 직접 고민하고 검색하는 과정에서 많은 것을 배울 수 있습니다!
 
-너무 어렵다면 참고 코드 [여기](../solutions/ch04_soultion.md)를 클릭해 주세요.
+너무 어렵다면 참고 코드 [여기](../solutions/ch04_solution.md)를 클릭해 주세요.
 
 
 ## 데이터 파일 준비
+
 - 두 개의 파일을 준비합니다: `employees.csv`와 `sales.tsv`.
+
+  - `employees.csv` 다운로드 $\to$ <a href="../files/ch04/employee.csv">click me</a>
+  - `sales.tsv` 다운로드 $\to$ <a href="../files/ch04/sales.tsv">click me</a>
+
 - `employees.csv` 파일에는 직원들의 정보가 포함되어 있습니다.
+
 - `sales.tsv` 파일에는 직원별 판매 실적 데이터가 포함되어 있습니다.
 
 **`employees.csv` 파일 구조**

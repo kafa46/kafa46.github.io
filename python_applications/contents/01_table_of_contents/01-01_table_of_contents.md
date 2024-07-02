@@ -7,7 +7,7 @@ tags: []
 (toc)=
 # Table of Contents
 
-1. [목차](../01_table_of_contents/01-01_table_of_contents.md)
+1. [Table of Contents (목차)](../01_table_of_contents/01-01_table_of_contents.md) - 현재 페이지
 
 2. [서문(Preface)](../02_preface/02-01_preface.md)
 
@@ -40,19 +40,21 @@ tags: []
     - 7.3 [패키징 및 배포](../07_game/07-03_packaging_distribution.md)
     - 7.4 [도전 프로젝트](../07_game/07-04_project.md)
 
-8. requests 모듈 사용
-    - 8.1 GET, POST 요청 이해하기
-    - 8.2 requests 모듈 소개
-    - 8.3 requests 모듈을 사용하여 HTTP 요청 보내기
-    - 8.4 API 사용하여 외부 데이터 가져오기
-    - 8.5 JSON 데이터 처리
-    - 8.6 도전 프로젝트 - wheather api 활용하여 동적 플롯 만들기
+8. [인터넷과 파이썬](../08_server_client/08-00_intro.md)
+    - 8.1 [서버-클라이언트 구조](../08_server_client/08-01_server_client.md)
+    - 8.2 [Request 종류](../08_server_client/08-02_request_types.md)
+    - 8.3 [`requests` 모듈 둘러보기](../08_server_client/08-03_requests_module.md)
+    - 8.4 [`Response` 객체 살펴보기](../08_server_client/08-04_response.md)
+    - 8.5 [API 활용](../08_server_client/08-05_requests_api.md)
+    - 8.6 [도전 프로젝트](../08_server_client/08-06_project.md)
 
-9. 웹 서버 만들기
-    - 9.1 Flask 기초
-    - 9.2 간단한 웹서버 만들기 - hello world 서버
-    - 9.3 Model-View-Controller 개념 잡기
-    - 9.3 템플릿 엔진 + (DB 개념 포함?? -- csv 처리로 대체)
-    - 9.4 도전 프로젝트 - 개인 홈페이지 만들기
+9. [웹 서버 만들기](../09_web_server/09-00_intro.md)
+    - 9.1 [Flask 기초](../09_web_server/09-01_flask_basic.md)
+    - 9.2 [Hello world 서버 만들기](../09_web_server/09-02_hello_world_server.md)
+    - 9.3 [MTV 모델 적용](../09_web_server/09-03_mtv_model.md)
+    - 9.4 [도전 프로젝트](../09_web_server/09-04_project.md)
+
+10. [정답(Solutions)](../solutions/00_solutions.md)
+
 
 [맨 위로 이동하기](toc)

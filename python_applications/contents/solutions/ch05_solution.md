@@ -1,79 +1,100 @@
 (ch05-solution)=
 **5장 솔루션**
 
-날씨 정보 API를 이용한 Realtime Plot 참고 코드 입니다.
+[정답 리스트로 이동](./00_solutions.md)
 
-아래 코드는 OpenWeatherMap API를 이용한 실시간 Plot 참고 코드입니다.
+2개의 실시간 플롯을 구현한 참고 코드입니다.
 
 ```python
-from pprint import pprint
-import requests
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import datetime as dt
+import numpy as np
+import random
 
-class RealTimeWeatherPlot:
-    def __init__(self, api_key, lat, lon, interval=60_000):
-        self.api_key = api_key
-        self.interval = interval # 단위: 밀리초, 기본값: 60초
-        self.api_url = f'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&units=metric&appid={API_KEY}&lang=kr'
+class RealTimePlot:
+    def __init__(self, data_gen_func1, data_gen_func2, interval=10):
+        self.data_gen_func1 = data_gen_func1
+        self.data_gen_func2 = data_gen_func2
+        self.interval = interval
 
-        # 그래프 초기 설정
-        self.fig, self.ax = plt.subplots()
-        self.line, = self.ax.plot([], [], lw=2)
-        self.ax.set_title('Real-time Temperature Plot')
-        self.ax.set_xlabel('Time')
-        self.ax.set_ylabel('Temperature (°C)')
-        self.xdata, self.ydata = [], []
+        self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1)
+        self.line1, = self.ax1.plot([], [], lw=2)
+        self.line2, = self.ax2.plot([], [], lw=2)
 
-        # 애니메이션 생성
-        self.ani = animation.FuncAnimation(self.fig, self.update, init_func=self.init, interval=self.interval)
+        self.xdata1, self.ydata1 = [], []
+        self.xdata2, self.ydata2 = [], []
 
-    def get_weather_data(self):
-        response = requests.get(self.api_url)
-        data = response.json()
-        print(data['current']['temp']) # 모니터 확인
-        temp = data['current']['temp']
-        timestamp = dt.datetime.now().strftime('%H:%M:%S')
-        return timestamp, temp
+        self.ani1 = animation.FuncAnimation(self.fig, self.update1, self.data_gen_func1, blit=False, interval=self.interval, init_func=self.init1)
+        self.ani2 = animation.FuncAnimation(self.fig, self.update2, self.data_gen_func2, blit=False, interval=self.interval, init_func=self.init2)
 
-    def init(self):
-        self.ax.set_xlim(0, 10)
-        self.ax.set_ylim(-10, 40)
-        del self.xdata[:]
-        del self.ydata[:]
-        self.line.set_data(self.xdata, self.ydata)
-        return self.line,
+    def init1(self):
+        self.ax1.set_ylim(-1.1, 1.1)
+        self.ax1.set_xlim(0, 10)
+        self.xdata1.clear()
+        self.ydata1.clear()
+        self.line1.set_data(self.xdata1, self.ydata1)
+        return self.line1,
 
-    def update(self, frame):
-        timestamp, temp = self.get_weather_data()
-        self.xdata.append(timestamp)
-        self.ydata.append(temp)
-        if len(self.xdata) > 10:
-            self.xdata.pop(0)
-            self.ydata.pop(0)
-        self.ax.set_xlim(self.xdata[0], self.xdata[-1])
-        self.line.set_data(self.xdata, self.ydata)
-        return self.line,
+    def init2(self):
+        self.ax2.set_ylim(0, 30)
+        self.ax2.set_xlim(0, 10)
+        self.xdata2.clear()
+        self.ydata2.clear()
+        self.line2.set_data(self.xdata2, self.ydata2)
+        return self.line2,
+
+    def update1(self, data):
+        t, y = data
+        self.xdata1.append(t)
+        self.ydata1.append(y)
+        xmin, xmax = self.ax1.get_xlim()
+
+        if t >= xmax:
+            self.ax1.set_xlim(xmin, 2 * xmax)
+            self.ax1.figure.canvas.draw()
+        self.line1.set_data(self.xdata1, self.ydata1)
+        return self.line1,
+
+    def update2(self, data):
+        t, y = data
+        self.xdata2.append(t)
+        self.ydata2.append(y)
+        xmin, xmax = self.ax2.get_xlim()
+
+        if t >= xmax:
+            self.ax2.set_xlim(xmin, 2 * xmax)
+            self.ax2.figure.canvas.draw()
+        self.line2.set_data(self.xdata2, self.ydata2)
+        return self.line2,
 
     def show(self):
         plt.show()
 
+# 데이터 생성 함수 1: 감쇠 사인 곡선
+def data_gen1():
+    t = data_gen1.t
+    cnt = 0
+    while cnt < 1000:
+        cnt += 1
+        t += 0.1
+        yield t, np.sin(2 * np.pi * t) * np.exp(-t / 10.)
 
-if __name__=='__main__':
-    # 'YOUR_API_KEY' 대신 자신의 API 키를 문자열로 입력하세요
-    API_KEY = 'YOUR_API_KEY'
+data_gen1.t = 0
 
-    # 위치 정보
-    #   구글, 네이버, 카카오 맵 등을 이용하여 원하는 위치의
-    #   위도/경도 값을 확인합니다.
-    lat = 36.651656 # 위도
-    lon = 127.495593 # 경도
+# 데이터 생성 함수 2: 랜덤 숫자
+def data_gen2():
+    t = data_gen2.t
+    cnt = 0
+    while cnt < 1000:
+        cnt += 1
+        t += 0.1
+        yield t, random.uniform(0, 30)
 
-    # 객체 생성 및 실행
-    rt_weather_plot = RealTimeWeatherPlot(API_KEY, lat, lon)
-    rt_weather_plot.show()
+data_gen2.t = 0
 
+# RealTimePlot 클래스 인스턴스 생성 및 플롯 표시
+rt_plot = RealTimePlot(data_gen1, data_gen2)
+rt_plot.show()
 ```
 
 [맨 위로 이동](ch05-solution)

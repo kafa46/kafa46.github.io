@@ -7,7 +7,7 @@
 
 데이터 시각화는 여러 형태로 나타낼 수 있으며, 대표적인 형태로는 막대 그래프, 선 그래프, 히스토그램, 산점도, 파이 차트, 히트맵 등이 있습니다. 이러한 시각적 표현은 데이터를 탐색하고 분석하는 데 중요한 역할을 하며, 다양한 산업 분야에서 광범위하게 사용됩니다.
 
-```{figure} ../imgs/05-01-01_visualization_intro.webp
+```{figure} ../imgs/chap_05/05-01-01_visualization_intro.webp
 ---
 width: 50%
 name: 05-01-01_visualization_intro
@@ -21,7 +21,7 @@ AI, 빅데이터에서 시각화 과정은 피해갈 수 없습니다.
 
 데이터 시각화는 복잡한 데이터를 시각적 형태로 변환하여 이해하기 쉽게 만듭니다. 그래프나 차트를 사용하면 데이터의 전반적인 추세와 패턴을 한눈에 파악할 수 있어 데이터의 의미를 빠르게 이해할 수 있습니다. 이는 특히 데이터 분석과 의사결정 과정에서 중요한 역할을 합니다.
 
-```{figure} ../imgs/05-01-02_importance.webp
+```{figure} ../imgs/chap_05/05-01-02_importance.webp
 ---
 width: 50%
 name: 05-01-02_importance
@@ -47,7 +47,7 @@ name: 05-01-02_importance
 
 **데이터 시각화와 인공지능의 관계**
 
-```{figure} ../imgs/05-01-03_ai_meets_visualization.webp
+```{figure} ../imgs/chap_05/05-01-03_ai_meets_visualization.webp
 ---
 width: 50%
 name: 05-01-03_ai_meets_visualization
@@ -79,7 +79,7 @@ AI에서도 꼭 필요한 시각화!
 
 Python은 데이터 시각화 도구로서 강력한 기능을 제공하며, 다양한 라이브러리와 풍부한 커뮤니티 지원으로 인해 데이터 시각화에 매우 적합한 프로그래밍 언어입니다. 아래에서는 Python이 데이터 시각화에서 가지는 강점들을 소개합니다.
 
-```{figure} ../imgs/05-01-04_python_first.webp
+```{figure} ../imgs/chap_05/05-01-04_python_first.webp
 ---
 width: 50%
 name: 05-01-04_python_first

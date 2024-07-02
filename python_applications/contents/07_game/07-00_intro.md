@@ -34,33 +34,35 @@ name: ch07_00_01_game_intro
 
 | 프레임워크| 언어| 특징|
 |-|-|-|
-| Unity| C#| - 크로스 플랫폼 지원|
+| **Unity**| C#| - 크로스 플랫폼 지원|
 ||| - 강력한 에디터와 커뮤니티|
 ||| - 2D 및 3D 게임 개발 가능|
-| Unreal Engine| C++| - 고성능, AAA급 게임 개발에 적합|
+| **Unreal Engine** | C++| - 고성능, AAA급 게임 개발에 적합|
 ||| - 실시간 렌더링 및 물리 엔진|
 ||| - 블루프린트 비주얼 스크립팅 지원|
-| Godot| GDScript, C#, C++| - 오픈 소스, 무료|
+| **Godot** | GDScript, C#, C++| - 오픈 소스, 무료|
 ||| - 가벼운 설치 파일과 쉬운 배포|
 ||| - 2D 및 3D 게임 개발 지원|
-|PyGame| Python| - 파이썬 기반, 간단한 게임 개발에 적합|
+| **PyGame** | Python| - 파이썬 기반, 간단한 게임 개발에 적합|
 ||| - 교육용으로 많이 사용|
 ||| - 2D 게임 개발에 주로 사용|
-| Panda3D| Python, C++| - 오픈 소스 3D 게임 엔진|
+| **Panda3D**| Python, C++| - 오픈 소스 3D 게임 엔진|
 ||| - 디즈니와 CMU에서 개발|
 ||| - VR 및 AR 지원|
-| Cocos2d| C++, Lua, JavaScript| - 2D 게임에 특화|
+| **Cocos2d** | C++, Lua, JavaScript| - 2D 게임에 특화|
 ||| - 크로스 플랫폼 지원|
 ||| - 많은 상업용 게임에서 사용|
-| Phaser| JavaScript| - HTML5 게임 개발에 적합|
+| **Phaser** | JavaScript| - HTML5 게임 개발에 적합|
 ||| - 빠른 프로토타이핑 가능|
 ||| - 웹 브라우저에서 직접 실행 가능|
-| Construct| JavaScript| - 비주얼 스크립팅을 통해 코드 작성 없이 게임 개발 가능|
+| **Construct** | JavaScript| - 비주얼 스크립팅을 통해 코드 작성 없이 게임 개발 가능|
 ||| - 2D 게임 개발에 특화|
 ||| - 교육용으로 많이 사용|
-| CryEngine| C++| - 고성능, 사실적인 그래픽|
+| **CryEngine** | C++| - 고성능, 사실적인 그래픽|
 ||| - AAA급 게임 개발에 적합|
 ||| - 강력한 샌드박스 편집기 제공|
-| GameMaker Studio| GML (GameMaker Language)| - 쉬운 게임 개발, 빠른 프로토타이핑 가능|
+| **GameMaker Studio** | GML (GameMaker Language)| - 쉬운 게임 개발, 빠른 프로토타이핑 가능|
 ||| - 2D 게임에 특화|
 ||| - 다양한 플랫폼에 배포 가능|
+
+[맨 위로 이동]((07-00))

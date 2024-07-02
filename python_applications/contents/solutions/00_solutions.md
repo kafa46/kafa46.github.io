@@ -24,6 +24,8 @@
 |05|[데이터 시각화](../05_data_visualization/05-00_intro.md)|[바로가기](../solutions/ch05_solution.md)|
 |06|[GUI 애플리케이션](../06_gui_application/06-00_intro.md)|[바로가기](../solutions/ch06_solution.md)|
 |07|[간단한 게임 만들기](../07_game/07-00_intro.md)|[바로가기](../solutions/ch07_solution.md)|
+|08|[인터넷과 파이썬](../08_server_client/08-00_intro.md)|[바로가기](../solutions/ch07_solution.md)|
+|09|[웹 서버 만들기](../09_web_server/09-00_intro.md)|[바로가기](../solutions/ch09_solution.md)|
 
 
 

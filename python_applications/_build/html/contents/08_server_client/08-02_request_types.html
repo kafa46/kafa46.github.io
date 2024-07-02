@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.2. Request 종류 &#8212; 도전! Python Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.3. requests 모듈 둘러보기" href="08-03_requests_module.html" />
+    <link rel="prev" title="8.1. 서버-클라이언트 구조" href="08-01_server_client.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/ch00-01_cover.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">도전! Python Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">
+   1. Table of Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_preface/02-01_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_author_intro/03-01_author.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">
+   4. 데이터 분석
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">
+     4.1. 데이터 처리 with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">
+     4.2. 기본 데이터 분석
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
+     4.3. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_data_visualization/05-00_intro.html">
+   5. 데이터 시각화
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
+     5.1. 데이터 시각화 도구
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
+     5.2. Matplotlib 기본 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
+     5.3. 시각화에 자주 사용되는 Dataset 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-04_multi_plot.html">
+     5.4. Multi-plot 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-05_realtime_plot.html">
+     5.5. Realtime Plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_data_visualization/05-06_project.html">
+     5.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_gui_application/06-00_intro.html">
+   6. GUI 애플리케이션
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">
+     6.1. Tkinter 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-02_base_app.html">
+     6.2. 기본 GUI 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-03_calculator.html">
+     6.3. 계산기 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">
+     6.4. 고급 기능 맛보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">
+     6.5. 메모장 애플리케이션 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-06_project.html">
+     6.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07_game/07-00_intro.html">
+   7. 간단한게임만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-01_number_guess.html">
+     7.1. 숫자 맞추기 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-02_shooting.html">
+     7.2. 슈팅 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-03_packaging_distribution.html">
+     7.3. 패키징 및 배포
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="08-00_intro.html">
+   8. 인터넷과 파이썬
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-01_server_client.html">
+     8.1. 서버-클라이언트 구조
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.2. Request 종류
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-03_requests_module.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+     모듈 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-04_response.html">
+     8.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Response
+      </span>
+     </code>
+     객체 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-05_requests_api.html">
+     8.5. API 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-06_project.html">
+     8.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09_web_server/09-00_intro.html">
+   9. 웹 서버 만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-01_flask_basic.html">
+     9.1. 플라스크 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-02_hello_world_server.html">
+     9.2. Hello world 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-03_mtv_model.html">
+     9.3. MTV 모델 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-04_apply_was.html">
+     9.4. WAS 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-05_project.html">
+     9.5. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. 정답 (Solutions)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/08_server_client/08-02_request_types.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/08_server_client/08-02_request_types.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requests">
+   8.2.1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requests
+    </span>
+   </code>
+   모듈 설치
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get">
+   8.2.2. GET 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post">
+   8.2.3. POST 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#put">
+   8.2.4. PUT 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patch">
+   8.2.5. PATCH 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete">
+   8.2.6. DELETE 요청
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Request 종류</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requests">
+   8.2.1.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     requests
+    </span>
+   </code>
+   모듈 설치
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get">
+   8.2.2. GET 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post">
+   8.2.3. POST 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#put">
+   8.2.4. PUT 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#patch">
+   8.2.5. PATCH 요청
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#delete">
+   8.2.6. DELETE 요청
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="request">
+<span id="id1"></span><h1><span class="section-number">8.2. </span>Request 종류<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h1>
+<p>HTTP Request는 하나의 메시지 객체로 만들어 서버로 전송합니다.</p>
+<p>메시지에 다양한 정보를 실어서 서버로 보내야 서버가 클라이언트의 의도대로 일을 마치고 적절한 답변을 보내줄 것입니다. 메시지 구조도 미리 약속이 되어 있어야 겠죠?</p>
+<p>메시지 구조는 다음 그림과 같습니다.</p>
+<div class="figure align-default" id="ch08-02-01-request-msg-structure">
+<a class="reference internal image-reference" href="../../_images/ch08_02_01_request_msg_structure.png"><img alt="../../_images/ch08_02_01_request_msg_structure.png" src="../../_images/ch08_02_01_request_msg_structure.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8.7 </span><span class="caption-text">Request 메시지 내부 구조</span><a class="headerlink" href="#ch08-02-01-request-msg-structure" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>HTTP 메시지 구성요소 설명</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">line</span></code>: HTTP 요청 방식(메서드), 요청하는 자원(문서, 이미지, 동영상 등) 경로, HTTP 버전을 띄워 쓰기로 구분하여 순서대로 기록합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">headers</span></code>: Request 자체에 대한 추가 정보(메타 정보라고 부르기도 함)를 <code class="docutils literal notranslate"><span class="pre">key</span></code>:<code class="docutils literal notranslate"><span class="pre">value</span></code> 형태로 기록합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blank</span> <span class="pre">line</span></code>: 메시지 헤더(<code class="docutils literal notranslate"><span class="pre">headers</span></code>)와 본문 내용을 구분하기 위해 추가하는 빈 줄 (blank line)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">body</span></code>: 실제 전송하는 데이터를 기록합니다. 전송 데이터가 없다면 비워 놓습니다. 만약 <code class="docutils literal notranslate"><span class="pre">POST</span></code> 방식으로 요청하게 되면 HTML <code class="docutils literal notranslate"><span class="pre">Form</span></code> 태그로 첨부한 데이터가 여기에 기록됩니다.</p></li>
+</ul>
+<p>HTTP Request 메소드는 클라이언트가 서버에 요청을 보낼 때 사용되는 다양한 명령어입니다.</p>
+<p>각 메소드는 특정한 작업을 수행하도록 설계되었습니다.</p>
+<p>Python의 <code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈을 통해 쉽게 사용할 수 있습니다. Python의 <code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈은 HTTP 요청을 보내고 응답을 받는 데 사용되는 간편하고 직관적인 라이브러리입니다. 이 모듈은 HTTP 요청을 손쉽게 다룰 수 있도록 설계되어 있어, 개발자들이 웹과 상호작용하는 다양한 응용 프로그램을 쉽게 작성할 수 있게 해줍니다.</p>
+<p>HTTP 요청 메소드는 다양합니다.</p>
+<ul class="simple">
+<li><p>GET</p></li>
+<li><p>POST</p></li>
+<li><p>PUT</p></li>
+<li><p>PATCH</p></li>
+<li><p>DELET</p></li>
+</ul>
+<p>종류가 많아서 혼란스러운가요?</p>
+<p>다양한 종류를 만들어 놓은 것은 개발자에게 좋은 일입니다.</p>
+<p>개발자는 서버-클라이언트 구조를 상황에 맞게 설계하고, 상황에 맞게 골라 쓸 수 있도록 해줍니다.</p>
+<p>우선 <code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈을 설치하고, 각각이 어떤 의미를 갖는 메서드인지 살펴보도록 하겠습니다.</p>
+<div class="section" id="requests">
+<h2><span class="section-number">8.2.1. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈 설치<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈은 PyPI에서 쉽게 설치할 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install requests
+</pre></div>
+</div>
+</div>
+<div class="section" id="get">
+<h2><span class="section-number">8.2.2. </span>GET 요청<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<p>GET 요청은 서버로부터 데이터를 가져오는 데 사용됩니다.
+주로 데이터를 조회하거나 웹 페이지를 요청할 때 사용되며,
+서버에 어떠한 데이터도 변경하지 않는 경우에 사용합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># GET 요청</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># URL 파라미터를 포함한 GET 요청</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value2&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>특징</strong></p>
+<ul class="simple">
+<li><p>요청 데이터는 URL의 쿼리 스트링에 포함됩니다.</p></li>
+<li><p>캐시될 수 있습니다.</p></li>
+<li><p>브라우저 기록에 저장됩니다.</p></li>
+<li><p>북마크로 저장될 수 있습니다.</p></li>
+</ul>
+<div class="admonition-request-parameter admonition">
+<p class="admonition-title">요청 파라미터(Request Parameter)란?</p>
+<p>HTTP 요청에서 파라미터는 클라이언트가 서버에 추가적인 데이터를 전달하기 위해 사용하는 방법입니다.</p>
+<p>파라미터는 주로 <code class="docutils literal notranslate"><span class="pre">URL</span> <span class="pre">쿼리</span> <span class="pre">스트링</span></code> 또는 요청 <code class="docutils literal notranslate"><span class="pre">본문(body)</span></code>에 포함됩니다.</p>
+<p>파라미터는 서버가 클라이언트의 요청을 더 정확히 처리하고, 요청에 따라 적절한 응답을 반환하는 데 도움이 됩니다.</p>
+</div>
+<p><strong>파라미터의 종류</strong></p>
+<ul>
+<li><p>URL 쿼리 파라미터(<code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">Parameters</span></code>)</p>
+<ul>
+<li><p>URL(인터넷 웹피이지 주소)의 끝에 <code class="docutils literal notranslate"><span class="pre">?</span></code> 기호를 사용하여 추가되는 <code class="docutils literal notranslate"><span class="pre">key-value</span></code> 쌍입니다.</p></li>
+<li><p>만약 보낼 파라미터가 여러 개일 경우 파라미터는 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> 기호로 구분됩니다.</p></li>
+<li><p>GET 요청에서 주로 사용됩니다.</p></li>
+<li><p>예시:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://api.example.com/data?key1=value1">https://api.example.com/data?key1=value1</a></p></li>
+<li><p><a class="reference external" href="https://api.example.com/data?area=news1&amp;page=1">https://api.example.com/data?area=news1&amp;page=1</a></p></li>
+<li><p><a class="reference external" href="https://api.example.com/data?name=hong&amp;org=cju&amp;grade=3">https://api.example.com/data?name=hong&amp;org=cju&amp;grade=3</a></p></li>
+</ul>
+<p>서버는 쿼리 파라미터를 검사하여 <code class="docutils literal notranslate"><span class="pre">json</span></code>(파이썬의 경우 <code class="docutils literal notranslate"><span class="pre">dict</span></code>) 형태로 데이터를 뽑아서 쓰게 됩니다.</p>
+</li>
+</ul>
+</li>
+<li><p>경로 파라미터(<code class="docutils literal notranslate"><span class="pre">Path</span> <span class="pre">Parameters</span></code>)</p>
+<ul>
+<li><p>URL 경로의 일부로 사용되는 변수입니다.</p></li>
+<li><p>RESTful API에서 리소스를 식별하는 데 자주 사용됩니다.</p></li>
+<li><p>예시: <a class="reference external" href="https://api.example.com/data/123">https://api.example.com/data/123</a> (여기서 <code class="docutils literal notranslate"><span class="pre">123</span></code>은 경로 파라미터)</p>
+<div class="admonition-restful-api admonition">
+<p class="admonition-title">RESTful API란 무엇인가요?</p>
+<p>REST(Representational State Transfer) API는 웹 서비스를 설계하고 개발하는 데 널리 사용되는 아키텍처 스타일입니다.</p>
+<p>REST API는 HTTP 프로토콜을 기반으로 하여 클라이언트와 서버 간의 상호작용을 정의하며, 리소스 기반의 접근 방식을 사용합니다.</p>
+<p>RESTful 웹 서비스는 REST 원칙을 따르는 API를 의미합니다.</p>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">클라이언트-서버</span> <span class="pre">구조</span></code>를 사용할 것!</p>
+<p>클라이언트와 서버는 독립적으로 개발되고 유지될 수 있습니다. 클라이언트는 사용자 인터페이스를 담당하고, 서버는 데이터 저장과 비즈니스 로직을 처리합니다.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">무상태(Stateless)</span></code>일 것!</p>
+<p>각 요청은 독립적이며, 서버는 이전 요청의 상태를 저장하지 않습니다. 모든 필요한 정보는 요청에 포함되어야 합니다.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">캐시</span> <span class="pre">가능(Cacheable)</span></code>할 것!</p>
+<p>HTTP의 캐싱 메커니즘을 사용하여 클라이언트가 응답을 캐싱할 수 있도록 합니다. 이는 네트워크 사용량과 서버 부하를 줄이는 데 도움이 됩니다.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">계층화</span> <span class="pre">시스템(Layered</span> <span class="pre">System)</span></code>일 것!</p>
+<p>클라이언트는 여러 계층의 중간 서버를 통해 서버와 상호작용할 수 있습니다. 이는 보안, 로드 밸런싱, 캐싱 등을 지원합니다.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">일관된</span> <span class="pre">인터페이스(Uniform</span> <span class="pre">Interface)</span></code>를 가질 것!</p>
+<p>리소스는 URI(Uniform Resource Identifier)를 통해 식별됩니다. 리소스에 대한 작업은 표준 HTTP 메소드를 사용하여 수행됩니다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>요청 본문 파라미터(<code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">Parameters</span></code>)</p>
+<ul>
+<li><p>요청 본문(<code class="docutils literal notranslate"><span class="pre">body</span></code>)에 포함되어 서버로 전송되는 데이터입니다.</p></li>
+<li><p>POST, PUT, PATCH 요청에서 주로 사용됩니다.</p></li>
+<li><p>JSON, XML, 폼 데이터 등 다양한 형식으로 전송될 수 있습니다.</p></li>
+<li><p>예시:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;key1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;key2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value2&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="post">
+<h2><span class="section-number">8.2.3. </span>POST 요청<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h2>
+<p>POST 요청은 서버에 데이터를 전송하고, 주로 서버에 새로운 리소스를 생성할 때 사용됩니다.
+폼 데이터를 제출하거나 파일 업로드와 같은 작업에 적합합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># POST 요청</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># JSON 데이터를 포함한 POST 요청</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;value2&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>특징</strong></p>
+<ul class="simple">
+<li><p>요청 데이터는 HTTP 본문에 포함됩니다.</p></li>
+<li><p>캐시되지 않습니다.</p></li>
+<li><p>브라우저 기록에 저장되지 않습니다.</p></li>
+<li><p>북마크로 저장될 수 없습니다.</p></li>
+</ul>
+</div>
+<div class="section" id="put">
+<h2><span class="section-number">8.2.4. </span>PUT 요청<a class="headerlink" href="#put" title="Permalink to this headline">¶</a></h2>
+<p>PUT 요청은 서버에 리소스를 업데이트할 때 사용됩니다.</p>
+<p>주로 기존 리소스를 완전히 대체하거나 새로 생성하는 경우에 사용됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># PUT 요청</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value2&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data/1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># JSON 데이터를 포함한 PUT 요청</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value1&#39;</span><span class="p">,</span> <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value2&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data/1&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>특징</strong></p>
+<ul class="simple">
+<li><p>요청 데이터는 HTTP 본문에 포함됩니다.</p></li>
+<li><p>전체 리소스를 업데이트합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="patch">
+<h2><span class="section-number">8.2.5. </span>PATCH 요청<a class="headerlink" href="#patch" title="Permalink to this headline">¶</a></h2>
+<p>PATCH 요청은 서버에서 리소스의 일부를 업데이트할 때 사용됩니다.</p>
+<p>PUT 요청과 달리 전체 리소스를 대체하지 않고 부분적인 업데이트만 수행합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># PATCH 요청</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value1&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data/1&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1"># JSON 데이터를 포함한 PATCH 요청</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="s1">&#39;updated_value1&#39;</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data/1&#39;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">json_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>특징</strong></p>
+<ul class="simple">
+<li><p>요청 데이터는 HTTP 본문에 포함됩니다.</p></li>
+<li><p>부분적인 리소스 업데이트를 수행합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="delete">
+<h2><span class="section-number">8.2.6. </span>DELETE 요청<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<p>DELETE 요청은 서버에서 리소스를 삭제할 때 사용됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># DELETE 요청</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/data/1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>특징</strong></p>
+<ul class="simple">
+<li><p>요청 데이터는 HTTP 본문에 포함되지 않습니다.</p></li>
+<li><p>서버의 리소스를 삭제합니다.</p></li>
+</ul>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\08_server_client"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="08-01_server_client.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8.1. </span>서버-클라이언트 구조</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="08-03_requests_module.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈 둘러보기</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -179,14 +179,14 @@ class RealTimePlot:
 
 # 데이터 생성 함수
 def data_gen():
-    t = data_gen.t
+    t = data_gen.t # t 값을 data_gen1.t에서 가져옴
     cnt = 0
     while cnt < 1000:
         cnt += 1
-        t += 0.1
+        t += 0.1 # 시간 값을 증가시킴
         yield t, np.sin(2 * np.pi * t) * np.exp(-t / 10.)
 
-data_gen.t = 0
+data_gen.t = 0 # 시간 값을 증가시킴
 
 # RealTimePlot 클래스 인스턴스 생성 및 플롯 표시
 rt_plot = RealTimePlot(data_gen)
@@ -214,4 +214,12 @@ rt_plot.show()
     새로운 데이터 포인트를 생성하는 제너레이터 함수
     예제이서는 단순히 시뮬레이션된 사인 함수를 생성
 
+    - `data_gen1.t`는 `data_gen` 함수 내에서 전역 변수처럼 사용되는 변수
+    
+    - 초기화: `data_gen1.t = 0`에서 초기 시간 값을 0으로 설정합니다.
+    
+    - 시간 증가: `t += 0.1` 코드에서 시간 값을 `0.1`씩 증가시킵니다.
 
+- 연속 데이터 생성: `yield t, np.sin(2 * np.pi * t) * np.exp(-t / 10.)`에서 
+
+    시간 값 `t`에 따라 감쇠 사인 곡선을 생성합니다.

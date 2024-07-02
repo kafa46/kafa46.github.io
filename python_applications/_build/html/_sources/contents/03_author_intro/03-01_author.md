@@ -4,7 +4,7 @@
 
 ## 노기섭 교수
 
-```{figure} ../imgs/00-01_prof_noh.jpg
+```{figure} ../imgs/chap_00/ch00-01_prof_noh.jpg
 ---
 width: 150px
 name: author
@@ -34,7 +34,7 @@ align: left
 
 또한, 그는 다양한 학회 및 컨퍼런스에서 활발히 활동하고 있으며, 기술 커뮤니티에서 중요한 역할을 하고 있습니다. 그의 지식과 경험은 많은 학생들과 전문가들에게 영감을 주고 있으며, 그의 강의와 연구는 항상 높은 평가를 받고 있습니다.
 
-```{figure} ../imgs/03-01_play_with_python.webp
+```{figure} ../imgs/chap_03/03-01_play_with_python.webp
 ---
 width: 100%
 name: class-object-02_02_play_with_python

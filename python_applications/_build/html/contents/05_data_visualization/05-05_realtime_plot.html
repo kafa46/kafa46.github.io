@@ -78,7 +78,7 @@
         
       
       
-      <img src="../../_static/00-01_cover.webp" class="logo" alt="logo">
+      <img src="../../_static/ch00-01_cover.webp" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">도전! Python Applications</h1>
@@ -248,11 +248,102 @@
      7.3. 패키징 및 배포
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08_server_client/08-00_intro.html">
+   8. 인터넷과 파이썬
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-01_server_client.html">
+     8.1. 서버-클라이언트 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-02_request_types.html">
+     8.2. Request 종류
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-03_requests_module.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+     모듈 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-04_response.html">
+     8.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Response
+      </span>
+     </code>
+     객체 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-05_requests_api.html">
+     8.5. API 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-06_project.html">
+     8.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09_web_server/09-00_intro.html">
+   9. 웹 서버 만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-01_flask_basic.html">
+     9.1. 플라스크 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-02_hello_world_server.html">
+     9.2. Hello world 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-03_mtv_model.html">
+     9.3. MTV 모델 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-04_project.html">
+     9.4. Challenge Project
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../solutions/00_solutions.html">
-   8. 정답 (Solutions)
+   10. 정답 (Solutions)
   </a>
  </li>
 </ul>
@@ -593,14 +684,14 @@
 
 <span class="c1"># 데이터 생성 함수</span>
 <span class="k">def</span> <span class="nf">data_gen</span><span class="p">():</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">data_gen</span><span class="o">.</span><span class="n">t</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="c1"># t 값을 data_gen1.t에서 가져옴</span>
     <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">cnt</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
         <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">t</span> <span class="o">+=</span> <span class="mf">0.1</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="c1"># 시간 값을 증가시킴</span>
         <span class="k">yield</span> <span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
 
-<span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 시간 값을 증가시킴</span>
 
 <span class="c1"># RealTimePlot 클래스 인스턴스 생성 및 플롯 표시</span>
 <span class="n">rt_plot</span> <span class="o">=</span> <span class="n">RealTimePlot</span><span class="p">(</span><span class="n">data_gen</span><span class="p">)</span>
@@ -608,9 +699,9 @@
 </pre></div>
 </div>
 <p><strong>코드 설명</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">RealTimePlot</span> <span class="pre">클래스</span></code></p>
 <ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RealTimePlot</span> <span class="pre">클래스</span></code></p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 메서드
 클래스 초기화.
 <code class="docutils literal notranslate"><span class="pre">data_gen_func</span></code>: 데이터 생성 함수,
@@ -628,7 +719,16 @@ Matplotlib의 FuncAnimation을 사용하여 애니메이션을 초기화합니�
 </li>
 <li><p>데이터 생성 함수 (<code class="docutils literal notranslate"><span class="pre">data_gen</span></code>):
 새로운 데이터 포인트를 생성하는 제너레이터 함수
-예제이서는 단순히 시뮬레이션된 사인 함수를 생성</p></li>
+예제이서는 단순히 시뮬레이션된 사인 함수를 생성</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data_gen1.t</span></code>는 <code class="docutils literal notranslate"><span class="pre">data_gen</span></code> 함수 내에서 전역 변수처럼 사용되는 변수</p></li>
+<li><p>초기화: <code class="docutils literal notranslate"><span class="pre">data_gen1.t</span> <span class="pre">=</span> <span class="pre">0</span></code>에서 초기 시간 값을 0으로 설정합니다.</p></li>
+<li><p>시간 증가: <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">+=</span> <span class="pre">0.1</span></code> 코드에서 시간 값을 <code class="docutils literal notranslate"><span class="pre">0.1</span></code>씩 증가시킵니다.</p></li>
+</ul>
+</li>
+<li><p>연속 데이터 생성: <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">t,</span> <span class="pre">np.sin(2</span> <span class="pre">*</span> <span class="pre">np.pi</span> <span class="pre">*</span> <span class="pre">t)</span> <span class="pre">*</span> <span class="pre">np.exp(-t</span> <span class="pre">/</span> <span class="pre">10.)</span></code>에서</p>
+<p>시간 값 <code class="docutils literal notranslate"><span class="pre">t</span></code>에 따라 감쇠 사인 곡선을 생성합니다.</p>
+</li>
 </ul>
 </div>
 </div>
