@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. 파이썬 기초 문법 &#8212; Python Programming - A Comprehensive Guide</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.1. 주석 사용법" href="04_01_comments.html" />
+    <link rel="prev" title="4.7. 연습 문제" href="../chap_03_intro_and_install/03_07_excercise.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/00_cover_img2.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Python Programming - A Comprehensive Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_table_of_contents.html">
+   1. 목차
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_01_preface/01_book_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_02_author_intro/02_author_intro.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_03_intro_and_install/03_00_intro.html">
+   4. 소개 및 설치
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_01_what_is_python.html">
+     4.1. 파이썬이란 무엇인가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_02_python_history_and_characteristics.html">
+     4.2. 파이썬의 역사 및 특징
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_03_Zen_of_Python.html">
+     4.3. Zen of Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_04_Python_Installation.html">
+     4.4. 파이썬 설치 방법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_05_vs_code_intro_python.html">
+     4.5. VS Code 소개 및 파이썬 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_06_first_prog_hello_world.html">
+     4.6. 첫 번째 프로그램 작성
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_07_excercise.html">
+     4.7. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   5. 파이썬 기초 문법
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_01_comments.html">
+     5.1. 주석 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_02_basic_data_type.html">
+     5.2. 기본 데이터 타입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_03_variable_declare_useage.html">
+     5.3. 변수 선언 및 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_04_excercise.html">
+     5.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_05_datatype_and_variables/05_00_chap_05_intro.html">
+   6. 데이터 타입 및 변수
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_01_number_types.html">
+     6.1. 데이터 타입 및 변수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_02_string_types.html">
+     6.2. 문자열(
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       string
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_03_list_tuple_set_dict.html">
+     6.3. 리스트, 튜플, 세트, 딕셔너리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_04_excercise.html">
+     6.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_06_operators/06_00_chap_06_intro.html">
+   7. 파이썬 연산자
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_01_arithmetic_operators.html">
+     7.1. 산술 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_02_comparison_operators.html">
+     7.2. 비교 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_03_logical_operators.html">
+     7.3. 논리 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_04_allocation_operators.html">
+     7.4. 할당 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_05_bitwise_operators.html">
+     7.5. 비트wise 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_06_membership_operators.html">
+     7.6. 멤버십 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_07_identity_operators.html">
+     7.7. 아이덴티티 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_08_excercise.html">
+     7.8. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_07_condition_iteration/07_00_chap_07_intro.html">
+   8. 조건문 및 반복문
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_01_if_elif_else.html">
+     8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     조건문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_02_for_loop.html">
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_03_while_loop.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_07_condition_iteration/07_04_excercise.html">
+     8.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_08_functions/08_00_chap_intro.html">
+   9. 함수(functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_01_func_define_and_call.html">
+     9.1. 함수 정의 및 호출
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_02_parameters.html">
+     9.2. 매개변수와 반환값
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_03_lambda_function.html">
+     9.3. 람다 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_04_excercise.html">
+     9.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_09_builtin_functions/09_00_chap_intro.html">
+   10. 내장 함수 (Built-in Functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_01_builtin_func.html">
+     10.1. 내장 함수란 무엇인가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_02_freq_builtin_func.html">
+     10.2. 자주 쓰는 내장 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_03_excercise.html">
+     10.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_10_modules_pakages/10_00_chap_intro.html">
+   11. 모듈 및 패키지
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_01_module_import.html">
+     11.1. 모듈
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_02_package_structure.html">
+     11.2. 패키지
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_03_absolute_relative_import.html">
+     11.3. 패키지 상대참조 절대참조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_04_circular_import.html">
+     11.4. 순환참조 문제
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_05_excercise.html">
+     11.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_11_file_io/11_00_chap_intro.html">
+   12. 파일 입출력
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_01_file_read_write.html">
+     12.1. 파일 입출력
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_02_file_mode.html">
+     12.2. 파일 모드 (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       r
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       w
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       a
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_03_excercise.html">
+     12.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_12_exceptions/12_00_chap_intro.html">
+   13. 예외 처리
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_01_concept_and_exception_types.html">
+     13.1. 예외 처리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_02_try_except_finally.html">
+     13.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       try
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       except
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       finally
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_03_assert.html">
+     13.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       assert
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_04_raise.html">
+     13.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       raise
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_05_excercise.html">
+     13.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_13_oop/13_00_chap_intro.html">
+   14. 객체 지향 프로그래밍
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_01_class_object.html">
+     14.1. 클래스와 객체
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_02_inheritance.html">
+     14.2. 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_03_magic_method.html">
+     14.3. 매직 메소드 (Magic Methods)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_04_visibility_mangling.html">
+     14.4. 가시성(visibility) 및 맹글링(Name Mangling)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_05_decorators.html">
+     14.5. 데코레이터(Decorator)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_06_excercise.html">
+     14.6. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_14_logging/14_00_chap_intro.html">
+   15. 로깅(
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     logging
+    </span>
+   </code>
+   )
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_01_logging_importance.html">
+     15.2. 로깅의 개념과 역할
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_02_intro_to_logging_module.html">
+     15.3. 파이썬 로깅 모듈 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_03_basic_logger_conf.html">
+     15.4. 기본 로깅 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_04_handler_formatter.html">
+     15.5. 핸들러(Handler)와 포매터(Formatter)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_05_configurateion_file.html">
+     15.6. 로깅 설정 파일 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_06_excercise.html">
+     15.7. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/chap_04_basic_grammer/04_00_chap_04_intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_04_basic_grammer/04_00_chap_04_intro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>파이썬 기초 문법</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<span id="id2"></span><h1><span class="section-number">5. </span>파이썬 기초 문법<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>우리가 파이썬을 배워서 최종적으로 하고 싶은 일은 아마도 소프트웨어(프로그램)을 만드는 것입니다. 소프트웨어를 개발하는 행위를 <code class="docutils literal notranslate"><span class="pre">프로그래밍</span> <span class="pre">한다</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">코딩한다</span></code>라고 표현합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">스크립트(Script)</span></code>는 “<code class="docutils literal notranslate"><span class="pre">scriptura</span></code>”라는 단어는 “쓰기”를 의미하는 라틴어 동사 “<code class="docutils literal notranslate"><span class="pre">scribere</span></code>”에서 유래하였습니다. 무엇인가를 글로 기록한 것을 스크립트라고 부릅니다. 영화, 연극, 방송 등에서 스크립트는 대본을 의미합니다. 스크립트에는 배우들이 해야 할 대사와 행동 지침이 포함되어 있습니다. 기독교에서는 성경을 “스크립트”라고 부릅니다. 성경은 “scriptura”라고 불리는데, 이는 “쓰여진 것” 또는 “기록된 것”을 의미합니다. 이 단어는 영어의 “script”와 어원이 같습니다. 따라서 성경을 “Holy Scripture”로 부르는 것은 “거룩한 글” 또는 “거룩한 기록”이라는 의미로 스크립트라고 부르기도 합니다.</p>
+<p>소프트웨어 프로그램(program)이란 컴퓨터가 해야 할 일을 기록해 놓은 파일입니다. 우리가 첫 번째로 작성했던 <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>라는 파이썬 파일도 프로그램입니다. 파이썬 파일을 <code class="docutils literal notranslate"><span class="pre">파이썬</span> <span class="pre">스크립트(script)</span></code>라고 부르기도 합니다. 파이썬은 스크립트 언어로 설계되었습니다. 스크립트 언어는 코드를 한 줄씩 실행하는 인터프리터 방식으로 작동하며, 컴파일 과정 없이 바로 실행할 수 있습니다. 파이썬 파일은 이러한 특성을 반영하여 컴퓨터가 해야 할 일을 기록해 놓은 파일이기 때문에 “<code class="docutils literal notranslate"><span class="pre">파이썬</span> <span class="pre">스크립트(script)</span></code>”라고 부릅니다.</p>
+<p>어떤 일을 하든지 기초가 중요합니다. 프로그래밍을 하는 것에도 당연히 기초가 중요합니다. 파이썬 프로그램 개발에서 가장 기초가 되는 것은 <strong>프로그래밍 문법</strong>입니다.</p>
+<p>우리가 파이썬을 이용해 컴퓨터가 해야 할 일을 파이썬 스크립트로 기록할 때 아무렇게나 적어놔도 잘 작동할까요? 물론 아닙니다.</p>
+<p>예를 들어 <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> 내용에 다음과 같이 기록해 놨다고 가정해 봅시다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hello.py</span>
+
+<span class="n">컴퓨터야</span><span class="p">,</span> <span class="n">반가워</span><span class="o">^^</span>
+
+<span class="n">모니터에</span> <span class="s2">&quot;Hello world!&quot;</span><span class="n">라고</span> <span class="n">출력해줘</span><span class="o">.</span>
+
+<span class="n">그럼</span> <span class="n">수고해</span> <span class="o">~</span>
+</pre></div>
+</div>
+<p>컴퓨터는 당연히 이런 파이썬 스크립트를 이해할 수 없습니다.</p>
+<p>원래 컴퓨터는 <code class="docutils literal notranslate"><span class="pre">0</span></code>과 <code class="docutils literal notranslate"><span class="pre">1</span></code>로 구성된 기계어만을 이해할 수 있습니다. 당연히 컴퓨터가 이해할 수 있는 기계어로 <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>를 작성해야 합니다. 하지만, 우리가 기계어를 다루기에는 너무 복잡하기 때문에 사람이 쓰기 편한 글자로 기록하면 컴퓨터가 이를 해석해서 작동하게 하면 편할 것입니다.</p>
+<p>사람이 이해하기 쉬은 방식으로 기록해 놓은 표현을 컴퓨터 기계어로 해석하는 소프트웨어를 <code class="docutils literal notranslate"><span class="pre">인터프리터(Interpreter)</span></code>라고 부릅니다. 기계어로 바꿔주는 소프트웨어를 <code class="docutils literal notranslate"><span class="pre">컴파일러(Compiler)</span></code>라고 부릅니다. 파이썬은 사람이 입력한 스크립트의 한줄 한줄을 실시간으로 읽어서 실행하는 스크립트 방식이기 때문에 <code class="docutils literal notranslate"><span class="pre">파이썬</span> <span class="pre">인터프리터</span></code>가 작동하게 되는 것입니다.</p>
+<p>하지만 사람들 각자는 쓰기 편한 표현은 모국어나 개인 성향에 따라서 천차만별 입니다. 파이썬 스크립트를 작성하는 사람마다 서로 다른 표현을 쓴다면 파이썬 <code class="docutils literal notranslate"><span class="pre">인터프리터</span></code>는 굉장히 복잡해질 것입니다. 이런 복잡성을 제거하기 위해서는 당연히 전 세계 개발자들이 공통적으로 사용할 수 있는 약속을 정해 놨겠죠? 그것이 바로 프로그래밍 이야기 하는 <code class="docutils literal notranslate"><span class="pre">프로그래밍</span> <span class="pre">언어</span> <span class="pre">(Programming</span> <span class="pre">Language)</span></code>라고 하는 것입니다.</p>
+<div class="figure align-default" id="different-lang">
+<a class="reference internal image-reference" href="../../_images/04_00_1_different_lang.webp"><img alt="../../_images/04_00_1_different_lang.webp" src="../../_images/04_00_1_different_lang.webp" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">일을 하려면 서로 말이 통해야 겠죠?</span><a class="headerlink" href="#different-lang" title="Permalink to this image">¶</a></p>
+</div>
+<p>영어를 사용하는 사람에게 일을 시키려면 영어로 글을 작성해야 합니다. 한국어를 사용하는 사람에게 의미를 전달할 때는 당연히 한국어로 글을 작성해야 할 것입니다. 컴퓨터도 마찬가지 입니다. 파이썬으로 컴퓨터에게 일을 시키려면 파이썬 언어를 사용해야 하고, 자바로 일을 시키려면 자바 언어로 글(프로그램)을 작성해야 합니다.</p>
+<p>이 경우, 한국어나 영어로 글을 작성할 때 문법에 맞게 작성해야 다른 사람이 제대로 글쓴이의 의도를 파악할 수 있겠죠?</p>
+<p>예를 들어 다음과 같은 스크립트가 있다면 다른 사람들이 이해할 수 있을까요?</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># 문법에 맞지 않는 문장 예시</span>
+
+&quot;고양이 먹다 호랑이 사과&quot;
+</pre></div>
+</div>
+<p>위 문장은 다음과 같이 해석될 수 있을 겁니다.</p>
+<ul class="simple">
+<li><p>“고양이가 뭔가를 먹고, 호랑이는 사과를 먹는다.”</p></li>
+<li><p>“고양이와 호랑이가 사과를 먹는다.”</p></li>
+<li><p>“호랑이는 고양이가 사과 먹은것을 사과한다.”</p></li>
+<li><p>“고양이가 호랑이를 먹은 것을 사과한다.”</p></li>
+<li><p>기타 등등</p></li>
+</ul>
+<p>위와 같은 문장은 해석의 모호성이 있기 때문에 상대방에게 정확히 의사를 전달하기 어렵습니다. 이런 문제점을 극복하는 방법은 각각 언어에 맞는 문법을 정하고 거기에 맞게 글을 작성하는 것입니다.</p>
+<p>프로그래밍 언어에서도 마찬가지입니다.</p>
+<div class="figure align-default" id="confusion">
+<a class="reference internal image-reference" href="../../_images/04_00_2_confusion.webp"><img alt="../../_images/04_00_2_confusion.webp" src="../../_images/04_00_2_confusion.webp" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text">컴퓨터에게 일을 시키려면 서로 알아들을 수 있는 언어가 필요합니다.</span><a class="headerlink" href="#confusion" title="Permalink to this image">¶</a></p>
+</div>
+<p>파이썬 언어를 사용한다면 파이썬 문법에 맞게 스크립트를 작성해야 합니다. 물론 자바 언어를 사용한다면 자바 문법에 맞게 소스코드를 작성해야 합니다.</p>
+<p>따라서 컴퓨터 소프트웨어(프로그램)을 개발하는 첫 걸음은 해당 언어의 문법을 정확히 이해하고 사용할 수 있는 능력을 기르는 것입니다.</p>
+<p>이번 장에서는 파이썬을 이용해 프로그램을 개발하기 위한 기초 단계로 파이썬 문법에 대해 공부하게 될 것입니다. 이번 장을 이해하면 파이썬 개발자로서 작지만 큰 걸을을 시작한 것입니다.</p>
+<p>인류 최초로 달을 밟았던 닐 암스트롱의 명언을 읽으며 이번 장을 시작해 보세요.</p>
+<div class="admonition- admonition">
+<p class="admonition-title">인류 최초로 달을 밟은 닐 암스트롱</p>
+<p>That’s one small step for man, one giant leap for mankind.</p>
+<p>(한 사람의 인간에게는 작은 걸음이지만 인류에게는 커다란 도약이다)</p>
+</div>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\chap_04_basic_grammer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../chap_03_intro_and_install/03_07_excercise.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4.7. </span>연습 문제</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_01_comments.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.1. </span>주석 사용법</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

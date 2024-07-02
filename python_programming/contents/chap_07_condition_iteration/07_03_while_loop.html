@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8.3. while 반복문 &#8212; Python Programming - A Comprehensive Guide</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.4. 연습 문제" href="07_04_excercise.html" />
+    <link rel="prev" title="8.2. for 반복문" href="07_02_for_loop.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/00_cover_img2.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Programming - A Comprehensive Guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Python Programming - A Comprehensive Guide
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00_table_of_contents.html">
+   1. 목차
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_01_preface/01_book_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../chap_02_author_intro/02_author_intro.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_03_intro_and_install/03_00_intro.html">
+   4. 소개 및 설치
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_01_what_is_python.html">
+     4.1. 파이썬이란 무엇인가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_02_python_history_and_characteristics.html">
+     4.2. 파이썬의 역사 및 특징
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_03_Zen_of_Python.html">
+     4.3. Zen of Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_04_Python_Installation.html">
+     4.4. 파이썬 설치 방법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_05_vs_code_intro_python.html">
+     4.5. VS Code 소개 및 파이썬 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_06_first_prog_hello_world.html">
+     4.6. 첫 번째 프로그램 작성
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_03_intro_and_install/03_07_excercise.html">
+     4.7. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_04_basic_grammer/04_00_chap_04_intro.html">
+   5. 파이썬 기초 문법
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_01_comments.html">
+     5.1. 주석 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_02_basic_data_type.html">
+     5.2. 기본 데이터 타입
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_03_variable_declare_useage.html">
+     5.3. 변수 선언 및 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_04_basic_grammer/04_04_excercise.html">
+     5.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_05_datatype_and_variables/05_00_chap_05_intro.html">
+   6. 데이터 타입 및 변수
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_01_number_types.html">
+     6.1. 데이터 타입 및 변수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_02_string_types.html">
+     6.2. 문자열(
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       string
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_03_list_tuple_set_dict.html">
+     6.3. 리스트, 튜플, 세트, 딕셔너리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_05_datatype_and_variables/05_04_excercise.html">
+     6.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_06_operators/06_00_chap_06_intro.html">
+   7. 파이썬 연산자
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_01_arithmetic_operators.html">
+     7.1. 산술 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_02_comparison_operators.html">
+     7.2. 비교 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_03_logical_operators.html">
+     7.3. 논리 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_04_allocation_operators.html">
+     7.4. 할당 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_05_bitwise_operators.html">
+     7.5. 비트wise 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_06_membership_operators.html">
+     7.6. 멤버십 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_07_identity_operators.html">
+     7.7. 아이덴티티 연산자
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_06_operators/06_08_excercise.html">
+     7.8. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="07_00_chap_07_intro.html">
+   8. 조건문 및 반복문
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_01_if_elif_else.html">
+     8.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       if
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       else
+      </span>
+     </code>
+     조건문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_02_for_loop.html">
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     반복문
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       while
+      </span>
+     </code>
+     반복문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_04_excercise.html">
+     8.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_08_functions/08_00_chap_intro.html">
+   9. 함수(functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_01_func_define_and_call.html">
+     9.1. 함수 정의 및 호출
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_02_parameters.html">
+     9.2. 매개변수와 반환값
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_03_lambda_function.html">
+     9.3. 람다 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_08_functions/08_04_excercise.html">
+     9.4. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_09_builtin_functions/09_00_chap_intro.html">
+   10. 내장 함수 (Built-in Functions)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_01_builtin_func.html">
+     10.1. 내장 함수란 무엇인가
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_02_freq_builtin_func.html">
+     10.2. 자주 쓰는 내장 함수
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_09_builtin_functions/09_03_excercise.html">
+     10.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_10_modules_pakages/10_00_chap_intro.html">
+   11. 모듈 및 패키지
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_01_module_import.html">
+     11.1. 모듈
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_02_package_structure.html">
+     11.2. 패키지
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_03_absolute_relative_import.html">
+     11.3. 패키지 상대참조 절대참조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_04_circular_import.html">
+     11.4. 순환참조 문제
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_10_modules_pakages/10_05_excercise.html">
+     11.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_11_file_io/11_00_chap_intro.html">
+   12. 파일 입출력
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_01_file_read_write.html">
+     12.1. 파일 입출력
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_02_file_mode.html">
+     12.2. 파일 모드 (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       r
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       w
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       a
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_11_file_io/11_03_excercise.html">
+     12.3. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_12_exceptions/12_00_chap_intro.html">
+   13. 예외 처리
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_01_concept_and_exception_types.html">
+     13.1. 예외 처리
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_02_try_except_finally.html">
+     13.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       try
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       except
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       finally
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_03_assert.html">
+     13.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       assert
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_04_raise.html">
+     13.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       raise
+      </span>
+     </code>
+     문
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_12_exceptions/12_05_excercise.html">
+     13.5. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_13_oop/13_00_chap_intro.html">
+   14. 객체 지향 프로그래밍
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_01_class_object.html">
+     14.1. 클래스와 객체
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_02_inheritance.html">
+     14.2. 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_03_magic_method.html">
+     14.3. 매직 메소드 (Magic Methods)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_04_visibility_mangling.html">
+     14.4. 가시성(visibility) 및 맹글링(Name Mangling)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_05_decorators.html">
+     14.5. 데코레이터(Decorator)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_13_oop/13_06_excercise.html">
+     14.6. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chap_14_logging/14_00_chap_intro.html">
+   15. 로깅(
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     logging
+    </span>
+   </code>
+   )
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_01_logging_importance.html">
+     15.1. 로깅의 개념과 역할
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_02_intro_to_logging_module.html">
+     15.2. 파이썬 로깅 모듈 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_03_basic_logger_conf.html">
+     15.3. 기본 로깅 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_04_handler_formatter.html">
+     15.4. 핸들러(Handler)와 포매터(Formatter)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_05_configurateion_file.html">
+     15.5. 로깅 설정 파일 사용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../chap_14_logging/14_06_excercise.html">
+     15.6. 연습 문제
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/chap_07_condition_iteration/07_03_while_loop.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_programming/issues/new?title=Issue%20on%20page%20%2Fcontents/chap_07_condition_iteration/07_03_while_loop.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   8.3.1. 기본 구조
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   8.3.2. 무한 루프
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break">
+   8.3.3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue">
+   8.3.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
+   문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   8.3.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+   반복문과 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   8.3.6.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+   반복문과 사용자 입력
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>while 반복문</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   8.3.1. 기본 구조
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   8.3.2. 무한 루프
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break">
+   8.3.3.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     break
+    </span>
+   </code>
+   문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue">
+   8.3.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     continue
+    </span>
+   </code>
+   문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   8.3.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+   반복문과 조건문
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   8.3.6.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     while
+    </span>
+   </code>
+   반복문과 사용자 입력
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="while">
+<span id="id1"></span><h1><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문<a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문은 조건이 참(<code class="docutils literal notranslate"><span class="pre">True</span></code>)인 동안 코드를 반복 실행하는 데 사용됩니다.</p>
+<p>조건이 거짓(<code class="docutils literal notranslate"><span class="pre">False</span></code>)이 되면 반복문을 종료합니다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">8.3.1. </span>기본 구조<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">조건</span><span class="p">:</span>
+    <span class="n">실행할</span> <span class="n">코드</span>
+</pre></div>
+</div>
+<p>다음 코드는 <code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문을 사용하여 1부터 5까지의 숫자를 출력하는 예제</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">1</span></code>로 초기화됩니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">5</span></code>보다 작거나 같은 동안 <code class="docutils literal notranslate"><span class="pre">i</span></code>를 출력하고, <code class="docutils literal notranslate"><span class="pre">i</span></code>를 <code class="docutils literal notranslate"><span class="pre">1</span></code>씩 증가시킵니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># 결과</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">8.3.2. </span>무한 루프<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문의 조건이 항상 참(<code class="docutils literal notranslate"><span class="pre">True</span></code>)일 경우, 무한 루프가 발생할 수 있습니다.</p>
+<p>이를 방지하기 위해 적절한 조건 설정과 루프 내 조건 변경이 필요합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;이 문장은 무한히 출력됩니다.&quot;</span><span class="p">)</span>
+    <span class="k">break</span>  <span class="c1"># 무한 루프를 방지하기 위해 break 문을 사용하여 루프를 종료합니다.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="break">
+<h2><span class="section-number">8.3.3. </span><code class="docutils literal notranslate"><span class="pre">break</span></code> 문<a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>break 문은 while 반복문을 즉시 종료하는 데 사용됩니다.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># i가 5일 때 루프를 종료합니다.</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># 결과</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">1</span></code>로 초기화됩니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">10</span></code>보다 작거나 같은 동안 <code class="docutils literal notranslate"><span class="pre">i</span></code>를 출력합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">5</span></code>일 때 <code class="docutils literal notranslate"><span class="pre">break</span></code> 문을 만나 루프를 종료합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="continue">
+<h2><span class="section-number">8.3.4. </span><code class="docutils literal notranslate"><span class="pre">continue</span></code> 문<a class="headerlink" href="#continue" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> 문은 현재 반복을 건너뛰고 다음 반복을 시작하는 데 사용됩니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># i가 짝수일 때 아래 코드를 건너뛰고 다음 반복을 시작합니다.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># 결과</span>
+<span class="mi">1</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">7</span>
+<span class="mi">9</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 초기화됩니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 <code class="docutils literal notranslate"><span class="pre">10</span></code>보다 작을 동안 <code class="docutils literal notranslate"><span class="pre">i</span></code>를 <code class="docutils literal notranslate"><span class="pre">1</span></code>씩 증가시킵니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 짝수일 때 <code class="docutils literal notranslate"><span class="pre">continue</span></code> 문을 만나 다음 반복으로 건너뜁니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code>가 홀수일 때만 <code class="docutils literal notranslate"><span class="pre">i</span></code>를 출력합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">8.3.5. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문과 조건문<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문과 조건문을 함께 사용하여 다양한 제어 구조를 구현할 수 있습니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">은(는) 짝수입니다.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">은(는) 홀수입니다.&quot;</span><span class="p">)</span>
+
+<span class="c1"># 결과</span>
+<span class="mi">1</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">홀수입니다</span><span class="o">.</span>
+<span class="mi">2</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">짝수입니다</span><span class="o">.</span>
+<span class="mi">3</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">홀수입니다</span><span class="o">.</span>
+<span class="mi">4</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">짝수입니다</span><span class="o">.</span>
+<span class="mi">5</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">홀수입니다</span><span class="o">.</span>
+<span class="mi">6</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">짝수입니다</span><span class="o">.</span>
+<span class="mi">7</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">홀수입니다</span><span class="o">.</span>
+<span class="mi">8</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">짝수입니다</span><span class="o">.</span>
+<span class="mi">9</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">홀수입니다</span><span class="o">.</span>
+<span class="mi">10</span><span class="n">은</span><span class="p">(</span><span class="n">는</span><span class="p">)</span> <span class="n">짝수입니다</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code>가 <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 초기화됩니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code>가 <code class="docutils literal notranslate"><span class="pre">10</span></code>보다 작을 동안 <code class="docutils literal notranslate"><span class="pre">number</span></code>를 <code class="docutils literal notranslate"><span class="pre">1</span></code>씩 증가시킵니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code>가 짝수일 때와 홀수일 때 다른 메시지를 출력합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">8.3.6. </span><code class="docutils literal notranslate"><span class="pre">while</span></code> 반복문과 사용자 입력<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>사용자 입력을 처리하여 조건을 변경하는 예제입니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;python123&quot;</span>
+<span class="n">input_password</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">while</span> <span class="n">input_password</span> <span class="o">!=</span> <span class="n">password</span><span class="p">:</span>
+    <span class="n">input_password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;비밀번호를 입력하세요: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;비밀번호가 일치합니다!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">password</span></code> 변수에 올바른 비밀번호를 저장합니다.</p></li>
+<li><p>사용자로부터 비밀번호를 입력받고, 올바른 비밀번호와 일치할 때까지 반복합니다.</p></li>
+<li><p>일치하면 <code class="docutils literal notranslate"><span class="pre">&quot;비밀번호가</span> <span class="pre">일치합니다!&quot;</span></code>를 출력합니다.</p></li>
+</ul>
+<p>while 반복문은 조건이 참인 동안 반복하여 실행할 작업이 있을 때 유용하게 사용됩니다.</p>
+<p>조건을 적절히 설정하고, 필요한 경우 <code class="docutils literal notranslate"><span class="pre">break</span></code>와 <code class="docutils literal notranslate"><span class="pre">continue</span></code>를 사용하여 루프를 제어할 수 있습니다.</p>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\chap_07_condition_iteration"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="07_02_for_loop.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">for</span></code> 반복문</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="07_04_excercise.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">8.4. </span>연습 문제</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

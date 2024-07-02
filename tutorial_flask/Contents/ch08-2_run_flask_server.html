@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.2. Flask 서버 실행 &#8212; Flask Tutorial for CJU Students</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. FLASK_APP 설정" href="ch08-3_setting_FLAK_APP.html" />
+    <link rel="prev" title="2.1. Flask app 코딩" href="ch08-1_first_app_helloCJU.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/prof_noh.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Flask Tutorial for CJU Students</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Flask Tutorial을 시작하며
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ch01_intro_to_flask.html">
+   1. Flask 소개 (Intro)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch02_todo_list.html">
+     1.3. Flask를 위한 사전 준비 목록
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch03_prep_intro_to_vscode.html">
+     1.4. 준비 1. VS Code 소개 및 설치
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch04_prep_anaconda_env.html">
+     1.5. 준비 2. 가상환경 및
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       anaconda
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch05_prep_flask_installation.html">
+     1.6. 준비 3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       flask
+      </span>
+     </code>
+     설치
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch06_prep_gitignore.html">
+     1.7. 준비 4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .gitignore
+      </span>
+     </code>
+     세팅
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch07_prep_dependancy_requirements.html">
+     1.8. 준비 5. 의존성 파일
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requirement.txt
+      </span>
+     </code>
+     생성
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="ch08_hello_world_flask.html">
+   2. 맛보기로 만드는 flask app
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-1_first_app_helloCJU.html">
+     2.1. Flask app 코딩
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. Flask 서버 실행
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-3_setting_FLAK_APP.html">
+     2.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FLASK_APP
+      </span>
+     </code>
+     설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch08-4_setting_develop_mode.html">
+     2.4. 개발자 모드 설정
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Section03_building_fundamentals/sec03_ch00_intro_fundamentals.html">
+   3. Flask 기본 구조 소개
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch01_basic_project_structure.html">
+     3.1. 프로젝트 기본 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch02_application_factory.html">
+     3.2. Application Factory 패턴
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch03_Blueprint_class.html">
+     3.3. Blueprint 클래스 활용
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04_ORM_model.html">
+     3.4. ORM 모델 완벽 이해
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-01_flask_ORM_library.html">
+       3.4.1. Flask ORM 설치
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-02_design_model.html">
+       3.4.2. 모델 설계 및 만들기
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-03_create_table.html">
+       3.4.3. DB 테이블 만들기
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-04_chedk_model.html">
+       3.4.4. 시각화 도구로 모델 확인
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch04-05_use_model.html">
+       3.4.5. 모델에 CRUD 해보기
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05_question_coding.html">
+     3.5. 질문 게시판 만들기
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-01_make_question_list_and_read.html">
+       3.5.1. Question List 조회
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-02_read_question_detail.html">
+       3.5.2. Question 상세 조회
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-03_404_error_handling.html">
+       3.5.3. 존재하지 않는 페이지 처리 - 404 오류
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="Section03_building_fundamentals/sec03_ch05-04_blueprint_func_seperation.html">
+       3.5.4. 기능 분리 - Blueprint 활용
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch06_reply_coding.html">
+     3.6. 게시판 댓글 구현
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch07_register_question.html">
+     3.7. 질문 &amp; 댓글 등록 - Flask Form 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch08_applying_CSS.html">
+     3.8. 예쁘게 - CSS 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch09_applying_Bootstrap.html">
+     3.9. 더 예쁘게 - Bootstrap 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch10_templates_inheritance.html">
+     3.10. HTML 구조와 Template 상속
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section03_building_fundamentals/sec03_ch11_section_closing_comment.html">
+     3.11. Flask 기본기 마치며…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Section04_system_deploy/sec04_ch00_intro_distribution.html">
+   4. 서비스 배포
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch01_server.html">
+     4.1. 서버(Server)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch02_move_to_server.html">
+     4.2. 서버 설정 및 파일 옮기기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch03_deploy_via_flask_server.html">
+     4.3. Flask 서버로 간단히 배포하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch04_web_server.html">
+     4.4. 웹 서버
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Section04_system_deploy/sec04_ch05_middleware.html">
+     4.5. 미들웨어 - WAS 서버
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Appendix/apdx00_appendix_list.html">
+   5. Appendix List
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx01_monolithic_vs_msa.html">
+     5.1. Monolithic vs. MSA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx03_aws_sing_up.html">
+     5.2. AWS 회원가입 및 MFA 설정
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx04_EC2_server_create.html">
+     5.3. 아마존 EC2 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx05_ssh_connection_to_server.html">
+     5.4. 아마존 클라우드 서버에 접속하기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx0x_tmux.html">
+     5.5.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       tmux
+      </span>
+     </code>
+     사용법 안내
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Appendix/apdx02_subdomain.html">
+     5.6. 서브도메인(Sub-domain)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Contents/ch08-2_run_flask_server.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FContents/ch08-2_run_flask_server.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Flask 서버 실행</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="flask">
+<h1><span class="section-number">2.2. </span>Flask 서버 실행<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h1>
+<p>우리는 목표 웹 시스템 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">CJU</span> <span class="pre">(hello_cju.py)</span></code> 코딩을 마쳤습니다.</p>
+<p>그 다음 할 일은 flask 서버를 작동시키는 것입니다.</p>
+<p>Flask 서버를 작동은 명령창에 <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code> 이라는 명령어를 입력하면 됩니다.</p>
+<p>명령을 실행하기 위해 윈도우의 경우 <code class="docutils literal notranslate"><span class="pre">cmd</span></code>, <code class="docutils literal notranslate"><span class="pre">powershell</span></code> 에서 입력하거나,
+리눅스/MacOS 경우 <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> 창을 실행하여 입력하면 됩니다.</p>
+<p>VS code, Pycharm 등과 같은 통합개발환경(IDE) 에디터에서는 별도로 명령창 실행 없이
+곧바로 활용할 수 있도록 명령창을 함께 제공하고 있습니다.</p>
+<p>우리는 VS code를 활용하고 있으므로 그림 <a class="reference internal" href="#vscode-open-terminal"><span class="std std-numref">Fig. 2.3</span></a>과 같이
+<code class="docutils literal notranslate"><span class="pre">Window</span></code> <span class="math notranslate nohighlight">\(\to\)</span> <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> 메뉴를 선택하거나, VS code 단축키로 <code class="docutils literal notranslate"><span class="pre">CTL</span> <span class="pre">+</span> <span class="pre">`</span> </code>을 사용하여(<code class="docutils literal notranslate"><span class="pre">백틱</span></code> 키 사용) 명령창을 실행합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Backtick
+<code class="docutils literal notranslate"><span class="pre">백틱(backtick)</span></code>은 작은 따옴표롸 비슷하게 출력되지만 작은 따옴표와 다른 키(key)입니다.
+작은 따옴표는 키보드의 <code class="docutils literal notranslate"><span class="pre">엔터(enter)</span></code> 키 왼쪽에 있지만, 백틱 키는 숫자 <code class="docutils literal notranslate"><span class="pre">1</span></code>의 왼쪽에 있는 키 입니다.
+백틱은 Markdown 과 같은 에디터에서 특수 기능을 활성화 할 때 사용됩니다. 백틱 <code class="docutils literal notranslate"><span class="pre">`</span></code>은 작은 따옴표 <code class="docutils literal notranslate"><span class="pre">'</span></code>의 방향과 반대 모양으로 생겨서 <code class="docutils literal notranslate"><span class="pre">back(반대)</span> <span class="pre">tick(점)</span></code>이라고 부릅니다.</p>
+<p>백틱은 <code class="docutils literal notranslate"><span class="pre">grave</span> <span class="pre">accent</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">backquote</span></code>라고 부르기도 합니다.</p>
+</div>
+<div class="figure align-left" id="vscode-open-terminal">
+<a class="reference internal image-reference" href="../_images/sec01_03_vscode_open_terminal_window.png"><img alt="vscode open terminal window" src="../_images/sec01_03_vscode_open_terminal_window.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">VS code에서 <code class="docutils literal notranslate"><span class="pre">hello_cju.py</span></code> 파일 만들기</span><a class="headerlink" href="#vscode-open-terminal" title="Permalink to this image">¶</a></p>
+</div>
+<p>명령창이 열리면 여러분이 만든 프로젝트 디렉토리(저자의 경우 <code class="docutils literal notranslate"><span class="pre">Source_codes</span></code>라는 디렉토리)에서 <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code> 이라고 입력하고 엔터키를 칩니다.</p>
+<p>명령을 실행하면 그림 <a class="reference internal" href="#flask-run-error"><span class="std std-numref">Fig. 2.4</span></a> 같은 메시가 출력됩니다.</p>
+<div class="figure align-left" id="flask-run-error">
+<a class="reference internal image-reference" href="../_images/sec01_04_flask_run_error.png"><img alt="vscode open terminal window" src="../_images/sec01_04_flask_run_error.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">VS code에서 <code class="docutils literal notranslate"><span class="pre">hello_cju.py</span></code> 파일 만들기</span><a class="headerlink" href="#flask-run-error" title="Permalink to this image">¶</a></p>
+</div>
+<p>그림 <a class="reference internal" href="#flask-run-error"><span class="std std-numref">Fig. 2.4</span></a>에서 출력된 에러를 깔끔하게 다시 보면
+아래와 같은 터미널 에러 메시지를 확인할 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>가상환경이름<span class="o">)</span> C:<span class="se">\여</span>러분의 컴퓨터 경로<span class="se">\S</span>ource_codes&gt;flask run
+ * Environment: production
+   WARNING: This is a development server. Do not use it <span class="k">in</span> a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Usage: flask run <span class="o">[</span>OPTIONS<span class="o">]</span>
+
+Error: Could not locate a Flask application. 
+You did not provide the <span class="s2">&quot;FLASK_APP&quot;</span> environment variable, 
+and a <span class="s2">&quot;wsgi.py&quot;</span> or <span class="s2">&quot;app.py&quot;</span> module was not found <span class="k">in</span> the current directory.
+</pre></div>
+</div>
+<p>위 메시지를 차근차근 살펴보도록 하겠습니다.</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Environment:</span> <span class="pre">production</span></code>: 현재 여러분이 사용하고 있는 서버 환경은 제품(즉, 서비스 배포) 단계라는 것입니다. 실제로 여러분이 만든 시스템을 배포하는 경우에는 현재 환경 대신 <code class="docutils literal notranslate"><span class="pre">WSGI</span></code> 서버를 사용하라고 경고합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">mode:</span> <span class="pre">off</span></code>: 현재는 디버그 모드가 꺼져 있다고 알려줍니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Usage:</span> <span class="pre">flask</span> <span class="pre">run</span> <span class="pre">[OPTIONS]</span></code>: 서버를 가동할 때 다양한 옵션이 제공되니 필요하면 <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span> <span class="pre">[옵션이름]</span></code>과 같은 형태로 명령어를 사용하라고 알려줍니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Error</span></code>: Flask가 볼 때 우리가 만든 앱 <code class="docutils literal notranslate"><span class="pre">hello_cju.py</span></code>를 어떻게 위치시켜야 하는지 잘 모르겠다는 의미입니다. 이것을 해결하기 위해서는 <code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code> 이라는 환경 변수가 있는데 여기에 우리가 만든 앱이 무엇인지 알려달라고 합니다. 그리고 현재 디렉토리(폴더)에 <code class="docutils literal notranslate"><span class="pre">wsgi.py</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 모듈을 찾을 수 없다고 합니다.</p></li>
+</ol>
+<p>에러를 보니 답답합니다.</p>
+<p>그러나 flask 입장에서도 답답한 것은 우리와 비슷할 겁니다.</p>
+<p>우리는 코딩 잘 끝내고 <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code> 명령어까지 정확히 줬는데 에러라니!!</p>
+<p>하지만, Flask 입장은 이렇습니다.</p>
+<div class="admonition-flask admonition">
+<p class="admonition-title">Flask 서버 실행 에러를 내보낸 이유</p>
+<ul class="simple">
+<li><p>개발자들이 웹 시스템 이름을 어떻게 지을지 어떻게 미리 알지?</p></li>
+<li><p>그러면 기본적으로 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 이라는 이름을 갖는 웹 시스템을 개발한다고 가정하자.</p></li>
+<li><p>만약에 개발자들이 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 라는 이름으로 모듈을 코딩 했으면 정상적으로 서버를 가동시키자.</p></li>
+<li><p>혹시 다른 이름을 가진 모듈을 만들면 그때는 어쩌나?</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code> 이라는 환경변수를 만들어 놓고,</p></li>
+<li><p>개발자가 이 환경변수에 모듈 이름을 등록하게 하면 되겠군.</p></li>
+<li><p>이 환경변수에 담긴 모듈 이름을 작동시키면 모든게 해결겠군. ㅎ</p></li>
+</ul>
+</li>
+<li><p>그런데 <code class="docutils literal notranslate"><span class="pre">app.py</span></code> 모듈도 없고, <code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code> 변수에 다른 이름도 등록 안되어 있다면?</p>
+<ul>
+<li><p>어라! 어떤 모듈을 돌리라는 거지???</p></li>
+<li><p>개발자가 깜빡한 모양이군! 에러 메시지를 보여주자.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code>에 개발자가 코딩한 모듈 이름을 적어주면 그때 실행하자!</p></li>
+</ul>
+</li>
+</ul>
+<p>이런 스토리가 숨어 있는 메시지 입니다. 참고로 <code class="docutils literal notranslate"><span class="pre">wsgi.py</span></code> 관련 사항은 나중에 따로 설명합니다.</p>
+</div>
+<p>이제 에러 내용을 확이했고 해석할 수 있게 되었습니다.</p>
+<p>다음 작업할 내용은 flask 서버에 우리가 만든 Python 모듈을 등록하는 것입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Next</span></code>를 클릭하여 이동해 보세요.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Contents"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch08-1_first_app_helloCJU.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Flask app 코딩</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch08-3_setting_FLAK_APP.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span><code class="docutils literal notranslate"><span class="pre">FLASK_APP</span></code> 설정</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스 
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
