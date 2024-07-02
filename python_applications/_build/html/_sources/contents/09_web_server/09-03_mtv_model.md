@@ -110,6 +110,7 @@ if __name__ == "__main__":
     from flask import Flask, render_template
     from flask_sqlalchemy import SQLAlchemy
 
+<<<<<<< HEAD
     # 플라스크 객체 생성
     app = Flask(__name__) 
     
@@ -120,6 +121,10 @@ if __name__ == "__main__":
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     
     # 데이터베이스 객체 생성
+=======
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     db = SQLAlchemy(app)
 
     class User(db.Model):
@@ -135,9 +140,13 @@ if __name__ == "__main__":
         return render_template('index.html', name='World')
 
     if __name__ == "__main__":
+<<<<<<< HEAD
         with app.app_context():
             db.create_all()
             app.run(debug=True)
+=======
+        app.run(debug=True)
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     ```
 
 ## 실전 예제
@@ -189,6 +198,7 @@ pip install Flask Flask-SQLAlchemy
 - `프로젝트폴더/app.py`
 
     ```python
+<<<<<<< HEAD
     '''프로젝트폴더명/app.py'''
 
     import os
@@ -208,6 +218,16 @@ pip install Flask Flask-SQLAlchemy
     db = SQLAlchemy(app)
 
 
+=======
+    from flask import Flask, render_template, request, redirect, url_for
+    from flask_sqlalchemy import SQLAlchemy
+
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    db = SQLAlchemy(app)
+
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     class User(db.Model):
         id = db.Column(db.Integer, primary_key=True)
         username = db.Column(db.String(80), unique=True, nullable=False)
@@ -220,7 +240,10 @@ pip install Flask Flask-SQLAlchemy
     def index():
         return render_template('index.html')
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     @app.route('/submit', methods=['POST'])
     def submit():
         username = request.form['username']
@@ -233,7 +256,10 @@ pip install Flask Flask-SQLAlchemy
             return redirect(url_for('result', username=username, email=email))
         return 'Please enter both username and email'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     @app.route('/result')
     def result():
         username = request.args.get('username')
@@ -241,9 +267,14 @@ pip install Flask Flask-SQLAlchemy
         return f'User {username} with email {email} has been added to the database.'
 
     if __name__ == "__main__":
+<<<<<<< HEAD
         with app.app_context():
             db.create_all()     # 현재 위치에 "hello.db" 파일 생성
             app.run(debug=True) # 디버그 모드로 웹 애플리케이션 실행
+=======
+        db.create_all()
+        app.run(debug=True)
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     ```
 
 ### 서버 실행
@@ -252,6 +283,7 @@ pip install Flask Flask-SQLAlchemy
 python app.py
 ```
 
+<<<<<<< HEAD
 위 명령어를 실행하면 `app.py`와 같은 폴더에 `hello.db`라는 SQLite 데이터베이스 파일이 생성됩니다.
 
 SQLite 데이터베이스 파일은 VS Code 확장팩(Extension Pack) 중에서 `SQLite3 Editor`를 설치하면 편리하게 DB 내용을 확인하고 수정할 수 있습니다. `SQLite3 Editor`는 아래 그림을 참고하세요.
@@ -290,5 +322,11 @@ name: ch09_01_04_check_db_update
 <a href="../files/ch09/hello_server/" target="_blank">hellow 서버 소스코드</a> 
 클릭하여 확인하기 바랍니다.
 
+=======
+브라우저에서 http://127.0.0.1:5000/ 로 접속하여 폼을 작성하고 제출합니다.
+
+사용자가 입력한 이름과 이메일이 데이터베이스에 저장되고, 저장된 결과를 확인할 수 있습니다.
+
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 
 [맨 위로 이동](09-03)

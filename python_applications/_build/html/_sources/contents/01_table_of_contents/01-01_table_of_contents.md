@@ -46,6 +46,7 @@ tags: []
     - 8.3 [`requests` 모듈 둘러보기](../08_server_client/08-03_requests_module.md)
     - 8.4 [`Response` 객체 살펴보기](../08_server_client/08-04_response.md)
     - 8.5 [API 활용](../08_server_client/08-05_requests_api.md)
+<<<<<<< HEAD
     - 8.6 [도전 프로젝트](../08_server_client/08-06_project.md)
 
 9. [웹 서버 만들기](../09_web_server/09-00_intro.md)
@@ -56,5 +57,15 @@ tags: []
 
 10. [정답(Solutions)](../solutions/00_solutions.md)
 
+=======
+    - 8.6 [도전 프로젝트 - wheather api 활용하여 동적 플롯 만들기](../08_server_client/08-06_project.md)
+
+9. [웹 서버 만들기](../09_web_server/09-00_intro.md)
+    - 9.1 [Flask 기초](../09_web_server/09-01_flask_basic.md)
+    - 9.2 [Hello world 서버 만들기](../09_web_server/09-02_hello_world_server.md)
+    - 9.3 [MTV 모델 적용](../09_web_server/09-03_mtv_model.md)
+    - 9.3 [WAS 적용]
+    - 9.4 도전 프로젝트 - 개인 홈페이지 만들기
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 
 [맨 위로 이동하기](toc)

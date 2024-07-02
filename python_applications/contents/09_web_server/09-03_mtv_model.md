@@ -220,7 +220,6 @@ pip install Flask Flask-SQLAlchemy
     def index():
         return render_template('index.html')
 
-
     @app.route('/submit', methods=['POST'])
     def submit():
         username = request.form['username']
@@ -232,7 +231,6 @@ pip install Flask Flask-SQLAlchemy
             db.session.commit()
             return redirect(url_for('result', username=username, email=email))
         return 'Please enter both username and email'
-
 
     @app.route('/result')
     def result():

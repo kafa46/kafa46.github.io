@@ -76,9 +76,13 @@ name: ch08_05_07_check_api_details
 ```
 
 사용할 API는 업그레이드 될 수 있기 때문에 `참고(기술)문서`는 다운로드 시점에 따라 다를 수 있습니다. 공공데이터포털 공식 웹페이지에서 다운로드 받는 것이 좋습니다. 이 교재가 작성될 당시 다운로드 받은 문서는 여기
+<<<<<<< HEAD
 <a href="../files/ch08/tech_doc_data.go.kr_accident_death.pdf" target='_blank'>pdf</a>,
 <a href="../files/ch08/tech_doc_data.go.kr_accident_death.hwp">hwp</a> 
 클릭하여 확인할 수 있습니다.
+=======
+([pdf](../files/ch08/tech_doc_data.go.kr_accident_death.pdf), [hwp](../files/ch08/tech_doc_data.go.kr_accident_death.hwp))를 클릭하여 확인할 수 있습니다.
+>>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 
 
 API 상세 정보 페이지에서는 요청을 보낼 URL과 요청 파라미터(request parameter)를 어떻게 작성해야 하는지에 대한 정보가 포함되어 있습니다. 다음 그림을 참고하세요.
