@@ -69,4 +69,4 @@ status.pack(side=tk.BOTTOM, fill=tk.X)
 window.mainloop()
 ```
 
-[맨 위로 이동]((06-05))
+[맨 위로 이동](06-05)

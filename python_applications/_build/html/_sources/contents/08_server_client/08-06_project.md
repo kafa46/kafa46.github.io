@@ -1,7 +1,6 @@
 (08-06)=
 # Challenge Project
 
-<<<<<<< HEAD
 우리가 배운 API 요청(Request) 기술을 바탕으로 실시간 날씨 정보를 가져오는 소프트웨어를 개발해 봅니다.
 
 이번 프로젝트에서는 OpenWeatherMap [웹사이트](https://openweathermap.org/)에서 제공하는 날씨 정보를 받아오는 것을 구현해 봅니다.
@@ -109,6 +108,3 @@ print(f'구름: {clouds}%')
 정답은 [여기](../solutions/ch05_solution.md)를 클릭해 주세요.
 
 [맨 위로 가기](08-06)
-=======
-[맨 위로 이동](08-06)
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b

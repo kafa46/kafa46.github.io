@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 
-<<<<<<< HEAD
 <html>
   <head>
     <meta charset="utf-8" />
@@ -473,445 +472,10 @@
  </li>
 </ul>
 
-=======
-
-<html lang="en" data-content_root="../../" >
-
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>9.3. MTV 모델 적용 &#8212; 도전! Python Applications</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
-
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/09_web_server/09-03_mtv_model';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10. 정답 (Solutions)" href="../solutions/00_solutions.html" />
-    <link rel="prev" title="9.2. Hello world 서버 만들기" href="09-02_hello_world_server.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
-  
-  
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-  
-    
-    
-      
-    
-    
-    <img src="../../_static/ch00-01_cover.webp" class="logo__image only-light" alt="도전! Python Applications - Home"/>
-    <script>document.write(`<img src="../../_static/ch00-01_cover.webp" class="logo__image only-dark" alt="도전! Python Applications - Home"/>`);</script>
-  
-  
-</a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">1. Table of Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02_preface/02-01_preface.html">2. 책 소개말 (Preface)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_author_intro/03-01_author.html">3. 저자 소개</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">4. 데이터 분석</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">4.1. 데이터 처리 with Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">4.2. 기본 데이터 분석</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">4.3. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05_data_visualization/05-00_intro.html">5. 데이터 시각화</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">5.1. 데이터 시각화 도구</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">5.2. Matplotlib 기본 사용법</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-03_datasets.html">5.3. 시각화에 자주 사용되는 Dataset 소개</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-04_multi_plot.html">5.4. Multi-plot 그리기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-05_realtime_plot.html">5.5. Realtime Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../05_data_visualization/05-06_project.html">5.6. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06_gui_application/06-00_intro.html">6. GUI 애플리케이션</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">6.1. Tkinter 기초</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-02_base_app.html">6.2. 기본 GUI 애플리케이션</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-03_calculator.html">6.3. 계산기 애플리케이션</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">6.4. 고급 기능 맛보기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">6.5. 메모장 애플리케이션 만들기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../06_gui_application/06-06_project.html">6.6. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07_game/07-00_intro.html">7. 간단한게임만들기</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../07_game/07-01_number_guess.html">7.1. 숫자 맞추기 게임</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07_game/07-02_shooting.html">7.2. 슈팅 게임</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07_game/07-03_packaging_distribution.html">7.3. 패키징 및 배포</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../07_game/07-04_project.html">7.4. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08_server_client/08-00_intro.html">8. 인터넷과 파이썬</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-01_server_client.html">8.1. 서버-클라이언트 구조</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-02_request_types.html">8.2. Request 종류</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-03_requests_module.html">8.3. <code class="docutils literal notranslate"><span class="pre">requests</span></code> 모듈 둘러보기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-04_response.html">8.4. <code class="docutils literal notranslate"><span class="pre">Response</span></code> 객체 살펴보기</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-05_requests_api.html">8.5. API 활용</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../08_server_client/08-06_project.html">8.6. Challenge Project</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="09-00_intro.html">9. 웹 서버 만들기</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="09-01_flask_basic.html">9.1. 플라스크 기초</a></li>
-<li class="toctree-l2"><a class="reference internal" href="09-02_hello_world_server.html">9.2. Hello world 서버 만들기</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.3. MTV 모델 적용</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="../solutions/00_solutions.html">10. 정답 (Solutions)</a></li>
-</ul>
-
-    </div>
-</nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main" role="main">
-        
-        
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article d-print-none">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</button></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/09_web_server/09-03_mtv_model.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/contents/09_web_server/09-03_mtv_model.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
-
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
-</div></div>
-      
-    </div>
-  
-</div>
-</div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>MTV 모델 적용</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">9.3.1. 모델 (Model)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template">9.3.2. 템플릿 (Template)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">9.3.3. 뷰 (View)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3.4. 실전 예제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flask">9.3.4.1. 가상 환경 설정 및 Flask 설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3.4.2. Flask 애플리케이션 설정</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.4.3. 서버 실행</a></li>
-</ul>
-</li>
-</ul>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
             </nav>
         </div>
     </div>
 </div>
-<<<<<<< HEAD
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
@@ -978,20 +542,6 @@ document.write(`
 <p>Flask MTV 패턴의 각 구성 요소에 대해 알아 보겠습니다.</p>
 <div class="section" id="model">
 <h2><span class="section-number">9.3.1. </span>모델 (Model)<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
-=======
-
-              
-                
-<div id="searchbox"></div>
-                <article class="bd-article">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="mtv">
-<span id="id1"></span><h1><span class="section-number">9.3. </span>MTV 모델 적용<a class="headerlink" href="#mtv" title="Link to this heading">#</a></h1>
-<p>패턴은 애플리케이션의 구조를 명확하게 나누어 관리와 확장을 용이하게 합니다. Flask는 “Model-Template-View (MTV)” 패턴을 사용하는 경량 웹 프레임워크입니다. 또 다른 파이썬 앱 개발 프레임워크인 Django는 “Model-View-Template (MVT)” 패턴을 사용합니다. Java를 사용하는 스프링부트의 경우 “Model-View-Controller (MVC)” 패턴을 사용합니다. 웹 애플리케이션에 따라 각자 개발 패턴을 가지고 있습니다. 프레임워크 개발 패턴은 다양하지만 내용은 거의 비슷합니다.</p>
-<p>Flask MTV 패턴의 각 구성 요소에 대해 알아 보겠습니다.</p>
-<section id="model">
-<h2><span class="section-number">9.3.1. </span>모델 (Model)<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <p>모델은 데이터베이스와 상호작용하는 부분으로, 데이터베이스의 구조와 데이터를 정의합니다. Flask에서는 SQLAlchemy를 사용하여 모델을 정의할 수 있습니다.</p>
 <div class="admonition-sqlalchemy admonition">
 <p class="admonition-title">SQLAlchemy 간단 소개</p>
@@ -1001,11 +551,7 @@ document.write(`
 </div>
 <p><strong>예제: SQLAlchemy로 모델 정의</strong></p>
 <p>먼저 SQLAlchemy를 설치합니다</p>
-<<<<<<< HEAD
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install Flask-SQLAlchemy
-=======
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>Flask-SQLAlchemy
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 </pre></div>
 </div>
 <p>그 다음 파이썬을 이용해 모델을 정의합니다.</p>
@@ -1028,15 +574,9 @@ document.write(`
     <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<<<<<<< HEAD
 </div>
 <div class="section" id="template">
 <h2><span class="section-number">9.3.2. </span>템플릿 (Template)<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
-=======
-</section>
-<section id="template">
-<h2><span class="section-number">9.3.2. </span>템플릿 (Template)<a class="headerlink" href="#template" title="Link to this heading">#</a></h2>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <p>템플릿은 사용자에게 보여줄 HTML을 생성(렌더링)하는 역할을 수행합니다. Flask는 <code class="docutils literal notranslate"><span class="pre">Jinja2</span></code> 템플릿 엔진을 사용하여 템플릿을 처리합니다. 플라스크에서 템플릿 파일은 일반적으로 <code class="docutils literal notranslate"><span class="pre">templates</span></code> 디렉터리에 저장됩니다.</p>
 <div class="admonition-jinja2 admonition">
 <p class="admonition-title">Jinja2 간단 소개</p>
@@ -1059,15 +599,9 @@ document.write(`
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<<<<<<< HEAD
 </div>
 <div class="section" id="view">
 <h2><span class="section-number">9.3.3. </span>뷰 (View)<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
-=======
-</section>
-<section id="view">
-<h2><span class="section-number">9.3.3. </span>뷰 (View)<a class="headerlink" href="#view" title="Link to this heading">#</a></h2>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <p>뷰는 애플리케이션의 로직을 처리하고, 클라이언트의 요청에 대한 응답을 생성하는 부분입니다.
 Flask에서는 뷰 함수가 URL 경로와 연결되어 클라이언트의 요청을 처리합니다.</p>
 <p><strong>예제: 뷰 함수 정의</strong></p>
@@ -1090,7 +624,6 @@ Flask에서는 뷰 함수가 URL 경로와 연결되어 클라이언트의 요�
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
 <span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
 
-<<<<<<< HEAD
 <span class="c1"># 플라스크 객체 생성</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
 
@@ -1101,10 +634,6 @@ Flask에서는 뷰 함수가 URL 경로와 연결되어 클라이언트의 요�
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="c1"># 데이터베이스 객체 생성</span>
-=======
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///site.db&#39;</span>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -1120,18 +649,13 @@ Flask에서는 뷰 함수가 URL 경로와 연결되어 클라이언트의 요�
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;World&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<<<<<<< HEAD
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
         <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-=======
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 </pre></div>
 </div>
 </li>
 </ul>
-<<<<<<< HEAD
 </div>
 <div class="section" id="id2">
 <h2><span class="section-number">9.3.4. </span>실전 예제<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -1149,25 +673,6 @@ pip install Flask Flask-SQLAlchemy
 </div>
 <div class="section" id="id3">
 <h3><span class="section-number">9.3.4.2. </span>Flask 애플리케이션 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-=======
-</section>
-<section id="id2">
-<h2><span class="section-number">9.3.4. </span>실전 예제<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>사용자가 이름과 이메일을 입력하면 User 클래스를 이용해 데이터를 데이터베이스에 저장하고, 저장된 결과를 보여주는 웹 애플리케이션을 구현해 보겠습니다.</p>
-<p>이를 위해서는 HTML 폼을 생성하고, 데이터를 처리하는 뷰 함수를 작성해야 합니다.</p>
-<section id="flask">
-<h3><span class="section-number">9.3.4.1. </span>가상 환경 설정 및 Flask 설치<a class="headerlink" href="#flask" title="Link to this heading">#</a></h3>
-<p>가상 환경을 설정하고 Flask와 SQLAlchemy를 설치합니다:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>myenv
-<span class="nb">source</span><span class="w"> </span>myenv/bin/activate<span class="w">  </span><span class="c1"># macOS 및 Linux</span>
-myenv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">  </span><span class="c1"># Windows</span>
-pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> </span>Flask-SQLAlchemy
-</pre></div>
-</div>
-</section>
-<section id="id3">
-<h3><span class="section-number">9.3.4.2. </span>Flask 애플리케이션 설정<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <p>다음은 Flask 애플리케이션의 전체 코드입니다.</p>
 <p>데이터베이스 모델, HTML 폼, 데이터 처리 및 결과 표시를 포함하여 코딩합니다.</p>
 <ul>
@@ -1193,7 +698,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
 </div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">프로젝트폴더/app.py</span></code></p>
-<<<<<<< HEAD
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;프로젝트폴더명/app.py&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
@@ -1213,16 +717,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
 
 
-=======
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span>
-<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///site.db&#39;</span>
-<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1235,10 +729,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/submit&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">submit</span><span class="p">():</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
@@ -1251,10 +741,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
         <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;result&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">))</span>
     <span class="k">return</span> <span class="s1">&#39;Please enter both username and email&#39;</span>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/result&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">result</span><span class="p">():</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span>
@@ -1262,19 +748,13 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
     <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;User </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1"> with email </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1"> has been added to the database.&#39;</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<<<<<<< HEAD
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>     <span class="c1"># 현재 위치에 &quot;hello.db&quot; 파일 생성</span>
         <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># 디버그 모드로 웹 애플리케이션 실행</span>
-=======
-    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 </pre></div>
 </div>
 </li>
 </ul>
-<<<<<<< HEAD
 </div>
 <div class="section" id="id4">
 <h3><span class="section-number">9.3.4.3. </span>서버 실행<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
@@ -1305,20 +785,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
 </div>
 </div>
 </div>
-=======
-</section>
-<section id="id4">
-<h3><span class="section-number">9.3.4.3. </span>서버 실행<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
-</pre></div>
-</div>
-<p>브라우저에서 <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> 로 접속하여 폼을 작성하고 제출합니다.</p>
-<p>사용자가 입력한 이름과 이메일이 데이터베이스에 저장되고, 저장된 결과를 확인할 수 있습니다.</p>
-<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
-</section>
-</section>
-</section>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
 
     <script type="text/x-thebe-config">
     {
@@ -1332,11 +798,7 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
             mode: "python"
         },
         kernelOptions: {
-<<<<<<< HEAD
             kernelName: "python3",
-=======
-            name: "python3",
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
             path: "./contents\09_web_server"
         },
         predefinedOutput: true
@@ -1344,7 +806,6 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
     </script>
     <script>kernelName = 'python3'</script>
 
-<<<<<<< HEAD
               </div>
               
             
@@ -1376,107 +837,12 @@ pip<span class="w"> </span>install<span class="w"> </span>Flask<span class="w"> 
         &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
       <div class="extra_footer">
         <p>
-=======
-                </article>
-              
-
-              
-              
-              
-              
-                <footer class="prev-next-footer d-print-none">
-                  
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="09-02_hello_world_server.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9.2. </span>Hello world 서버 만들기</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../solutions/00_solutions.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>정답 (Solutions)</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">9.3.1. 모델 (Model)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#template">9.3.2. 템플릿 (Template)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view">9.3.3. 뷰 (View)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">9.3.4. 실전 예제</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flask">9.3.4.1. 가상 환경 설정 및 Flask 설치</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">9.3.4.2. Flask 애플리케이션 설정</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">9.3.4.3. 서버 실행</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Giseop Noh
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
-    
-      © Copyright Prof. Giseop Noh in Cheongju University.
-      <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <p>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
     본 책자에 적용되는 라이센스
     <a href="https://opensource.org/licenses/MIT">
       MIT License
     </a>.
 </p>
 
-<<<<<<< HEAD
       </div>
   </p>
 </footer>
@@ -1488,24 +854,5 @@ By Giseop Noh
   
   <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-=======
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
-
-  <footer class="bd-footer">
-  </footer>
->>>>>>> 78da4cfe81afd3de6a8c7e9e7b955d9565bb205b
   </body>
 </html>
