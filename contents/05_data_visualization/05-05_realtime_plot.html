@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.5. Realtime Plot &#8212; 도전! Python Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.6. Challenge Project" href="05-06_project.html" />
+    <link rel="prev" title="5.4. Multi-plot 그리기" href="05-04_multi_plot.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/ch00-01_cover.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">도전! Python Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">
+   1. Table of Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_preface/02-01_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_author_intro/03-01_author.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">
+   4. 데이터 분석
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">
+     4.1. 데이터 처리 with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">
+     4.2. 기본 데이터 분석
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
+     4.3. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="05-00_intro.html">
+   5. 데이터 시각화
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-01_visualization_tools.html">
+     5.1. 데이터 시각화 도구
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-02_matplotlib_basics.html">
+     5.2. Matplotlib 기본 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-03_datasets.html">
+     5.3. 시각화에 자주 사용되는 Dataset 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-04_multi_plot.html">
+     5.4. Multi-plot 그리기
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.5. Realtime Plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-06_project.html">
+     5.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_gui_application/06-00_intro.html">
+   6. GUI 애플리케이션
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">
+     6.1. Tkinter 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-02_base_app.html">
+     6.2. 기본 GUI 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-03_calculator.html">
+     6.3. 계산기 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">
+     6.4. 고급 기능 맛보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">
+     6.5. 메모장 애플리케이션 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-06_project.html">
+     6.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07_game/07-00_intro.html">
+   7. 간단한게임만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-01_number_guess.html">
+     7.1. 숫자 맞추기 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-02_shooting.html">
+     7.2. 슈팅 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-03_packaging_distribution.html">
+     7.3. 패키징 및 배포
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08_server_client/08-00_intro.html">
+   8. 인터넷과 파이썬
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-01_server_client.html">
+     8.1. 서버-클라이언트 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-02_request_types.html">
+     8.2. Request 종류
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-03_requests_module.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+     모듈 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-04_response.html">
+     8.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Response
+      </span>
+     </code>
+     객체 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-05_requests_api.html">
+     8.5. API 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-06_project.html">
+     8.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09_web_server/09-00_intro.html">
+   9. 웹 서버 만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-01_flask_basic.html">
+     9.1. 플라스크 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-02_hello_world_server.html">
+     9.2. Hello world 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-03_mtv_model.html">
+     9.3. MTV 모델 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-04_project.html">
+     9.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. 정답 (Solutions)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/05_data_visualization/05-05_realtime_plot.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/05_data_visualization/05-05_realtime_plot.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   5.5.1. 실시간 플롯의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#animantion">
+   5.5.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     animantion
+    </span>
+   </code>
+   모듈 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.5.3. Realtime Plot 예제
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Realtime Plot</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   5.5.1. 실시간 플롯의 필요성
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#animantion">
+   5.5.2.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     animantion
+    </span>
+   </code>
+   모듈 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.5.3. Realtime Plot 예제
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="realtime-plot">
+<span id="id1"></span><h1><span class="section-number">5.5. </span>Realtime Plot<a class="headerlink" href="#realtime-plot" title="Permalink to this headline">¶</a></h1>
+<p>실시간 플롯은 시간에 따라 변하는 데이터를 동적으로 시각화하는 도구로, 여러 응용 분야에서 필수적인 역할을 합니다. 데이터가 실시간으로 수집되고 처리되는 상황에서, 실시간 플롯은 데이터를 즉각적으로 분석하고 이해하는 데 중요한 역할을 합니다. 이는 다양한 산업과 연구 분야에서 데이터 기반의 신속한 의사결정을 지원하는 데 필수적입니다.</p>
+<div class="section" id="id2">
+<h2><span class="section-number">5.5.1. </span>실시간 플롯의 필요성<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>실시간 모니터링
+실시간 플롯은 시스템이나 프로세스를 실시간으로 모니터링하는 데 필수적입니다. 예를 들어, 제조 공정에서 센서 데이터를 실시간으로 모니터링하여 기계의 성능을 확인하고, 이상 징후를 조기에 감지할 수 있습니다. 이를 통해 기계 고장을 예방하고, 유지보수 비용을 절감할 수 있습니다.</p></li>
+<li><p>즉각적인 피드백 제공
+실시간 플롯은 데이터 변화에 대한 즉각적인 피드백을 제공하여 사용자나 운영자가 신속하게 대응할 수 있도록 합니다. 금융 거래 시스템에서 실시간 주가 데이터를 시각화하여 투자자가 빠르게 시장 상황을 파악하고, 적절한 투자 결정을 내릴 수 있습니다.</p></li>
+<li><p>이상 감지 및 문제 해결
+실시간 데이터를 시각화함으로써 데이터의 이상치를 즉시 감지할 수 있습니다. 네트워크 관리에서는 실시간 트래픽 데이터를 모니터링하여 비정상적인 패턴을 발견하고, 네트워크 침입이나 성능 저하 문제를 빠르게 해결할 수 있습니다.</p></li>
+<li><p>데이터 흐름의 이해
+실시간 플롯은 데이터 흐름과 그 변화를 시각적으로 이해하는 데 도움을 줍니다. IoT(사물 인터넷) 환경에서는 다양한 센서로부터 수집된 데이터를 실시간으로 시각화하여, 전체 시스템의 상태와 성능을 한눈에 파악할 수 있습니다.</p></li>
+</ul>
+</div>
+<div class="section" id="animantion">
+<h2><span class="section-number">5.5.2. </span><code class="docutils literal notranslate"><span class="pre">animantion</span></code> 모듈 소개<a class="headerlink" href="#animantion" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 동적이고 애니메이션된 시각화를 쉽게 생성할 수 있는 강력한 도구입니다. 이 모듈을 사용하면 시간에 따라 변화하는 데이터를 시각적으로 표현할 수 있습니다. 특히 실시간 데이터 스트림이나 시뮬레이션 데이터를 시각화하는 데 유용합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/animation_api.html">여기</a>를 참고하세요.</p>
+<p><strong>주요 클래스와 함수</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 기본 클래스인 <code class="docutils literal notranslate"><span class="pre">Animation</span></code>를 상속받아 <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code> 클래스를 만들고, <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code>로부터 함수를 주기적으로 호출하는 <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> 클래스와 일정 길이의 데이터셋을 애니메이션 해주는 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code>로 구성되어 있습니다.</p>
+<div class="figure align-default" id="ch05-07-animation-classes">
+<a class="reference internal image-reference" href="../../_images/ch05_07_animation_classes.png"><img alt="../../_images/ch05_07_animation_classes.png" src="../../_images/ch05_07_animation_classes.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.21 </span><span class="caption-text">animation 클래스 구조</span><a class="headerlink" href="#ch05-07-animation-classes" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code></p>
+<p>가장 많이 사용되는 애니메이션 클래스 중 하나로, 주기적으로 함수를 호출하여 플롯을 업데이트합니다.</p>
+<ul>
+<li><p>초기화</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">func</span><span class="p">,</span>
+    <span class="n">frames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">init_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">fargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>매개변수</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: 각 프레임에서 호출되는 함수로, 플롯을 업데이트하는 역할</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frames</span></code>: 애니메이션의 프레임 수 또는 프레임 생성기</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init_func</span></code>: 애니메이션 시작 전에 한 번 호출되는 초기화 함수의 이름</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fargs</span></code>: func에 전달할 추가 인수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_count</span></code>: 저장할 프레임 수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
+</ul>
+</li>
+<li><p>간단 예제</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+
+<span class="c1"># 데이터 생성 함수</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">frame</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>  <span class="c1"># 업데이트할 데이터</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># 초기화 함수</span>
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># 데이터 준비</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># 애니메이션 생성</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">Artist</span></code> 객체의 리스트를 사용하여 애니메이션을 생성합니다.
+각 프레임에서 플롯이 어떻게 보일지를 명시적으로 정의하여 주어진 데이터를 실시간으로 표현하면 어떻게 보이는지 확인하기 위하여 사용합니다.</p>
+<ul>
+<li><p>초기화</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">ArtistAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">artists</span><span class="p">,</span>
+    <span class="n">interval</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">repeat_delay</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">blit</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>매개변수</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">artists</span></code>: 각 프레임에 대한 Artist 객체의 리스트</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interval</span></code>: 프레임 간의 시간 간격(밀리초)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repeat_delay</span></code>: 애니메이션 반복 간의 지연 시간</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
+</ul>
+</li>
+<li><p>간단 예제</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">artists</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">point</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+    <span class="n">artists</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">point</span><span class="p">])</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">ArtistAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">animation</span></code> 동영상 저장</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 현재 디렉토리에 animation.mp4 이름의 파일로 저장</span>
+<span class="n">ani</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;animation.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">5.5.3. </span>Realtime Plot 예제<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Python에서 실시간 플롯을 생성하는 방법을 실습해 봅니다.</p>
+<p>Matplotlib의 animation 모듈을 사용하여 데이터를 실시간으로 업데이트하는 방법을 설명합니다.</p>
+<p>다음 코드는 Matplotlib을 사용하여 실시간 플롯을 생성하는 예제입니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">RealTimePlot</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_gen_func</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_gen_func</span> <span class="o">=</span> <span class="n">data_gen_func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_gen_func</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="n">xmax</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">xmax</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ydata</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">line</span><span class="p">,</span>
+
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 데이터 생성 함수</span>
+<span class="k">def</span> <span class="nf">data_gen</span><span class="p">():</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="c1"># t 값을 data_gen1.t에서 가져옴</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">cnt</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">t</span> <span class="o">+=</span> <span class="mf">0.1</span> <span class="c1"># 시간 값을 증가시킴</span>
+        <span class="k">yield</span> <span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
+
+<span class="n">data_gen</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 시간 값을 증가시킴</span>
+
+<span class="c1"># RealTimePlot 클래스 인스턴스 생성 및 플롯 표시</span>
+<span class="n">rt_plot</span> <span class="o">=</span> <span class="n">RealTimePlot</span><span class="p">(</span><span class="n">data_gen</span><span class="p">)</span>
+<span class="n">rt_plot</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>코드 설명</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">RealTimePlot</span> <span class="pre">클래스</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 메서드
+클래스 초기화.
+<code class="docutils literal notranslate"><span class="pre">data_gen_func</span></code>: 데이터 생성 함수,
+<code class="docutils literal notranslate"><span class="pre">interval</span></code>: 업데이트 간격
+Matplotlib의 FuncAnimation을 사용하여 애니메이션을 초기화합니다.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init</span></code> 메서드
+플롯의 초기 상태를 설정
+애니메이션 시작 전에 호출</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">update</span></code> 메서드
+새로운 데이터 포인트를 받아서 플롯을 업데이트
+<code class="docutils literal notranslate"><span class="pre">x</span></code> 축의 범위를 넘어가면 <code class="docutils literal notranslate"><span class="pre">x</span></code> 축의 범위를 두 배로 증가</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show</span></code> 메서드
+플롯을 화면에 표시</p></li>
+</ul>
+</li>
+<li><p>데이터 생성 함수 (<code class="docutils literal notranslate"><span class="pre">data_gen</span></code>):
+새로운 데이터 포인트를 생성하는 제너레이터 함수
+예제이서는 단순히 시뮬레이션된 사인 함수를 생성</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data_gen1.t</span></code>는 <code class="docutils literal notranslate"><span class="pre">data_gen</span></code> 함수 내에서 전역 변수처럼 사용되는 변수</p></li>
+<li><p>초기화: <code class="docutils literal notranslate"><span class="pre">data_gen1.t</span> <span class="pre">=</span> <span class="pre">0</span></code>에서 초기 시간 값을 0으로 설정합니다.</p></li>
+<li><p>시간 증가: <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">+=</span> <span class="pre">0.1</span></code> 코드에서 시간 값을 <code class="docutils literal notranslate"><span class="pre">0.1</span></code>씩 증가시킵니다.</p></li>
+</ul>
+</li>
+<li><p>연속 데이터 생성: <code class="docutils literal notranslate"><span class="pre">yield</span> <span class="pre">t,</span> <span class="pre">np.sin(2</span> <span class="pre">*</span> <span class="pre">np.pi</span> <span class="pre">*</span> <span class="pre">t)</span> <span class="pre">*</span> <span class="pre">np.exp(-t</span> <span class="pre">/</span> <span class="pre">10.)</span></code>에서</p>
+<p>시간 값 <code class="docutils literal notranslate"><span class="pre">t</span></code>에 따라 감쇠 사인 곡선을 생성합니다.</p>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\05_data_visualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="05-04_multi_plot.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5.4. </span>Multi-plot 그리기</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-06_project.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>Challenge Project</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

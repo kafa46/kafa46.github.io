@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.3. 시각화에 자주 사용되는 Dataset 소개 &#8212; 도전! Python Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.4. Multi-plot 그리기" href="05-04_multi_plot.html" />
+    <link rel="prev" title="5.2. Matplotlib 기본 사용법" href="05-02_matplotlib_basics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/ch00-01_cover.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">도전! Python Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">
+   1. Table of Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_preface/02-01_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_author_intro/03-01_author.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">
+   4. 데이터 분석
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">
+     4.1. 데이터 처리 with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">
+     4.2. 기본 데이터 분석
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
+     4.3. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="05-00_intro.html">
+   5. 데이터 시각화
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-01_visualization_tools.html">
+     5.1. 데이터 시각화 도구
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-02_matplotlib_basics.html">
+     5.2. Matplotlib 기본 사용법
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.3. 시각화에 자주 사용되는 Dataset 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-04_multi_plot.html">
+     5.4. Multi-plot 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-05_realtime_plot.html">
+     5.5. Realtime Plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-06_project.html">
+     5.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_gui_application/06-00_intro.html">
+   6. GUI 애플리케이션
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">
+     6.1. Tkinter 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-02_base_app.html">
+     6.2. 기본 GUI 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-03_calculator.html">
+     6.3. 계산기 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">
+     6.4. 고급 기능 맛보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">
+     6.5. 메모장 애플리케이션 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-06_project.html">
+     6.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07_game/07-00_intro.html">
+   7. 간단한게임만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-01_number_guess.html">
+     7.1. 숫자 맞추기 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-02_shooting.html">
+     7.2. 슈팅 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-03_packaging_distribution.html">
+     7.3. 패키징 및 배포
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08_server_client/08-00_intro.html">
+   8. 인터넷과 파이썬
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-01_server_client.html">
+     8.1. 서버-클라이언트 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-02_request_types.html">
+     8.2. Request 종류
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-03_requests_module.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+     모듈 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-04_response.html">
+     8.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Response
+      </span>
+     </code>
+     객체 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-05_requests_api.html">
+     8.5. API 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-06_project.html">
+     8.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09_web_server/09-00_intro.html">
+   9. 웹 서버 만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-01_flask_basic.html">
+     9.1. 플라스크 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-02_hello_world_server.html">
+     9.2. Hello world 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-03_mtv_model.html">
+     9.3. MTV 모델 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-04_project.html">
+     9.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. 정답 (Solutions)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/05_data_visualization/05-03_datasets.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/05_data_visualization/05-03_datasets.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tabular-data">
+   5.3.1. 표 형식 데이터 (Tabular Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-series-data">
+   5.3.2. 시계열 데이터 (Time Series Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-data">
+   5.3.3. 범주형 데이터 (Categorical Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-data">
+   5.3.4. 공간 데이터 (Spatial Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-data">
+   5.3.5. 이미지 데이터 (Image Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-data">
+   5.3.6. 텍스트 데이터 (Text Data)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>시각화에 자주 사용되는 Dataset 소개</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tabular-data">
+   5.3.1. 표 형식 데이터 (Tabular Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-series-data">
+   5.3.2. 시계열 데이터 (Time Series Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorical-data">
+   5.3.3. 범주형 데이터 (Categorical Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-data">
+   5.3.4. 공간 데이터 (Spatial Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-data">
+   5.3.5. 이미지 데이터 (Image Data)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#text-data">
+   5.3.6. 텍스트 데이터 (Text Data)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dataset">
+<span id="id1"></span><h1><span class="section-number">5.3. </span>시각화에 자주 사용되는 Dataset 소개<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<p>데이터 시각화는 데이터를 직관적으로 이해하고 분석하는 데 중요한 역할을 합니다. 다양한 데이터셋이 데이터 시각화에 사용되며, 그 중 몇 가지 대표적인 데이터셋을 소개합니다.</p>
+<p>표 형식 데이터는 행과 열로 구성된 스프레드시트나 데이터베이스 테이블 형태로, 변수와 관측치가 명확히 구분됩니다. 대표적인 예로, Iris 데이터셋과 Titanic 데이터셋이 있습니다. Iris 데이터셋은 꽃잎과 꽃받침의 길이와 너비를 포함한 간단한 데이터셋으로, 데이터 시각화와 머신러닝 초보자들에게 자주 사용됩니다. Titanic 데이터셋은 타이타닉 호의 승객 정보를 포함하고 있어, 생존자 분석 등 다양한 시각화와 분석을 수행할 수 있습니다.</p>
+<p>시계열 데이터는 시간의 경과에 따른 데이터를 포함하며, 시간 순서대로 정렬된 데이터 포인트로 구성됩니다. 예를 들어, Global Temperature 데이터셋은 특정 지역의 일별 기온 변화를 기록한 데이터셋으로, 기후 변화와 관련된 시각화에 유용합니다.</p>
+<p>범주형 데이터는 고정된 수의 범주로 구성된 데이터입니다. 예를 들어, Penguins 데이터셋은 펭귄의 종, 섬, 성별 등을 포함하여 범주형 데이터를 시각화하는 데 자주 사용됩니다.</p>
+<p>공간 데이터는 지리적 위치와 관련된 데이터를 포함하며, 지도 시각화에 사용됩니다. 대표적인 예로, Earthquake 데이터셋은 지진 발생 위치와 강도를 포함하여 지진의 분포와 패턴을 시각화하는 데 유용합니다.</p>
+<p>이미지 데이터는 이미지 파일로 구성된 데이터로, 이미지 분류와 객체 탐지 등의 시각화에 사용됩니다. 예를 들어, MNIST 데이터셋은 손글씨 숫자 이미지 데이터셋으로, 이미지 처리와 관련된 다양한 시각화와 분석을 수행할 수 있습니다. CIFAR-10 데이터셋은 10개 클래스의 이미지 데이터셋으로, 보다 복잡한 이미지 분류 작업에 사용됩니다.</p>
+<p>텍스트 데이터는 텍스트 형식의 데이터를 포함하며, 자연어 처리와 관련된 시각화에 사용됩니다. 예를 들어, IMDb 영화 리뷰 데이터셋은 영화 리뷰 텍스트와 평점을 포함하여 텍스트 데이터의 감정 분석과 시각화에 유용합니다.</p>
+<div class="section" id="tabular-data">
+<h2><span class="section-number">5.3.1. </span>표 형식 데이터 (Tabular Data)<a class="headerlink" href="#tabular-data" title="Permalink to this headline">¶</a></h2>
+<p>행과 열로 구성된 표 형식의 데이터로, 스프레드시트나 데이터베이스 테이블 형태로 자주 사용됩니다. 각 열은 변수(피처)를 나타내고, 각 행은 관측치를 나타냅니다.</p>
+<ul class="simple">
+<li><p><strong>Iris 데이터셋</strong>: 꽃잎과 꽃받침의 길이와 너비를 포함한 간단한 데이터셋 (<a class="reference external" href="https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv">download link</a>)</p></li>
+<li><p><strong>Titanic 데이터셋</strong>: 타이타닉 호의 승객 정보를 포함한 데이터셋 (<a class="reference external" href="https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv">download link</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="time-series-data">
+<h2><span class="section-number">5.3.2. </span>시계열 데이터 (Time Series Data)<a class="headerlink" href="#time-series-data" title="Permalink to this headline">¶</a></h2>
+<p>시간의 경과에 따른 데이터로, 주로 시간 순서대로 정렬된 데이터 포인트로 구성됩니다. 주식 가격, 기온 변화, 판매 수치 등이 이에 해당합니다.</p>
+<ul class="simple">
+<li><p><strong>기온 변화 데이터셋</strong>: 특정 지역의 일별 기온 변화를 기록한 데이터셋 (<a class="reference external" href="https://raw.githubusercontent.com/datasets/global-temp/master/data/monthly.csv">download link</a>)</p></li>
+<li><p><strong>주식 가격 데이터셋</strong>: 특정 주식의 일별 종가를 기록한 데이터셋</p></li>
+</ul>
+</div>
+<div class="section" id="categorical-data">
+<h2><span class="section-number">5.3.3. </span>범주형 데이터 (Categorical Data)<a class="headerlink" href="#categorical-data" title="Permalink to this headline">¶</a></h2>
+<p>범주형 데이터는 고정된 수의 범주로 구성된 데이터를 말하며, 주로 막대 그래프나 파이 차트로 시각화됩니다.</p>
+<ul class="simple">
+<li><p><strong>자동차 데이터셋</strong>: 자동차의 종류, 제조사, 연료 타입 등을 포함한 데이터셋</p></li>
+<li><p><strong>펭귄 데이터셋</strong>: 펭귄의 종, 섬, 성별 등을 포함한 데이터셋 (<a class="reference external" href="https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv">download link</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="spatial-data">
+<h2><span class="section-number">5.3.4. </span>공간 데이터 (Spatial Data)<a class="headerlink" href="#spatial-data" title="Permalink to this headline">¶</a></h2>
+<p>지리적 위치와 관련된 데이터를 말하며, 주로 지도 시각화에 사용됩니다. 좌표, 지역, 경계선 등의 정보를 포함합니다.</p>
+<ul class="simple">
+<li><p><strong>지도 데이터셋</strong>: 특정 지역의 지리적 경계 데이터를 포함한 데이터셋</p></li>
+<li><p><strong>지진 데이터셋</strong>: 지진 발생 위치와 강도를 포함한 데이터셋 (<a class="reference external" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.csv">download link</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="image-data">
+<h2><span class="section-number">5.3.5. </span>이미지 데이터 (Image Data)<a class="headerlink" href="#image-data" title="Permalink to this headline">¶</a></h2>
+<p>이미지 파일로 구성된 데이터로, 이미지 분류, 객체 탐지 등의 시각화에 사용됩니다.</p>
+<ul class="simple">
+<li><p><strong>MNIST 데이터셋</strong>: 손글씨 숫자 이미지 데이터셋 (<a class="reference external" href="http://yann.lecun.com/exdb/mnist/">download link</a>)</p></li>
+<li><p><strong>CIFAR-10 데이터셋</strong>: 10개 클래스의 이미지 데이터셋 (<a class="reference external" href="https://www.cs.toronto.edu/~kriz/cifar.html">download link</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="text-data">
+<h2><span class="section-number">5.3.6. </span>텍스트 데이터 (Text Data)<a class="headerlink" href="#text-data" title="Permalink to this headline">¶</a></h2>
+<p>텍스트 형식의 데이터로, 자연어 처리와 관련된 시각화에 사용됩니다.</p>
+<ul class="simple">
+<li><p><strong>뉴스 기사 데이터셋</strong>: 뉴스 기사 텍스트를 포함한 데이터셋</p></li>
+<li><p><strong>영화 리뷰 데이터셋</strong>: 영화 리뷰 텍스트와 평점을 포함한 데이터셋 (<a class="reference external" href="https://ai.stanford.edu/~amaas/data/sentiment/">download link</a>)</p></li>
+</ul>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\05_data_visualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="05-02_matplotlib_basics.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5.2. </span>Matplotlib 기본 사용법</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-04_multi_plot.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.4. </span>Multi-plot 그리기</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

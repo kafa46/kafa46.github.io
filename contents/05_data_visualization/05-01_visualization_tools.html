@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.1. 데이터 시각화 도구 &#8212; 도전! Python Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.2. Matplotlib 기본 사용법" href="05-02_matplotlib_basics.html" />
+    <link rel="prev" title="5. 데이터 시각화" href="05-00_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/ch00-01_cover.webp" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">도전! Python Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_table_of_contents/01-01_table_of_contents.html">
+   1. Table of Contents
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_preface/02-01_preface.html">
+   2. 책 소개말 (Preface)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_author_intro/03-01_author.html">
+   3. 저자 소개
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_data_analysis_basic/04-00_intro.html">
+   4. 데이터 분석
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-01_pandas.html">
+     4.1. 데이터 처리 with Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-02_csv_tsv_statistics.html">
+     4.2. 기본 데이터 분석
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
+     4.3. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="05-00_intro.html">
+   5. 데이터 시각화
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.1. 데이터 시각화 도구
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-02_matplotlib_basics.html">
+     5.2. Matplotlib 기본 사용법
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-03_datasets.html">
+     5.3. 시각화에 자주 사용되는 Dataset 소개
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-04_multi_plot.html">
+     5.4. Multi-plot 그리기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-05_realtime_plot.html">
+     5.5. Realtime Plot
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-06_project.html">
+     5.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_gui_application/06-00_intro.html">
+   6. GUI 애플리케이션
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-01_tkinter_basic.html">
+     6.1. Tkinter 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-02_base_app.html">
+     6.2. 기본 GUI 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-03_calculator.html">
+     6.3. 계산기 애플리케이션
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-04_advanced_func.html">
+     6.4. 고급 기능 맛보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-05_notepad_app.html">
+     6.5. 메모장 애플리케이션 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_gui_application/06-06_project.html">
+     6.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07_game/07-00_intro.html">
+   7. 간단한게임만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-01_number_guess.html">
+     7.1. 숫자 맞추기 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-02_shooting.html">
+     7.2. 슈팅 게임
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-03_packaging_distribution.html">
+     7.3. 패키징 및 배포
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07_game/07-04_project.html">
+     7.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08_server_client/08-00_intro.html">
+   8. 인터넷과 파이썬
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-01_server_client.html">
+     8.1. 서버-클라이언트 구조
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-02_request_types.html">
+     8.2. Request 종류
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-03_requests_module.html">
+     8.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+     모듈 둘러보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-04_response.html">
+     8.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Response
+      </span>
+     </code>
+     객체 살펴보기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-05_requests_api.html">
+     8.5. API 활용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_server_client/08-06_project.html">
+     8.6. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../09_web_server/09-00_intro.html">
+   9. 웹 서버 만들기
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-01_flask_basic.html">
+     9.1. 플라스크 기초
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-02_hello_world_server.html">
+     9.2. Hello world 서버 만들기
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-03_mtv_model.html">
+     9.3. MTV 모델 적용
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09_web_server/09-04_project.html">
+     9.4. Challenge Project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. 정답 (Solutions)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contents/05_data_visualization/05-01_visualization_tools.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kafa46/kafa46.github.io/tree/gh-pages/python_applications/issues/new?title=Issue%20on%20page%20%2Fcontents/05_data_visualization/05-01_visualization_tools.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   5.1.1. Matplotlib 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seaborn">
+   5.1.2. Seaborn 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.1.3. 특징 비교
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>데이터 시각화 도구</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   5.1.1. Matplotlib 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#seaborn">
+   5.1.2. Seaborn 소개
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   5.1.3. 특징 비교
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<span id="id2"></span><h1><span class="section-number">5.1. </span>데이터 시각화 도구<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>파이썬을 이용한 시각화 도구는 다양합니다. 개발자의 취향이나 개발 목적에 따라 선택하면 됩니다.
+가장 대표적인 도구는 matplotlib와 seaborn입니다.
+Matplotlib는 개발자가 자유롭게 커스터마이징 할 수 있고, seaborn은 다양한 테마를 기반으로 쉽게 시각화를 할 수 있다는 특징이 있습니다.</p>
+<div class="figure align-default" id="matplotlib-vs-seaborn">
+<a class="reference internal image-reference" href="../../_images/05-02-01_matplotlib_vs_seaborn.webp"><img alt="../../_images/05-02-01_matplotlib_vs_seaborn.webp" src="../../_images/05-02-01_matplotlib_vs_seaborn.webp" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Python 진영의 대표적인 시각화 도구는 matplotlib와 seaborn 입니다.</span><a class="headerlink" href="#matplotlib-vs-seaborn" title="Permalink to this image">¶</a></p>
+</div>
+<p>우리는 matplotlib를 사용한 시각화 실습을 공부할 것입니다. Seaborn 역시 널리 사랑받는 python 시각화 도구이므르 개인적으로 학습할 것을 추천합니다. 이번 장에서는 matplotlib와 seaborn에 대한 간단한 소개입니다.</p>
+<div class="section" id="matplotlib">
+<h2><span class="section-number">5.1.1. </span>Matplotlib 소개<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib은 파이썬에서 데이터 시각화를 위한 가장 널리 사용되는 라이브러리 중 하나입니다. 다양한 유형의 그래프와 플롯을 생성할 수 있으며, 사용자 정의가 용이하고, 다른 데이터 분석 라이브러리(예: Pandas)와 잘 통합됩니다. Matplotlib을 사용하면 복잡한 데이터 셋을 시각적으로 쉽게 이해할 수 있습니다.</p>
+<p><strong>주요 특징</strong></p>
+<ul class="simple">
+<li><p>다양한 플롯 유형: 선 그래프, 막대 그래프, 히스토그램, 산점도, 파이 차트 등 다양한 그래프를 그릴 수 있습니다.</p></li>
+<li><p>자유로운 커스터마이징: 그래프의 제목, 축 레이블, 범례, 색상, 스타일 등을 자유롭게 설정할 수 있습니다.</p></li>
+<li><p>다양한 출력 형식 지원: 그래프를 PNG, PDF, SVG 등 다양한 형식으로 저장할 수 있습니다.</p></li>
+<li><p>Pandas와의 통합: Pandas 데이터 프레임을 사용하여 간편하게 그래프를 생성할 수 있습니다.</p></li>
+<li><p>상호작용 가능한 플롯: Jupyter Notebook과 같은 환경에서 상호작용 가능한 플롯을 생성할 수 있습니다.</p></li>
+</ul>
+<p><strong>설치 방법</strong></p>
+<p>Matplotlib은 pip를 사용하여 설치할 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install matplotlib
+</pre></div>
+</div>
+</div>
+<div class="section" id="seaborn">
+<h2><span class="section-number">5.1.2. </span>Seaborn 소개<a class="headerlink" href="#seaborn" title="Permalink to this headline">¶</a></h2>
+<p>Seaborn은 Matplotlib을 기반으로 한 Python 데이터 시각화 라이브러리로, 통계 그래프를 더 쉽게 그릴 수 있도록 도와줍니다. Seaborn은 시각적으로 매력적이고 정보를 잘 전달하는 그래프를 생성하는 데 중점을 두고 있으며, Pandas 데이터프레임과도 잘 통합됩니다.</p>
+<p><strong>주요 특징</strong></p>
+<ul class="simple">
+<li><p>고수준 인터페이스: 복잡한 그래프를 간단한 코드로 생성할 수 있습니다.</p></li>
+<li><p>다양한 테마: 다양한 스타일과 색상 팔레트를 제공하여 일관성 있는 시각화를 쉽게 생성할 수 있습니다.</p></li>
+<li><p>통계적 시각화: 다양한 통계적 플롯을 제공하여 데이터의 분포와 관계를 쉽게 파악할 수 있습니다.</p></li>
+<li><p>Pandas와의 통합: Pandas 데이터프레임을 직접 사용하여 그래프를 그릴 수 있습니다.</p></li>
+<li><p>멀티플롯 기능: FacetGrid와 같은 도구를 사용하여 복잡한 멀티플롯을 쉽게 생성할 수 있습니다.</p></li>
+</ul>
+<p><strong>설치 방법</strong></p>
+<p>Seaborn은 pip를 사용하여 설치할 수 있습니다.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install seaborn
+</pre></div>
+</div>
+<p>Matplotlib과 Seaborn은 Python에서 데이터 시각화를 위한 강력한 라이브러리입니다. 이 두 라이브러리를 사용하면 데이터를 효과적으로 시각화하여 더 나은 인사이트를 도출할 수 있습니다. 아래는 Matplotlib과 Seaborn의 주요 특징을 비교한 표입니다.</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">5.1.3. </span>특징 비교<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>특징</strong></p></th>
+<th class="head"><p><strong>Matplotlib</strong></p></th>
+<th class="head"><p><strong>Seaborn</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>편의성</strong></p></td>
+<td><p>고수준 인터페이스 제공<br>복잡한 그래프를 간단하게 생성 가능</p></td>
+<td><p>고수준 인터페이스 제공<br>복잡한 그래프를 간단한 코드로 생성 가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>스타일</strong></p></td>
+<td><p>기본 스타일 제공<br>사용자 정의 필요</p></td>
+<td><p>다양한 스타일과 색상 팔레트 제공<br>예쁜 그래프 기본 제공</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>통계 시각화</strong></p></td>
+<td><p>기본 통계 시각화 지원</p></td>
+<td><p>통계적 시각화에 특화<br>데이터의 분포와 관계를 쉽게 파악할 수 있는 다양한 플롯 제공</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pandas 통합</strong></p></td>
+<td><p>Pandas 데이터프레임과 잘 통합</p></td>
+<td><p>Pandas 데이터프레임을 직접 사용하여 플롯 작성</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>커스터마이징</strong></p></td>
+<td><p>그래프의 세부 요소를 자세히 커스터마이징할 수 있는 유연성 제공</p></td>
+<td><p>높은 수준의 기본 설정 제공<br> 기본 설정을 쉽게 사용자 정의 가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>멀티 그래프</strong></p></td>
+<td><p>Subplot 등을 사용하여 여러 개의 그래프를 하나의 Figure에 배치 가능</p></td>
+<td><p>FacetGrid와 같은 도구를 사용하여 복잡한 멀티 그래프를 쉽게 생성</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>그래프 유형</strong></p></td>
+<td><p>선 그래프, 막대 그래프, 히스토그램, 산점도, 파이 차트 등 다양한 그래프 제공</p></td>
+<td><p>선 그래프, 막대 그래프, 히스토그램, 산점도, 카운트 플롯, 박스 플롯 등 다양한 그래프 제공</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>상호작용</strong></p></td>
+<td><p>Jupyter Notebook과 같은 환경에서 상호작용 가능한 그래프 생성 가능</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contents\05_data_visualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="05-00_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>데이터 시각화</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05-02_matplotlib_basics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Matplotlib 기본 사용법</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Giseop Noh<br/>
+    
+        &copy; Copyright Prof. Giseop Noh in Cheongju University.<br/>
+      <div class="extra_footer">
+        <p>
+    본 책자에 적용되는 라이센스
+    <a href="https://opensource.org/licenses/MIT">
+      MIT License
+    </a>.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
