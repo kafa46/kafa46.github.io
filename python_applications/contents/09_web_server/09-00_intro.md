@@ -114,7 +114,7 @@ uWSGI와 Gunicorn은 Python 기반의 웹 애플리케이션을 배포하는 데
 
 ```{figure} ../imgs/chap_09/ch09_00_01_ws_was_app.png
 ---
-width: 95%
+width: 100%
 name: ch09_00_01_ws_was_app
 ---
 WS, WAS, Web App의 관계(예시)
@@ -128,39 +128,39 @@ WS, WAS, Web App의 관계(예시)
 
 웹 애플리케이션 백엔드 개발에 사용할 기술 스택을 선택하는 것은 프로젝트의 요구사항, 팀의 기술적 역량, 유지보수 용이성, 성능 요구사항 등 여러 요소를 고려해야 합니다. 다양한 기술 스택의 조합은 특정 요구에 맞게 최적화될 수 있으며, 각 조합의 장단점을 이해하는 것이 중요합니다.
 
-대표적인 백엔드 기술 조합 (`테크 트리` 또는 `기술 스택` 이라고 부르기도 함)
+**대표적인 백엔드 기술 조합(`테크 트리` 또는 `기술 스택` 이라고 부르기도 함)** 
 
-- Python + Django + Gunicorn/uWSGI + Nginx
+**`Python` + `Django` + `Gunicorn/uWSGI` + `Nginx`**
 
-    - Django: 배터리가 포함된 웹 프레임워크로, 신속한 개발과 유지보수가 용이합니다. ORM, 관리자 인터페이스, 인증 등 다양한 기능이 내장되어 있습니다.
+- Django: 배터리가 포함된 웹 프레임워크로, 신속한 개발과 유지보수가 용이합니다. ORM, 관리자 인터페이스, 인증 등 다양한 기능이 내장되어 있습니다.
 
-    - Gunicorn/uWSGI: WSGI 애플리케이션 서버로 Django 애플리케이션을 서비스합니다.
+- Gunicorn/uWSGI: WSGI 애플리케이션 서버로 Django 애플리케이션을 서비스합니다.
 
-    - Nginx: 정적 파일 제공, 리버스 프록시, 로드 밸런싱 등을 처리합니다.
+- Nginx: 정적 파일 제공, 리버스 프록시, 로드 밸런싱 등을 처리합니다.
 
-- Python + Flask + Gunicorn/uWSGI + Nginx
+**`Python` + `Flask` + `Gunicorn/uWSGI` + `Nginx`**
 
-    - Flask: 경량 웹 프레임워크로, 필요한 기능만 추가하여 사용할 수 있습니다. 유연성이 높고 배우기 쉽습니다.
+- Flask: 경량 웹 프레임워크로, 필요한 기능만 추가하여 사용할 수 있습니다. 유연성이 높고 배우기 쉽습니다.
 
-    - Gunicorn/uWSGI: Flask 애플리케이션을 서비스하는 WSGI 서버입니다.
+- Gunicorn/uWSGI: Flask 애플리케이션을 서비스하는 WSGI 서버입니다.
 
-    - Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
+- Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
 
-- Node.js + Express + PM2 + Nginx
+**`Node.js` + `Express` + `PM2(process manager)` + `Nginx`**
 
-    - Express: Node.js의 경량 웹 프레임워크로, 빠른 개발이 가능합니다. 비동기 처리가 용이합니다.
+- Express: Node.js의 경량 웹 프레임워크로, 빠른 개발이 가능합니다. 비동기 처리가 용이합니다.
 
-    - PM2: Node.js 애플리케이션을 관리하고, 자동 재시작 및 로드 밸런싱을 제공합니다.
+- PM2: Node.js 애플리케이션을 관리하고, 자동 재시작 및 로드 밸런싱을 제공합니다.
 
-    - Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
+- Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
 
-- Java + Spring Boot + Tomcat + Nginx
+**`Java` + `Spring Boot + Tomcat` + `Nginx`**
 
-    - Spring Boot: 엔터프라이즈급 애플리케이션을 위한 프레임워크로, 다양한 기능을 제공합니다.
+- Spring Boot: 엔터프라이즈급 애플리케이션을 위한 프레임워크로, 다양한 기능을 제공합니다.
 
-    - Tomcat: Spring Boot 애플리케이션을 서비스하는 서블릿 컨테이너입니다.
+- Tomcat: Spring Boot 애플리케이션을 서비스하는 서블릿 컨테이너입니다.
 
-    - Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
+- Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.
 
 **우리의 선택은?**
 

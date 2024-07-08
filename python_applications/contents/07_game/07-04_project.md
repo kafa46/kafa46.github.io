@@ -51,6 +51,7 @@ self.score_label.pack(side=tk.RIGHT, padx=10)
 - 플레이어가 화면의 왼쪽 경계를 넘지 않도록 이동을 제한
 
 - `if player_coords[0] > 0:` 조건을 추가하여 플레이어가 왼쪽 경계를 넘지 않도록 처리
+
     ```python
     def move_left(self, event, distance: int = -20):
         if self.running:
