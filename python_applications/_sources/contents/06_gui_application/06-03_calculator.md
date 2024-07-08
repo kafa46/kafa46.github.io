@@ -10,13 +10,13 @@
 
 ```{figure} ../imgs/chap_06/ch06_03_01_calculator.png
 ---
-width: 50%
+width: 70%
 name: ch06_03_01_calculator
 ---
 목표로 하는 간단한 계산기 애플리케이션 UI
 ```
 
-샘플 코드는 다음과 같습니다. 
+샘플 코드는 다음과 같습니다.
 
 ```python
 import tkinter as tk

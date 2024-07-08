@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7.1. 숫자 맞추기 게임" href="07-01_number_guess.html" />
-    <link rel="prev" title="6.6. Challenge Project" href="../06_gui_application/06-06_project.html" />
+    <link rel="prev" title="6.6. 도전 프로젝트" href="../06_gui_application/06-06_project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -479,136 +491,105 @@
 <p>파이썬으로 게임을 개발하려면 <code class="docutils literal notranslate"><span class="pre">PyGame</span></code>, <code class="docutils literal notranslate"><span class="pre">Panda3D</span></code>, <code class="docutils literal notranslate"><span class="pre">PyOpenGL</span></code> 등과 같은 라이브러리와 프레임워크를 이용해야 합니다. 공부를 더 해야 한다는 뜻입니다. 게임 개발은 이 책의 범위를 벗어납니다. 관심 있는 독자는 관련 분야를 추가로 학습하시기 바랍니다.</p>
 <p><strong>우리는 GUI 프로그램을 간단히 응용하는 게임을 만들어 보고, 그 경험을 바탕으로 Python 응용 능력을 높이는데 목표가 있습니다.</strong></p>
 <div class="figure align-default" id="ch07-00-01-game-intro">
-<a class="reference internal image-reference" href="../../_images/ch07_00_01_game_intro.webp"><img alt="../../_images/ch07_00_01_game_intro.webp" src="../../_images/ch07_00_01_game_intro.webp" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch07_00_01_game_intro.webp"><img alt="../../_images/ch07_00_01_game_intro.webp" src="../../_images/ch07_00_01_game_intro.webp" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7.1 </span><span class="caption-text">파이썬을 이용해 간단한 게임을 개발할 수 있습니다.</span><a class="headerlink" href="#ch07-00-01-game-intro" title="Permalink to this image">¶</a></p>
 </div>
 <p>참고로 게임 개발 프레임워크와 특징을 살펴보면 다음과 같습니다.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>프레임워크</p></th>
-<th class="head"><p>언어</p></th>
+<tr class="row-odd"><th class="head"><p>프레임워크(언어)</p></th>
 <th class="head"><p>특징</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Unity</strong></p></td>
-<td><p>C#</p></td>
+<tr class="row-even"><td><p><strong>Unity</strong><br>(C#)</p></td>
 <td><p>- 크로스 플랫폼 지원</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 강력한 에디터와 커뮤니티</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 2D 및 3D 게임 개발 가능</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Unreal Engine</strong></p></td>
-<td><p>C++</p></td>
+<tr class="row-odd"><td><p><strong>Unreal Engine</strong><br>(C++)</p></td>
 <td><p>- 고성능, AAA급 게임 개발에 적합</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 실시간 렌더링 및 물리 엔진</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 블루프린트 비주얼 스크립팅 지원</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Godot</strong></p></td>
-<td><p>GDScript, C#, C++</p></td>
+<tr class="row-even"><td><p><strong>Godot</strong><br>(GDScript, C#, C++)</p></td>
 <td><p>- 오픈 소스, 무료</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 가벼운 설치 파일과 쉬운 배포</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 2D 및 3D 게임 개발 지원</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>PyGame</strong></p></td>
 <td><p>Python</p></td>
-<td><p>- 파이썬 기반, 간단한 게임 개발에 적합</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 교육용으로 많이 사용</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 2D 게임 개발에 주로 사용</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>Panda3D</strong></p></td>
 <td><p>Python, C++</p></td>
-<td><p>- 오픈 소스 3D 게임 엔진</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 디즈니와 CMU에서 개발</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- VR 및 AR 지원</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Cocos2d</strong></p></td>
-<td><p>C++, Lua, JavaScript</p></td>
+<tr class="row-odd"><td><p><strong>Cocos2d</strong><br>(C++, Lua, JavaScript)</p></td>
 <td><p>- 2D 게임에 특화</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 크로스 플랫폼 지원</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 많은 상업용 게임에서 사용</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Phaser</strong></p></td>
-<td><p>JavaScript</p></td>
+<tr class="row-even"><td><p><strong>Phaser</strong><br>(JavaScript)</p></td>
 <td><p>- HTML5 게임 개발에 적합</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 빠른 프로토타이핑 가능</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 웹 브라우저에서 직접 실행 가능</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Construct</strong></p></td>
-<td><p>JavaScript</p></td>
+<tr class="row-odd"><td><p><strong>Construct</strong><br>(JavaScript)</p></td>
 <td><p>- 비주얼 스크립팅을 통해 코드 작성 없이 게임 개발 가능</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 2D 게임 개발에 특화</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 교육용으로 많이 사용</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>CryEngine</strong></p></td>
-<td><p>C++</p></td>
+<tr class="row-even"><td><p><strong>CryEngine</strong><br>(C++)</p></td>
 <td><p>- 고성능, 사실적인 그래픽</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- AAA급 게임 개발에 적합</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 강력한 샌드박스 편집기 제공</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>GameMaker Studio</strong></p></td>
-<td><p>GML (GameMaker Language)</p></td>
+<tr class="row-odd"><td><p><strong>GameMaker Studio</strong><br>(GML (GameMaker Language))</p></td>
 <td><p>- 쉬운 게임 개발, 빠른 프로토타이핑 가능</p></td>
 </tr>
 <tr class="row-even"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 2D 게임에 특화</p></td>
 </tr>
 <tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
 <td><p>- 다양한 플랫폼에 배포 가능</p></td>
 </tr>
 </tbody>
@@ -647,7 +628,7 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6.6. </span>Challenge Project</p>
+            <p class="prev-next-title"><span class="section-number">6.6. </span>도전 프로젝트</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="07-01_number_guess.html" title="next page">

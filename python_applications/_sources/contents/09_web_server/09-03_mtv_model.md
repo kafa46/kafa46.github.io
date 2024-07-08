@@ -1,20 +1,20 @@
 (09-03)=
 # MTV 모델 적용
 
-패턴은 애플리케이션의 구조를 명확하게 나누어 관리와 확장을 용이하게 합니다. Flask는 "Model-Template-View (MTV)" 패턴을 사용하는 경량 웹 프레임워크입니다. 또 다른 파이썬 앱 개발 프레임워크인 Django는 "Model-View-Template (MVT)" 패턴을 사용합니다. Java를 사용하는 스프링부트의 경우 "Model-View-Controller (MVC)" 패턴을 사용합니다. 웹 애플리케이션에 따라 각자 개발 패턴을 가지고 있습니다. 프레임워크 개발 패턴은 다양하지만 내용은 거의 비슷합니다.
+패턴은 애플리케이션의 구조를 명확하게 나누어 관리와 확장을 용이하게 합니다. Flask는 "Model-Template-View (`MTV`)" 패턴을 사용하는 경량 웹 프레임워크입니다. 또 다른 파이썬 앱 개발 프레임워크인 Django는 "Model-View-Template (`MVT`)" 패턴을 사용합니다. Java를 사용하는 스프링부트의 경우 "Model-View-Controller (`MVC`)" 패턴을 사용합니다. 웹 애플리케이션에 따라 각자 개발 패턴을 가지고 있습니다. 프레임워크 개발 패턴은 다양하지만 내용은 거의 비슷합니다.
 
 Flask MTV 패턴의 각 구성 요소에 대해 알아 보겠습니다.
 
 ## 모델 (Model)
 
-모델은 데이터베이스와 상호작용하는 부분으로, 데이터베이스의 구조와 데이터를 정의합니다. Flask에서는 SQLAlchemy를 사용하여 모델을 정의할 수 있습니다.
+모델은 데이터베이스와 상호작용하는 부분으로, 데이터베이스의 구조와 데이터를 정의합니다. Flask에서는 `SQLAlchemy`를 사용하여 모델을 정의할 수 있습니다.
 
 ```{admonition} SQLAlchemy 간단 소개
-SQLAlchemy는 Python 언어용 SQL 도구이자 Object-Relational Mapping(ORM) 라이브러리입니다. SQLAlchemy는 관계형 데이터베이스와의 상호작용을 단순화하고, 데이터베이스 작업을 더 효율적이고 직관적으로 만들기 위해 설계되었습니다.
+SQLAlchemy는 Python 언어용 SQL 도구이자 Object-Relational Mapping(`ORM`) 라이브러리입니다. SQLAlchemy는 관계형 데이터베이스와의 상호작용을 단순화하고, 데이터베이스 작업을 더 효율적이고 직관적으로 만들기 위해 설계되었습니다.
 
 2005년 마이클 베이어(Michael Bayer)에 의해 처음 개발된 이래, SQLAlchemy는 Python 커뮤니티에서 널리 사용되고 있습니다.
 
-자세한 내용은 SQLAlchemy 공식 [문서](https://www.sqlalchemy.org/)를 참고하기 바랍니다.
+자세한 내용은 SQLAlchemy [공식 문서](https://www.sqlalchemy.org/)를 참고하기 바랍니다.
 ```
 
 **예제: SQLAlchemy로 모델 정의**
@@ -49,14 +49,16 @@ if __name__ == "__main__":
 
 ## 템플릿 (Template)
 
-템플릿은 사용자에게 보여줄 HTML을 생성(렌더링)하는 역할을 수행합니다. Flask는 `Jinja2` 템플릿 엔진을 사용하여 템플릿을 처리합니다. 플라스크에서 템플릿 파일은 일반적으로 `templates` 디렉터리에 저장됩니다.
+템플릿은 사용자에게 보여줄 `HTML`을 생성(렌더링)하는 역할을 수행합니다. Flask는 `Jinja2` 템플릿 엔진을 사용하여 템플릿을 처리합니다. 
+
+Flask 템플릿 파일은 일반적으로 `templates` 디렉터리에 저장됩니다. 개발자가 원한다면 다른 폴더 이름을 사용할 수 있지만, 이 경우에는 별도 설정(`configuration`)을 잡아줘야 합니다.
 
 ```{admonition} Jinja2 간단 소개
-Jinja2는 Python용 템플릿 엔진으로, 웹 애플리케이션에서 HTML, XML 등의 텍스트 기반 파일을 동적으로 생성할 수 있게 해줍니다.
+`Jinja2`는 Python용 템플릿 엔진으로, 웹 애플리케이션에서 `HTML`, `XML` 등의 텍스트 기반 파일을 동적으로 생성할 수 있게 해줍니다.
 
-Jinja2는 Django 템플릿 엔진에서 영감을 받아 Armin Ronacher에 의해 개발되었으며, Flask와 같은 많은 Python 웹 프레임워크에서 기본 템플릿 엔진으로 사용되고 있습니다.
+`Jinja2`는 `Django` 템플릿 엔진에서 영감을 받아 Armin Ronacher에 의해 개발되었으며, Flask와 같은 많은 Python 웹 프레임워크에서 기본 템플릿 엔진으로 사용되고 있습니다.
 
-자세한 내용은 Jinja2 공식 [문서](https://jinja.palletsprojects.com/en/3.1.x/)를 참고하기 바랍니다.
+자세한 내용은 Jinja2 [공식 문서](https://jinja.palletsprojects.com/en/3.1.x/)를 참고하기 바랍니다.
 ```
 
 
@@ -266,7 +268,7 @@ SQLite3 Editor 확장팩
 
 ```{figure} ../imgs/chap_09/ch09_01_03_index_page.png
 ---
-width: 50%
+width: 80%
 name: ch09_01_03_index_page
 ---
 메인 페이지에서 Name, Email 입력 후 `Submit`(제출) 버튼 클릭

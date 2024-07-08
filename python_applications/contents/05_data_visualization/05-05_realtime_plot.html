@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.6. Challenge Project" href="05-06_project.html" />
+    <link rel="next" title="5.6. 도전 프로젝트" href="05-06_project.html" />
     <link rel="prev" title="5.4. Multi-plot 그리기" href="05-04_multi_plot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -104,7 +106,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +136,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +153,23 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +184,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +226,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +258,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +280,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +318,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +350,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -439,19 +453,57 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#animantion">
+  <a class="reference internal nav-link" href="#animation">
    5.5.2.
    <code class="docutils literal notranslate">
     <span class="pre">
-     animantion
+     animation
     </span>
    </code>
-   모듈 소개
+   모듈
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   5.5.3. Realtime Plot 예제
+   5.5.3. 주요 클래스와 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcanimation">
+   5.5.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     FuncAnimation
+    </span>
+   </code>
+   클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#artistanimation">
+   5.5.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArtistAnimation
+    </span>
+   </code>
+   클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   5.5.6.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     animation
+    </span>
+   </code>
+   동영상 저장
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   5.5.7. Realtime Plot 예제
   </a>
  </li>
 </ul>
@@ -480,19 +532,57 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#animantion">
+  <a class="reference internal nav-link" href="#animation">
    5.5.2.
    <code class="docutils literal notranslate">
     <span class="pre">
-     animantion
+     animation
     </span>
    </code>
-   모듈 소개
+   모듈
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   5.5.3. Realtime Plot 예제
+   5.5.3. 주요 클래스와 함수
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcanimation">
+   5.5.4.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     FuncAnimation
+    </span>
+   </code>
+   클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#artistanimation">
+   5.5.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ArtistAnimation
+    </span>
+   </code>
+   클래스
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   5.5.6.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     animation
+    </span>
+   </code>
+   동영상 저장
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   5.5.7. Realtime Plot 예제
   </a>
  </li>
 </ul>
@@ -506,34 +596,47 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="realtime-plot">
 <span id="id1"></span><h1><span class="section-number">5.5. </span>Realtime Plot<a class="headerlink" href="#realtime-plot" title="Permalink to this headline">¶</a></h1>
-<p>실시간 플롯은 시간에 따라 변하는 데이터를 동적으로 시각화하는 도구로, 여러 응용 분야에서 필수적인 역할을 합니다. 데이터가 실시간으로 수집되고 처리되는 상황에서, 실시간 플롯은 데이터를 즉각적으로 분석하고 이해하는 데 중요한 역할을 합니다. 이는 다양한 산업과 연구 분야에서 데이터 기반의 신속한 의사결정을 지원하는 데 필수적입니다.</p>
+<p>실시간 플롯은 시간에 따라 변하는 데이터를 동적으로 시각화하는 도구로, 여러 응용 분야에서 필수적인 역할을 합니다.</p>
+<p>데이터가 실시간으로 수집되고 처리되는 상황에서, 실시간 플롯은 데이터를 즉각적으로 분석하고 이해하는 데 중요한 역할을 합니다.</p>
+<p>다양한 산업과 연구 분야에서 데이터 기반의 신속한 의사결정을 지원하는 데 필수적이며 데이터와 인공지능을 다루는 개발자라면 꼭 알아야 하는 필수 지식 중 하나입니다.</p>
 <div class="section" id="id2">
 <h2><span class="section-number">5.5.1. </span>실시간 플롯의 필요성<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>실시간 모니터링
-실시간 플롯은 시스템이나 프로세스를 실시간으로 모니터링하는 데 필수적입니다. 예를 들어, 제조 공정에서 센서 데이터를 실시간으로 모니터링하여 기계의 성능을 확인하고, 이상 징후를 조기에 감지할 수 있습니다. 이를 통해 기계 고장을 예방하고, 유지보수 비용을 절감할 수 있습니다.</p></li>
-<li><p>즉각적인 피드백 제공
-실시간 플롯은 데이터 변화에 대한 즉각적인 피드백을 제공하여 사용자나 운영자가 신속하게 대응할 수 있도록 합니다. 금융 거래 시스템에서 실시간 주가 데이터를 시각화하여 투자자가 빠르게 시장 상황을 파악하고, 적절한 투자 결정을 내릴 수 있습니다.</p></li>
-<li><p>이상 감지 및 문제 해결
-실시간 데이터를 시각화함으로써 데이터의 이상치를 즉시 감지할 수 있습니다. 네트워크 관리에서는 실시간 트래픽 데이터를 모니터링하여 비정상적인 패턴을 발견하고, 네트워크 침입이나 성능 저하 문제를 빠르게 해결할 수 있습니다.</p></li>
-<li><p>데이터 흐름의 이해
-실시간 플롯은 데이터 흐름과 그 변화를 시각적으로 이해하는 데 도움을 줍니다. IoT(사물 인터넷) 환경에서는 다양한 센서로부터 수집된 데이터를 실시간으로 시각화하여, 전체 시스템의 상태와 성능을 한눈에 파악할 수 있습니다.</p></li>
-</ul>
+<p><strong>실시간 모니터링</strong></p>
+<p>실시간 플롯은 시스템이나 프로세스를 실시간으로 모니터링하는 데 필수적입니다. 예를 들어, 제조 공정에서 센서 데이터를 실시간으로 모니터링하여 기계의 성능을 확인하고, 이상 징후를 조기에 감지할 수 있습니다. 이를 통해 기계 고장을 예방하고, 유지보수 비용을 절감할 수 있습니다.</p>
+<p><strong>즉각적인 피드백 제공</strong></p>
+<p>실시간 플롯은 데이터 변화에 대한 즉각적인 피드백을 제공하여 사용자나 운영자가 신속하게 대응할 수 있도록 합니다. 금융 거래 시스템에서 실시간 주가 데이터를 시각화하여 투자자가 빠르게 시장 상황을 파악하고, 적절한 투자 결정을 내릴 수 있습니다.</p>
+<p><strong>이상 감지 및 문제 해결</strong></p>
+<p>실시간 데이터를 시각화함으로써 데이터의 이상치를 즉시 감지할 수 있습니다. 네트워크 관리에서는 실시간 트래픽 데이터를 모니터링하여 비정상적인 패턴을 발견하고, 네트워크 침입이나 성능 저하 문제를 빠르게 해결할 수 있습니다.</p>
+<p><strong>데이터 흐름의 이해와 통찰력</strong></p>
+<p>실시간 플롯은 데이터 흐름과 그 변화를 시각적으로 이해하는 데 도움을 줍니다. IoT(사물 인터넷) 환경에서는 다양한 센서로부터 수집된 데이터를 실시간으로 시각화하여, 전체 시스템의 상태와 성능을 한눈에 파악할 수 있습니다.</p>
 </div>
-<div class="section" id="animantion">
-<h2><span class="section-number">5.5.2. </span><code class="docutils literal notranslate"><span class="pre">animantion</span></code> 모듈 소개<a class="headerlink" href="#animantion" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 동적이고 애니메이션된 시각화를 쉽게 생성할 수 있는 강력한 도구입니다. 이 모듈을 사용하면 시간에 따라 변화하는 데이터를 시각적으로 표현할 수 있습니다. 특히 실시간 데이터 스트림이나 시뮬레이션 데이터를 시각화하는 데 유용합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/animation_api.html">여기</a>를 참고하세요.</p>
-<p><strong>주요 클래스와 함수</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 기본 클래스인 <code class="docutils literal notranslate"><span class="pre">Animation</span></code>를 상속받아 <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code> 클래스를 만들고, <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code>로부터 함수를 주기적으로 호출하는 <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> 클래스와 일정 길이의 데이터셋을 애니메이션 해주는 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code>로 구성되어 있습니다.</p>
+<div class="section" id="animation">
+<h2><span class="section-number">5.5.2. </span><code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈<a class="headerlink" href="#animation" title="Permalink to this headline">¶</a></h2>
+<p>지금까지 기본적 플롯을 생성하기 위해 사용한 모둘은 <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 하부 패키지인 <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> 모듈(<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>)을 주로 사용하였습니다. 동적(dynamic) 플로팅을 위해서는 다른 하부 패키지를 사용해야 합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 수많은 하부 패키지 중 하나인 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈(<code class="docutils literal notranslate"><span class="pre">matplotlib.animation</span></code>)은 동적이고 애니메이션된 시각화를 쉽게 생성할 수 있는 강력한 도구입니다.</p>
+<div class="admonition-matplotlib admonition">
+<p class="admonition-title">Matplotlib 하부 패키지 종류</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>는 그 인기 만큼 수많은 하부 패키지(또는 모듈)을 제공하고 있습니다.</p>
+<p>개발자라면 너무 많아서 복잡하다고 불평해서는 안됩니다. 개발자의 다양한 요구를 충족하기 위해서 만든 기능들입니다. 게다가 모두 무료로 쓸 수 있습니다. 비슷한 기능을 제공하는 <code class="docutils literal notranslate"><span class="pre">Matlab</span></code> 소프트웨어는 돈을 내야 합니다.</p>
+<p>심지어 <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>은 오픈소스 프로젝트로 모든 소스코드가 공개되어 누구나 자유롭게 접근할 수 있으며, 관심있는 독자라면 직접 고치거나 변형하여 성능개선에 공헌할 수도 있습니다. 좋은 오픈소스는 항상 감사한 마음으로 사용해야 합니다 ^^.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>에서 제공하는 전체 API 목록은 <a class="reference external" href="https://matplotlib.org/stable/api/index.html">공식 문서</a>에서 확인할 수 있습니다.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈을 사용하면 시간에 따라 변화하는 데이터를 시각적으로 표현할 수 있습니다. 특히 실시간 데이터 스트림이나 시뮬레이션 데이터를 시각화하는 데 유용합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/animation_api.html">여기</a>를 참고하세요.</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">5.5.3. </span>주요 클래스와 함수<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>의 <code class="docutils literal notranslate"><span class="pre">animation</span></code> 모듈은 기본 클래스인 <code class="docutils literal notranslate"><span class="pre">Animation</span></code>를 상속받아 <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code> 클래스를 만듭니다. <code class="docutils literal notranslate"><span class="pre">TimedAnimation</span></code> 클래스는 다시 <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code>와 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code> 클래스를 자식으로 갖고 있습니다.</p>
 <div class="figure align-default" id="ch05-07-animation-classes">
-<a class="reference internal image-reference" href="../../_images/ch05_07_animation_classes.png"><img alt="../../_images/ch05_07_animation_classes.png" src="../../_images/ch05_07_animation_classes.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_07_animation_classes.png"><img alt="../../_images/ch05_07_animation_classes.png" src="../../_images/ch05_07_animation_classes.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.21 </span><span class="caption-text">animation 클래스 구조</span><a class="headerlink" href="#ch05-07-animation-classes" title="Permalink to this image">¶</a></p>
 </div>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code></p>
-<p>가장 많이 사용되는 애니메이션 클래스 중 하나로, 주기적으로 함수를 호출하여 플롯을 업데이트합니다.</p>
-<ul>
-<li><p>초기화</p>
+</div>
+<div class="section" id="funcanimation">
+<h2><span class="section-number">5.5.4. </span><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> 클래스<a class="headerlink" href="#funcanimation" title="Permalink to this headline">¶</a></h2>
+<p>함수를 주기적으로 호출하는 <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code> 클래스입니다. 호출 함수로부터 실시간 데이터(센서 데이터 등)를 리턴 받아 사용할 수 있습니다. 방송으로 보면 생방송(라이브 방송)에 해당합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span> <span class="pre">인터페이스</span></code></p>
+<p>가장 많이 사용되는 애니메이션 클래스 중 하나로, 주기적으로 함수를 호출하여 플롯을 업데이트합니다. 자세한 내용은 공식 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html">문서</a>를 참고하기 바랍니다.</p>
+<p><strong>초기화(객체 생성)</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span>
     <span class="n">fig</span><span class="p">,</span>
     <span class="n">func</span><span class="p">,</span>
@@ -545,19 +648,48 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>매개변수(parameters, <code class="docutils literal notranslate"><span class="pre">params</span></code>)</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 <code class="docutils literal notranslate"><span class="pre">Figure</span></code> 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: 각 프레임에서 호출되는 함수이름, 플롯을 업데이트할 값을 생성해 주는 함수(첫번째 인자는 반드시 <code class="docutils literal notranslate"><span class="pre">frame</span></code>으로 전달해야 함), 인자(<code class="docutils literal notranslate"><span class="pre">argument</span></code>)를 추가해서 <code class="docutils literal notranslate"><span class="pre">func</span></code> 정의하고 싶을 경우 2가지 방법이 가능함.</p>
+  <br />
+<p><strong>방법 1. <code class="docutils literal notranslate"><span class="pre">functools.partial</span></code> 사용 (<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>에서 추천하는 기법)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">partial</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;something&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+  <br />
+<p><strong>방법 2. <code class="docutils literal notranslate"><span class="pre">fargs</span></code> 파라미터 이용</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="o">*</span><span class="n">fargs</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">iterable_of_artists</span>
+
+<span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">fargs</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;something&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
 </li>
-<li><p>매개변수</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: 각 프레임에서 호출되는 함수로, 플롯을 업데이트하는 역할</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">frames</span></code>: 애니메이션의 프레임 수 또는 프레임 생성기</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">init_func</span></code>: 애니메이션 시작 전에 한 번 호출되는 초기화 함수의 이름</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fargs</span></code>: func에 전달할 추가 인수</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">save_count</span></code>: 저장할 프레임 수</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fargs</span></code>: <code class="docutils literal notranslate"><span class="pre">func</span></code>에 전달할 추가 인수 (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>로 전달), <em>optional</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frames</span></code>: 애니메이션의 프레임(1초당 이미지 개수) 수 또는 프레임 생성 함수, <em>optional</em>.</p>
+<p>(예) 정수 100을 입력할 경우 <code class="docutils literal notranslate"><span class="pre">range(100)</span></code>을 <code class="docutils literal notranslate"><span class="pre">func</span></code>로 전달</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">init_func</span></code>: 애니메이션 시작 전에 한 번 호출되는 초기화 함수의 이름, <em>optional</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_count</span></code>: 저장할 프레임 수, <em>optional</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부, <em>optional</em>.</p></li>
 </ul>
-</li>
-<li><p>간단 예제</p>
+<div class="admonition-blitting admonition">
+<p class="admonition-title">여기서 잠깐! Blitting이란?</p>
+<p>컴퓨터 그래픽에서 렌더링(화면에 이미지를 그리는 작업) 수행 시 변하지 않는 영역은 그대로 두고 변하는 픽셀만 그리는 접근법입니다.</p>
+<p>예를 들어 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>가 생성한 <code class="docutils literal notranslate"><span class="pre">plot</span></code>에서 배경, <code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>축을 표현하는 그래픽 등은 변하지 않기 때문에 그대로 두고, 변하는 데이터만 새롭게 그리는 방법입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Blitting</span></code>은 컴퓨터 그래픽 작업을 빠르게 처리할 수 있기 때문에 광범위하게 사용되고 있습니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/users/explain/animations/blitting.html">공식 문서</a>를 참고하세요.</p>
+</div>
+<p><strong>간단 예제</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
@@ -578,19 +710,25 @@
 <span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
 <span class="c1"># 애니메이션 생성</span>
-<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">update</span><span class="p">,</span>
+    <span class="n">frames</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span>
+    <span class="n">blit</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 
+<span class="c1"># 화면에 플롯 시현</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">Artist</span></code> 객체의 리스트를 사용하여 애니메이션을 생성합니다.
-각 프레임에서 플롯이 어떻게 보일지를 명시적으로 정의하여 주어진 데이터를 실시간으로 표현하면 어떻게 보이는지 확인하기 위하여 사용합니다.</p>
-<ul>
-<li><p>초기화</p>
+</div>
+<div class="section" id="artistanimation">
+<h2><span class="section-number">5.5.5. </span><code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code> 클래스<a class="headerlink" href="#artistanimation" title="Permalink to this headline">¶</a></h2>
+<p>이미 생성된 데이터가 시간에 따라 어떻게 변화되는지 관찰해야 하는 경우도 있을 것입니다. 일정 길이의 데이터셋을 애니메이션(시뮬레이션) 해주는 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code>클래스는 저장된 데이터셋을 불러와 녹화 재생기처럼 에니메이션 해주는 클래스입니다. 방송에 비유하면 녹화방송(재방송)에 해당합니다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Artist</span></code> 인터페이스</strong></p>
+<p>각 프레임에서 플롯이 어떻게 보일지를 명시적으로 정의하여 주어진 데이터를 실시간으로 표현하면 어떻게 보이는지 확인하기 위하여 사용합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.ArtistAnimation.html">공식 문서</a>를 참고하세요.</p>
+<p><strong>초기화(객체 생성)</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">ArtistAnimation</span><span class="p">(</span>
     <span class="n">fig</span><span class="p">,</span>
     <span class="n">artists</span><span class="p">,</span>
@@ -600,8 +738,7 @@
 <span class="p">)</span>
 </pre></div>
 </div>
-<ul>
-<li><p>매개변수</p>
+<p><strong>매개변수(parameters, <code class="docutils literal notranslate"><span class="pre">params</span></code>)</strong></p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fig</span></code>: 애니메이션이 적용될 Figure 객체</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">artists</span></code>: 각 프레임에 대한 Artist 객체의 리스트</p></li>
@@ -609,8 +746,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">repeat_delay</span></code>: 애니메이션 반복 간의 지연 시간</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">blit</span></code>: blitting 최적화를 사용할지 여부</p></li>
 </ul>
-</li>
-<li><p>간단 예제</p>
+<p><strong>간단 예제</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
@@ -628,21 +764,152 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">animation</span></code> 동영상 저장</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 현재 디렉토리에 animation.mp4 이름의 파일로 저장</span>
-<span class="n">ani</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;animation.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">)</span>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">5.5.6. </span><code class="docutils literal notranslate"><span class="pre">animation</span></code> 동영상 저장<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Anmaition</span></code> 객체가 생성한 플롯은 저장 기능(<code class="docutils literal notranslate"><span class="pre">save()</span></code> 메서드)을 가지고 있습니다. 쉽게 realtime plot을 저장할 수 있다는 뜻입니다. 정말 편리한 기능입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code>와 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code>도 <code class="docutils literal notranslate"><span class="pre">Anmaition</span></code>의 자식 클래스이므로 당연히 저장 기능을 사용할 수 있습니다. <a class="reference internal" href="#ch05-07-animation-classes"><span class="std std-numref">Fig. 5.21</span></a>를 기억해 보세요 ^^.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">animation.save</span></code> 인터페이스</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">Animation</span></code> 객체가 생성한 플롯을 사용자가 원하는 형태로 저장하는 기능입니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.Animation.html#matplotlib.animation.Animation.save">공식 문서</a>를 참고하기 바랍니다.</p>
+<p><strong>초기화(객체 생성)</strong></p>
+<p>애니메이션 저장을 위한 별도의 객체 생성은 필요하지 않습니다. 왜냐하면 realtime 플롯을 위해 이미 <code class="docutils literal notranslate"><span class="pre">Animiation</span></code> 객체를 생성했기 때문입니다. <code class="docutils literal notranslate"><span class="pre">FuncAnimation</span></code>와 <code class="docutils literal notranslate"><span class="pre">ArtistAnimation</span></code> 모두 가능합니다.</p>
+<p><strong>매개변수(parameters, <code class="docutils literal notranslate"><span class="pre">params</span></code>)</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animation</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span>
+    <span class="n">writer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="n">fps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>        <span class="n">dpi</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">codec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>     <span class="n">bitrate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="n">extra_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="n">extra_anim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">savefig_kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">progress_callback</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
 </pre></div>
 </div>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: <code class="docutils literal notranslate"><span class="pre">str</span></code>, 저장할 파일 이름, (예) <code class="docutils literal notranslate"><span class="pre">mymovie.mp4</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">writer</span></code>: <code class="docutils literal notranslate"><span class="pre">MovieWriter</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">str</span></code>, 기본값: <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>.</p>
+<p>간단하게 사용하려면 <code class="docutils literal notranslate"><span class="pre">filename</span></code> 값만 전달하면 됩니다.
+Default / Optional <code class="docutils literal notranslate"><span class="pre">parameter</span></code>에 대한 세부적인 설명은 생략합니다. <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.Animation.html#matplotlib.animation.Animation.save">공식 문서</a>를 확인해 주세요.</p>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fps</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dpi</span></code>: <code class="docutils literal notranslate"><span class="pre">float</span></code>, default: <code class="docutils literal notranslate"><span class="pre">figure</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">codec</span></code>: <code class="docutils literal notranslate"><span class="pre">str</span></code>, default: <code class="docutils literal notranslate"><span class="pre">h264</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitrate</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span></code>, default: <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra_args</span></code>: <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, <em>optional</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metadata</span></code>: <code class="docutils literal notranslate"><span class="pre">dict[str,</span> <span class="pre">str]</span></code>, default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra_anim</span></code>: <code class="docutils literal notranslate"><span class="pre">list</span></code>, default: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">savefig_kwargs</span></code> : <code class="docutils literal notranslate"><span class="pre">dict</span></code>, default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">progress_callback</span></code> : <code class="docutils literal notranslate"><span class="pre">function</span></code>, <em>optional</em></p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">writer</span></code> 파라미터의 기본값(<code class="docutils literal notranslate"><span class="pre">default</span></code>)이 <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>로 지정되어 있습니다. 따라서 동영상 저장을 하려면 <a class="reference external" href="https://ffmpeg.org/">ffmpeg</a>가 설치되어 있어야 합니다.</p>
+<p>모든 것을 기본설정으로 처리하고, 간단히 저장하려면 다음 명령어로도 충분합니다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 현재 디렉토리에 animation.mp4 이름의 파일로 저장</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;animation.mp4&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">5.5.3. </span>Realtime Plot 예제<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code>는 별도의 설치 파일(<code class="docutils literal notranslate"><span class="pre">.msi</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">.exe</span></code>)을 제공하지 않기 때문에 빌드(build)가 된 압축 파일을 다운로드하여 실행 경로(path)를 직접 설정해 주면 됩니다.</p>
+<p>윈도우에 <code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code> 설치 <span class="math notranslate nohighlight">\(\to\)</span> 참고할 만한 블로그 (<a class="reference external" href="https://zerobit.tistory.com/42">바로가기</a>)</p>
+<p>다음 예제는 2개의 3차원(3D) 서브 플롯을 갖는 Figure를 생성하고 실행시킨 것을 동영상으로 저장하는 예제 코드입니다.</p>
+<ul class="simple">
+<li><p><strong>참고 사항</strong>: 동영상을 만드는데 약 3분(180초) 처리 시간이 필요합니다.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;3D 애니메이션 예제&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+
+<span class="c1"># X축 및 Y축 좌표 생성</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1"># -2부터 2까지 균일간격 101개 값 생성</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span> <span class="c1"># -2부터 2까지 균일간격 101개 값 생성</span>
+
+<span class="c1"># XY 평면 좌표 생성</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+
+<span class="c1"># 모든 XY 평면상 값에 해당하는 Z값 생성</span>
+<span class="n">zz</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">yy</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 3D 플롯 생성</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
+    <span class="c1"># layout 방식 설정 - 아래 두가지 방법 모두 가능</span>
+    <span class="c1"># constrained_layout=True,</span>
+    <span class="c1"># layout=&#39;tight&#39;,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+    <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="s1">&#39;3d&#39;</span><span class="p">}</span> <span class="c1"># 각 sub-plot에 전달할 args</span>
+<span class="p">)</span>
+
+<span class="c1"># 참고사항</span>
+<span class="c1"># constrained_layout</span>
+<span class="c1"># tight_layout과 비슷하게 sub-plot을 자동 배치해주는 옵션입니다.</span>
+<span class="c1"># 하지만, tight_layout 보다 유연한 배치를 제공합니다.</span>
+<span class="c1">#   - sub-plot에 할당된 color bar 자동 배치</span>
+<span class="c1">#   - 동일한 행/열에 배치된 sub-plot의 크기를 자동 조정</span>
+<span class="c1">#   - 가로축, 세로축 자동 맞춤</span>
+<span class="c1"># 참고: https://matplotlib.org/stable/users/explain/axes/constrainedlayout_guide.html</span>
+
+<span class="c1"># constrained_layout vs tight_layout</span>
+<span class="c1"># 이것 저것 신경쓰지 않고 matplotlib에게 맡기고 싶다면 constrained_layout 사용</span>
+<span class="c1"># 미세한 조정을 직접 하고 싶다면 tight_layout 사용</span>
+
+<span class="c1">### 첫번째(왼쪽) plot 생성 ###</span>
+<span class="c1"># 3차원 채워진 등고선, contourf 메서드 -&gt; 연결된 등고선 생성</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">,</span> <span class="c1"># 컬러맵 지정,</span>
+    <span class="c1"># cmap 참고: https://matplotlib.org/stable/users/explain/colors/colormaps.html#grayscale-conversion</span>
+    <span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="c1"># 등고선 라인 개수</span>
+<span class="p">)</span>
+
+<span class="c1">### 두번째(오른쪽) plot 생성 ###</span>
+<span class="c1"># 2차원 바닥 등고선 생성</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;inferno&quot;</span><span class="p">,</span>
+    <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span>         <span class="c1"># edge color, k: black</span>
+    <span class="c1"># edge color format: https://matplotlib.org/stable/users/explain/colors/colors.html#color-formats</span>
+    <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">,</span>  <span class="c1"># line 스타일(선 종류)</span>
+    <span class="c1"># lie syyles format: https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span>  <span class="c1"># line width(선 굵기)</span>
+<span class="p">)</span>
+<span class="c1"># 3차원 색이 채워진 등고선 생성</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="c1"># 3차원 선으로만 연결된 등고선 생성</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">zz</span><span class="p">,</span> <span class="n">zdir</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=-</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">])</span>
+<span class="c1"># Sub-plot 제목 지정</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;(A): contourf()&quot;</span><span class="p">,</span> <span class="s2">&quot;(B): plot_surface() + 2D contours&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">titles</span><span class="p">):</span>
+    <span class="c1"># 시작할 때 바라보는 각도 지정</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=</span><span class="mi">225</span><span class="p">)</span> <span class="c1"># 높이각: 20도, 좌우각: 225도</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Z축 범위 지정</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># animation frame마다 적용되는 변화</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame_number</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mi">225</span> <span class="o">+</span> <span class="n">frame_number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 좌우각 업데이트</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mi">225</span> <span class="o">+</span> <span class="n">frame_number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 좌우각 업데이트</span>
+
+<span class="c1"># animation 객체 생성</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span>
+    <span class="n">fig</span><span class="p">,</span>
+    <span class="n">update</span><span class="p">,</span>
+    <span class="n">frames</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span> <span class="c1"># 초당 프레임(이미지) 개수</span>
+    <span class="n">interval</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="c1"># 프레임과 프레임 시간 간격(밀리초), 기본값: 200ms</span>
+<span class="p">)</span>
+
+<span class="c1"># animation을 mp4 동영상으로 저장</span>
+<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;animation_result.mp4&quot;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>위 코드로 생성된 동영상은 다음과 같습니다.</p>
+<!-- <div>
+    <iframe src="../files/ch05/animation_result.mp4">
+</div> -->
+<p><video src="../files/ch05/animation_result.mp4" width="100%" controls></video></p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">5.5.7. </span>Realtime Plot 예제<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Python에서 실시간 플롯을 생성하는 방법을 실습해 봅니다.</p>
 <p>Matplotlib의 animation 모듈을 사용하여 데이터를 실시간으로 업데이트하는 방법을 설명합니다.</p>
 <p>다음 코드는 Matplotlib을 사용하여 실시간 플롯을 생성하는 예제입니다.</p>
@@ -768,7 +1035,7 @@ Matplotlib의 FuncAnimation을 사용하여 애니메이션을 초기화합니�
     <a class='right-next' id="next-link" href="05-06_project.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.6. </span>Challenge Project</p>
+        <p class="prev-next-title"><span class="section-number">5.6. </span>도전 프로젝트</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.3. Challenge Project" href="04-03_project.html" />
+    <link rel="next" title="4.3. 도전 프로젝트" href="04-03_project.html" />
     <link rel="prev" title="4.1. 데이터 처리 with Pandas" href="04-01_pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -475,7 +487,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     4.2.4.5. 서로 다른 데이터 합치기(병합)
+     4.2.4.5. 데이터 합치기(병합)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -552,7 +564,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id9">
-     4.2.4.5. 서로 다른 데이터 합치기(병합)
+     4.2.4.5. 데이터 합치기(병합)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -578,13 +590,13 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <span id="id2"></span><h1><span class="section-number">4.2. </span>기본 데이터 분석<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>컴퓨터가 관리하는 데이터는 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 형태로 관리되는 경우가 많습니다. CSV와 TSV는 모두 데이터를 저장하고 교환하는 데 매우 유용한 형식입니다. CSV는 더 널리 사용되지만, TSV는 필드 값에 콤마가 포함된 경우 더 유리할 수 있습니다. 적절한 형식을 선택하는 것은 데이터의 특성과 사용 목적에 따라 달라집니다.</p>
+<p>컴퓨터가 관리하는 데이터는 <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 형태로 관리되는 경우가 많습니다. CSV와 TSV는 모두 데이터를 저장하고 교환하는 데 매우 유용한 형식입니다. CSV는 더 많이 사용되지만, 필드(실제 데이터 자체)에 콤마가 포함된 경우 TSV가 더 유리할 수 있습니다. 적절한 데이터 저장 형식을 선택하는 것은 데이터의 특성과 사용 목적에 따라 달라집니다.</p>
 <div class="section" id="csv-comma-separated-values">
 <h2><span class="section-number">4.2.1. </span>CSV (Comma-Separated Values)<a class="headerlink" href="#csv-comma-separated-values" title="Permalink to this headline">¶</a></h2>
 <p>CSV 파일은 콤마(,)로 구분된 데이터를 저장하는 파일 형식입니다. 각 줄은 데이터 레코드를 나타내며, 각 레코드는 쉼표로 구분된 필드(열)로 구성됩니다. CSV 파일은 간단하고 널리 사용되며, 다양한 프로그램에서 지원됩니다.</p>
 <p><strong>특징</strong></p>
 <ul>
-<li><p>구분자: 콤마(,).</p></li>
+<li><p>구분자: 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>).</p></li>
 <li><p>사용 사례: 스프레드시트 프로그램(예: MS Excel, Google Sheets), DBMS, 데이터 분석 도구 등</p></li>
 <li><p>장점: 간단한 구조, 다양한 애플리케이션에서 쉽게 사용 가능</p></li>
 <li><p>단점: 데이터에 콤마가 포함될 경우 이스케이프(제거 또는 다른 문자로 치환) 처리가 필요</p></li>
@@ -607,7 +619,7 @@ Linda,32,London
 <li><p>구분자: 탭 문자(<code class="docutils literal notranslate"><span class="pre">\t</span></code>)</p></li>
 <li><p>사용 사례: 스프레드시트 프로그램, DBMS, 데이터 분석 도구 등</p></li>
 <li><p>장점: 필드 값에 콤마가 포함되어도 문제가 되지 않음, 구분자가 명확하여 가독성 높음</p></li>
-<li><p>단점: CSV에 비해 덜 일반적이며, 일부 애플리케이션에서는 기본적으로 지원하지 않을 수 있음</p></li>
+<li><p>단점: CSV에 비해 덜 일반적이며, 일부 애플리케이션에서는 기본 지원이 안되는 경우도 있음</p></li>
 <li><p>데이터 예시</p>
 <div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Name    Age    City
 John    28    New York
@@ -697,13 +709,17 @@ Linda    32    London
 </div>
 </div>
 <div class="section" id="id9">
-<h3><span class="section-number">4.2.4.5. </span>서로 다른 데이터 합치기(병합)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4.5. </span>데이터 합치기(병합)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pandas.merge()</span></code> 메서드를 이용하면 서로 다른 데이터 테이블을 합칠 수 있습니다.</p>
 <p>자세한 내용은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.merge.html#pandas.merge">pandas.merge()</a>를 참고하세요.</p>
 <p>데이터 프레임(데이터베이스의 경우 DB Table)을 병합하는 방법은 다양합니다. 대표적으로는 <code class="docutils literal notranslate"><span class="pre">merge()</span></code>, <code class="docutils literal notranslate"><span class="pre">join()</span></code>, <code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>, <code class="docutils literal notranslate"><span class="pre">stack()</span></code> 등이 있습니다.</p>
 <p>그림을 이용한 간단한 설명은 <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/merging.html#merge">여기를 클릭</a>하면 확인할 수 있습니다.</p>
 <p>우리는 <code class="docutils literal notranslate"><span class="pre">merge()</span></code> 메서드를 활용하여 2개 데이터 테이블을 합치는 실습을 간단하게 해 보겠습니다.</p>
-<p>아래 코드는 2개의 데이터 프레임을 <code class="docutils literal notranslate"><span class="pre">EmployeeID</span></code>라는 컬럼명(column name) 기준으로 병합하는 코드입니다.</p>
+<p>아래 코드는 2개의 데이터 프레임을 <code class="docutils literal notranslate"><span class="pre">EmployeeID</span></code>라는 컬럼명(column name) 기준으로 병합하는 코드입니다. 실습파일을 다운로드하여 현재 디렉토리에 복사합니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">employee.csv</span></code>: <a href="../files/ch04/employee.csv">다운로드</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sales.csv</span></code>: <a href="../files/ch04/sales.csv">다운로드</a></p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -813,7 +829,7 @@ Linda    32    London
     <a class='right-next' id="next-link" href="04-03_project.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.3. </span>Challenge Project</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>도전 프로젝트</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

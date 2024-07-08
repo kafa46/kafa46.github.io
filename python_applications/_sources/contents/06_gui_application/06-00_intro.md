@@ -9,7 +9,7 @@ GUI(Graphic User Interface) 애플리케이션은 사용자가 그래픽 인터�
 
 ```{figure} ../imgs/chap_06/ch06_00_01_gui_intro.webp
 ---
-width: 70%
+width: 80%
 name: ch06_00_01_gui_intro
 ---
 GUI 프로그래밍을 통해 User는 소프트웨어를 직관적으로 사용할 수 있습니다.

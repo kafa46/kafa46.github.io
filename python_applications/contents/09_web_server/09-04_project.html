@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9.4. Challenge Project &#8212; 도전! Python Applications</title>
+    <title>9.4. 도전 프로젝트 &#8212; 도전! Python Applications</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -435,7 +447,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Challenge Project</h1>
+                <h1>도전 프로젝트</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -446,14 +458,14 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="challenge-project">
-<span id="id1"></span><h1><span class="section-number">9.4. </span>Challenge Project<a class="headerlink" href="#challenge-project" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<span id="id2"></span><h1><span class="section-number">9.4. </span>도전 프로젝트<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>이전에 만든 <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code> 서버를 확장하여 사용자로부터 주소(<code class="docutils literal notranslate"><span class="pre">address</span></code>)와 학교(<code class="docutils literal notranslate"><span class="pre">university</span></code>) 정보를 추가적으로 받아서 데이터베이스에 저장하는 시스템을 만들어 봅니다.</p>
 <p>우선 정답 없이 구현할 수 있도록 노력해 보세요^^</p>
 <p><strong>고민하는 과정에서 더 많은 것을 배울 수 있습니다.</strong></p>
 <p>웹 애플리케이션 업그레이드를 위해 수정해야 할 내용은 3가지 입니다.</p>
-<ul>
-<li><p>Model: 추가 정보를 받을 수 있도록 Model 클래스 수정</p>
+<br />
+<p><strong><code class="docutils literal notranslate"><span class="pre">Model</span></code>: 추가 정보를 받을 수 있도록 Model 클래스 수정</strong></p>
 <p><strong>힌트</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -466,8 +478,8 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;User </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s1">&gt;&#39;</span>
 </pre></div>
 </div>
-</li>
-<li><p>Templates: 사용자가 추가 정보를 입력할 수 있도록 html 파일 업그레이드</p>
+<br />
+<p><strong><code class="docutils literal notranslate"><span class="pre">Templates</span></code>: 추가 정보를 입력할 수 있도록 html 업그레이드</strong></p>
 <p><strong>힌트</strong></p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;submit&#39;) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>Name:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
@@ -482,8 +494,8 @@
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</li>
-<li><p>View: 웹 애플리케이션이 추가된 정보를 데이터베이스에 반영할 수 있도록 업그레이드</p>
+<br />
+<p><strong><code class="docutils literal notranslate"><span class="pre">View</span></code>: 추가된 정보를 데이터베이스에 반영할 수 있도록 업그레이드</strong></p>
 <p><strong>힌트</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/submit&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">submit</span><span class="p">():</span>
@@ -508,8 +520,6 @@
     <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;User </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1"> with email </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s1">, address </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s1">, and university </span><span class="si">{</span><span class="n">university</span><span class="si">}</span><span class="s1"> has been added to the database.&#39;</span>
 </pre></div>
 </div>
-</li>
-</ul>
 <p>업그레이드 내용을 포함한 전체 코드는 <a class="reference internal" href="../solutions/ch09_solution.html"><span class="doc std std-doc">여기</span></a>를 참고하세요.</p>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
 </div>

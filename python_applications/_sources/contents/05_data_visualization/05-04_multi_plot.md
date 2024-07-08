@@ -1,7 +1,7 @@
 (05-04)=
 # Multi-plot 그리기
 
-Matplotlib은 하나의 Figure에 여러 개의 플롯을 배치할 수 있는 다양한 기능을 제공합니다. 이를 통해 여러 데이터를 한 눈에 비교하고 분석할 수 있습니다. 다음 코드는 Multi-plot을 사용하는 다양한 예제를 보여줍니다.
+Matplotlib은 하나의 Figure에 여러 개의 플롯을 배치할 수 있는 다양한 기능을 제공합니다. 멀티 플롯을 잘 활용할 수 있다면 여러분이 갖고 있는 데이터를 한 눈에 비교하고 분석할 수 있으며, 개발자 동료나 다른 분야의 관련자들에게 설명하기도 편리합니다. 누구도 가르쳐주지 않지만, 개발자라면 꼭 알아야 하는 기술 중 하나입니다.
 
 
 ## Matplotlib 구성 이해하기
@@ -10,20 +10,27 @@ Matplotlib은 하나의 Figure에 여러 개의 플롯을 배치할 수 있는 �
 
 ```{figure} ../imgs/chap_05/ch05_06_01_figure_axes_axis.png
 ---
-width: 80%
+width: 90%
 name: ch05_06_01_figure_axes_axis
 ---
 Figure, Axes, Axis 관계
 ```
 
-**`Figure`**
+**`Figure` 객체**
 
-전체 플롯을 그리는 도화지(또는 액자)를 표현하는 객체입니다. 도화지 1장에 하나의 그림을 그릴 수도 있고, 도화지를 가로/세로로 분할해서 여러 그림을 그릴수도 있습니다. `Figure` 객체에 대한 자세한 설명은 [여기](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure)를 참고하세요.
+전체 플롯을 그리는 **도화지**(또는 액자)를 표현하는 객체입니다.
+
+도화지 1장에 하나의 그림을 그릴 수도 있고, 도화지를 가로/세로로 분할해서 여러 그림을 그릴수도 있습니다.
+
+`Figure` 객체에 대한 자세한 설명은 [여기](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure)를 참고하세요.
+
 서브 플롯(`Axes`)이 있을 경우 모든 서브 플롯을 추적(tracking)하고, 그림 상에 나타나는 정보(`Artist` 가 생성한 정보)를 관리합니다.
 
 일반적으로 `Figure`는 다음과 같이 생성합니다.
 
 ```python
+import matplotlib.pyplot as plt
+
 fig = plt.figure()             # 자식 플롯이 없는 빈 도화지 생성
 fig, ax = plt.subplots()       # 도화지에 1개의 서브 플롯 생성
 fig, axs = plt.subplots(2, 2)  # 도화지에 2행, 2열로 구성된 서브 플롯 생성
@@ -36,32 +43,32 @@ fig, axs = plt.subplot_mosaic([['left', 'right_top'],
 
 ```{figure} ../imgs/chap_05/ch05_06_03_sequential_outputs.webp
 ---
-width: 80%
+width: 90%
 name: ch05_06_03_sequential_outputs
 ---
 4개 fig를 순서대로 생성한 이미지
 ```
 
-**`Axes`**
+**`Axes` 객체**
 
 도화지 안에 들어갈 하부(자식 플롯) 그림들을 표현하는 객체입니다. {numref}`ch05_06_01_figure_axes_axis`은 도화지를 반으로 접어서 1행 2열로 2개 영역을 만드는 예제입니다. 이 때 matplotlib는 2개의 `Axes` 객체가 생성됩니다. `Axes`에 대한 자세한 설명은 [여기](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axes.html#matplotlib.pyplot.axes)를 참고하세요.
 
 
-**`Axis`**
+**`Axis` 객체**
 
 각각의 하부 그림 `Axes`에 속하는 객체입니다.
 `Axes`와 이름이 비슷하여 많은 학생들이 헷갈려 하는 개념입니다.
 `Axis`는 축(axis)을 표현하며 2차원 플롯에서는 가로(`x`)축과 세로(`y`)축을 표현합니다. 3차원 플롯일 경우 당연히 `x`, `y`, `z` 축을 표현하게 됩니다. 축의 `ticks`(눈금)을 설정하거나 `ticklabels`(눈금 설명) 등을 수행할 때 사용하는 개념입니다.
 
 
-`Artist`
+`Artist 객체`
 
-그림(`Figure`)에서 사람의 눈으로 볼 수 있는 모든 것을 의미합니다.
+그림(`Figure`)에서 사람의 눈에 보이는 정보를 표현하는 객체입니다. 플롯에서 눈에 보이는 모든 것을 의미합니다.
 `Figure`, `Axes`, `Axis`도 `Artist`입니다.
 
 ```{figure} ../imgs/chap_05/ch05_06_02_components_of_figure.webp
 ---
-width: 80%
+width: 90%
 name: ch05_06_02_components_of_figure
 ---
 Figure 객체의 주요 구성품
@@ -76,14 +83,14 @@ Figure 객체의 주요 구성품
 
 여백이 깨진 경우에는 프로그래머가 일일히 수작업으로 서브 플롯의 여백을 재조정 하는 작업은 매우 번거롭습니다.
 
-Matplotlib에서는 자동으로 여백을 재조정해주는 메서드 'tight_layout( )'을 제공합니다.
+Matplotlib에서는 자동으로 여백을 재조정해주는 메서드 `tight_layout()` 메서드를 제공합니다. 자세한 내용은 [공식 문서](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout)를 참고하기 바랍니다.
 ```
 
 아래 그림은 `tight_layout()` 적용하지 않아 여백이 깨진 서브 플롯입니다.
 
 ```{figure} ../imgs/chap_05/ch05_06_04_layout_broken.webp
 ---
-width: 80%
+width: 90%
 name: ch05_06_04_layout_broken
 ---
 여백이 깨진 서브 플롯
@@ -164,12 +171,11 @@ subplot을 이용한 multi-plot 생성 결과
 
 ## 여러 열과 행의 Subplot
 
-여러 행과 열로 구성된 subplot을 생성하는 방법입니다.
+여러 행과 열로 구성된 subplot을 생성하는 방법을 설명합니다.
 
+실습 예제로 2행 3열의 서브 플롯을 생성하는 코드를 작성해 봅니다.
 
-다음 예제는 2행 3열의 서브 플롯을 생성하는 코드입니다.
-
-내용이 없이 비어 있는 서브 플롯 6개가 생성됩니다.
+처음에는 내용이 없이 비어 있는 서브 플롯 6개가 생성됩니다.
 
 ```python
 import matplotlib.pyplot as plt
@@ -189,15 +195,15 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_06_multiplot_01.png
 ---
-width: 80%
+width: 90%
 name: ch05_06_multiplot_01
 ---
-subplots을 이용한 2행 3열 멀티 플롯 생성
+`subplots()`을 이용한 2행 3열 플롯 생성
 ```
 
-다음 코드는 2행, 2열의 서브 플롯을 생성하는 코드입니다.
+다음 코드는 2행, 2열의 서브 플롯에 서로 다른 데이터를 시각화하는 코드입니다.
 
-각가의 서브 플롯에 사인 함수, 코사인 함수, 탄젠트함수, 지수함수 데이터를 표현하게 됩니다.
+각각의 서브 플롯에 `sine`(사인) 함수, `cosine`(코사인) 함수, `tangent`(탄젠트) 함수, `exponential`(지수) 함수 데이터를 표현하게 됩니다.
 
 ```python
 import matplotlib.pyplot as plt

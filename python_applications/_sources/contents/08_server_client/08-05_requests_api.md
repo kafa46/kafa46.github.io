@@ -15,7 +15,7 @@
 
 ```{figure} ../imgs/chap_08/ch08_05_02_data_search_keyword.png
 ---
-width: 80%
+width: 95%
 name: ch08_05_02_data_search_keyword
 ---
 공공데이터포털에서 `도로교통공단` 관련 데이터 검색
@@ -213,7 +213,9 @@ URL 문자열에 특수 문자를 지정하고, 해당 문자를 만나면 문�
 
 ## 교통정보 가져오기
 
-위 그림의 샘플코드에서 `url` 변수는 API 요청을 위한 공공데이터포털 주소입니다. `params` 변수는 {numref}`ch08_05_08_api_request_details`의 요청 파라미터를 파이썬 `사전(dictionary)` 구조를 이용하여 작성한 것입니다.
+위 그림의 샘플코드에서 `url` 변수는 API 요청을 위한 공공데이터포털 주소입니다. 
+
+`params` 변수는 {numref}`ch08_05_08_api_request_details`의 요청 파라미터를 파이썬 `사전(dictionary)` 구조를 이용하여 작성한 것입니다.
 
 ```python
 import requests
