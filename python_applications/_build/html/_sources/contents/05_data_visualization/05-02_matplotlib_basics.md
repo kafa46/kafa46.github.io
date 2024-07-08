@@ -1,68 +1,77 @@
 (05-02)=
-# Matplotlib 기본 사용법
+# `Matplotlib` 기본 사용법
 
-Matplotlib은 Python에서 데이터 시각화를 위한 강력한 라이브러리로, 다양한 유형의 그래프와 플롯을 생성할 수 있습니다.
+`Matplotlib`은 Python에서 데이터 시각화를 위한 강력한 라이브러리로, 다양한 유형의 그래프와 플롯을 생성할 수 있습니다.
 
 일반적인 사용 절차는 다음과 같습니다.
 
-자세한 내용은 matplotlib의 API 공식 문서 ([click me](https://matplotlib.org/stable/api/matplotlib_configuration_api.html))를 참고하면 됩니다.
+자세한 내용은 `matplotlib`의 API 공식 문서 ([click me](https://matplotlib.org/stable/api/matplotlib_configuration_api.html))를 참고하면 됩니다.
 
-- `pyplot` 임포트 하기
-  ```python
-    import matplotlib.pyplot as plt
-  ```
+**`pyplot` 임포트 하기**
 
-- `plot()` 메서드에 `x`축 값과 `y`축 값을 전달하기
-  ```python
-    plt.plot(x, y)
-    # x: x축 데이터
-    # y: y축 데이터
-    # 하나의 데이터만 전달된 경우
-    #   전달된 데이터는 y축 데이터로 처리하고,
-    #   x축은 matplotlib에서 자동 생성
-  ```
+```python
+  import matplotlib.pyplot as plt
+```
 
-- 그래프 제목, `x`, `y` 축 제목 등 필요한 정보 설정하기
-  ```python
-    plt.title('Line Plot Example')
-    plt.xlabel('X Axis')
-    plt.ylabel('Y Axis')
-    # 다양한 설정을 추가할 수 있음
-    :
-    :
-  ```
+**`plot()` 메서드에 `x`축 값과 `y`축 값을 전달하기**
 
-- `show()` 메서드를 이용해 그래프 생성하기
-  ```python
-    plt.show()
-  ```
+```python
+  plt.plot(x, y)
+  # x: x축 데이터
+  # y: y축 데이터
+  # 하나의 데이터만 전달된 경우
+  #   전달된 데이터는 y축 데이터로 처리하고,
+  #   x축은 matplotlib에서 자동 생성
+```
 
-- 필요한 경우 그래프를 저장하기
-  ```python
-    plt.savefig(
-        file_name: str, # 저장할 파일 이름 (문자열)
-        tranparent: bool = False, # 배경을 투명하게 처리할지 여부
-        dpi: int = rcParams["savefig.dpi"], # 해상도
-        format: str = 'png, svg, ... unset from file_name', # 이미지 포맷 (파일 이름으로부터 이용)
-    )
-  ```
+**그래프 제목, `x`, `y` 축 제목 등 필요한 정보 설정하기**
 
-    ```{admonition} 여기서 잠깐!!! 그래프? 플롯?
-    Computer Science에서 그래프는 수학적 구조로, 객체(노드 또는 정점)와 객체 간의 관계(에지 또는 간선)를 나타냅니다. 그래프는 정형화된 데이터 구조로서, 네트워크, 소셜 미디어 연결, 경로 탐색, 트리 구조 등 다양한 응용 분야에서 사용됩니다.
+```python
+  plt.title('Line Plot Example')
+  plt.xlabel('X Axis')
+  plt.ylabel('Y Axis')
+  # 다양한 설정을 추가할 수 있음
+  :
+  :
+```
 
-    플롯은 수치 데이터를 시각적으로 표현하는 방법입니다. 플롯은 데이터를 직관적으로 이해하고 분석하기 위해 사용되며, 다양한 형태의 차트와 그래프를 포함합니다.
+**`show()` 메서드를 이용해 그래프 생성하기**
 
-    | 요소 | 그래프(Graph) | 플롯(Plot) |
-    |-----|--------------|-------------|
-    | 목적 | 객체와 객체 간의 관계를 나타내기 위해 사용 | 수치 데이터를 시각적으로 표현하기 위해 사용 |
-    | 구성 요소 | 노드, 에지 | 데이터 포인트, 축, 레전드 |
-    | 데이터 유형 | 구조화된 데이터<br>(예: 네트워크, 트리) | 수치 데이터<br>(예: 시간에 따른 변화, 변수 간 관계) |
-    | 사용 예 | 소셜 네트워크, 경로 탐색, 트리 구조 | 데이터 분석, 통계적 시각화, 트렌드 분석 |
-    | 대표 라이브러리 | NetworkX, Graphviz | Matplotlib, Seaborn, Plotly |
-    ```
+```python
+  plt.show()
+```
+
+**필요한 경우 그래프를 저장하기**
+
+```python
+  plt.savefig(
+      file_name: str, # 저장할 파일 이름 (문자열)
+      tranparent: bool = False, # 배경을 투명하게 처리할지 여부
+      dpi: int = rcParams["savefig.dpi"], # 해상도
+      format: str = 'png, svg, ... unset from file_name', # 이미지 포맷 (파일 이름으로부터 이용)
+  )
+```
+
+```{admonition} 여기서 잠깐!!! 그래프? 플롯?
+Computer Science에서 그래프(`graph`)는 수학적 구조로, 객체(`node` 또는 `vertex`)와 객체 간의 관계(`edge` 또는 `connection`)를 나타냅니다.
+
+그래프는 정형화된 데이터 구조로서, 네트워크, 소셜 미디어 연결, 경로 탐색, 트리 구조 등 다양한 응용 분야에서 사용됩니다.
+
+플롯(`plot`)은 수치 데이터를 시각적으로 표현하는 방법입니다.
+
+플롯은 데이터를 직관적으로 이해하고 분석하기 위해 사용되며, 다양한 형태의 차트와 그래프를 포함합니다.
+
+| 구분 | 그래프(`Graph`) | 플롯(`Plot`) |
+|-----|--------------|-------------|
+| 목적 | 객체와 객체 간의 관계를 나타내기 위해 사용 | 수치 데이터를 시각적으로 표현하기 위해 사용 |
+| 구성 요소 | 노드, 에지 | 데이터 포인트, 축, 레전드 |
+| 데이터 유형 | 구조화된 데이터<br>(예: 네트워크, 트리) | 수치 데이터<br>(예: 시간에 따른 변화, 변수 간 관계) |
+| 사용 예 | 소셜 네트워크, 경로 탐색, 트리 구조 | 데이터 분석, 통계적 시각화, 트렌드 분석 |
+| 대표 라이브러리 |- `NetworkX`, <br>- `Graphviz` | - `Matplotlib`, <br>- `Seaborn`, <br>- `Plotly` |
+```
 
 
-Matplotlib의 기본 사용법을 몇 가지 예제를 통해 설명합니다.
+Matplotlib의 기본 사용법을 몇 가지 예제를 통해 공부해 보겠습니다.
 
 
 ## 라인 플롯(Line Plot)
@@ -92,7 +101,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_01_line_plot.png
 ---
-width: 80%
+width: 90%
 name: ch05_01_line_plot
 ---
 라인 플롯 생성 결과
@@ -126,7 +135,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_02_bar_chart.png
 ---
-width: 80%
+width: 90%
 name: ch05_02_bar_chart
 ---
 Bar Chart 생성 결과
@@ -164,7 +173,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_03_histogram.png
 ---
-width: 80%
+width: 90%
 name: ch05_03_histogram
 ---
 Histogram 생성 결과
@@ -197,7 +206,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_04_scatter_01.png
 ---
-width: 80%
+width: 90%
 name: ch05_04_scatter_01
 ---
 Scatter Plot 생성 결과
@@ -230,7 +239,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_04_scatter_02.png
 ---
-width: 80%
+width: 90%
 name: ch05_04_scatter_02
 ---
 크기/색상을 커스터마이징 해준 Scatter Plot 생성 결과
@@ -299,7 +308,7 @@ plt.show()
 
 ```{figure} ../imgs/chap_05/ch05_05_pie_chart.png
 ---
-width: 80%
+width: 90%
 name: ch05_05_pie_chart
 ---
 Pi Chart 생성 결과

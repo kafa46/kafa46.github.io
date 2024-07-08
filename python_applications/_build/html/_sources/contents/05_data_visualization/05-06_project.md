@@ -1,10 +1,10 @@
 (05-06)=
-# Challenge Project
+# 도전 프로젝트
 
-우리가 [5.5 Realtime Plot 예제](../05_data_visualization/05-05_realtime_plot.md) 에서 구현했던 실시간 플롯 소프트웨어를 업그레이드 합니다. 
+우리가 [5.5 Realtime Plot 예제](../05_data_visualization/05-05_realtime_plot.md) 에서 구현했던 실시간 플롯 소프트웨어를 업그레이드 합니다.
 
 1. 데이터 생성 함수를 하나 더 추가해 봅니다.
-    
+
     - `data_gen2()` 함수는 0과 30 사이의 랜덤 숫자를 생성합니다.
 
 2. 기존의 플롯 하단에 `data_gen2()` 함수가 생성하는 데이터를 보여줄 실시간 플롯을 추가합니다.
@@ -33,7 +33,7 @@
     self.xdata2, self.ydata2 = [], []
 
     self.ani1 = animation.FuncAnimation(self.fig, self.update1, self.data_gen_func1, blit=False, interval=self.interval, init_func=self.init1)
-    
+
     self.ani2 = animation.FuncAnimation(self.fig, self.update2, self.data_gen_func2, blit=False, interval=self.interval, init_func=self.init2)
     ```
 
@@ -54,7 +54,7 @@
         self.xdata2.clear()
         self.ydata2.clear()
         self.line2.set_data(self.xdata2, self.ydata2)
-        return self.line2,  
+        return self.line2,
     ```
 
 - `RealTimePlot` **업데이트** 메서드를 추가
@@ -82,7 +82,7 @@
             self.ax2.set_xlim(xmin, 2 * xmax)
             self.ax2.figure.canvas.draw()
         self.line2.set_data(self.xdata2, self.ydata2)
-        return self.line2,  
+        return self.line2,
     ```
 
 - 데이터 생성 함수 추가
@@ -107,14 +107,14 @@
             t += 0.1
             yield t, random.uniform(0, 30)
 
-    data_gen2.t = 0    
+    data_gen2.t = 0
     ```
 
 - `RealTimePlot` 객체 생성 및 실행
 
     ```python
     rt_plot = RealTimePlot(data_gen1, data_gen2)
-    rt_plot.show()    
+    rt_plot.show()
     ```
 
 정답은 [여기](../solutions/ch05_solution.md)를 클릭해 주세요.

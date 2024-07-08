@@ -26,7 +26,7 @@ window.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_02_01_base.png
 ---
-width: 70%
+width: 80%
 name: ch06_02_01_base_01
 ---
 텍스트 입력(`Label`) 객체 추가하여 실행한 결과
@@ -34,7 +34,7 @@ name: ch06_02_01_base_01
 
 ## 텍스트 입력(`Entry`) 객체 추가
 
-Tkinter로 간단한 앱을 만들고 다양한 위젯을 추가하는 예제입니다. 
+Tkinter로 간단한 앱을 만들고 다양한 위젯을 추가하는 예제입니다.
 
 기존 앱에 텍스트 입력 객체를 추가하고 `pack()` 메서드를 이용하여 `Label` 객체 아래에 추가하고 패딩을 설정해 줍니다.
 
@@ -60,7 +60,7 @@ window.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_02_02_add_label.png
 ---
-width: 70%
+width: 80%
 name: ch06_02_02_add_label
 ---
 텍스트 입력(`Entry`) 객체를 추가하여 실행한 결과
@@ -93,7 +93,7 @@ def on_button_click():
 
 # 버튼 추가
 button = tk.Button(window, text="Click Me!", command=on_button_click)
-button.pack(padx=10, pady=10) # pack() 메서드 사용, 패딩 추가 
+button.pack(padx=10, pady=10) # pack() 메서드 사용, 패딩 추가
 
 # 체크박스 추가
 checkbox_var = tk.BooleanVar()
@@ -112,7 +112,7 @@ window.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_02_03_add_btn_checkbox.png
 ---
-width: 70%
+width: 80%
 name: ch06_02_03_add_btn_checkbox
 ---
 버튼, 체크박스 객체 추가하여 실행한 결과

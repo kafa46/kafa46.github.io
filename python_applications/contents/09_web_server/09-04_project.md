@@ -1,5 +1,5 @@
 (09-04)=
-# Challenge Project
+# 도전 프로젝트
 
 이전에 만든 `hello world` 서버를 확장하여 사용자로부터 주소(`address`)와 학교(`university`) 정보를 추가적으로 받아서 데이터베이스에 저장하는 시스템을 만들어 봅니다.
 
@@ -25,7 +25,7 @@
         return f'<User {self.username}>'
     ```
 
-- Templates: 사용자가 추가 정보를 입력할 수 있도록 html 파일 업그레이드 
+- Templates: 사용자가 추가 정보를 입력할 수 있도록 html 파일 업그레이드
 
     **힌트**
 

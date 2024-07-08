@@ -1,5 +1,5 @@
 (08-02)=
-# Request 종류
+# `Request` 종류
 
 HTTP Request는 하나의 메시지 객체로 만들어 서버로 전송합니다.
 

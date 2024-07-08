@@ -12,7 +12,7 @@
 
 ```{figure} ../imgs/chap_07/ch07_01_01_num_guess_ui.png
 ---
-width: 70%
+width: 80%
 name: ch07_01_01_num_guess_ui
 ---
 숫자 맞추기 게임 UI 설계
@@ -20,16 +20,27 @@ name: ch07_01_01_num_guess_ui
 
 ## 코드 설계
 
-- 게임 클래스(`NumberGuessingGame`)
-    - `__init__` 메서드: 초기 설정, GUI 요소 생성
-    - `create_widgets` 메서드: 라벨, 입력 필드, 버튼 등 필요한 위젯을 생성
-    - `check_guess` 메서드: 사용자 입력을 확인하고 결과를 라벨에 표시, 맞췄을 경우 메시지 팝업 실행
-    - `reset_game` 메서드: 게임 초기화
+<br />
 
-- GUI 요소
+**게임 클래스(`NumberGuessingGame`)**
+
+- `__init__` 메서드: 초기 설정, GUI 요소 생성
+
+- `create_widgets` 메서드: 라벨, 입력 필드, 버튼 등 필요한 위젯을 생성
+
+- `check_guess` 메서드: 사용자 입력을 확인하고 결과를 라벨에 표시, 맞췄을 경우 메시지 팝업 실행
+
+- `reset_game` 메서드: 게임 초기화
+
+
+**GUI 요소**
+
 - `Label` 위젯: 텍스트를 표시
+
 - `Entry` 위젯: 사용자의 입력 받기
+
 - `Button` 위젯: 사용자에게 추측 버튼 제공
+
 - `messagebox` 모듈: 사용자가 맞췄을 때 팝업 메시지를 표시
 
 
