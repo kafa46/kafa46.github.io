@@ -137,7 +137,7 @@ print(grouped)
 아래 코드는 2개의 데이터 프레임을 `EmployeeID`라는 컬럼명(column name) 기준으로 병합하는 코드입니다. 실습파일을 다운로드하여 현재 디렉토리에 복사합니다.
 
 - `employee.csv`: <a href="../files/ch04/employee.csv">다운로드</a>
-- `sales.csv`: <a href="../files/ch04/sales.csv">다운로드</a>
+- `sales.tsv`: <a href="../files/ch04/sales.tsv">다운로드</a>
 
 ```python
 import pandas as pd
