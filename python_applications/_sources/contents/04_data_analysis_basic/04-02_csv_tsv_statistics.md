@@ -66,7 +66,7 @@ pd.read_csv('filepath_or_buffer', sep=',')
 import pandas as pd
 
 # CSV 파일을 읽어 데이터 프레임으로 변환
-df = pd.read_csv('data.tsv', sep=',') # sep=',' 생략 가능
+df = pd.read_csv('data.csv', sep=',') # sep=',' 생략 가능
 
 # TSV 파일을 읽어 데이터 프레임으로 변환
 df = pd.read_csv('data.tsv', sep='\t')
