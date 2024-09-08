@@ -42,6 +42,8 @@
     <script src="../../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -634,7 +636,7 @@ Linda    32    London
 <div class="section" id="id3">
 <h2><span class="section-number">4.2.3. </span>파일 데이터 불러오기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>파일을 읽어오려면 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>의  <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드를 사용하면 됩니다. 파일에서 데이터를 읽어오면  데이터 프레임으로 리턴합니다.</p>
-<p>자세한 사용법은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas-read-csv">pandas.read_dsv</a>를 참고하면 됩니다.</p>
+<p>자세한 사용법은 <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas-read-csv">pandas.read_csv</a>를 참고하면 됩니다.</p>
 <p><code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> 메서드 파라미터는 2개만 신경쓰면 됩니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -644,6 +646,11 @@ Linda    32    London
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'filepath_or_buffer'</span></code>: 파일 이름입니다. 만약 파일 내용이 메인 메모리에 적재되고 변수로 관리되고 있다면 변수 이름을 입력하면 됩니다.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>는 구분자를 의미합니다. 기본값은 콤마(<code class="docutils literal notranslate"><span class="pre">,</span></code>) 입니다. 아무것도 입력하지 않으면 콤마를 기준으로 데이터 열을 구분합니다. <code class="docutils literal notranslate"><span class="pre">CSV</span></code> 파일은 콤마로 구분되기 때문에 별도로 입력할 필요가 없습니다. <code class="docutils literal notranslate"><span class="pre">TSV</span></code> 파일은 탭으로 구분하기 때문에 <code class="docutils literal notranslate"><span class="pre">sep='\t'</span></code>라고 입력해 주어야 합니다.</p></li>
+</ul>
+<p>두 개의 파일을 준비합니다: <code class="docutils literal notranslate"><span class="pre">data.csv</span></code>와 <code class="docutils literal notranslate"><span class="pre">data.tsv</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data.csv</span></code> 다운로드 <span class="math notranslate nohighlight">\(\to\)</span> <a href="../files/ch04/data.csv">click me</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data.tsv</span></code> 다운로드 <span class="math notranslate nohighlight">\(\to\)</span> <a href="../files/ch04/data.tsv">click me</a></p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -670,10 +677,10 @@ Linda    32    London
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 
 <span class="c1"># 첫 n개 데이터만 보기</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 첫 5줄만 보기</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 첫 5줄만 보기</span>
 
 <span class="c1"># 마지막 n개 데이터만 보기</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1"># 마지막 7줄만 보기</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span> <span class="c1"># 마지막 7줄만 보기</span>
 </pre></div>
 </div>
 </div>
