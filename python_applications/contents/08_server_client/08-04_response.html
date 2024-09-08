@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -526,76 +538,76 @@
 <p><code class="docutils literal notranslate"><span class="pre">Response</span></code> 객체가 가지고 있는 모든 속성과 메서드는 다음 표와 같습니다.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>Property/Method</strong></p></th>
+<tr class="row-odd"><th class="head"><p><strong>Property/<br>Method</strong></p></th>
 <th class="head"><p><strong>Description</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>apparent_encoding</strong></p></td>
-<td><p>예상 인코딩을 반환합니다.</p></td>
+<td><p>예상 인코딩을 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>close()</strong></p></td>
-<td><p>서버와의 연결을 닫습니다.</p></td>
+<td><p>서버와의 연결 종료</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>content</strong></p></td>
-<td><p>응답의 내용을 바이트 단위로 반환합니다.</p></td>
+<td><p>응답의 내용을 바이트 단위로 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>cookies</strong></p></td>
-<td><p>서버에서 반환된 쿠키가 포함된 CookieJar 객체를 반환합니다.</p></td>
+<td><p>서버에서 반환된 쿠키가 포함된 CookieJar 객체를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>elapsed</strong></p></td>
-<td><p>요청을 보낸 시점부터 응답이 도착한 시점까지의 시간을 나타내는 timedelta 객체를 반환합니다.</p></td>
+<td><p>요청을 보낸 시점부터 응답이 도착한 시점까지의 시간을 나타내는 timedelta 객체를 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>encoding</strong></p></td>
-<td><p>r.text를 디코딩하는 데 사용되는 인코딩을 반환합니다.</p></td>
+<td><p>r.text를 디코딩하는 데 사용되는 인코딩을 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>headers</strong></p></td>
-<td><p>응답 헤더를 사전 형태로 반환합니다.</p></td>
+<td><p>응답 헤더를 사전 형태로 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>history</strong></p></td>
-<td><p>요청의 이력을 가진 응답 객체의 리스트를 반환합니다 (URL).</p></td>
+<td><p>요청의 이력을 가진 응답 객체의 리스트를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>is_permanent_redirect</strong></p></td>
-<td><p>응답이 영구 리디렉션된 URL인지 여부를 나타내는 True 또는 False를 반환합니다.</p></td>
+<td><p>응답이 영구 리디렉션된 URL인지 여부를 나타내는 True 또는 False를 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>is_redirect</strong></p></td>
-<td><p>응답이 리디렉션되었는지 여부를 나타내는 True 또는 False를 반환합니다.</p></td>
+<td><p>응답이 리디렉션되었는지 여부를 나타내는 True 또는 False를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>iter_content()</strong></p></td>
-<td><p>응답의 내용을 청크 단위로 순회합니다.</p></td>
+<td><p>응답의 내용을 청크 단위로 순회</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>iter_lines()</strong></p></td>
-<td><p>응답의 내용을 라인 단위로 순회합니다.</p></td>
+<td><p>응답의 내용을 라인 단위로 순회</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>json()</strong></p></td>
-<td><p>결과를 JSON 객체로 반환합니다 (결과가 JSON 형식으로 작성되지 않은 경우 오류가 발생합니다).</p></td>
+<td><p>결과를 JSON 객체로 반환(결과가 JSON 형식으로 작성되지 않은 경우 오류가 발생)</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>links</strong></p></td>
-<td><p>헤더 링크를 반환합니다.</p></td>
+<td><p>헤더 링크를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>next</strong></p></td>
-<td><p>리디렉션에서 다음 요청을 위한 PreparedRequest 객체를 반환합니다.</p></td>
+<td><p>리디렉션에서 다음 요청을 위한 PreparedRequest 객체를 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>ok</strong></p></td>
-<td><p>status_code가 400보다 작은 경우 True, 그렇지 않은 경우 False를 반환합니다.</p></td>
+<td><p>status_code가 400보다 작은 경우 True, 그렇지 않은 경우 False를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>raise_for_status()</strong></p></td>
-<td><p>오류가 발생한 경우 HTTPError 객체를 반환합니다.</p></td>
+<td><p>오류가 발생한 경우 HTTPError 객체를 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>reason</strong></p></td>
-<td><p>상태 코드에 해당하는 텍스트를 반환합니다.</p></td>
+<td><p>상태 코드에 해당하는 텍스트를 반환</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>request</strong></p></td>
-<td><p>이 응답을 요청한 요청 객체를 반환합니다.</p></td>
+<td><p>이 응답을 요청한 요청 객체를 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>status_code</strong></p></td>
-<td><p>상태를 나타내는 숫자를 반환합니다 (200은 OK, 404는 Not Found).</p></td>
+<td><p>상태를 나타내는 숫자를 반환(예: 200은 OK, 404는 Not Found)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>text</strong></p></td>
-<td><p>응답의 내용을 유니코드로 반환합니다.</p></td>
+<td><p>응답의 내용을 유니코드로 반환</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>url</strong></p></td>
-<td><p>응답의 URL을 반환합니다.</p></td>
+<td><p>응답의 URL을 반환</p></td>
 </tr>
 </tbody>
 </table>

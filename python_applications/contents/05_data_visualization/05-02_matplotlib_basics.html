@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.3. 시각화에 자주 사용되는 Dataset 소개" href="05-03_datasets.html" />
-    <link rel="prev" title="5.1. 데이터 시각화 도구" href="05-01_visualization_tools.html" />
+    <link rel="next" title="5.3. 자주 사용되는 Dataset 소개" href="05-03_datasets.html" />
+    <link rel="prev" title="5.1. 시각화 도구" href="05-01_visualization_tools.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -513,17 +525,15 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="matplotlib">
-<span id="id1"></span><h1><span class="section-number">5.2. </span>Matplotlib 기본 사용법<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
-<p>Matplotlib은 Python에서 데이터 시각화를 위한 강력한 라이브러리로, 다양한 유형의 그래프와 플롯을 생성할 수 있습니다.</p>
+<span id="id1"></span><h1><span class="section-number">5.2. </span><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 기본 사용법<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>은 Python에서 데이터 시각화를 위한 강력한 라이브러리로, 다양한 유형의 그래프와 플롯을 생성할 수 있습니다.</p>
 <p>일반적인 사용 절차는 다음과 같습니다.</p>
-<p>자세한 내용은 matplotlib의 API 공식 문서 (<a class="reference external" href="https://matplotlib.org/stable/api/matplotlib_configuration_api.html">click me</a>)를 참고하면 됩니다.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">pyplot</span></code> 임포트 하기</p>
+<p>자세한 내용은 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>의 API 공식 문서 (<a class="reference external" href="https://matplotlib.org/stable/api/matplotlib_configuration_api.html">click me</a>)를 참고하면 됩니다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pyplot</span></code> 임포트 하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">plot()</span></code> 메서드에 <code class="docutils literal notranslate"><span class="pre">x</span></code>축 값과 <code class="docutils literal notranslate"><span class="pre">y</span></code>축 값을 전달하기</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plot()</span></code> 메서드에 <code class="docutils literal notranslate"><span class="pre">x</span></code>축 값과 <code class="docutils literal notranslate"><span class="pre">y</span></code>축 값을 전달하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
   <span class="c1"># x: x축 데이터</span>
   <span class="c1"># y: y축 데이터</span>
@@ -532,8 +542,7 @@
   <span class="c1">#   x축은 matplotlib에서 자동 생성</span>
 </pre></div>
 </div>
-</li>
-<li><p>그래프 제목, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> 축 제목 등 필요한 정보 설정하기</p>
+<p><strong>그래프 제목, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> 축 제목 등 필요한 정보 설정하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Line Plot Example&#39;</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X Axis&#39;</span><span class="p">)</span>
   <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y Axis&#39;</span><span class="p">)</span>
@@ -542,13 +551,11 @@
   <span class="p">:</span>
 </pre></div>
 </div>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">show()</span></code> 메서드를 이용해 그래프 생성하기</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">show()</span></code> 메서드를 이용해 그래프 생성하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</li>
-<li><p>필요한 경우 그래프를 저장하기</p>
+<p><strong>필요한 경우 그래프를 저장하기</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
       <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="c1"># 저장할 파일 이름 (문자열)</span>
       <span class="n">tranparent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># 배경을 투명하게 처리할지 여부</span>
@@ -559,13 +566,15 @@
 </div>
 <div class="admonition- admonition">
 <p class="admonition-title">여기서 잠깐!!! 그래프? 플롯?</p>
-<p>Computer Science에서 그래프는 수학적 구조로, 객체(노드 또는 정점)와 객체 간의 관계(에지 또는 간선)를 나타냅니다. 그래프는 정형화된 데이터 구조로서, 네트워크, 소셜 미디어 연결, 경로 탐색, 트리 구조 등 다양한 응용 분야에서 사용됩니다.</p>
-<p>플롯은 수치 데이터를 시각적으로 표현하는 방법입니다. 플롯은 데이터를 직관적으로 이해하고 분석하기 위해 사용되며, 다양한 형태의 차트와 그래프를 포함합니다.</p>
+<p>Computer Science에서 그래프(<code class="docutils literal notranslate"><span class="pre">graph</span></code>)는 수학적 구조로, 객체(<code class="docutils literal notranslate"><span class="pre">node</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">vertex</span></code>)와 객체 간의 관계(<code class="docutils literal notranslate"><span class="pre">edge</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">connection</span></code>)를 나타냅니다.</p>
+<p>그래프는 정형화된 데이터 구조로서, 네트워크, 소셜 미디어 연결, 경로 탐색, 트리 구조 등 다양한 응용 분야에서 사용됩니다.</p>
+<p>플롯(<code class="docutils literal notranslate"><span class="pre">plot</span></code>)은 수치 데이터를 시각적으로 표현하는 방법입니다.</p>
+<p>플롯은 데이터를 직관적으로 이해하고 분석하기 위해 사용되며, 다양한 형태의 차트와 그래프를 포함합니다.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>요소</p></th>
-<th class="head"><p>그래프(Graph)</p></th>
-<th class="head"><p>플롯(Plot)</p></th>
+<tr class="row-odd"><th class="head"><p>구분</p></th>
+<th class="head"><p>그래프(<code class="docutils literal notranslate"><span class="pre">Graph</span></code>)</p></th>
+<th class="head"><p>플롯(<code class="docutils literal notranslate"><span class="pre">Plot</span></code>)</p></th>
 </tr>
 </thead>
 <tbody>
@@ -586,15 +595,13 @@
 <td><p>데이터 분석, 통계적 시각화, 트렌드 분석</p></td>
 </tr>
 <tr class="row-even"><td><p>대표 라이브러리</p></td>
-<td><p>NetworkX, Graphviz</p></td>
-<td><p>Matplotlib, Seaborn, Plotly</p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code>, <br>- <code class="docutils literal notranslate"><span class="pre">Graphviz</span></code></p></td>
+<td><p>- <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>, <br>- <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>, <br>- <code class="docutils literal notranslate"><span class="pre">Plotly</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</li>
-</ul>
-<p>Matplotlib의 기본 사용법을 몇 가지 예제를 통해 설명합니다.</p>
+<p>Matplotlib의 기본 사용법을 몇 가지 예제를 통해 공부해 보겠습니다.</p>
 <div class="section" id="line-plot">
 <h2><span class="section-number">5.2.1. </span>라인 플롯(Line Plot)<a class="headerlink" href="#line-plot" title="Permalink to this headline">¶</a></h2>
 <p>라인 플롯은 가장 기본적인 그래프 유형 중 하나로, 데이터를 선으로 연결하여 시각화합니다.</p>
@@ -618,7 +625,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-01-line-plot">
-<a class="reference internal image-reference" href="../../_images/ch05_01_line_plot.png"><img alt="../../_images/ch05_01_line_plot.png" src="../../_images/ch05_01_line_plot.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_01_line_plot.png"><img alt="../../_images/ch05_01_line_plot.png" src="../../_images/ch05_01_line_plot.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.6 </span><span class="caption-text">라인 플롯 생성 결과</span><a class="headerlink" href="#ch05-01-line-plot" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -645,7 +652,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-02-bar-chart">
-<a class="reference internal image-reference" href="../../_images/ch05_02_bar_chart.png"><img alt="../../_images/ch05_02_bar_chart.png" src="../../_images/ch05_02_bar_chart.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_02_bar_chart.png"><img alt="../../_images/ch05_02_bar_chart.png" src="../../_images/ch05_02_bar_chart.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.7 </span><span class="caption-text">Bar Chart 생성 결과</span><a class="headerlink" href="#ch05-02-bar-chart" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -676,7 +683,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-03-histogram">
-<a class="reference internal image-reference" href="../../_images/ch05_03_histogram.png"><img alt="../../_images/ch05_03_histogram.png" src="../../_images/ch05_03_histogram.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_03_histogram.png"><img alt="../../_images/ch05_03_histogram.png" src="../../_images/ch05_03_histogram.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.8 </span><span class="caption-text">Histogram 생성 결과</span><a class="headerlink" href="#ch05-03-histogram" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -703,7 +710,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-04-scatter-01">
-<a class="reference internal image-reference" href="../../_images/ch05_04_scatter_01.png"><img alt="../../_images/ch05_04_scatter_01.png" src="../../_images/ch05_04_scatter_01.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_04_scatter_01.png"><img alt="../../_images/ch05_04_scatter_01.png" src="../../_images/ch05_04_scatter_01.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.9 </span><span class="caption-text">Scatter Plot 생성 결과</span><a class="headerlink" href="#ch05-04-scatter-01" title="Permalink to this image">¶</a></p>
 </div>
 <p>산점도의 점의 크기와 색상을 변경하여 더 다양한 시각적 효과를 줄 수도 있습니다.</p>
@@ -729,7 +736,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-04-scatter-02">
-<a class="reference internal image-reference" href="../../_images/ch05_04_scatter_02.png"><img alt="../../_images/ch05_04_scatter_02.png" src="../../_images/ch05_04_scatter_02.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_04_scatter_02.png"><img alt="../../_images/ch05_04_scatter_02.png" src="../../_images/ch05_04_scatter_02.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.10 </span><span class="caption-text">크기/색상을 커스터마이징 해준 Scatter Plot 생성 결과</span><a class="headerlink" href="#ch05-04-scatter-02" title="Permalink to this image">¶</a></p>
 </div>
 <p>컬러맵을 사용하여 점의 색상을 데이터 값에 따라 동적으로 변경할 수 있습니다.</p>
@@ -784,7 +791,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-05-pie-chart">
-<a class="reference internal image-reference" href="../../_images/ch05_05_pie_chart.png"><img alt="../../_images/ch05_05_pie_chart.png" src="../../_images/ch05_05_pie_chart.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_05_pie_chart.png"><img alt="../../_images/ch05_05_pie_chart.png" src="../../_images/ch05_05_pie_chart.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.12 </span><span class="caption-text">Pi Chart 생성 결과</span><a class="headerlink" href="#ch05-05-pie-chart" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
@@ -820,13 +827,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.1. </span>데이터 시각화 도구</p>
+            <p class="prev-next-title"><span class="section-number">5.1. </span>시각화 도구</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05-03_datasets.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.3. </span>시각화에 자주 사용되는 Dataset 소개</p>
+        <p class="prev-next-title"><span class="section-number">5.3. </span>자주 사용되는 Dataset 소개</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

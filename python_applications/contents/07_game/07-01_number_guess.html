@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -510,22 +522,22 @@
 <h2><span class="section-number">7.1.1. </span>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h2>
 <p>숫자 맞추기 게임이 실행되면 아래 그림과 같은 형태가 되도록 합니다.</p>
 <div class="figure align-default" id="ch07-01-01-num-guess-ui">
-<a class="reference internal image-reference" href="../../_images/ch07_01_01_num_guess_ui.png"><img alt="../../_images/ch07_01_01_num_guess_ui.png" src="../../_images/ch07_01_01_num_guess_ui.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch07_01_01_num_guess_ui.png"><img alt="../../_images/ch07_01_01_num_guess_ui.png" src="../../_images/ch07_01_01_num_guess_ui.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7.2 </span><span class="caption-text">숫자 맞추기 게임 UI 설계</span><a class="headerlink" href="#ch07-01-01-num-guess-ui" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id3">
 <h2><span class="section-number">7.1.2. </span>코드 설계<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<br />
+<p><strong>게임 클래스(<code class="docutils literal notranslate"><span class="pre">NumberGuessingGame</span></code>)</strong></p>
 <ul class="simple">
-<li><p>게임 클래스(<code class="docutils literal notranslate"><span class="pre">NumberGuessingGame</span></code>)</p>
-<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 메서드: 초기 설정, GUI 요소 생성</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">create_widgets</span></code> 메서드: 라벨, 입력 필드, 버튼 등 필요한 위젯을 생성</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">check_guess</span></code> 메서드: 사용자 입력을 확인하고 결과를 라벨에 표시, 맞췄을 경우 메시지 팝업 실행</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">reset_game</span></code> 메서드: 게임 초기화</p></li>
 </ul>
-</li>
-<li><p>GUI 요소</p></li>
+<p><strong>GUI 요소</strong></p>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Label</span></code> 위젯: 텍스트를 표시</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Entry</span></code> 위젯: 사용자의 입력 받기</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Button</span></code> 위젯: 사용자에게 추측 버튼 제공</p></li>

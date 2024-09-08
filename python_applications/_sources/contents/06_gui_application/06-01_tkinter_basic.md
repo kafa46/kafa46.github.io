@@ -37,7 +37,7 @@ window.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_01_tk_window_01.png
 ---
-width: 20%
+width: 80%
 name: ch06_01_01_tk_window_01.png
 ---
 단순히 윈도우만 생성한 경우
@@ -48,27 +48,28 @@ name: ch06_01_01_tk_window_01.png
 - `geometry(str)`: 메서드를 사용하여 생성될 때 크기를 지정("가로x세로+x좌표+y좌표")
 - `resiable(bool, bool)`: 사용자의 창 크기 변경 허용 여부(가로, 세로)
 
-- 윈도우 이름, 시작할 때 크기를 지정한 경우
-  ```python
-    import tkinter as tk
+**윈도우 이름, 시작할 때 크기를 지정하는 예제**
 
-    # 윈도우 객체 생성
-    window = tk.Tk()
+```python
+  import tkinter as tk
 
-    window.title("cju test")
+  # 윈도우 객체 생성
+  window = tk.Tk()
 
-    # 윈도우 크기 지정 -> 가로 800 픽셀, 세로: 500 픽셀
-    # 윈도우 위치 지정 -> x 위치: 200 픽셀, y 위치: 300 픽셀
-    window.geometry('800x500+200+300')
+  window.title("cju test")
 
-    # 메인 루프 실행
-    window.mainloop()
-  ```
+  # 윈도우 크기 지정 -> 가로 800 픽셀, 세로: 500 픽셀
+  # 윈도우 위치 지정 -> x 위치: 200 픽셀, y 위치: 300 픽셀
+  window.geometry('800x500+200+300')
+
+  # 메인 루프 실행
+  window.mainloop()
+```
 
 **실행 결과**
 ```{figure} ../imgs/chap_06/ch06_01_01_tk_window_02.png
 ---
-width: 40%
+width: 80%
 name: ch06_01_01_tk_window_02.png
 ---
 윈도우의 제목, 크기, 위치를 설정한 경우
@@ -120,6 +121,7 @@ Python Tkinter 모듈에서 사용할 수 있는 19개의 위젯이 있습니다
 | [MessageBox](http://studytonight.com/tkinter/python-tkinter-messagebox) | 데스크탑 애플리케이션에서 메시지를 표시하는 위젯|
 
 출처: [Studytonight](https://www.studytonight.com/tkinter/python-tkinter-widgets)
+
 
 ## Tkinter로 만들 수 있는 것들
 
@@ -187,7 +189,7 @@ window.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_04_pack_wo_params.png
 ---
-width: 30%
+width: 80%
 name: ch06_01_04_pack_wo_params
 ---
 파라미터 설정 없이 pack( ) 실행한 결과
@@ -218,7 +220,7 @@ win.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_05_pack_w_params.png
 ---
-width: 30%
+width: 80%
 name: ch06_01_05_pack_w_params
 ---
 파라미터 사용하여 pack( ) 실행한 결과
@@ -252,7 +254,7 @@ win.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_06_grid_wo_params.png
 ---
-width: 30%
+width: 80%
 name: ch06_01_06_grid_wo_params
 ---
 파라미터 사용하지 않고 grid 생성
@@ -283,7 +285,7 @@ win.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_07_grid_w_params.png
 ---
-width: 30%
+width: 80%
 name: ch06_01_07_grid_w_params
 ---
 파라미터 사용하지 않고 grid 생성
@@ -316,7 +318,7 @@ top.mainloop()
 
 ```{figure} ../imgs/chap_06/ch06_01_08_place.png
 ---
-width: 50%
+width: 80%
 name: ch06_01_08_place
 ---
 파라미터 사용하지 않고 grid 생성

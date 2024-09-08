@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5.5. Realtime Plot" href="05-05_realtime_plot.html" />
-    <link rel="prev" title="5.3. 시각화에 자주 사용되는 Dataset 소개" href="05-03_datasets.html" />
+    <link rel="prev" title="5.3. 자주 사용되는 Dataset 소개" href="05-03_datasets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -494,19 +506,23 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="multi-plot">
 <span id="id1"></span><h1><span class="section-number">5.4. </span>Multi-plot 그리기<a class="headerlink" href="#multi-plot" title="Permalink to this headline">¶</a></h1>
-<p>Matplotlib은 하나의 Figure에 여러 개의 플롯을 배치할 수 있는 다양한 기능을 제공합니다. 이를 통해 여러 데이터를 한 눈에 비교하고 분석할 수 있습니다. 다음 코드는 Multi-plot을 사용하는 다양한 예제를 보여줍니다.</p>
+<p>Matplotlib은 하나의 Figure에 여러 개의 플롯을 배치할 수 있는 다양한 기능을 제공합니다. 멀티 플롯을 잘 활용할 수 있다면 여러분이 갖고 있는 데이터를 한 눈에 비교하고 분석할 수 있으며, 개발자 동료나 다른 분야의 관련자들에게 설명하기도 편리합니다. 누구도 가르쳐주지 않지만, 개발자라면 꼭 알아야 하는 기술 중 하나입니다.</p>
 <div class="section" id="matplotlib">
 <h2><span class="section-number">5.4.1. </span>Matplotlib 구성 이해하기<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
 <p><strong>주요 객체 이해하기</strong></p>
 <div class="figure align-default" id="ch05-06-01-figure-axes-axis">
-<a class="reference internal image-reference" href="../../_images/ch05_06_01_figure_axes_axis.png"><img alt="../../_images/ch05_06_01_figure_axes_axis.png" src="../../_images/ch05_06_01_figure_axes_axis.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_06_01_figure_axes_axis.png"><img alt="../../_images/ch05_06_01_figure_axes_axis.png" src="../../_images/ch05_06_01_figure_axes_axis.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.13 </span><span class="caption-text">Figure, Axes, Axis 관계</span><a class="headerlink" href="#ch05-06-01-figure-axes-axis" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Figure</span></code></strong></p>
-<p>전체 플롯을 그리는 도화지(또는 액자)를 표현하는 객체입니다. 도화지 1장에 하나의 그림을 그릴 수도 있고, 도화지를 가로/세로로 분할해서 여러 그림을 그릴수도 있습니다. <code class="docutils literal notranslate"><span class="pre">Figure</span></code> 객체에 대한 자세한 설명은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure">여기</a>를 참고하세요.
-서브 플롯(<code class="docutils literal notranslate"><span class="pre">Axes</span></code>)이 있을 경우 모든 서브 플롯을 추적(tracking)하고, 그림 상에 나타나는 정보(<code class="docutils literal notranslate"><span class="pre">Artist</span></code> 가 생성한 정보)를 관리합니다.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Figure</span></code> 객체</strong></p>
+<p>전체 플롯을 그리는 <strong>도화지</strong>(또는 액자)를 표현하는 객체입니다.</p>
+<p>도화지 1장에 하나의 그림을 그릴 수도 있고, 도화지를 가로/세로로 분할해서 여러 그림을 그릴수도 있습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Figure</span></code> 객체에 대한 자세한 설명은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure">여기</a>를 참고하세요.</p>
+<p>서브 플롯(<code class="docutils literal notranslate"><span class="pre">Axes</span></code>)이 있을 경우 모든 서브 플롯을 추적(tracking)하고, 그림 상에 나타나는 정보(<code class="docutils literal notranslate"><span class="pre">Artist</span></code> 가 생성한 정보)를 관리합니다.</p>
 <p>일반적으로 <code class="docutils literal notranslate"><span class="pre">Figure</span></code>는 다음과 같이 생성합니다.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>             <span class="c1"># 자식 플롯이 없는 빈 도화지 생성</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>             <span class="c1"># 자식 플롯이 없는 빈 도화지 생성</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>       <span class="c1"># 도화지에 1개의 서브 플롯 생성</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 도화지에 2행, 2열로 구성된 서브 플롯 생성</span>
 <span class="c1"># 좌측 상단+하단 영역을 모자이크처럼 합치기 -&gt; 3개 서브 플롯으로 구성</span>
@@ -516,20 +532,20 @@
 </div>
 <p>실행 결과</p>
 <div class="figure align-default" id="ch05-06-03-sequential-outputs">
-<a class="reference internal image-reference" href="../../_images/ch05_06_03_sequential_outputs.webp"><img alt="../../_images/ch05_06_03_sequential_outputs.webp" src="../../_images/ch05_06_03_sequential_outputs.webp" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_06_03_sequential_outputs.webp"><img alt="../../_images/ch05_06_03_sequential_outputs.webp" src="../../_images/ch05_06_03_sequential_outputs.webp" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.14 </span><span class="caption-text">4개 fig를 순서대로 생성한 이미지</span><a class="headerlink" href="#ch05-06-03-sequential-outputs" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Axes</span></code></strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Axes</span></code> 객체</strong></p>
 <p>도화지 안에 들어갈 하부(자식 플롯) 그림들을 표현하는 객체입니다. <a class="reference internal" href="#ch05-06-01-figure-axes-axis"><span class="std std-numref">Fig. 5.13</span></a>은 도화지를 반으로 접어서 1행 2열로 2개 영역을 만드는 예제입니다. 이 때 matplotlib는 2개의 <code class="docutils literal notranslate"><span class="pre">Axes</span></code> 객체가 생성됩니다. <code class="docutils literal notranslate"><span class="pre">Axes</span></code>에 대한 자세한 설명은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.axes.html#matplotlib.pyplot.axes">여기</a>를 참고하세요.</p>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Axis</span></code></strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Axis</span></code> 객체</strong></p>
 <p>각각의 하부 그림 <code class="docutils literal notranslate"><span class="pre">Axes</span></code>에 속하는 객체입니다.
 <code class="docutils literal notranslate"><span class="pre">Axes</span></code>와 이름이 비슷하여 많은 학생들이 헷갈려 하는 개념입니다.
 <code class="docutils literal notranslate"><span class="pre">Axis</span></code>는 축(axis)을 표현하며 2차원 플롯에서는 가로(<code class="docutils literal notranslate"><span class="pre">x</span></code>)축과 세로(<code class="docutils literal notranslate"><span class="pre">y</span></code>)축을 표현합니다. 3차원 플롯일 경우 당연히 <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code> 축을 표현하게 됩니다. 축의 <code class="docutils literal notranslate"><span class="pre">ticks</span></code>(눈금)을 설정하거나 <code class="docutils literal notranslate"><span class="pre">ticklabels</span></code>(눈금 설명) 등을 수행할 때 사용하는 개념입니다.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Artist</span></code></p>
-<p>그림(<code class="docutils literal notranslate"><span class="pre">Figure</span></code>)에서 사람의 눈으로 볼 수 있는 모든 것을 의미합니다.
+<p><code class="docutils literal notranslate"><span class="pre">Artist</span> <span class="pre">객체</span></code></p>
+<p>그림(<code class="docutils literal notranslate"><span class="pre">Figure</span></code>)에서 사람의 눈에 보이는 정보를 표현하는 객체입니다. 플롯에서 눈에 보이는 모든 것을 의미합니다.
 <code class="docutils literal notranslate"><span class="pre">Figure</span></code>, <code class="docutils literal notranslate"><span class="pre">Axes</span></code>, <code class="docutils literal notranslate"><span class="pre">Axis</span></code>도 <code class="docutils literal notranslate"><span class="pre">Artist</span></code>입니다.</p>
 <div class="figure align-default" id="ch05-06-02-components-of-figure">
-<a class="reference internal image-reference" href="../../_images/ch05_06_02_components_of_figure.webp"><img alt="../../_images/ch05_06_02_components_of_figure.webp" src="../../_images/ch05_06_02_components_of_figure.webp" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_06_02_components_of_figure.webp"><img alt="../../_images/ch05_06_02_components_of_figure.webp" src="../../_images/ch05_06_02_components_of_figure.webp" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.15 </span><span class="caption-text">Figure 객체의 주요 구성품</span><a class="headerlink" href="#ch05-06-02-components-of-figure" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-layout admonition">
@@ -537,11 +553,11 @@
 <p>레이아웃(layout)이란 Figure에 있는 Axes의 배치를 의미합니다.</p>
 <p>서브 플롯을 여러 개 생성하면 이미지 배치가 깨지는 경우가 생깁니다.</p>
 <p>여백이 깨진 경우에는 프로그래머가 일일히 수작업으로 서브 플롯의 여백을 재조정 하는 작업은 매우 번거롭습니다.</p>
-<p>Matplotlib에서는 자동으로 여백을 재조정해주는 메서드 ‘tight_layout( )’을 제공합니다.</p>
+<p>Matplotlib에서는 자동으로 여백을 재조정해주는 메서드 <code class="docutils literal notranslate"><span class="pre">tight_layout()</span></code> 메서드를 제공합니다. 자세한 내용은 <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout">공식 문서</a>를 참고하기 바랍니다.</p>
 </div>
 <p>아래 그림은 <code class="docutils literal notranslate"><span class="pre">tight_layout()</span></code> 적용하지 않아 여백이 깨진 서브 플롯입니다.</p>
 <div class="figure align-default" id="ch05-06-04-layout-broken">
-<a class="reference internal image-reference" href="../../_images/ch05_06_04_layout_broken.webp"><img alt="../../_images/ch05_06_04_layout_broken.webp" src="../../_images/ch05_06_04_layout_broken.webp" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch05_06_04_layout_broken.webp"><img alt="../../_images/ch05_06_04_layout_broken.webp" src="../../_images/ch05_06_04_layout_broken.webp" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5.16 </span><span class="caption-text">여백이 깨진 서브 플롯</span><a class="headerlink" href="#ch05-06-04-layout-broken" title="Permalink to this image">¶</a></p>
 </div>
 <p>다음 그림은 <code class="docutils literal notranslate"><span class="pre">tight_layout()</span></code> 적용한 결과입니다.</p>
@@ -599,9 +615,9 @@
 </div>
 <div class="section" id="subplot">
 <h2><span class="section-number">5.4.3. </span>여러 열과 행의 Subplot<a class="headerlink" href="#subplot" title="Permalink to this headline">¶</a></h2>
-<p>여러 행과 열로 구성된 subplot을 생성하는 방법입니다.</p>
-<p>다음 예제는 2행 3열의 서브 플롯을 생성하는 코드입니다.</p>
-<p>내용이 없이 비어 있는 서브 플롯 6개가 생성됩니다.</p>
+<p>여러 행과 열로 구성된 subplot을 생성하는 방법을 설명합니다.</p>
+<p>실습 예제로 2행 3열의 서브 플롯을 생성하는 코드를 작성해 봅니다.</p>
+<p>처음에는 내용이 없이 비어 있는 서브 플롯 6개가 생성됩니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># nrows: 멀티 플롯에서 2개의 행</span>
@@ -617,11 +633,11 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch05-06-multiplot-01">
-<a class="reference internal image-reference" href="../../_images/ch05_06_multiplot_01.png"><img alt="../../_images/ch05_06_multiplot_01.png" src="../../_images/ch05_06_multiplot_01.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.19 </span><span class="caption-text">subplots을 이용한 2행 3열 멀티 플롯 생성</span><a class="headerlink" href="#ch05-06-multiplot-01" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/ch05_06_multiplot_01.png"><img alt="../../_images/ch05_06_multiplot_01.png" src="../../_images/ch05_06_multiplot_01.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5.19 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">subplots()</span></code>을 이용한 2행 3열 플롯 생성</span><a class="headerlink" href="#ch05-06-multiplot-01" title="Permalink to this image">¶</a></p>
 </div>
-<p>다음 코드는 2행, 2열의 서브 플롯을 생성하는 코드입니다.</p>
-<p>각가의 서브 플롯에 사인 함수, 코사인 함수, 탄젠트함수, 지수함수 데이터를 표현하게 됩니다.</p>
+<p>다음 코드는 2행, 2열의 서브 플롯에 서로 다른 데이터를 시각화하는 코드입니다.</p>
+<p>각각의 서브 플롯에 <code class="docutils literal notranslate"><span class="pre">sine</span></code>(사인) 함수, <code class="docutils literal notranslate"><span class="pre">cosine</span></code>(코사인) 함수, <code class="docutils literal notranslate"><span class="pre">tangent</span></code>(탄젠트) 함수, <code class="docutils literal notranslate"><span class="pre">exponential</span></code>(지수) 함수 데이터를 표현하게 됩니다.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -696,7 +712,7 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.3. </span>시각화에 자주 사용되는 Dataset 소개</p>
+            <p class="prev-next-title"><span class="section-number">5.3. </span>자주 사용되는 Dataset 소개</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05-05_realtime_plot.html" title="next page">

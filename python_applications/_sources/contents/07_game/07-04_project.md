@@ -1,5 +1,5 @@
 (07-04)=
-# Challenge Project
+# 도전 프로젝트
 
 우리는 GUI 실습으로 간단한 슈팅 게임을 만들어 봤습니다.
 
@@ -33,7 +33,7 @@ self.score_label.pack(side=tk.RIGHT, padx=10)
         # 현재 점수 업데이트 코드 추가
         self.score_label.config(
             text=f"Score: {self.score}"
-        )          
+        )
 
 ```
 
@@ -42,28 +42,41 @@ self.score_label.pack(side=tk.RIGHT, padx=10)
 
 플레이어가 화면 밖으로 나가지 않도록 보완하려면 플레이어의 이동 범위를 제한해야 합니다. 이를 위해 `move_left`와 `move_right` 메서드에서 플레이어의 위치를 확인하고, 화면 경계를 넘지 않도록 조건을 추가하면 됩니다.
 
-- `move_left` 메서드
-    - 플레이어의 현재 좌표를 확인
-    - 플레이어가 화면의 왼쪽 경계를 넘지 않도록 이동을 제한
-    - `if player_coords[0] > 0:` 조건을 추가하여 플레이어가 왼쪽 경계를 넘지 않도록 처리
-        ```python
-        def move_left(self, event, distance: int = -20):
-            if self.running:
-                player_coords = self.canvas.coords(self.player)
-                if player_coords[0] > 0:
-                    self.canvas.move(self.player, -20, 0)
-        ```
-- `move_right` 메서드
-    - 플레이어의 현재 좌표를 확인
-    - 플레이어가 화면의 오른쪽 경계를 넘지 않도록 이동을 제한
-    - `if player_coords[2] < self.width:` 조건을 추가하여 플레이어가 오른쪽 경계를 넘지 않도록 처리
-        ```python
-        def move_right(self, event, distance: int = 20):
-            if self.running:
-                player_coords = self.canvas.coords(self.player)
-                if player_coords[2] < self.width:
-                    self.canvas.move(self.player, 20, 0)
-        ```
+<br />
+
+**`move_left` 메서드**
+
+- 플레이어의 현재 좌표를 확인
+
+- 플레이어가 화면의 왼쪽 경계를 넘지 않도록 이동을 제한
+
+- `if player_coords[0] > 0:` 조건을 추가하여 플레이어가 왼쪽 경계를 넘지 않도록 처리
+
+    ```python
+    def move_left(self, event, distance: int = -20):
+        if self.running:
+            player_coords = self.canvas.coords(self.player)
+            if player_coords[0] > 0:
+                self.canvas.move(self.player, -20, 0)
+    ```
+
+<br />
+
+**`move_right` 메서드**
+
+- 플레이어의 현재 좌표를 확인
+
+- 플레이어가 화면의 오른쪽 경계를 넘지 않도록 이동을 제한
+
+- `if player_coords[2] < self.width:` 조건을 추가하여 플레이어가 오른쪽 경계를 넘지 않도록 처리
+
+    ```python
+    def move_right(self, event, distance: int = 20):
+        if self.running:
+            player_coords = self.canvas.coords(self.player)
+            if player_coords[2] < self.width:
+                self.canvas.move(self.player, 20, 0)
+    ```
 
 ## 게임 레벨 운영하기
 
@@ -74,7 +87,7 @@ self.score_label.pack(side=tk.RIGHT, padx=10)
 레벨을 관리하기 위해서는 다음과 같이 설정할 수 있겠습니다.
 
 - 레벨 1: 점수가 0 ~ 14점  $\to$ 적의 속도 5로 설정
-- 레벨 2: 점수가 15 ~ 29점  $\to$ 적의 속도 10로 설정 
+- 레벨 2: 점수가 15 ~ 29점  $\to$ 적의 속도 10로 설정
 - 레벨 3: 점수가 30점 이상  $\to$ 적의 속도 15로 설정
 
 레벨 관리를 위한 변수(attribute)와 메서드를 도입합니다.
@@ -83,11 +96,13 @@ self.score_label.pack(side=tk.RIGHT, padx=10)
 class ShootingGame:
     def __init__(self, root):
         # 이전 코드와 동일
-        
+
         # 레벨 관리 변수 설정
         self.level = 1          # 시작 레벨
         self.enemy_speed = 5    # 적 속도
 ```
+
+<br />
 
 `move_enemies` 메서드에서 `self.enemy_speed` 값을 이용하도록 변경합니다.
 
@@ -110,6 +125,8 @@ class ShootingGame:
                 self.failures += 1 # 놓친 횟수 증가
 ```
 
+<br />
+
 `update_level` 메서드를 추가합니다.
 
 ```python
@@ -125,6 +142,8 @@ class ShootingGame:
             self.enemy_speed = 5
 ```
 
+<br />
+
 매 업데이트 시 점수를 확인하여 게임 레벨을 업데이트 할 수 있도록 `update_game` 메서드를 업그레이드 합니다.
 
 ```python
@@ -137,10 +156,10 @@ class ShootingGame:
             self.check_collisions() # 충돌 확인
             self.check_game_over() # 게임 종료 상황 확인
             self.update_labels()  # 라벨 업데이트
-            
+
             # 게임 레벨 업데이트  추가
-            self.update_level() 
-            
+            self.update_level()
+
             # 일정 시간이 지나면 업데이트를 반복적으로 수행
             self.window.after(
                 ms=interval, # 시간 간격 설정: 50 밀리초(0.05초) 이후에 실행
@@ -148,7 +167,9 @@ class ShootingGame:
             )
 ```
 
-리셋 버튼을 클릭했을 경우 게임 레벨을 1로 조정하기 위해 `self.enemy_speed` 값을 5로 재설정 합니다. 
+<br />
+
+리셋 버튼을 클릭했을 경우 게임 레벨을 1로 조정하기 위해 `self.enemy_speed` 값을 5로 재설정 합니다.
 `reset_game` 메서드를 다음과 같이 수정합니다.
 
 ```python
@@ -165,11 +186,13 @@ class ShootingGame:
         self.bullets.clear()
         self.enemies.clear()
         self.canvas.coords(
-            self.player, 
+            self.player,
             self.width/2 - offset, self.height - 20,  # 플레이어 좌측상단 좌표
             self.width/2 + offset, self.height        # 플레이어 우측하단 좌표
         )
 ```
+
+<br />
 
 업그레이드 내용을 포함한 전체 코드는 [여기](../solutions/ch07_solution.md)를 참고하세요.
 

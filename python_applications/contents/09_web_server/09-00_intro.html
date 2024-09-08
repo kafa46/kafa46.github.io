@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="9.1. 플라스크 기초" href="09-01_flask_basic.html" />
-    <link rel="prev" title="8.6. Challenge Project" href="../08_server_client/08-06_project.html" />
+    <link rel="prev" title="8.6. 도전 프로젝트" href="../08_server_client/08-06_project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06_gui_application/06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -581,43 +593,37 @@
 </table>
 <p><strong>WS, WAS, Web App의 관계</strong></p>
 <div class="figure align-default" id="ch09-00-01-ws-was-app">
-<a class="reference internal image-reference" href="../../_images/ch09_00_01_ws_was_app.png"><img alt="../../_images/ch09_00_01_ws_was_app.png" src="../../_images/ch09_00_01_ws_was_app.png" style="width: 95%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch09_00_01_ws_was_app.png"><img alt="../../_images/ch09_00_01_ws_was_app.png" src="../../_images/ch09_00_01_ws_was_app.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 9.1 </span><span class="caption-text">WS, WAS, Web App의 관계(예시)</span><a class="headerlink" href="#ch09-00-01-ws-was-app" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>무엇을 써야 하나요?</strong></p>
 <p>사용할 수 있는 기술이 너무 다양해서 복잡한가요?</p>
 <p>맞습니다. 어떤 기술을 선택할지는 아무도 결정해 주지 않습니다. 어찌보면 개발자의 몫이라고 할 수 있습니다. 개발자에게 선택의 다양성을 준다는 점에서는 좋지만, 한편으로는 공부해야 할 양이 방대해지고 선택의 고민에 빠지게 하는 단점이기도 합니다.</p>
 <p>웹 애플리케이션 백엔드 개발에 사용할 기술 스택을 선택하는 것은 프로젝트의 요구사항, 팀의 기술적 역량, 유지보수 용이성, 성능 요구사항 등 여러 요소를 고려해야 합니다. 다양한 기술 스택의 조합은 특정 요구에 맞게 최적화될 수 있으며, 각 조합의 장단점을 이해하는 것이 중요합니다.</p>
-<p>대표적인 백엔드 기술 조합 (<code class="docutils literal notranslate"><span class="pre">테크</span> <span class="pre">트리</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">기술</span> <span class="pre">스택</span></code> 이라고 부르기도 함)</p>
+<p><strong>대표적인 백엔드 기술 조합(<code class="docutils literal notranslate"><span class="pre">테크</span> <span class="pre">트리</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">기술</span> <span class="pre">스택</span></code> 이라고 부르기도 함)</strong></p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code> + <code class="docutils literal notranslate"><span class="pre">Django</span></code> + <code class="docutils literal notranslate"><span class="pre">Gunicorn/uWSGI</span></code> + <code class="docutils literal notranslate"><span class="pre">Nginx</span></code></strong></p>
 <ul class="simple">
-<li><p>Python + Django + Gunicorn/uWSGI + Nginx</p>
-<ul>
 <li><p>Django: 배터리가 포함된 웹 프레임워크로, 신속한 개발과 유지보수가 용이합니다. ORM, 관리자 인터페이스, 인증 등 다양한 기능이 내장되어 있습니다.</p></li>
 <li><p>Gunicorn/uWSGI: WSGI 애플리케이션 서버로 Django 애플리케이션을 서비스합니다.</p></li>
 <li><p>Nginx: 정적 파일 제공, 리버스 프록시, 로드 밸런싱 등을 처리합니다.</p></li>
 </ul>
-</li>
-<li><p>Python + Flask + Gunicorn/uWSGI + Nginx</p>
-<ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Python</span></code> + <code class="docutils literal notranslate"><span class="pre">Flask</span></code> + <code class="docutils literal notranslate"><span class="pre">Gunicorn/uWSGI</span></code> + <code class="docutils literal notranslate"><span class="pre">Nginx</span></code></strong></p>
+<ul class="simple">
 <li><p>Flask: 경량 웹 프레임워크로, 필요한 기능만 추가하여 사용할 수 있습니다. 유연성이 높고 배우기 쉽습니다.</p></li>
 <li><p>Gunicorn/uWSGI: Flask 애플리케이션을 서비스하는 WSGI 서버입니다.</p></li>
 <li><p>Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.</p></li>
 </ul>
-</li>
-<li><p>Node.js + Express + PM2 + Nginx</p>
-<ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Node.js</span></code> + <code class="docutils literal notranslate"><span class="pre">Express</span></code> + <code class="docutils literal notranslate"><span class="pre">PM2(process</span> <span class="pre">manager)</span></code> + <code class="docutils literal notranslate"><span class="pre">Nginx</span></code></strong></p>
+<ul class="simple">
 <li><p>Express: Node.js의 경량 웹 프레임워크로, 빠른 개발이 가능합니다. 비동기 처리가 용이합니다.</p></li>
 <li><p>PM2: Node.js 애플리케이션을 관리하고, 자동 재시작 및 로드 밸런싱을 제공합니다.</p></li>
 <li><p>Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.</p></li>
 </ul>
-</li>
-<li><p>Java + Spring Boot + Tomcat + Nginx</p>
-<ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">Java</span></code> + <code class="docutils literal notranslate"><span class="pre">Spring</span> <span class="pre">Boot</span> <span class="pre">+</span> <span class="pre">Tomcat</span></code> + <code class="docutils literal notranslate"><span class="pre">Nginx</span></code></strong></p>
+<ul class="simple">
 <li><p>Spring Boot: 엔터프라이즈급 애플리케이션을 위한 프레임워크로, 다양한 기능을 제공합니다.</p></li>
 <li><p>Tomcat: Spring Boot 애플리케이션을 서비스하는 서블릿 컨테이너입니다.</p></li>
 <li><p>Nginx: 정적 파일 제공 및 리버스 프록시 역할을 합니다.</p></li>
-</ul>
-</li>
 </ul>
 <p><strong>우리의 선택은?</strong></p>
 <p>적합한 기술 스택을 선택하는 것은 프로젝트 성공의 중요한 요소입니다.</p>
@@ -664,7 +670,7 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8.6. </span>Challenge Project</p>
+            <p class="prev-next-title"><span class="section-number">8.6. </span>도전 프로젝트</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="09-01_flask_basic.html" title="next page">

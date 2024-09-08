@@ -104,7 +104,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../02_preface/02-01_preface.html">
-   2. 책 소개말 (Preface)
+   2. 서문(Preface)
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,7 +134,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../04_data_analysis_basic/04-03_project.html">
-     4.3. Challenge Project
+     4.3. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -151,17 +151,23 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-01_visualization_tools.html">
-     5.1. 데이터 시각화 도구
+     5.1. 시각화 도구
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-02_matplotlib_basics.html">
-     5.2. Matplotlib 기본 사용법
+     5.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Matplotlib
+      </span>
+     </code>
+     기본 사용법
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-03_datasets.html">
-     5.3. 시각화에 자주 사용되는 Dataset 소개
+     5.3. 자주 사용되는 Dataset 소개
     </a>
    </li>
    <li class="toctree-l2">
@@ -176,7 +182,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../05_data_visualization/05-06_project.html">
-     5.6. Challenge Project
+     5.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -218,7 +224,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-06_project.html">
-     6.6. Challenge Project
+     6.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -250,7 +256,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../07_game/07-04_project.html">
-     7.4. Challenge Project
+     7.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -272,7 +278,13 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-02_request_types.html">
-     8.2. Request 종류
+     8.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Request
+      </span>
+     </code>
+     종류
     </a>
    </li>
    <li class="toctree-l2">
@@ -304,7 +316,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../08_server_client/08-06_project.html">
-     8.6. Challenge Project
+     8.6. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -336,7 +348,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../09_web_server/09-04_project.html">
-     9.4. Challenge Project
+     9.4. 도전 프로젝트
     </a>
    </li>
   </ul>
@@ -615,15 +627,16 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-01-tk-window-01-png">
-<a class="reference internal image-reference" href="../../_images/ch06_01_01_tk_window_01.png"><img alt="../../_images/ch06_01_01_tk_window_01.png" src="../../_images/ch06_01_01_tk_window_01.png" style="width: 20%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_01_tk_window_01.png"><img alt="../../_images/ch06_01_01_tk_window_01.png" src="../../_images/ch06_01_01_tk_window_01.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">단순히 윈도우만 생성한 경우</span><a class="headerlink" href="#ch06-01-01-tk-window-01-png" title="Permalink to this image">¶</a></p>
 </div>
 <p>윈도우 객체는 다양한 메서드를 사용할 수 있습니다.</p>
-<ul>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">title()</span></code>: 윈도우 창 이름(제목)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">geometry(str)</span></code>: 메서드를 사용하여 생성될 때 크기를 지정(“가로x세로+x좌표+y좌표”)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">resiable(bool,</span> <span class="pre">bool)</span></code>: 사용자의 창 크기 변경 허용 여부(가로, 세로)</p></li>
-<li><p>윈도우 이름, 시작할 때 크기를 지정한 경우</p>
+</ul>
+<p><strong>윈도우 이름, 시작할 때 크기를 지정하는 예제</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
 
   <span class="c1"># 윈도우 객체 생성</span>
@@ -639,11 +652,9 @@
   <span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 </div>
-</li>
-</ul>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-01-tk-window-02-png">
-<a class="reference internal image-reference" href="../../_images/ch06_01_01_tk_window_02.png"><img alt="../../_images/ch06_01_01_tk_window_02.png" src="../../_images/ch06_01_01_tk_window_02.png" style="width: 40%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_01_tk_window_02.png"><img alt="../../_images/ch06_01_01_tk_window_02.png" src="../../_images/ch06_01_01_tk_window_02.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.3 </span><span class="caption-text">윈도우의 제목, 크기, 위치를 설정한 경우</span><a class="headerlink" href="#ch06-01-01-tk-window-02-png" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Tkinter Widgets</strong></p>
@@ -794,7 +805,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-04-pack-wo-params">
-<a class="reference internal image-reference" href="../../_images/ch06_01_04_pack_wo_params.png"><img alt="../../_images/ch06_01_04_pack_wo_params.png" src="../../_images/ch06_01_04_pack_wo_params.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_04_pack_wo_params.png"><img alt="../../_images/ch06_01_04_pack_wo_params.png" src="../../_images/ch06_01_04_pack_wo_params.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.6 </span><span class="caption-text">파라미터 설정 없이 pack( ) 실행한 결과</span><a class="headerlink" href="#ch06-01-04-pack-wo-params" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong><code class="docutils literal notranslate"><span class="pre">pack()</span></code> 옵션을 사용하여 3개 위젯을 쌓는 예제</strong></p>
@@ -818,7 +829,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-05-pack-w-params">
-<a class="reference internal image-reference" href="../../_images/ch06_01_05_pack_w_params.png"><img alt="../../_images/ch06_01_05_pack_w_params.png" src="../../_images/ch06_01_05_pack_w_params.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_05_pack_w_params.png"><img alt="../../_images/ch06_01_05_pack_w_params.png" src="../../_images/ch06_01_05_pack_w_params.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.7 </span><span class="caption-text">파라미터 사용하여 pack( ) 실행한 결과</span><a class="headerlink" href="#ch06-01-05-pack-w-params" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -846,7 +857,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-06-grid-wo-params">
-<a class="reference internal image-reference" href="../../_images/ch06_01_06_grid_wo_params.png"><img alt="../../_images/ch06_01_06_grid_wo_params.png" src="../../_images/ch06_01_06_grid_wo_params.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_06_grid_wo_params.png"><img alt="../../_images/ch06_01_06_grid_wo_params.png" src="../../_images/ch06_01_06_grid_wo_params.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.8 </span><span class="caption-text">파라미터 사용하지 않고 grid 생성</span><a class="headerlink" href="#ch06-01-06-grid-wo-params" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>패딩(<code class="docutils literal notranslate"><span class="pre">padx</span></code>, <code class="docutils literal notranslate"><span class="pre">pady</span></code>) 파라미터를 사용하여 <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">×</span> <span class="pre">3</span></code> grid 프레임을 만드는 예제</strong></p>
@@ -870,7 +881,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-07-grid-w-params">
-<a class="reference internal image-reference" href="../../_images/ch06_01_07_grid_w_params.png"><img alt="../../_images/ch06_01_07_grid_w_params.png" src="../../_images/ch06_01_07_grid_w_params.png" style="width: 30%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_07_grid_w_params.png"><img alt="../../_images/ch06_01_07_grid_w_params.png" src="../../_images/ch06_01_07_grid_w_params.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.9 </span><span class="caption-text">파라미터 사용하지 않고 grid 생성</span><a class="headerlink" href="#ch06-01-07-grid-w-params" title="Permalink to this image">¶</a></p>
 </div>
 </div>
@@ -898,7 +909,7 @@
 </div>
 <p><strong>실행 결과</strong></p>
 <div class="figure align-default" id="ch06-01-08-place">
-<a class="reference internal image-reference" href="../../_images/ch06_01_08_place.png"><img alt="../../_images/ch06_01_08_place.png" src="../../_images/ch06_01_08_place.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../_images/ch06_01_08_place.png"><img alt="../../_images/ch06_01_08_place.png" src="../../_images/ch06_01_08_place.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6.10 </span><span class="caption-text">파라미터 사용하지 않고 grid 생성</span><a class="headerlink" href="#ch06-01-08-place" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#id1"><span class="std std-ref">맨 위로 이동</span></a></p>
